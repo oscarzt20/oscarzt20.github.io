@@ -1,0 +1,46 @@
+baseURL = 'https://oscarzt20.github.io/'
+languageCode = 'es-mx'
+title = 'oscarzt20'
+theme = 'PaperMod'
+
+[params]
+  defaultTheme = "auto"
+  ShowReadingTime = false
+  ShowBreadCrumbs = true
+  showtoc = true
+  tocopen = true
+  ShowPostNavLinks = false
+  ShowCodeCopyButtons = true
+  hideSummary = false
+  mainSections = ["proyectos", "recursos", "apuntes", "pasatiempos", "recetas"]
+
+  [params.profileMode]
+    enabled = true
+    title = "¡Hola, soy oscarzt20!"
+    subtitle = "Bienvenido a mi sitio personal."
+
+[menu]
+  [[menu.main]]
+    name = "Portafolio"
+    url = "/proyectos/"
+    weight = 1
+
+  [[menu.main]]
+    name = "Recursos / Guías"
+    url = "/recursos/"
+    weight = 2
+
+  [[menu.main]]
+    name = "Estudios"
+    url = "/apuntes/"
+    weight = 3
+
+  [[menu.main]]
+    name = "Entretenimiento"
+    url = "/pasatiempos/"
+    weight = 4
+
+  [[menu.main]]
+    name = "Recetas"
+    url = "/recetas/"
+    weight = 5

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Programacion on oscarzt20</title>
+    <link>http://localhost:1313/tags/programacion/</link>
+    <description>Recent content in Programacion on oscarzt20</description>
+    <generator>Hugo -- 0.148.1</generator>
+    <language>es-mx</language>
+    <atom:link href="http://localhost:1313/tags/programacion/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Programación Orientada a Objetos</title>
+      <link>http://localhost:1313/apuntes/programaci%C3%B3n-orientada-a-objetos/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/apuntes/programaci%C3%B3n-orientada-a-objetos/</guid>
+      <description>&lt;hr&gt;
+&lt;h2 id=&#34;i-introducción-a-la-programación-orientada-a-objetos-poo&#34;&gt;I. Introducción a la Programación Orientada a Objetos (POO)&lt;/h2&gt;
+&lt;p&gt;La programación orientada a objetos es un paradigma que organiza el código en objetos, cada uno con sus propios datos (&lt;em&gt;atributos&lt;/em&gt;) y comportamientos (&lt;em&gt;métodos&lt;/em&gt;), evitando que otros objetos tengan acceso a estos elementos de manera no controlada.&lt;/p&gt;
+&lt;p&gt;Los beneficios y objetivos de POO son:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Natural&lt;/strong&gt;: Permite construir un sistema que modele elementos del mundo real.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Confiable&lt;/strong&gt;: Un programa bien diseñado y codificado va a funcionar como es esperado sin importar el tamaño, y el testing se vuelve más sencillo.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Reusable&lt;/strong&gt;: Una vez un problema es resuelto se puede volver a usar la solución.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Fácil de mantener&lt;/strong&gt;: Se estima que del 60%-80% del trabajo en un programa es el mantenimiento, el 20% es el desarrollo. Un bug se puede resolver corrigiendo una sola parte.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Extendible&lt;/strong&gt;: Un software creado en POO puede crecer y cambiar sin muchas dificultades.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Oportuno&lt;/strong&gt;: Varias partes del programa se pueden desarrollar en paralelo. Es esencial realizar correctamente el análisis y diseño.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;11-diferencias-entre-poo-y-la-programación-estructurada&#34;&gt;1.1 Diferencias entre POO y la programación estructurada&lt;/h3&gt;
+&lt;p&gt;A diferencia de la programación estructurada, donde el código se escribe en &lt;em&gt;funciones&lt;/em&gt; que resuelven un problema lógico y este se ejecuta en orden de arriba hacia abajo, la POO organiza el código en un sistema conectado basado en &lt;em&gt;objetos&lt;/em&gt;, y el orden en que se escriben las partes de una clase no afecta su funcionamiento.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
