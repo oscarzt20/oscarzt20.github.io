@@ -1565,7 +1565,7 @@ class Program
 
 ## / Más Información
 
-**Anterior**: `[[Conceptos Generales de Programación]]`
+**Anterior**: [Conceptos Generales de Programación](/apuntes/conceptos-generales-de-programación/)
 
 ### Lenguajes de programación
 
