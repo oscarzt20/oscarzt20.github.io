@@ -3,6 +3,10 @@ languageCode = 'es-mx'
 title = 'oscarzt20'
 theme = 'PaperMod'
 
+[caches]
+  [caches.images]
+    dir = ':cacheDir/images'
+
 [params]
   defaultTheme = "auto"
   ShowReadingTime = false
