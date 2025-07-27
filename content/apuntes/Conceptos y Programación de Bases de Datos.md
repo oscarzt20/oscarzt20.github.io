@@ -443,7 +443,7 @@ SELECT precio, ventas FROM Productos WHERE color = 'azul';
 
 Combina filas de dos o más tablas en función de una condición de igualdad especificada en la cláusula `ON`. Solo devuelve las filas donde existe una coincidencia en ambas tablas. Se toma en cuenta la llave primaria y la foránea.
 
-![Fundamentos de Bases de Datos-05_12_2024.png|330](/imagenes/Fundamentos%20de%20Bases%20de%20Datos-05_12_2024.png%7C330)
+![Conceptos y Programación de Bases de Datos_26-07-2025.png](/imagenes/Conceptos%20y%20Programaci%C3%B3n%20de%20Bases%20de%20Datos_26-07-2025.png)
 
 **Sintaxis**
 
