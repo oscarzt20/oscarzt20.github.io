@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>Conceptos Generales de Programación | oscarzt20</title>
+<meta name="keywords" content="programacion, enciclopedia, post">
+<meta name="description" content="
+La programación es el proceso de escribir instrucciones para que una computadora realice tareas específicas. Antes de empezar a programar, es importante conocer los fundamentos necesarios para entender cómo funciona la programación.
+I. Algoritmos
+Para programar, los desarrolladores crean algoritmos, que son secuencias ordenadas de pasos que resuelven un problema o llevan a cabo una tarea.
+1.1 Características de los algoritmos
+
+Finito: Un algoritmo debe terminar después de un número determinado de pasos. Se evitan los bucles sin fin.
+Preciso: No debe haber interpretaciones subjetivas sobre lo que se debe hacer en cada instrucción.
+Con inicio y final/es: Debe tener un inicio y puede contener más de un final.
+Eficaz en la solución del problema: El algoritmo debe resolver el problema de manera correcta y óptima, evitando pasos innecesarios o ineficientes.
+
+1.2 Tipos de algoritmos
+
+Cualitativos: Emplean palabras, ej. receta de cocina.
+Cuantitativos: Utilizan cálculos numéricos, ej. resolver una ecuación de 2° grado.
+
+1.3 Lenguajes algorítmicos
+Conjunto de símbolos y reglas que permiten explicar un proceso.">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/apuntes/conceptos-generales-de-programaci%C3%B3n/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.fa971e8aab64e20929a4e6c16aae93ca2c3f302fdd53c7b71bedfc2bfe4a2590.css" integrity="sha256-&#43;pceiqtk4gkppObBaq6Tyiw/MC/dU8e3G&#43;38K/5KJZA=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/apuntes/conceptos-generales-de-programaci%C3%B3n/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="oscarzt20 (Alt + H)">oscarzt20</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/proyectos/" title="Portafolio">
+                    <span>Portafolio</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/recursos/" title="Recursos / Guías">
+                    <span>Recursos / Guías</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/apuntes/" title="Estudios">
+                    <span>Estudios</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/pasatiempos/" title="Entretenimiento">
+                    <span>Entretenimiento</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/recetas/" title="Recetas">
+                    <span>Recetas</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/apuntes/">Apuntes</a></div>
+    <h1 class="post-title entry-hint-parent">
+      Conceptos Generales de Programación
+    </h1>
+    <div class="post-meta">
+
+</div>
+  </header> <div class="toc">
+    <details  open>
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#i-algoritmos" aria-label="I. Algoritmos">I. Algoritmos</a><ul>
+                        
+                <li>
+                    <a href="#11-caracter%c3%adsticas-de-los-algoritmos" aria-label="1.1 Características de los algoritmos">1.1 Características de los algoritmos</a></li>
+                <li>
+                    <a href="#12-tipos-de-algoritmos" aria-label="1.2 Tipos de algoritmos">1.2 Tipos de algoritmos</a></li>
+                <li>
+                    <a href="#13-lenguajes-algor%c3%adtmicos" aria-label="1.3 Lenguajes algorítmicos">1.3 Lenguajes algorítmicos</a><ul>
+                        
+                <li>
+                    <a href="#lenguajes-algor%c3%adtmicos-gr%c3%a1ficos" aria-label="Lenguajes algorítmicos gráficos">Lenguajes algorítmicos gráficos</a></li>
+                <li>
+                    <a href="#lenguajes-algor%c3%adtmicos-no-gr%c3%a1ficos" aria-label="Lenguajes algorítmicos no gráficos">Lenguajes algorítmicos no gráficos</a></li></ul>
+                </li>
+                <li>
+                    <a href="#14-metodolog%c3%ada-general-para-solucionar-algoritmos" aria-label="1.4 Metodología general para solucionar algoritmos">1.4 Metodología general para solucionar algoritmos</a></li></ul>
+                </li>
+                <li>
+                    <a href="#ii-clasificaci%c3%b3n-de-los-lenguajes-de-programaci%c3%b3n" aria-label="II. Clasificación de los lenguajes de programación">II. Clasificación de los lenguajes de programación</a><ul>
+                        
+                <li>
+                    <a href="#21-niveles-de-abstracci%c3%b3n" aria-label="2.1 Niveles de abstracción">2.1 Niveles de abstracción</a></li>
+                <li>
+                    <a href="#22-lenguajes-compilados-e-interpretados" aria-label="2.2 Lenguajes compilados e interpretados">2.2 Lenguajes compilados e interpretados</a></li></ul>
+                </li>
+                <li>
+                    <a href="#iii-componentes-b%c3%a1sicos-de-la-programaci%c3%b3n" aria-label="III. Componentes básicos de la programación">III. Componentes básicos de la programación</a><ul>
+                        
+                <li>
+                    <a href="#31-tipos-de-datos-simples" aria-label="3.1 Tipos de datos simples">3.1 Tipos de datos simples</a></li>
+                <li>
+                    <a href="#32-atributos" aria-label="3.2 Atributos">3.2 Atributos</a><ul>
+                        
+                <li>
+                    <a href="#variable" aria-label="Variable">Variable</a></li>
+                <li>
+                    <a href="#constante" aria-label="Constante">Constante</a></li></ul>
+                </li>
+                <li>
+                    <a href="#33-operadores" aria-label="3.3 Operadores">3.3 Operadores</a><ul>
+                        
+                <li>
+                    <a href="#operadores-aritm%c3%a9ticos" aria-label="Operadores aritméticos">Operadores aritméticos</a></li>
+                <li>
+                    <a href="#operadores-de-comparaci%c3%b3n" aria-label="Operadores de comparación">Operadores de comparación</a></li>
+                <li>
+                    <a href="#operadores-de-asignaci%c3%b3n" aria-label="Operadores de asignación">Operadores de asignación</a></li>
+                <li>
+                    <a href="#operadores-l%c3%b3gicos" aria-label="Operadores lógicos">Operadores lógicos</a></li></ul>
+                </li>
+                <li>
+                    <a href="#34-expresiones-l%c3%b3gicas" aria-label="3.4 Expresiones lógicas">3.4 Expresiones lógicas</a><ul>
+                        
+                <li>
+                    <a href="#tabla-de-verdad" aria-label="Tabla de verdad">Tabla de verdad</a></li></ul>
+                </li>
+                <li>
+                    <a href="#35-estructuras-de-control-de-flujo" aria-label="3.5 Estructuras de control de flujo">3.5 Estructuras de control de flujo</a><ul>
+                        
+                <li>
+                    <a href="#estructuras-condicionales" aria-label="Estructuras condicionales">Estructuras condicionales</a></li>
+                <li>
+                    <a href="#estructuras-iterativas" aria-label="Estructuras iterativas">Estructuras iterativas</a></li></ul>
+                </li></ul>
+                </li>
+                <li>
+                    <a href="#iv-gu%c3%ada-de-nomenclatura-en-programaci%c3%b3n" aria-label="IV. Guía de nomenclatura en programación">IV. Guía de nomenclatura en programación</a></li>
+                <li>
+                    <a href="#v-paradigmas-de-programaci%c3%b3n" aria-label="V. Paradigmas de programación">V. Paradigmas de programación</a></li>
+                <li>
+                    <a href="#vi-tips" aria-label="VI. Tips">VI. Tips</a></li>
+                <li>
+                    <a href="#-m%c3%a1s-informaci%c3%b3n" aria-label="/ Más Información">/ Más Información</a><ul>
+                        
+                <li>
+                    <a href="#lenguajes-de-programaci%c3%b3n" aria-label="Lenguajes de programación">Lenguajes de programación</a>
+                </li>
+            </ul>
+            </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><hr>
+<p>La programación es el proceso de escribir instrucciones para que una computadora realice tareas específicas. Antes de empezar a programar, es importante conocer los fundamentos necesarios para entender cómo funciona la programación.</p>
+<h2 id="i-algoritmos">I. Algoritmos<a hidden class="anchor" aria-hidden="true" href="#i-algoritmos">#</a></h2>
+<p>Para programar, los desarrolladores crean algoritmos, que son secuencias ordenadas de pasos que resuelven un problema o llevan a cabo una tarea.</p>
+<h3 id="11-características-de-los-algoritmos">1.1 Características de los algoritmos<a hidden class="anchor" aria-hidden="true" href="#11-características-de-los-algoritmos">#</a></h3>
+<ul>
+<li><strong>Finito</strong>: Un algoritmo debe terminar después de un número determinado de pasos. Se evitan los bucles sin fin.</li>
+<li><strong>Preciso</strong>: No debe haber interpretaciones subjetivas sobre lo que se debe hacer en cada instrucción.</li>
+<li><strong>Con inicio y final/es</strong>: Debe tener un inicio y puede contener más de un final.</li>
+<li><strong>Eficaz en la solución del problema</strong>: El algoritmo debe resolver el problema de manera correcta y óptima, evitando pasos innecesarios o ineficientes.</li>
+</ul>
+<h3 id="12-tipos-de-algoritmos">1.2 Tipos de algoritmos<a hidden class="anchor" aria-hidden="true" href="#12-tipos-de-algoritmos">#</a></h3>
+<ul>
+<li><strong>Cualitativos</strong>: Emplean palabras, ej. receta de cocina.</li>
+<li><strong>Cuantitativos</strong>: Utilizan cálculos numéricos, ej. resolver una ecuación de 2° grado.</li>
+</ul>
+<h3 id="13-lenguajes-algorítmicos">1.3 Lenguajes algorítmicos<a hidden class="anchor" aria-hidden="true" href="#13-lenguajes-algorítmicos">#</a></h3>
+<p>Conjunto de símbolos y reglas que permiten explicar un proceso.</p>
+<h4 id="lenguajes-algorítmicos-gráficos">Lenguajes algorítmicos gráficos<a hidden class="anchor" aria-hidden="true" href="#lenguajes-algorítmicos-gráficos">#</a></h4>
+<ul>
+<li><strong>Diagrama de flujo</strong>: Es una representación gráfica de un algoritmo o proceso, utilizando distintos símbolos conectados por flechas que indican el flujo de ejecución. Se usa para facilitar la comprensión del programa y ayudar a detectar errores. Los símbolos usados son:
+<ul>
+<li><strong>Círculo</strong>: Indica el inicio y el fin del algoritmo.</li>
+<li><strong>Rectángulo</strong>: Expresa una acción o proceso a realizar.</li>
+<li><strong>Rombo</strong>: Representa una decisión (condición lógica).</li>
+<li><strong>Flechas</strong>: Indican el flujo del proceso.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Ejemplo de diagrama de flujo</strong>:</p>
+<p>Algoritmo que determina si un número es par o impar.</p>
+<p><img alt="Conceptos Generales de Programación_05-06-2025-1.png" loading="lazy" src="/imagenes/Conceptos%20Generales%20de%20Programaci%C3%B3n_05-06-2025-1.png"></p>
+<h4 id="lenguajes-algorítmicos-no-gráficos">Lenguajes algorítmicos no gráficos<a hidden class="anchor" aria-hidden="true" href="#lenguajes-algorítmicos-no-gráficos">#</a></h4>
+<ul>
+<li><strong>Pseudocódigo</strong>: Es una forma de representar algoritmos utilizando un lenguaje intermedio entre el lenguaje natural y un lenguaje de programación. Sirve para planificar la lógica de un programa y facilitar su comprensión antes de escribir código.</li>
+</ul>
+<p><strong>Ejemplo de pseudocódigo</strong>:</p>
+<p>Algoritmo para anotar un gol en un partido de fútbol.</p>
+<pre tabindex="0"><code>1. Inicio.
+2. Entrar a la cancha de fútbol con el equipo adecuado.
+3. Esperar la indicación del inicio del partido.
+4. Localizar el balón.
+5. Correr hacia el balón.
+6. Ganar control del balón.
+7. ¿Se tiene posesión del balón?
+	1. Sí, continuar al paso 8.
+	2. No, regresar al paso 4.
+8. Localizar la portería deseada.
+9. Patear la pelota levemente y repetidamente en dirección a la portería.
+10. Evitar intentos del equipo contrario de arrebatar el control del balón.
+11. ¿Se mantuvo el control del balón?
+	1. Sí, continuar al paso 12.
+	2. No, regresar al paso 4.
+12. Una vez frente a la portería, a un mínimo de 5 metros de distancia, cambiar rápidamente a posición de tiro.
+13. Identificar un espacio en la portería donde sea menos accesible para el portero.
+14. Patear la pelota con suficiente fuerza en dirección hacia dentro de la portería, usando el empeine del pie hábil.
+15. ¿Se logró anotar el gol?
+	1. Sí, festejar con el equipo propio.
+	2. No, regresar al paso 4.
+16. Fin.
+</code></pre><h3 id="14-metodología-general-para-solucionar-algoritmos">1.4 Metodología general para solucionar algoritmos<a hidden class="anchor" aria-hidden="true" href="#14-metodología-general-para-solucionar-algoritmos">#</a></h3>
+<ol>
+<li><strong>Definición del problema</strong>: Debe ser clara y precisa.</li>
+<li><strong>Análisis del problema</strong>: Colocarse en el lugar del ordenador y buscar lo que se necesita para cumplir la tarea. Lleva:
+<ul>
+<li>Datos de entrada.</li>
+<li>Información a producir (salida)</li>
+<li>Métodos y fórmulas para analizar datos.</li>
+</ul>
+</li>
+<li><strong>Diseño del algoritmo</strong>:
+<ul>
+<li>Debe tener un punto particular de inicio.</li>
+<li>No debe ser ambiguo.</li>
+<li>Debe ir de lo general a lo particular.</li>
+<li>Debe ser finito en tamaño y tiempo de ejecución.</li>
+<li>Debe hacerse la prueba de escritorio (se toman datos límite de entrada y se sigue el algoritmo para validarlo).</li>
+</ul>
+</li>
+</ol>
+<h2 id="ii-clasificación-de-los-lenguajes-de-programación">II. Clasificación de los lenguajes de programación<a hidden class="anchor" aria-hidden="true" href="#ii-clasificación-de-los-lenguajes-de-programación">#</a></h2>
+<h3 id="21-niveles-de-abstracción">2.1 Niveles de abstracción<a hidden class="anchor" aria-hidden="true" href="#21-niveles-de-abstracción">#</a></h3>
+<ul>
+<li><strong>Bajo nivel</strong>: Aquellos lenguajes que controlan el hardware del ordenador. Ej. Lenguaje Ensamblador, Código Máquina o Binario.</li>
+<li><strong>Alto nivel</strong>: Son más parecidos al lenguaje natural humano y abarca el 99% de lenguajes de programación.</li>
+<li><strong>Nivel intermedio</strong>: Puede usar elementos de los dos anteriores. El único que lo hace es el C.</li>
+</ul>
+<h3 id="22-lenguajes-compilados-e-interpretados">2.2 Lenguajes compilados e interpretados<a hidden class="anchor" aria-hidden="true" href="#22-lenguajes-compilados-e-interpretados">#</a></h3>
+<ul>
+<li><strong>Lenguaje compilado</strong>: Se toma el código en alto nivel y lo convierte en bytes, y al final nos dará un archivo ejecutable. Tiene mejor rendimiento al ejecutarse aunque ocupa más memoria que el interpretado.</li>
+<li><strong>Lenguaje interpretado</strong>: Se interpreta línea a línea en tiempo real al ejecutarse (Ej. JavaScript, Python). Tiene un rendimiento algo más lento que el compilado pero ocupa menos memoria.</li>
+<li><strong>Lenguaje híbrido</strong>: Algunos lenguajes combinan ambos enfoques, primero, el código es compilado a un formato intermedio llamado bytecode, luego este bytecode es ejecutado por un intérprete o máquina virtual (JVM en Java, CLR en C#) (Ej. Java, C#, Kotlin).</li>
+</ul>
+<h2 id="iii-componentes-básicos-de-la-programación">III. Componentes básicos de la programación<a hidden class="anchor" aria-hidden="true" href="#iii-componentes-básicos-de-la-programación">#</a></h2>
+<h3 id="31-tipos-de-datos-simples">3.1 Tipos de datos simples<a hidden class="anchor" aria-hidden="true" href="#31-tipos-de-datos-simples">#</a></h3>
+<p>Algunos de los tipos de datos comunes simples son:</p>
+<ul>
+<li><strong>Caracteres (char)</strong>: Almacenan una sola letra, número o símbolo.</li>
+<li><strong>Texto (string)</strong>: Secuencia de caracteres utilizada para representar palabras o frases.</li>
+<li><strong>Entero (int)</strong>: Números enteros, positivos o negativos, sin decimales.</li>
+<li><strong>Decimal (double, float)</strong>: Números con parte decimal.</li>
+<li><strong>Booleano (bool)</strong>: Solo tiene dos valores posibles: verdadero (true) o falso (false).</li>
+<li><strong>Fecha (date, datetime)</strong>: Representa una fecha y, en algunos casos, también la hora.</li>
+<li><strong>Nulo (null, None, nil)</strong>: Representa la ausencia de un valor o un objeto vacío.</li>
+</ul>
+<blockquote>
+<p>[!NOTE]
+La denominación de cada tipo de dato puede diferir en cada lenguaje de programación.</p></blockquote>
+<h3 id="32-atributos">3.2 Atributos<a hidden class="anchor" aria-hidden="true" href="#32-atributos">#</a></h3>
+<h4 id="variable">Variable<a hidden class="anchor" aria-hidden="true" href="#variable">#</a></h4>
+<p>Espacio reservado en memoria para almacenar un valor como tipo de dato. Este valor se puede modificar a lo largo del programa, y tiene un nombre.</p>
+<p><strong>Ejemplo de declaración de variable en C#</strong>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> edad = <span style="color:#ae81ff">25</span>;  <span style="color:#75715e">// Variable de tipo entero (int) con valor inicial de 25</span>
+</span></span></code></pre></div><h4 id="constante">Constante<a hidden class="anchor" aria-hidden="true" href="#constante">#</a></h4>
+<p>Es un espacio reservado en memoria para almacenar un valor como tipo de dato, el cual <em>NO</em> se puede modificar, y tiene un nombre.</p>
+<p><strong>Ejemplo de declaración de constante en C#</strong>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#66d9ef">double</span> PI = <span style="color:#ae81ff">3.1416</span>; <span style="color:#75715e">// Constante de tipo double</span>
+</span></span></code></pre></div><h3 id="33-operadores">3.3 Operadores<a hidden class="anchor" aria-hidden="true" href="#33-operadores">#</a></h3>
+<h4 id="operadores-aritméticos">Operadores aritméticos<a hidden class="anchor" aria-hidden="true" href="#operadores-aritméticos">#</a></h4>
+<p>Es la regla que define el orden en el que se harán las operaciones en un determinado código:</p>
+<ul>
+<li><strong>Suma (+)</strong>: Realiza la adición de dos valores numéricos.</li>
+<li><strong>Resta (-)</strong>: Calcula la diferencia entre dos valores.</li>
+<li><strong>Multiplicación ($*$)</strong>: Multiplica dos valores numéricos.</li>
+<li><strong>División (/)</strong>: Divide un número entre otro y devuelve el resultado.</li>
+<li><strong>Módulo (%)</strong>: Retorna el residuo de una división entre dos números.</li>
+<li><strong>Incremento (++):</strong> Aumenta en una unidad el valor de una variable.</li>
+<li><strong>Decremento (&ndash;):</strong> Disminuye en una unidad el valor de una variable.</li>
+</ul>
+<blockquote>
+<p>[!NOTE]
+El orden es el mismo que en la aritmética: ( ) * / + - %</p></blockquote>
+<h4 id="operadores-de-comparación">Operadores de comparación<a hidden class="anchor" aria-hidden="true" href="#operadores-de-comparación">#</a></h4>
+<p>Expresiones que comparan dos valores y devuelven un valor booleano:</p>
+<ul>
+<li><strong>Menor que (&lt;)</strong>: Verifica si el valor de la izquierda es menor que el de la derecha.</li>
+<li><strong>Mayor que (&gt;)</strong>: Comprueba si el valor de la izquierda es mayor que el de la derecha.</li>
+<li><strong>Igual a ($==$)</strong>: Determina si ambos valores son exactamente iguales. <em>No confundir con <code>=</code> que es el operador de asignación.</em></li>
+<li><strong>Diferente de (!=)</strong>: Evalúa si dos valores son distintos.</li>
+<li><strong>Menor o igual a (&lt;=)</strong>: Verifica si el valor de la izquierda es menor o igual al de la derecha.</li>
+<li><strong>Mayor o igual a (&gt;=)</strong>: Comprueba si el valor de la izquierda es mayor o igual al de la derecha.</li>
+</ul>
+<h4 id="operadores-de-asignación">Operadores de asignación<a hidden class="anchor" aria-hidden="true" href="#operadores-de-asignación">#</a></h4>
+<ul>
+<li><strong>Asignación (<code>=</code>)</strong>: Asigna el valor de la derecha a la variable de la izquierda.</li>
+<li><strong>Suma y asignación (<code>+=</code>)</strong>: Suma el valor de la derecha al de la variable y almacena el resultado en la misma variable.</li>
+<li><strong>Resta y asignación (<code>-=</code>)</strong>: Resta el valor de la derecha al de la variable y almacena el resultado en la misma variable.</li>
+<li><strong>Multiplicación y asignación (<code>*=</code>)</strong>: Multiplica la variable por el valor de la derecha y almacena el resultado en la misma variable.</li>
+<li><strong>División y asignación (<code>/=</code>)</strong>: Divide la variable entre el valor de la derecha y almacena el resultado en la misma variable.</li>
+<li><strong>Módulo y asignación (<code>%=</code>)</strong>: Calcula el residuo de la división entre la variable y el valor de la derecha, almacenándolo en la misma variable.</li>
+</ul>
+<h4 id="operadores-lógicos">Operadores lógicos<a hidden class="anchor" aria-hidden="true" href="#operadores-lógicos">#</a></h4>
+<p>Permiten realizar operaciones lógicas en valores booleanos y se apoyan de estructuras como if, while y for. Son:</p>
+<ul>
+<li><strong>AND (<code>&amp;&amp;</code>)</strong>: Resulta verdadero si todas las expresiones conectadas son verdaderas, sino, es falso.</li>
+<li><strong>OR (<code>||</code>)</strong>: Devuelve verdadero si al menos una de las expresiones ligadas es verdadero, sino, es falso.</li>
+</ul>
+<h3 id="34-expresiones-lógicas">3.4 Expresiones lógicas<a hidden class="anchor" aria-hidden="true" href="#34-expresiones-lógicas">#</a></h3>
+<p>Es una construcción en código que combina valores y operadores lógicos para evaluar si una proposición es verdadera o falsa. Ej. (edad &gt;= 18).</p>
+<h4 id="tabla-de-verdad">Tabla de verdad<a hidden class="anchor" aria-hidden="true" href="#tabla-de-verdad">#</a></h4>
+<p>Es una representación en tabla que abarca todas las posibles combinaciones de datos de entrada en una expresión lógica, determinando si el resultado es Verdadero o Falso. Sirve para validar las expresiones lógicas. Se recomienda usar datos límite.</p>
+<p><strong>Ejemplo con OR</strong>:</p>
+<p>Determinar si un cliente recibe entrada gratis en Cinépolis.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> ((PuntosClienteFrecuente &gt;= <span style="color:#ae81ff">300</span>) || (TipoDePromocion == <span style="color:#e6db74">&#34;boleto gratis&#34;</span>) || (TipoDePromocion == <span style="color:#e6db74">&#34;aniversario Cinépolis&#34;</span>))
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    Console.WriteLine(<span style="color:#e6db74">&#34;Bienvenido a Cinépolis, no paga su entrada, es gratis&#34;</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    Console.WriteLine(<span style="color:#e6db74">&#34;Bienvenido a Cinépolis, favor de pasar a taquilla&#34;</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><table>
+  <thead>
+      <tr>
+          <th><strong>Var 1</strong> (Puntos Cliente Frecuente)</th>
+          <th><strong>Var 2</strong> (Tipo De Promocion)</th>
+          <th><strong>R</strong></th>
+          <th><strong>Var 3</strong> (Tipo De Promocion)</th>
+          <th><strong>Salida</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>&gt;= 300</td>
+          <td>&ldquo;boleto gratis&rdquo;</td>
+          <td>V</td>
+          <td>&ldquo;aniversario Cinépolis&rdquo;</td>
+          <td><strong>V</strong> &ldquo;Bienvenido a Cinépolis, no paga su entrada, es gratis&rdquo;</td>
+      </tr>
+      <tr>
+          <td>300</td>
+          <td>&ldquo;boleto gratis&rdquo;</td>
+          <td>V</td>
+          <td>&ldquo;aniversario Cinépolis&rdquo;</td>
+          <td><strong>V</strong> &ldquo;Bienvenido a Cinépolis, no paga su entrada, es gratis&rdquo;</td>
+      </tr>
+      <tr>
+          <td>425</td>
+          <td>&ldquo;muchos gratis&rdquo;</td>
+          <td>F</td>
+          <td>&ldquo;sin promoción&rdquo;</td>
+          <td><strong>V</strong> &ldquo;Bienvenido a Cinépolis, no paga su entrada, es gratis&rdquo;</td>
+      </tr>
+      <tr>
+          <td>200</td>
+          <td>&ldquo;boleto gratis&rdquo;</td>
+          <td>V</td>
+          <td>&ldquo;sin promoción&rdquo;</td>
+          <td><strong>V</strong> &ldquo;Bienvenido a Cinépolis, no paga su entrada, es gratis&rdquo;</td>
+      </tr>
+      <tr>
+          <td>80</td>
+          <td>&ldquo;sin promoción&rdquo;</td>
+          <td>F</td>
+          <td>&ldquo;sin promoción&rdquo;</td>
+          <td><strong>F</strong> &ldquo;Bienvenido a Cinépolis, favor de pasar a taquilla&rdquo;</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Ejemplo con AND</strong>:</p>
+<p>Evaluar si una persona es acreedora a una tarjeta premium.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> ((IngresoPersona &gt;= <span style="color:#ae81ff">50000</span>) &amp;&amp; (IngresoPersona &lt;= <span style="color:#ae81ff">99000</span>) &amp;&amp; (EstadoPagos == <span style="color:#e6db74">&#34;puntuales&#34;</span>))
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    Console.WriteLine(<span style="color:#e6db74">&#34;Eres acreedor a una tarjeta premium&#34;</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    Console.WriteLine(<span style="color:#e6db74">&#34;Lo sentimos, no cubre con todos los requisitos&#34;</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><table>
+  <thead>
+      <tr>
+          <th><strong>Var 1</strong> (Ingreso Persona &gt;= 50000)</th>
+          <th><strong>Var 2</strong> (Ingreso Persona &lt;= 99000)</th>
+          <th><strong>R</strong></th>
+          <th><strong>Var 3</strong> (Estado Pagos)</th>
+          <th><strong>Salida</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>50000</td>
+          <td>99000</td>
+          <td>V</td>
+          <td>&ldquo;puntuales&rdquo;</td>
+          <td><strong>V</strong> &ldquo;Eres acreedor a una tarjeta premium&rdquo;</td>
+      </tr>
+      <tr>
+          <td>60000</td>
+          <td>115000</td>
+          <td>F</td>
+          <td>&ldquo;atrasados&rdquo;</td>
+          <td><strong>F</strong> &ldquo;Lo sentimos, no cubre con todos los requisitos&rdquo;</td>
+      </tr>
+      <tr>
+          <td>40000</td>
+          <td>80000</td>
+          <td>V</td>
+          <td>&ldquo;atrasados&rdquo;</td>
+          <td><strong>F</strong> &ldquo;Lo sentimos, no cubre con todos los requisitos&rdquo;</td>
+      </tr>
+      <tr>
+          <td>10000</td>
+          <td>20000</td>
+          <td>F</td>
+          <td>&ldquo;atrasados&rdquo;</td>
+          <td><strong>F</strong> &ldquo;Lo sentimos, no cubre con todos los requisitos&rdquo;</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="35-estructuras-de-control-de-flujo">3.5 Estructuras de control de flujo<a hidden class="anchor" aria-hidden="true" href="#35-estructuras-de-control-de-flujo">#</a></h3>
+<h4 id="estructuras-condicionales">Estructuras condicionales<a hidden class="anchor" aria-hidden="true" href="#estructuras-condicionales">#</a></h4>
+<p>Controla el flujo de ejecución del programa según si una o varias condiciones son verdaderas o falsas.</p>
+<ul>
+<li><strong>IF</strong>: Ejecuta un bloque de código si una condición es verdadera.</li>
+</ul>
+<p><img alt="Conceptos Generales de Programación_05-06-2025-3.png" loading="lazy" src="/imagenes/Conceptos%20Generales%20de%20Programaci%C3%B3n_05-06-2025-3.png"></p>
+<p><strong>Ejemplo en C#</strong>:</p>
+<p>Un supermercado ofrece un 10% de descuento si el cliente es mayor de 60 años.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> edad = <span style="color:#ae81ff">65</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">double</span> precio = <span style="color:#ae81ff">100.0</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">double</span> descuento = <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (edad &gt; <span style="color:#ae81ff">60</span>)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    descuento = precio * <span style="color:#ae81ff">0.10</span>;
+</span></span><span style="display:flex;"><span>    Console.WriteLine(<span style="color:#e6db74">$&#34;Descuento aplicado: ${descuento}&#34;</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><ul>
+<li><strong>ELSE</strong>: Se utiliza con if para ejecutar un bloque de código alternativo si if resulta falso.</li>
+</ul>
+<p><strong>Ejemplo en C#</strong>:</p>
+<p>Un sistema de compras decide si el envío es gratis o tiene costo dependiendo del total de la compra.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">double</span> totalCompra = <span style="color:#ae81ff">250.0</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (totalCompra &gt;= <span style="color:#ae81ff">200</span>)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    Console.WriteLine(<span style="color:#e6db74">&#34;¡Envío gratis!&#34;</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    Console.WriteLine(<span style="color:#e6db74">&#34;El costo de envío es de $50.&#34;</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><ul>
+<li><strong>SWITCH</strong>: Permite seleccionar uno de varios bloques de código para ejecutar y tiene una opción de default.</li>
+</ul>
+<p><img alt="Conceptos Generales de Programación_05-06-2025-2.png" loading="lazy" src="/imagenes/Conceptos%20Generales%20de%20Programaci%C3%B3n_05-06-2025-2.png"></p>
+<p><strong>Ejemplo en C#</strong>:</p>
+<p>Un usuario elige su método de pago en un e-commerce.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">string</span> metodoPago = <span style="color:#e6db74">&#34;Tarjeta&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">switch</span> (metodoPago)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;Tarjeta&#34;</span>:
+</span></span><span style="display:flex;"><span>        Console.WriteLine(<span style="color:#e6db74">&#34;Pago realizado con tarjeta.&#34;</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;PayPal&#34;</span>:
+</span></span><span style="display:flex;"><span>        Console.WriteLine(<span style="color:#e6db74">&#34;Pago realizado con PayPal.&#34;</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;Transferencia&#34;</span>:
+</span></span><span style="display:flex;"><span>        Console.WriteLine(<span style="color:#e6db74">&#34;Pago realizado con transferencia bancaria.&#34;</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">default</span>:
+</span></span><span style="display:flex;"><span>        Console.WriteLine(<span style="color:#e6db74">&#34;Método de pago no reconocido.&#34;</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h4 id="estructuras-iterativas">Estructuras iterativas<a hidden class="anchor" aria-hidden="true" href="#estructuras-iterativas">#</a></h4>
+<ul>
+<li><strong>FOR</strong>: Es una estructura de control que permite ejecutar de manera repetitiva un bloque de instrucciones.</li>
+</ul>
+<p><img alt="Conceptos Generales de Programación_05-06-2025-4.png" loading="lazy" src="/imagenes/Conceptos%20Generales%20de%20Programaci%C3%B3n_05-06-2025-4.png"></p>
+<p><strong>Ejemplo en C#</strong>:</p>
+<p>Un usuario tiene varios productos en su carrito y queremos mostrar la lista.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">string</span>[] carrito = { <span style="color:#e6db74">&#34;Laptop&#34;</span>, <span style="color:#e6db74">&#34;Mouse&#34;</span>, <span style="color:#e6db74">&#34;Teclado&#34;</span> };
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i = <span style="color:#ae81ff">0</span>; i &lt; carrito.Length; i++)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    Console.WriteLine(<span style="color:#e6db74">$&#34;Producto {i + 1}: {carrito[i]}&#34;</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><ul>
+<li><strong>FOR EACH</strong>: Se utiliza para recorrer los elementos de una colección (como arreglos o listas) sin necesidad de usar un índice explícito.</li>
+</ul>
+<p><img alt="Conceptos Generales de Programación_05-06-2025-5.png" loading="lazy" src="/imagenes/Conceptos%20Generales%20de%20Programaci%C3%B3n_05-06-2025-5.png"></p>
+<p><strong>Ejemplo en C#</strong>:</p>
+<p>Recorre una lista de productos en un inventario.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">string</span>[] productos = { <span style="color:#e6db74">&#34;Pan&#34;</span>, <span style="color:#e6db74">&#34;Leche&#34;</span>, <span style="color:#e6db74">&#34;Huevos&#34;</span>, <span style="color:#e6db74">&#34;Queso&#34;</span> };
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">foreach</span> (<span style="color:#66d9ef">string</span> producto <span style="color:#66d9ef">in</span> productos)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    Console.WriteLine(<span style="color:#e6db74">$&#34;Producto disponible: {producto}&#34;</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><ul>
+<li><strong>WHILE</strong>: Este validará la condición primero y de ser válida, regresará a la condición.</li>
+</ul>
+<p><img alt="Conceptos Generales de Programación_05-06-2025-6.png" loading="lazy" src="/imagenes/Conceptos%20Generales%20de%20Programaci%C3%B3n_05-06-2025-6.png"></p>
+<p><strong>Ejemplo en C#</strong>:</p>
+<p>Un sistema de inventario descuenta unidades de un producto mientras haya stock disponible.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> stock = <span style="color:#ae81ff">5</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">while</span> (stock &gt; <span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    Console.WriteLine(<span style="color:#e6db74">$&#34;Producto vendido. Stock restante: {stock}&#34;</span>);
+</span></span><span style="display:flex;"><span>    stock--;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><ul>
+<li><strong>DO WHILE</strong>: Parecido al while pero este se cumple al menos una vez sin importar las condiciones.</li>
+</ul>
+<p><img alt="Conceptos Generales de Programación_05-06-2025-7.png" loading="lazy" src="/imagenes/Conceptos%20Generales%20de%20Programaci%C3%B3n_05-06-2025-7.png"></p>
+<p><strong>Ejemplo en C#</strong>:</p>
+<p>Un usuario debe ingresar su contraseña correcta para acceder al sistema.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">string</span> contraseña;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    Console.Write(<span style="color:#e6db74">&#34;Ingrese su contraseña: &#34;</span>);
+</span></span><span style="display:flex;"><span>    contraseña = Console.ReadLine();
+</span></span><span style="display:flex;"><span>} 
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">while</span> (contraseña != <span style="color:#e6db74">&#34;segura123&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Console.WriteLine(<span style="color:#e6db74">&#34;¡Acceso concedido!&#34;</span>);
+</span></span></code></pre></div><h2 id="iv-guía-de-nomenclatura-en-programación">IV. Guía de nomenclatura en programación<a hidden class="anchor" aria-hidden="true" href="#iv-guía-de-nomenclatura-en-programación">#</a></h2>
+<p>Las convenciones ampliamente aceptadas en la industria para la nomenclatura en programación son:</p>
+<table>
+  <thead>
+      <tr>
+          <th><strong>Elemento</strong></th>
+          <th><strong>Convención</strong></th>
+          <th><strong>Ejemplo</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>Nombre del proyecto</strong></td>
+          <td><code>PascalCase</code> o <code>kebab-case</code> Usa nombres claros, únicos y profesionales.</td>
+          <td>MiProyecto, mi-proyecto</td>
+      </tr>
+      <tr>
+          <td><strong>Organización de carpetas</strong></td>
+          <td><code>lowercase</code> o <code>kebab-case</code></td>
+          <td>controllers/, user-data/</td>
+      </tr>
+      <tr>
+          <td><strong>Variables</strong></td>
+          <td><code>camelCase</code> Nombres significativos, evita abreviaciones ambiguas. Singular para datos únicos, plural para colecciones</td>
+          <td>userName, totalItems</td>
+      </tr>
+      <tr>
+          <td><strong>Constantes</strong></td>
+          <td><code>UPPER_SNAKE_CASE</code></td>
+          <td>PI, API_BASE_URL</td>
+      </tr>
+      <tr>
+          <td><strong>Funciones y Métodos</strong></td>
+          <td><code>camelCase</code> o <code>PascalCase</code> Usa verbos</td>
+          <td>getUser(), ProcessOrder()</td>
+      </tr>
+      <tr>
+          <td><strong>Clases y Objetos</strong></td>
+          <td><code>PascalCase</code> con sustantivos para clases, <code>kebab-case</code> para archivos con sufijos descriptivos</td>
+          <td>ShoppingCart, user-profile.js, cart.service.js</td>
+      </tr>
+      <tr>
+          <td><strong>Propiedades</strong></td>
+          <td>Se toma el nombre del atributo y se pasa a <code>PascalCase</code></td>
+          <td>public int Edad { get {  } set {  } }</td>
+      </tr>
+      <tr>
+          <td><strong>Assets (Recursos)</strong></td>
+          <td><code>kebab-case</code> o <code>snake_case</code>, agrupados en carpetas</td>
+          <td>icon-home.svg, assets/images/, assets/fonts/</td>
+      </tr>
+      <tr>
+          <td><strong>Commits</strong></td>
+          <td><code>&lt;tipo&gt;(área): descripción breve</code> Tipos: feat, fix, docs, test</td>
+          <td>feat(auth): add login feature</td>
+      </tr>
+      <tr>
+          <td><strong>Configuración del Proyecto</strong></td>
+          <td><code>Ramas</code> y <code>versiones organizadas</code></td>
+          <td>feature/login-page, v1.0.0</td>
+      </tr>
+      <tr>
+          <td><strong>Bases de Datos y Eventos</strong></td>
+          <td>Tablas/campos en <code>snake_case</code>y eventos en <code>verbo-nombre</code></td>
+          <td>user_profiles, created_at, user-logged-in</td>
+      </tr>
+  </tbody>
+</table>
+<blockquote>
+<p>[!NOTE]
+Siempre evitar utilizar las palabras reservadas de cada lenguaje.</p></blockquote>
+<h2 id="v-paradigmas-de-programación">V. Paradigmas de programación<a hidden class="anchor" aria-hidden="true" href="#v-paradigmas-de-programación">#</a></h2>
+<p>Un paradigma de programación es una forma de pensar o estilo de programación que define cómo se estructuran y organizan los programas. Los paradigmas afectan la forma en que se diseñan, implementan y mantienen los programas, influyendo en factores como la legibilidad, escalabilidad y eficiencia del código.</p>
+<ul>
+<li><strong>Programación estructurada o imperativa</strong>: Es el estilo más simple, donde el código se ejecuta de arriba hacia abajo en un único archivo o función principal. Se usa para aprender los fundamentos de la programación.</li>
+<li><strong>Programación orientada a objetos</strong>: Organiza el código en clases y objetos que representan entidades del mundo real. Facilita la reutilización y mantenimiento del código.</li>
+<li><strong>Programación funcional</strong>: Se basa en funciones matemáticas puras y evita modificar variables globales. Es ideal para programación concurrente y análisis de datos.</li>
+<li><strong>Programación orientada a eventos</strong>: Es un paradigma en el que el flujo de ejecución del programa está determinado por eventos, como interacciones del usuario (clics, teclas presionadas), mensajes del sistema o respuestas de otros programas. En lugar de ejecutarse secuencialmente, el programa reacciona a eventos mediante manejadores o listeners que se activan cuando ocurre un evento específico.</li>
+</ul>
+<h2 id="vi-tips">VI. Tips<a hidden class="anchor" aria-hidden="true" href="#vi-tips">#</a></h2>
+<p><strong>Antes de programar</strong>:</p>
+<ol>
+<li>Definir bien los requisitos del programa.</li>
+<li>Escribir el pseudocódigo.</li>
+<li>Identificar las variables que se van a utilizar.</li>
+<li>Describir los posibles escenarios.</li>
+<li>Realizar el diagrama de actividades.</li>
+<li>Realizar la prueba de escritorio.</li>
+<li>Escribir el programa en C#.</li>
+</ol>
+<hr>
+<h2 id="-más-información">/ Más Información<a hidden class="anchor" aria-hidden="true" href="#-más-información">#</a></h2>
+<ul>
+<li><strong>Anterior</strong>: <code>[[Principios de la Ingeniería de Software]]</code></li>
+<li><strong>Siguiente</strong>: <a href="/apuntes/programaci%C3%B3n-orientada-a-objetos/">Programación Orientada a Objetos</a></li>
+</ul>
+<h3 id="lenguajes-de-programación">Lenguajes de programación<a hidden class="anchor" aria-hidden="true" href="#lenguajes-de-programación">#</a></h3>
+<ul>
+<li><code>[[C Sharp]]</code></li>
+<li><code>[[Java]]</code></li>
+<li><code>[[JavaScript]]</code></li>
+<li><code>[[Python]]</code></li>
+</ul>
+<hr>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/programacion/">Programacion</a></li>
+      <li><a href="http://localhost:1313/tags/enciclopedia/">Enciclopedia</a></li>
+      <li><a href="http://localhost:1313/tags/post/">Post</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="http://localhost:1313/">oscarzt20</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

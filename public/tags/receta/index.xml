@@ -1,55 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>oscarzt20</title>
-    <link>http://localhost:1313/</link>
-    <description>Recent content on oscarzt20</description>
+    <title>Receta on oscarzt20</title>
+    <link>http://localhost:1313/tags/receta/</link>
+    <description>Recent content in Receta on oscarzt20</description>
     <generator>Hugo -- 0.148.1</generator>
     <language>es-mx</language>
-    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Conceptos Generales de Programación</title>
-      <link>http://localhost:1313/apuntes/conceptos-generales-de-programaci%C3%B3n/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/apuntes/conceptos-generales-de-programaci%C3%B3n/</guid>
-      <description>&lt;hr&gt;
-&lt;p&gt;La programación es el proceso de escribir instrucciones para que una computadora realice tareas específicas. Antes de empezar a programar, es importante conocer los fundamentos necesarios para entender cómo funciona la programación.&lt;/p&gt;
-&lt;h2 id=&#34;i-algoritmos&#34;&gt;I. Algoritmos&lt;/h2&gt;
-&lt;p&gt;Para programar, los desarrolladores crean algoritmos, que son secuencias ordenadas de pasos que resuelven un problema o llevan a cabo una tarea.&lt;/p&gt;
-&lt;h3 id=&#34;11-características-de-los-algoritmos&#34;&gt;1.1 Características de los algoritmos&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Finito&lt;/strong&gt;: Un algoritmo debe terminar después de un número determinado de pasos. Se evitan los bucles sin fin.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Preciso&lt;/strong&gt;: No debe haber interpretaciones subjetivas sobre lo que se debe hacer en cada instrucción.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Con inicio y final/es&lt;/strong&gt;: Debe tener un inicio y puede contener más de un final.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Eficaz en la solución del problema&lt;/strong&gt;: El algoritmo debe resolver el problema de manera correcta y óptima, evitando pasos innecesarios o ineficientes.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;12-tipos-de-algoritmos&#34;&gt;1.2 Tipos de algoritmos&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Cualitativos&lt;/strong&gt;: Emplean palabras, ej. receta de cocina.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Cuantitativos&lt;/strong&gt;: Utilizan cálculos numéricos, ej. resolver una ecuación de 2° grado.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;13-lenguajes-algorítmicos&#34;&gt;1.3 Lenguajes algorítmicos&lt;/h3&gt;
-&lt;p&gt;Conjunto de símbolos y reglas que permiten explicar un proceso.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Conceptos y Programación de Bases de Datos</title>
-      <link>http://localhost:1313/apuntes/conceptos-y-programaci%C3%B3n-de-bases-de-datos/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/apuntes/conceptos-y-programaci%C3%B3n-de-bases-de-datos/</guid>
-      <description>&lt;hr&gt;
-&lt;h2 id=&#34;i-bases-de-datos&#34;&gt;I. Bases de datos&lt;/h2&gt;
-&lt;p&gt;Una base de datos se puede percibir como un gran almacén de datos, que se utiliza al mismo tiempo por distintos usuarios.&lt;/p&gt;
-&lt;p&gt;En relevante tanto a nivel persona (permite desarrollar software sin estar en una empresa), como a nivel empresa (análisis de datos).&lt;/p&gt;
-&lt;p&gt;Un registro es una fila o dupla: Registro = Filas = Dupla
-Los componentes de las bases de datos son:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Datos&lt;/li&gt;
-&lt;li&gt;Software&lt;/li&gt;
-&lt;li&gt;Recursos humanos&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;11-back-end&#34;&gt;1.1 Back-end&lt;/h3&gt;
-&lt;p&gt;Administración de los datos en relación con la interacción con los usuarios. Es vital para el funcionamiento de las funciones de una página o programa.&lt;/p&gt;</description>
-    </item>
+    <atom:link href="http://localhost:1313/tags/receta/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Pan de Muerto - Hojaldras</title>
       <link>http://localhost:1313/recetas/pan-de-muerto---hojaldras-tradicionales/</link>
@@ -245,26 +202,6 @@ Los componentes de las bases de datos son:&lt;/p&gt;
 &lt;li&gt;Agregar la levadura en polvo y 150gr de harina. Revolver no muy rápido hasta que se incorpore todo.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;img alt=&#34;Pizza_24-06-2025.png&#34; loading=&#34;lazy&#34; src=&#34;http://localhost:1313/imagenes/Pizza_24-06-2025.png&#34;&gt;&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Programación Orientada a Objetos</title>
-      <link>http://localhost:1313/apuntes/programaci%C3%B3n-orientada-a-objetos/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/apuntes/programaci%C3%B3n-orientada-a-objetos/</guid>
-      <description>&lt;hr&gt;
-&lt;h2 id=&#34;i-introducción-a-la-programación-orientada-a-objetos-poo&#34;&gt;I. Introducción a la Programación Orientada a Objetos (POO)&lt;/h2&gt;
-&lt;p&gt;La programación orientada a objetos es un paradigma que organiza el código en objetos, cada uno con sus propios datos (&lt;em&gt;atributos&lt;/em&gt;) y comportamientos (&lt;em&gt;métodos&lt;/em&gt;), evitando que otros objetos tengan acceso a estos elementos de manera no controlada.&lt;/p&gt;
-&lt;p&gt;Los beneficios y objetivos de POO son:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Natural&lt;/strong&gt;: Permite construir un sistema que modele elementos del mundo real.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Confiable&lt;/strong&gt;: Un programa bien diseñado y codificado va a funcionar como es esperado sin importar el tamaño, y el testing se vuelve más sencillo.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Reusable&lt;/strong&gt;: Una vez un problema es resuelto se puede volver a usar la solución.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Fácil de mantener&lt;/strong&gt;: Se estima que del 60%-80% del trabajo en un programa es el mantenimiento, el 20% es el desarrollo. Un bug se puede resolver corrigiendo una sola parte.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Extendible&lt;/strong&gt;: Un software creado en POO puede crecer y cambiar sin muchas dificultades.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Oportuno&lt;/strong&gt;: Varias partes del programa se pueden desarrollar en paralelo. Es esencial realizar correctamente el análisis y diseño.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;11-diferencias-entre-poo-y-la-programación-estructurada&#34;&gt;1.1 Diferencias entre POO y la programación estructurada&lt;/h3&gt;
-&lt;p&gt;A diferencia de la programación estructurada, donde el código se escribe en &lt;em&gt;funciones&lt;/em&gt; que resuelven un problema lógico y este se ejecuta en orden de arriba hacia abajo, la POO organiza el código en un sistema conectado basado en &lt;em&gt;objetos&lt;/em&gt;, y el orden en que se escriben las partes de una clase no afecta su funcionamiento.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

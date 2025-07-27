@@ -6,15 +6,29 @@
   </url><url>
     <loc>http://localhost:1313/categories/</loc>
   </url><url>
+    <loc>http://localhost:1313/apuntes/conceptos-generales-de-programaci%C3%B3n/</loc>
+  </url><url>
+    <loc>http://localhost:1313/apuntes/conceptos-y-programaci%C3%B3n-de-bases-de-datos/</loc>
+  </url><url>
     <loc>http://localhost:1313/tags/enciclopedia/</loc>
   </url><url>
     <loc>http://localhost:1313/</loc>
+  </url><url>
+    <loc>http://localhost:1313/recetas/pan-de-muerto---hojaldras-tradicionales/</loc>
+  </url><url>
+    <loc>http://localhost:1313/recetas/pay-de-calabaza/</loc>
+  </url><url>
+    <loc>http://localhost:1313/recetas/pizza/</loc>
   </url><url>
     <loc>http://localhost:1313/tags/post/</loc>
   </url><url>
     <loc>http://localhost:1313/tags/programacion/</loc>
   </url><url>
     <loc>http://localhost:1313/apuntes/programaci%C3%B3n-orientada-a-objetos/</loc>
+  </url><url>
+    <loc>http://localhost:1313/tags/receta/</loc>
+  </url><url>
+    <loc>http://localhost:1313/recetas/</loc>
   </url><url>
     <loc>http://localhost:1313/tags/</loc>
   </url>

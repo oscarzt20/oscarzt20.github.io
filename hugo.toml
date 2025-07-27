@@ -18,10 +18,21 @@ theme = 'PaperMod'
   hideSummary = false
   mainSections = ["proyectos", "recursos", "apuntes", "pasatiempos", "recetas"]
 
-  [params.profileMode]
-    enabled = true
-    title = "¡Hola, soy oscarzt20!"
-    subtitle = "Bienvenido a mi sitio personal."
+  [params.homeInfoParams]
+    Title = "oscarzt20 | Blog & Notas"
+    Content = "Soy Oscar, desarrollador. En este blog comparto lo que hago, lo que aprendo y lo que me inspira, desde proyectos personales hasta apuntes técnicos o pasatiempos que me ayudan a seguir creando."
+
+  [[params.socialIcons]]
+    name = "github"
+    url = "https://github.com/oscarzt20"
+
+  [[params.socialIcons]]
+    name = "x"
+    url = "https://x.com/oscarzt20"
+
+  [[params.socialIcons]]
+    name = "linkedin"
+    url = "https://www.linkedin.com/in/oscarzt20/"
 
 [menu]
   [[menu.main]]

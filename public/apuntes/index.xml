@@ -8,6 +8,49 @@
     <language>es-mx</language>
     <atom:link href="http://localhost:1313/apuntes/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Conceptos Generales de Programación</title>
+      <link>http://localhost:1313/apuntes/conceptos-generales-de-programaci%C3%B3n/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/apuntes/conceptos-generales-de-programaci%C3%B3n/</guid>
+      <description>&lt;hr&gt;
+&lt;p&gt;La programación es el proceso de escribir instrucciones para que una computadora realice tareas específicas. Antes de empezar a programar, es importante conocer los fundamentos necesarios para entender cómo funciona la programación.&lt;/p&gt;
+&lt;h2 id=&#34;i-algoritmos&#34;&gt;I. Algoritmos&lt;/h2&gt;
+&lt;p&gt;Para programar, los desarrolladores crean algoritmos, que son secuencias ordenadas de pasos que resuelven un problema o llevan a cabo una tarea.&lt;/p&gt;
+&lt;h3 id=&#34;11-características-de-los-algoritmos&#34;&gt;1.1 Características de los algoritmos&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Finito&lt;/strong&gt;: Un algoritmo debe terminar después de un número determinado de pasos. Se evitan los bucles sin fin.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Preciso&lt;/strong&gt;: No debe haber interpretaciones subjetivas sobre lo que se debe hacer en cada instrucción.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Con inicio y final/es&lt;/strong&gt;: Debe tener un inicio y puede contener más de un final.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Eficaz en la solución del problema&lt;/strong&gt;: El algoritmo debe resolver el problema de manera correcta y óptima, evitando pasos innecesarios o ineficientes.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;12-tipos-de-algoritmos&#34;&gt;1.2 Tipos de algoritmos&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Cualitativos&lt;/strong&gt;: Emplean palabras, ej. receta de cocina.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Cuantitativos&lt;/strong&gt;: Utilizan cálculos numéricos, ej. resolver una ecuación de 2° grado.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;13-lenguajes-algorítmicos&#34;&gt;1.3 Lenguajes algorítmicos&lt;/h3&gt;
+&lt;p&gt;Conjunto de símbolos y reglas que permiten explicar un proceso.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Conceptos y Programación de Bases de Datos</title>
+      <link>http://localhost:1313/apuntes/conceptos-y-programaci%C3%B3n-de-bases-de-datos/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/apuntes/conceptos-y-programaci%C3%B3n-de-bases-de-datos/</guid>
+      <description>&lt;hr&gt;
+&lt;h2 id=&#34;i-bases-de-datos&#34;&gt;I. Bases de datos&lt;/h2&gt;
+&lt;p&gt;Una base de datos se puede percibir como un gran almacén de datos, que se utiliza al mismo tiempo por distintos usuarios.&lt;/p&gt;
+&lt;p&gt;En relevante tanto a nivel persona (permite desarrollar software sin estar en una empresa), como a nivel empresa (análisis de datos).&lt;/p&gt;
+&lt;p&gt;Un registro es una fila o dupla: Registro = Filas = Dupla
+Los componentes de las bases de datos son:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Datos&lt;/li&gt;
+&lt;li&gt;Software&lt;/li&gt;
+&lt;li&gt;Recursos humanos&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;11-back-end&#34;&gt;1.1 Back-end&lt;/h3&gt;
+&lt;p&gt;Administración de los datos en relación con la interacción con los usuarios. Es vital para el funcionamiento de las funciones de una página o programa.&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>Programación Orientada a Objetos</title>
       <link>http://localhost:1313/apuntes/programaci%C3%B3n-orientada-a-objetos/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

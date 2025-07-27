@@ -237,7 +237,7 @@ Las bases de datos relacionales requieren de un conjunto de operaciones que perm
 Se puede representar de 3 maneras:
 
 - **Texto**: Descripción.
-> Muestra *todos* los datos de <u>empleados</u> que tengan un <u>salario de 4000</u>
+> Muestra *todos* los datos de *empleados* que tengan un *salario de 4000*
 - **Álgebra Relacional**: Expresión Relacional.
 $$\sigma({\pi\text{salario} = 4000} (\text{Empleados})) $$
 - **Código SQL**: Código.

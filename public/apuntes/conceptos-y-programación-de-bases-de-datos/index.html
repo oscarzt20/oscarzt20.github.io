@@ -1,0 +1,1686 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>Conceptos y Programación de Bases de Datos | oscarzt20</title>
+<meta name="keywords" content="programacion, enciclopedia, post">
+<meta name="description" content="
+I. Bases de datos
+Una base de datos se puede percibir como un gran almacén de datos, que se utiliza al mismo tiempo por distintos usuarios.
+En relevante tanto a nivel persona (permite desarrollar software sin estar en una empresa), como a nivel empresa (análisis de datos).
+Un registro es una fila o dupla: Registro = Filas = Dupla
+Los componentes de las bases de datos son:
+
+Datos
+Software
+Recursos humanos
+
+1.1 Back-end
+Administración de los datos en relación con la interacción con los usuarios. Es vital para el funcionamiento de las funciones de una página o programa.">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/apuntes/conceptos-y-programaci%C3%B3n-de-bases-de-datos/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.fa971e8aab64e20929a4e6c16aae93ca2c3f302fdd53c7b71bedfc2bfe4a2590.css" integrity="sha256-&#43;pceiqtk4gkppObBaq6Tyiw/MC/dU8e3G&#43;38K/5KJZA=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/apuntes/conceptos-y-programaci%C3%B3n-de-bases-de-datos/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="oscarzt20 (Alt + H)">oscarzt20</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/proyectos/" title="Portafolio">
+                    <span>Portafolio</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/recursos/" title="Recursos / Guías">
+                    <span>Recursos / Guías</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/apuntes/" title="Estudios">
+                    <span>Estudios</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/pasatiempos/" title="Entretenimiento">
+                    <span>Entretenimiento</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/recetas/" title="Recetas">
+                    <span>Recetas</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/apuntes/">Apuntes</a></div>
+    <h1 class="post-title entry-hint-parent">
+      Conceptos y Programación de Bases de Datos
+    </h1>
+    <div class="post-meta">
+
+</div>
+  </header> <div class="toc">
+    <details  open>
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#i-bases-de-datos" aria-label="I. Bases de datos">I. Bases de datos</a><ul>
+                        
+                <li>
+                    <a href="#11-back-end" aria-label="1.1 Back-end">1.1 Back-end</a></li>
+                <li>
+                    <a href="#12-tipos-de-atributos" aria-label="1.2 Tipos de atributos">1.2 Tipos de atributos</a></li>
+                <li>
+                    <a href="#13-cardinalidad" aria-label="1.3 Cardinalidad">1.3 Cardinalidad</a></li>
+                <li>
+                    <a href="#14-tipos-de-bases-de-datos" aria-label="1.4 Tipos de bases de datos">1.4 Tipos de bases de datos</a><ul>
+                        
+                <li>
+                    <a href="#modelo-de-bases-de-datos-relacionales" aria-label="Modelo de bases de datos relacionales">Modelo de bases de datos relacionales</a></li>
+                <li>
+                    <a href="#modelo-de-datos-jer%c3%a1rquico" aria-label="Modelo de datos jerárquico">Modelo de datos jerárquico</a></li>
+                <li>
+                    <a href="#modelo-de-datos-en-red" aria-label="Modelo de datos en red">Modelo de datos en red</a></li>
+                <li>
+                    <a href="#modelo-de-datos-orientado-a-objetos" aria-label="Modelo de datos orientado a objetos">Modelo de datos orientado a objetos</a></li></ul>
+                </li></ul>
+                </li>
+                <li>
+                    <a href="#ii-diagramas-representativos" aria-label="II. Diagramas representativos">II. Diagramas representativos</a><ul>
+                        
+                <li>
+                    <a href="#21-diagrama-de-entidad-relaci%c3%b3n" aria-label="2.1 Diagrama de entidad relación">2.1 Diagrama de entidad relación</a></li>
+                <li>
+                    <a href="#22-diagrama-relacional" aria-label="2.2 Diagrama relacional">2.2 Diagrama relacional</a><ul>
+                        
+                <li>
+                    <a href="#tipos-de-claves-en-un-diagrama-relacional" aria-label="Tipos de claves en un diagrama relacional">Tipos de claves en un diagrama relacional</a><ul>
+                        
+                <li>
+                    <a href="#claves-primarias-llaves-primarias" aria-label="Claves primarias (llaves primarias)">Claves primarias (llaves primarias)</a></li>
+                <li>
+                    <a href="#claves-candidatas" aria-label="Claves candidatas">Claves candidatas</a></li>
+                <li>
+                    <a href="#claves-for%c3%a1neas" aria-label="Claves foráneas">Claves foráneas</a></li></ul>
+                </li></ul>
+                </li></ul>
+                </li>
+                <li>
+                    <a href="#iii-normalizaci%c3%b3n" aria-label="III. Normalización">III. Normalización</a><ul>
+                        
+                <li>
+                    <a href="#31-reglaforma-1" aria-label="3.1 Regla/Forma 1">3.1 Regla/Forma 1</a></li>
+                <li>
+                    <a href="#32-reglaforma-2" aria-label="3.2 Regla/Forma 2">3.2 Regla/Forma 2</a></li>
+                <li>
+                    <a href="#33-reglaforma-3" aria-label="3.3 Regla/Forma 3">3.3 Regla/Forma 3</a></li>
+                <li>
+                    <a href="#34-reglaforma-35-boyce-codd" aria-label="3.4 Regla/Forma 3.5 Boyce Codd">3.4 Regla/Forma 3.5 Boyce Codd</a></li>
+                <li>
+                    <a href="#35-reglaforma-4" aria-label="3.5 Regla/Forma 4">3.5 Regla/Forma 4</a></li>
+                <li>
+                    <a href="#36-reglaforma-5" aria-label="3.6 Regla/Forma 5">3.6 Regla/Forma 5</a></li>
+                <li>
+                    <a href="#37-notas-de-normalizaci%c3%b3n" aria-label="3.7 Notas de normalización">3.7 Notas de normalización</a><ul>
+                        
+                <li>
+                    <a href="#dependencia-transitiva" aria-label="Dependencia transitiva">Dependencia transitiva</a></li>
+                <li>
+                    <a href="#creaci%c3%b3n-de-tablas-normalizadas-en-diagrama-relacional" aria-label="Creación de tablas normalizadas en diagrama relacional">Creación de tablas normalizadas en diagrama relacional</a></li></ul>
+                </li></ul>
+                </li>
+                <li>
+                    <a href="#iv-diccionario-de-datos" aria-label="IV. Diccionario de datos">IV. Diccionario de datos</a><ul>
+                        
+                <li>
+                    <a href="#41-datos-del-diccionario" aria-label="4.1 Datos del diccionario">4.1 Datos del diccionario</a></li>
+                <li>
+                    <a href="#42-importancia" aria-label="4.2 Importancia">4.2 Importancia</a></li></ul>
+                </li>
+                <li>
+                    <a href="#v-%c3%a1lgebra-relacional" aria-label="V. Álgebra relacional">V. Álgebra relacional</a><ul>
+                        
+                <li>
+                    <a href="#51-operadores-relacionales" aria-label="5.1 Operadores relacionales">5.1 Operadores relacionales</a></li>
+                <li>
+                    <a href="#52-operadores-de-condici%c3%b3n" aria-label="5.2 Operadores de condición">5.2 Operadores de condición</a></li>
+                <li>
+                    <a href="#53-representaci%c3%b3n-de-una-expresi%c3%b3n" aria-label="5.3 Representación de una expresión">5.3 Representación de una expresión</a></li></ul>
+                </li>
+                <li>
+                    <a href="#vi-microsoft-sql" aria-label="VI. Microsoft SQL">VI. Microsoft SQL</a><ul>
+                        
+                <li>
+                    <a href="#61-categor%c3%adas-de-sql" aria-label="6.1 Categorías de SQL">6.1 Categorías de SQL</a></li>
+                <li>
+                    <a href="#62-instalaci%c3%b3n-y-uso" aria-label="6.2 Instalación y uso">6.2 Instalación y uso</a><ul>
+                        
+                <li>
+                    <a href="#notas-de-programar-en-sql" aria-label="Notas de programar en SQL">Notas de programar en SQL</a></li></ul>
+                </li></ul>
+                </li>
+                <li>
+                    <a href="#vii-estructura-y-configuraci%c3%b3n-inicial-en-sql-server" aria-label="VII. Estructura y configuración inicial en SQL Server">VII. Estructura y configuración inicial en SQL Server</a><ul>
+                        
+                <li>
+                    <a href="#71-operaciones-b%c3%a1sicas-de-sql" aria-label="7.1 Operaciones básicas de SQL">7.1 Operaciones básicas de SQL</a></li>
+                <li>
+                    <a href="#72-creaci%c3%b3n-de-los-elementos-iniciales" aria-label="7.2 Creación de los elementos iniciales">7.2 Creación de los elementos iniciales</a></li>
+                <li>
+                    <a href="#73--manipulaciones-de-datos-en-tablas" aria-label="7.3  Manipulaciones de datos en tablas">7.3  Manipulaciones de datos en tablas</a><ul>
+                        
+                <li>
+                    <a href="#insert" aria-label="INSERT">INSERT</a></li>
+                <li>
+                    <a href="#update" aria-label="UPDATE">UPDATE</a></li>
+                <li>
+                    <a href="#delete" aria-label="DELETE">DELETE</a></li>
+                <li>
+                    <a href="#drop" aria-label="DROP">DROP</a></li></ul>
+                </li>
+                <li>
+                    <a href="#74-notas-generales-de-sql-server" aria-label="7.4 Notas generales de SQL Server">7.4 Notas generales de SQL Server</a></li></ul>
+                </li>
+                <li>
+                    <a href="#viii-consultas" aria-label="VIII. Consultas">VIII. Consultas</a><ul>
+                        
+                <li>
+                    <a href="#81-consultas-b%c3%a1sicas" aria-label="8.1 Consultas básicas">8.1 Consultas básicas</a></li>
+                <li>
+                    <a href="#82-uso-de-join" aria-label="8.2 Uso de JOIN">8.2 Uso de JOIN</a><ul>
+                        
+                <li>
+                    <a href="#inner-join" aria-label="INNER JOIN">INNER JOIN</a></li>
+                <li>
+                    <a href="#left-join" aria-label="LEFT JOIN">LEFT JOIN</a></li>
+                <li>
+                    <a href="#right-join" aria-label="RIGHT JOIN">RIGHT JOIN</a></li>
+                <li>
+                    <a href="#full-join" aria-label="FULL JOIN">FULL JOIN</a></li>
+                <li>
+                    <a href="#cross-join" aria-label="CROSS JOIN">CROSS JOIN</a></li></ul>
+                </li>
+                <li>
+                    <a href="#83-funciones" aria-label="8.3 Funciones">8.3 Funciones</a><ul>
+                        
+                <li>
+                    <a href="#concatx-y" aria-label="CONCAT(X, Y)">CONCAT(X, Y)</a></li>
+                <li>
+                    <a href="#lengthx" aria-label="LENGTH(X)">LENGTH(X)</a></li>
+                <li>
+                    <a href="#substringx-start-length" aria-label="SUBSTRING(X, Start, Length)">SUBSTRING(X, Start, Length)</a></li>
+                <li>
+                    <a href="#upperx--lowerx" aria-label="UPPER(X) / LOWER(X)">UPPER(X) / LOWER(X)</a></li>
+                <li>
+                    <a href="#date" aria-label="DATE">DATE</a></li></ul>
+                </li>
+                <li>
+                    <a href="#84-operaciones" aria-label="8.4 Operaciones">8.4 Operaciones</a><ul>
+                        
+                <li>
+                    <a href="#count" aria-label="COUNT(*)">COUNT(*)</a></li>
+                <li>
+                    <a href="#sumcolumna" aria-label="SUM(columna)">SUM(columna)</a></li>
+                <li>
+                    <a href="#avgcolumna" aria-label="AVG(columna)">AVG(columna)</a></li>
+                <li>
+                    <a href="#mincolumna" aria-label="MIN(columna)">MIN(columna)</a></li>
+                <li>
+                    <a href="#maxcolumna" aria-label="MAX(columna)">MAX(columna)</a></li>
+                <li>
+                    <a href="#uso-de-group-by" aria-label="Uso de GROUP BY">Uso de GROUP BY</a></li>
+                <li>
+                    <a href="#uso-de-order-by" aria-label="Uso de ORDER BY">Uso de ORDER BY</a><ul>
+                        
+                <li>
+                    <a href="#relaci%c3%b3n-con-group-by" aria-label="Relación con GROUP BY">Relación con GROUP BY</a></li></ul>
+                </li></ul>
+                </li>
+                <li>
+                    <a href="#85-vistas" aria-label="8.5 Vistas">8.5 Vistas</a><ul>
+                        
+                <li>
+                    <a href="#sintaxis-b%c3%a1sica-de-una-vista" aria-label="Sintaxis básica de una vista">Sintaxis básica de una vista</a></li>
+                <li>
+                    <a href="#cifrado-de-vistas" aria-label="Cifrado de vistas">Cifrado de vistas</a></li></ul>
+                </li></ul>
+                </li>
+                <li>
+                    <a href="#ix-automatizaci%c3%b3n-y-seguridad" aria-label="IX. Automatización y seguridad">IX. Automatización y seguridad</a><ul>
+                        
+                <li>
+                    <a href="#91-procedimientos-almacenados" aria-label="9.1 Procedimientos almacenados">9.1 Procedimientos almacenados</a></li>
+                <li>
+                    <a href="#92-checks" aria-label="9.2 Checks">9.2 Checks</a></li>
+                <li>
+                    <a href="#93-triggers" aria-label="9.3 Triggers">9.3 Triggers</a><ul>
+                        
+                <li>
+                    <a href="#tipos-de-triggers" aria-label="Tipos de triggers">Tipos de triggers</a></li>
+                <li>
+                    <a href="#tipos-de-errores-en-los-triggers" aria-label="Tipos de errores en los triggers">Tipos de errores en los triggers</a></li>
+                <li>
+                    <a href="#ejecuci%c3%b3n-de-los-triggers" aria-label="Ejecución de los triggers">Ejecución de los triggers</a></li></ul>
+                </li></ul>
+                </li>
+                <li>
+                    <a href="#x-operaciones-avanzadas" aria-label="X. Operaciones avanzadas">X. Operaciones avanzadas</a><ul>
+                        
+                <li>
+                    <a href="#101-procedimientos-almacenados-avanzados" aria-label="10.1 Procedimientos almacenados avanzados">10.1 Procedimientos almacenados avanzados</a></li></ul>
+                </li>
+                <li>
+                    <a href="#xi-configuraciones-de-sql-server" aria-label="XI. Configuraciones de SQL Server">XI. Configuraciones de SQL Server</a><ul>
+                        
+                <li>
+                    <a href="#111-creaci%c3%b3n-de-diagramas" aria-label="11.1 Creación de diagramas">11.1 Creación de diagramas</a></li>
+                <li>
+                    <a href="#112-backups" aria-label="11.2 Backups">11.2 Backups</a></li>
+                <li>
+                    <a href="#113-creaci%c3%b3n-de-usuarios-y-permisos" aria-label="11.3 Creación de usuarios y permisos">11.3 Creación de usuarios y permisos</a></li>
+                <li>
+                    <a href="#114-consideraciones-de-una-bd-en-producci%c3%b3n" aria-label="11.4 Consideraciones de una BD en producción">11.4 Consideraciones de una BD en producción</a></li></ul>
+                </li>
+                <li>
+                    <a href="#preguntas-variadas" aria-label="Preguntas variadas:">Preguntas variadas:</a></li>
+                <li>
+                    <a href="#-m%c3%a1s-informaci%c3%b3n" aria-label="/ Más Información">/ Más Información</a><ul>
+                        
+                <li>
+                    <a href="#lenguajes-de-programaci%c3%b3n" aria-label="Lenguajes de programación">Lenguajes de programación</a>
+                </li>
+            </ul>
+            </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><hr>
+<h2 id="i-bases-de-datos">I. Bases de datos<a hidden class="anchor" aria-hidden="true" href="#i-bases-de-datos">#</a></h2>
+<p>Una base de datos se puede percibir como un gran almacén de datos, que se utiliza al mismo tiempo por distintos usuarios.</p>
+<p>En relevante tanto a nivel persona (permite desarrollar software sin estar en una empresa), como a nivel empresa (análisis de datos).</p>
+<p>Un registro es una fila o dupla: Registro = Filas = Dupla
+Los componentes de las bases de datos son:</p>
+<ul>
+<li>Datos</li>
+<li>Software</li>
+<li>Recursos humanos</li>
+</ul>
+<h3 id="11-back-end">1.1 Back-end<a hidden class="anchor" aria-hidden="true" href="#11-back-end">#</a></h3>
+<p>Administración de los datos en relación con la interacción con los usuarios. Es vital para el funcionamiento de las funciones de una página o programa.</p>
+<h3 id="12-tipos-de-atributos">1.2 Tipos de atributos<a hidden class="anchor" aria-hidden="true" href="#12-tipos-de-atributos">#</a></h3>
+<ul>
+<li><strong>Mono-valuados</strong>: Tienen un único valor asociado a una entidad, y que solo se puede tener uno. Ejemplo: Matrícula, Apellidos (paterno y materno)</li>
+<li><strong>Multivaluados</strong>: Tienen un conjunto de valores para una entidad específica. Ejemplo: teléfonos, correos</li>
+<li><strong>Compuestos</strong>: Son atributos que se pueden descomponer en elementos más pequeños. Ejemplo: Dirección, Nombre</li>
+<li><strong>Derivados</strong>: Sus atributos se pueden obtener en base a otros atributos relacionados. Ejemplo: El atributo Edad se deriva del atributo Fecha de nacimiento y Fecha actual</li>
+<li><strong>Nulo</strong>: Cuando una entidad no tiene un valor para un atributo. Ejemplo: Atributos opcionales que no tienen respuesta en formularios</li>
+</ul>
+<h3 id="13-cardinalidad">1.3 Cardinalidad<a hidden class="anchor" aria-hidden="true" href="#13-cardinalidad">#</a></h3>
+<p>Expresa las relaciones entre entidades, mediante el número de entidades a las que otra entidad puede estar relacionada. Ejemplo: (Entidad1: Docente, Entidad2: Curso. Las relaciones son la cardinalidad) Tipos:</p>
+<ul>
+<li><strong>1 a muchos</strong>: 1 docente puede impartir varios cursos (1_m) o (1_asterisco)</li>
+<li><strong>1 a 1</strong>: 1 docente puede impartir un curso (1_1)</li>
+<li><strong>muchos a muchos</strong>: un docente puede impartir varios cursos y varios cursos pueden ser impartidos por muchos docentes (n:n) ó (n_m)</li>
+</ul>
+<h3 id="14-tipos-de-bases-de-datos">1.4 Tipos de bases de datos<a hidden class="anchor" aria-hidden="true" href="#14-tipos-de-bases-de-datos">#</a></h3>
+<h4 id="modelo-de-bases-de-datos-relacionales">Modelo de bases de datos relacionales<a hidden class="anchor" aria-hidden="true" href="#modelo-de-bases-de-datos-relacionales">#</a></h4>
+<ul>
+<li>Se organizan en tablas con relaciones definidas mediante claves primarias y foráneas.</li>
+<li>Entre sus ventajas se encuentra: Estandarizado, eficiente.</li>
+</ul>
+<h4 id="modelo-de-datos-jerárquico">Modelo de datos jerárquico<a hidden class="anchor" aria-hidden="true" href="#modelo-de-datos-jerárquico">#</a></h4>
+<ul>
+<li>Organización en forma de árbol, con un nodo raíz y niveles</li>
+<li>Tienen relación padre-hijo</li>
+</ul>
+<h4 id="modelo-de-datos-en-red">Modelo de datos en red<a hidden class="anchor" aria-hidden="true" href="#modelo-de-datos-en-red">#</a></h4>
+<ul>
+<li>Relaciones complejas no jerárquicas</li>
+<li>Complejo de usar</li>
+</ul>
+<h4 id="modelo-de-datos-orientado-a-objetos">Modelo de datos orientado a objetos<a hidden class="anchor" aria-hidden="true" href="#modelo-de-datos-orientado-a-objetos">#</a></h4>
+<ul>
+<li>Se usa el encapsulamiento, donde se ocultan detalles internos, exponiendo sólo los métodos para acceder a ellos. (Público, Privado, Protegido)</li>
+<li>Los objetos pueden heredar propiedades y métodos, promoviendo la reutilización de código</li>
+<li>Los objetos se pueden comportar de diversas maneras según su tipo, aumentando la flexibilidad. El polimorfismo establece que un objeto sea abstracto, de manera que otros sean lo que lo definan</li>
+</ul>
+<h2 id="ii-diagramas-representativos">II. Diagramas representativos<a hidden class="anchor" aria-hidden="true" href="#ii-diagramas-representativos">#</a></h2>
+<h3 id="21-diagrama-de-entidad-relación">2.1 Diagrama de entidad relación<a hidden class="anchor" aria-hidden="true" href="#21-diagrama-de-entidad-relación">#</a></h3>
+<p>Es la representación gráfica de cada uno de los requerimientos representados en entidades, atributos y relaciones.</p>
+<ul>
+<li>Entidad: Es un objeto o una cosa del mundo real que es distinguible de los demás objetos. Ejemplo: Mesa</li>
+<li>Atributos: Son las características de a entidad. Ejemplo: Material</li>
+<li>Relaciones: Cardinalidad</li>
+</ul>
+<table>
+  <thead>
+      <tr>
+          <th><strong>Figura</strong></th>
+          <th><strong>Representación</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Rectángulo</td>
+          <td>Entidades. Ejemplo: Cliente, Proveedores&hellip;</td>
+      </tr>
+      <tr>
+          <td>Elipse</td>
+          <td>Atributos: Puntuado derivadas, doble para multivaluado, subrayado es clave primaria. Ejemplo: Teléfono</td>
+      </tr>
+      <tr>
+          <td>Rombo</td>
+          <td>Conjunto de Relaciones. Ejemplo: Compra, Vende, Atiende&hellip;</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="22-diagrama-relacional">2.2 Diagrama relacional<a hidden class="anchor" aria-hidden="true" href="#22-diagrama-relacional">#</a></h3>
+<p>Es una representación en forma de tablas que representa una base de datos relacional, donde sus columnas (atributos) y las relaciones entre ellas mediante llaves foráneas y primarias.</p>
+<ul>
+<li>Una base de datos es un conjunto de tablas.</li>
+<li>Una tabla está compuesta por registros denominados también como filas o duplas.</li>
+<li>Un registro está compuesto por campos a los que también se llaman columnas o atributos.</li>
+<li>Las claves nos permiten acceder a los registros de una tabla.</li>
+<li>Una clave candidata es un campo o una combinación de campos que identifican un atributo de forma exclusiva.</li>
+<li>Una clave primaria es una clave candidata que ha sido designada para identificar de forma única los registros de una tabla.</li>
+<li>Las bases de datos relacionales son aquellas en las que cualquier tabla puede relacionarse con otra tabla a través de claves.</li>
+</ul>
+<p>Notas: Si cambian los datos, pueden tener su tabla aparte.</p>
+<h4 id="tipos-de-claves-en-un-diagrama-relacional">Tipos de claves en un diagrama relacional<a hidden class="anchor" aria-hidden="true" href="#tipos-de-claves-en-un-diagrama-relacional">#</a></h4>
+<h5 id="claves-primarias-llaves-primarias">Claves primarias (llaves primarias)<a hidden class="anchor" aria-hidden="true" href="#claves-primarias-llaves-primarias">#</a></h5>
+<p>Atributo que garantiza que cada entidad es única. Las claves candidatas son aquellas que pueden cumplir este propósito. Las claves primarias son las elegidas. Ejemplo: Matrícula, CURP, RFC</p>
+<ul>
+<li>Cada entidad debe tener una clave primaria.</li>
+<li>Las claves primarias van subrayadas.</li>
+</ul>
+<h5 id="claves-candidatas">Claves candidatas<a hidden class="anchor" aria-hidden="true" href="#claves-candidatas">#</a></h5>
+<p>Son aquellas llaves que son candidatas a ser clave primaria.</p>
+<h5 id="claves-foráneas">Claves foráneas<a hidden class="anchor" aria-hidden="true" href="#claves-foráneas">#</a></h5>
+<p>Una clave foránea o externa se compone de uno o varios atributos, que forman una clave primaria en otra tabla a la cual se desea relacionar.</p>
+<ul>
+<li>Se puede cambiar el nombre de la clave foránea, no necesariamente debe ser la misma que la clave primaria de la tabla con la que se relaciona.</li>
+</ul>
+<h2 id="iii-normalización">III. Normalización<a hidden class="anchor" aria-hidden="true" href="#iii-normalización">#</a></h2>
+<p>Es la transformación del diseño de la base de datos a uno más simple y estable, sin ambigüedad.</p>
+<p>Esto es importante para optimizar y garantizar que no haya ambigüedades (Pérdida de datos, etc.).</p>
+<h3 id="31-reglaforma-1">3.1 Regla/Forma 1<a hidden class="anchor" aria-hidden="true" href="#31-reglaforma-1">#</a></h3>
+<p>Una tabla está en <strong>Primera Forma Normal (1NF)</strong> si cumple con lo siguiente:</p>
+<ul>
+<li><strong>Atomicidad:</strong> Cada celda contiene un único valor atómico (no listas, conjuntos ni estructuras anidadas).</li>
+<li><strong>Clave primaria:</strong> Debe existir una clave primaria que identifique unívocamente cada fila.</li>
+<li><strong>Sin duplicados:</strong> No debe haber filas duplicadas.</li>
+<li><strong>Uniformidad:</strong> Cada columna debe contener valores de un solo tipo de dato (coherentes para cada fila).</li>
+</ul>
+<p><strong>Recomendación:</strong> Los datos compuestos (como nombres completos) o valores múltiples (como listas de teléfonos) deben descomponerse en datos atómicos. No se permiten rangos ni conjuntos de valores en una celda.</p>
+<h3 id="32-reglaforma-2">3.2 Regla/Forma 2<a hidden class="anchor" aria-hidden="true" href="#32-reglaforma-2">#</a></h3>
+<p>Una tabla está en <strong>Segunda Forma Normal (2NF)</strong> si:</p>
+<ul>
+<li>Está en 1NF.</li>
+<li><strong>Sin dependencias parciales</strong> Ocurren cuando un atributo depende de parte de una clave primaria compuesta y no de la clave primaria completa. Es decir, se crean tablas independientes para conjuntos de valores que se apliquen a varios registros.</li>
+<li><strong>Llaves foráneas</strong>: Las tablas se relacionan mediante llaves foráneas.</li>
+</ul>
+<h3 id="33-reglaforma-3">3.3 Regla/Forma 3<a hidden class="anchor" aria-hidden="true" href="#33-reglaforma-3">#</a></h3>
+<p>Una tabla está en <strong>Tercera Forma Normal (3NF)</strong> si:</p>
+<ul>
+<li>Está en 2NF.</li>
+<li><strong>Sin dependencias transitivas</strong>: Los atributos no clave dependen exclusivamente de la clave primaria y no de otros atributos no clave. Es decir, al tener dos entidades conectadas de muchos a muchos, se crea una tabla intermedia que incluye las claves primarias de ambas tablas como claves foráneas y con el nombre de ambas entidades.</li>
+<li><strong>Se separan los catálogos</strong>: Surge el catálogo, donde los datos ya están definidos, como tipos de categorías. (Dato de un atributo, que tiene un rango limitado).</li>
+</ul>
+<h3 id="34-reglaforma-35-boyce-codd">3.4 Regla/Forma 3.5 Boyce Codd<a hidden class="anchor" aria-hidden="true" href="#34-reglaforma-35-boyce-codd">#</a></h3>
+<p>La <strong>Forma Normal de Boyce-Codd</strong> es una versión más estricta de la 3NF, y se cumple si:</p>
+<ul>
+<li>Está en 3NF.</li>
+<li><strong>Cada determinante es una clave candidata</strong>: Cada atributo que determine a otro debe ser una clave candidata, o debe dividirse la tabla si causa dependencias funcionales. Es decir, si para cada dependencia funcional X - Y en la tabla, el conjunto X es una superclave. Una superclave es un conjunto de uno o más atributos de una tabla que puede identificar de manera única todas las filas de las tablas.</li>
+<li><strong>Sin dependencias funcionales</strong>: No deben existir relaciones entre atributos fuera de las claves candidatas.</li>
+<li>En general, todos los atributos tienen que depender de la superclave. Ejemplo: Si tenemos la tabla Estudiantes: id_estudiante, nombreEstudiante, nombre_curso, profesor. Los datos de curso y el profesor no van en la tabla Estudiantes ya que no dependen de la superclave (id_estudiante), por lo que se separan en otra tabla donde se conecten.</li>
+</ul>
+<h3 id="35-reglaforma-4">3.5 Regla/Forma 4<a hidden class="anchor" aria-hidden="true" href="#35-reglaforma-4">#</a></h3>
+<p>Una tabla está en <strong>Cuarta Forma Normal (4NF)</strong> si:</p>
+<ul>
+<li>Está en 3.5NF.</li>
+<li><strong>Sin dependencias multivaluadas:</strong> En una tabla sólo pueden haber 2 llaves foráneas. Se puede resolver al separar la tercera tabla y conectarla con otra. Ejemplo: Se tienen varias tablas que se relacionan a una sola y esto crea muchas combinaciones posibles, que pueden confundir, como un juguete que tiene aspectos de las tablas materiales colores tamaños, venta etc..</li>
+</ul>
+<h3 id="36-reglaforma-5">3.6 Regla/Forma 5<a hidden class="anchor" aria-hidden="true" href="#36-reglaforma-5">#</a></h3>
+<p>Una tabla está en <strong>Quinta Forma Normal (5NF)</strong> si:</p>
+<ul>
+<li>Está en 5NF.</li>
+<li><strong>Sin dependencias de unión</strong>: Depuración, es decir, se optimizan las tablas para eliminar redundancias entre las tablas con relaciones.</li>
+</ul>
+<h3 id="37-notas-de-normalización">3.7 Notas de normalización<a hidden class="anchor" aria-hidden="true" href="#37-notas-de-normalización">#</a></h3>
+<ul>
+<li>Pensar en cómo interaccionan los datos con el front-end.</li>
+<li>Los datos generados automáticamente, o que se ponen con un menú específico en la interfaz, no se coloca como tabla. Ejemplo: Fecha, en caso de que el usuario pueda elegirla de un calendario, ya que tiene un formato estándar. Es decir, si un dato se consigue en la interfaz, mediante un algoritmo programado y no de una base de datos. Por lo tanto, no va una tabla.</li>
+</ul>
+<h4 id="dependencia-transitiva">Dependencia transitiva<a hidden class="anchor" aria-hidden="true" href="#dependencia-transitiva">#</a></h4>
+<p>Se da al romper la ambigüedad generada por dos elementos que dependen entre ellos.</p>
+<h4 id="creación-de-tablas-normalizadas-en-diagrama-relacional">Creación de tablas normalizadas en diagrama relacional<a hidden class="anchor" aria-hidden="true" href="#creación-de-tablas-normalizadas-en-diagrama-relacional">#</a></h4>
+<p><strong>¿Cuándo se separa un atributo de una tabla?</strong></p>
+<p><em>Depende mucho de los requerimientos pero para darse una idea inicial:</em></p>
+<ol>
+<li>¿El valor del atributo cambia con cierta frecuencia?
+<ul>
+<li>Sí: Se separa de la tabla.</li>
+<li>No:</li>
+</ul>
+</li>
+<li>¿Varias instancias del mismo elemento podrían compartir un mismo valor?
+<ul>
+<li>Si:</li>
+<li>No: Se queda en la tabla.</li>
+</ul>
+</li>
+<li>¿El atributo se trata de un catálogo? (Datos que pueden representarse en una lista o que tienen un rango de datos ya establecido)
+<ul>
+<li>Si: Se separa de la tabla.</li>
+<li>No: Se queda en la tabla. (Ejemplo: Nombre)</li>
+</ul>
+</li>
+</ol>
+<h2 id="iv-diccionario-de-datos">IV. Diccionario de datos<a hidden class="anchor" aria-hidden="true" href="#iv-diccionario-de-datos">#</a></h2>
+<p>Es un repositorio descentralizado de información sobre los datos que se utilizan en un sistema de gestión de bases de datos o en una aplicación.</p>
+<p>Contiene descripciones detalladas en forma de tabla, de las variables, tablas, atributos y relaciones dentro de un sistema de base de datos.</p>
+<p>Se debe considerar el front-end.</p>
+<h3 id="41-datos-del-diccionario">4.1 Datos del diccionario<a hidden class="anchor" aria-hidden="true" href="#41-datos-del-diccionario">#</a></h3>
+<ul>
+<li>Nombre del campo o atributo</li>
+<li>Tipo de dato</li>
+<li>Tamaño del campo</li>
+<li>Descripción que explique el dato</li>
+<li>Valor permitido válido para ese atributo (Dominio)</li>
+<li>Relaciones del dato con otros (Claves foráneas, etc.)</li>
+<li>Reglas de validación para verificar que el dato sea correcto (Ejemplo: no se permiten valores negativos)</li>
+</ul>
+<h3 id="42-importancia">4.2 Importancia<a hidden class="anchor" aria-hidden="true" href="#42-importancia">#</a></h3>
+<ul>
+<li>Análisis de requerimientos. Ayuda a comprender los datos necesarios para una solución</li>
+<li>Diseño de bases de datos</li>
+<li>Desarrollo</li>
+<li>Mantenimiento</li>
+</ul>
+<h2 id="v-álgebra-relacional">V. Álgebra relacional<a hidden class="anchor" aria-hidden="true" href="#v-álgebra-relacional">#</a></h2>
+<p>Las bases de datos relacionales requieren de un conjunto de operaciones que permiten manipular la base de datos. Date (2001) menciona que el álgebra relacional es un conjunto de operadores que toman sus relaciones como sus operandos y regresan una relación como resultado.</p>
+<h3 id="51-operadores-relacionales">5.1 Operadores relacionales<a hidden class="anchor" aria-hidden="true" href="#51-operadores-relacionales">#</a></h3>
+<ul>
+<li><strong>σ (sigma)</strong>: Representa la <strong>operación de selección</strong>, que filtra las filas de una relación basándose en una condición.</li>
+<li><strong>π (pi)</strong>: Representa la <strong>operación de proyección</strong>, que selecciona columnas específicas de una relación.</li>
+<li><strong>∪ (unión)</strong>: Representa la <strong>unión</strong> de dos relaciones.</li>
+</ul>
+<h3 id="52-operadores-de-condición">5.2 Operadores de condición<a hidden class="anchor" aria-hidden="true" href="#52-operadores-de-condición">#</a></h3>
+<ul>
+<li><strong>&lt; (Menor que)</strong>: Compara si un valor es menor que otro.</li>
+<li><strong>&gt; (Mayor que)</strong>: Compara si un valor es mayor que otro.</li>
+<li><strong>&lt;= (Menor o igual a que)</strong>: Compara si un valor es menor o igual a otro.</li>
+<li><strong>&gt;= (Mayor o igual a que)</strong>: Compara si un valor es mayor o igual a otro.</li>
+<li><strong>= (Igual a)</strong>: Verifica si dos valores son iguales.</li>
+</ul>
+<h3 id="53-representación-de-una-expresión">5.3 Representación de una expresión<a hidden class="anchor" aria-hidden="true" href="#53-representación-de-una-expresión">#</a></h3>
+<p>Se puede representar de 3 maneras:</p>
+<ul>
+<li><strong>Texto</strong>: Descripción.</li>
+</ul>
+<blockquote>
+<p>Muestra <em>todos</em> los datos de <!-- raw HTML omitted -->empleados<!-- raw HTML omitted --> que tengan un <!-- raw HTML omitted -->salario de 4000<!-- raw HTML omitted --></p></blockquote>
+<ul>
+<li><strong>Álgebra Relacional</strong>: Expresión Relacional.
+$$\sigma({\pi\text{salario} = 4000} (\text{Empleados})) $$</li>
+<li><strong>Código SQL</strong>: Código.</li>
+</ul>
+<pre tabindex="0"><code>SELECT * FROM Empleados WHERE salario = 4000;
+</code></pre><h2 id="vi-microsoft-sql">VI. Microsoft SQL<a hidden class="anchor" aria-hidden="true" href="#vi-microsoft-sql">#</a></h2>
+<p>El SQL (Lenguaje Estructurado de Consultas) es un lenguaje declarativo basado en el modelo relacional, es decir, se indican instrucciones y la acción que realizarán sobre una base de datos relacional.</p>
+<h3 id="61-categorías-de-sql">6.1 Categorías de SQL<a hidden class="anchor" aria-hidden="true" href="#61-categorías-de-sql">#</a></h3>
+<ul>
+<li><strong>Lenguaje de definición de datos (DDL, Data Definition Language)</strong>: Son instrucciones que se utilizan para crear, modificar y borrar objetos de la base de datos, como tablas, vistas, esquemas, dominios, activadores y procedimientos almacenados.</li>
+<li><strong>Lenguaje de control de datos (DCL, Data Control Language)</strong>: Son instrucciones que permiten controlar quién o qué tiene acceso a objetos específicos de la base de datos. Dentro de estas instrucciones se pueden encontrar aquellas asociadas a la administración de usuarios, para otorgar o revocar permisos a objetos de las bases de datos.</li>
+<li><strong>Lenguaje de manipulación de datos (DML, Data Manipulation Language)</strong>: Son instrucciones que se utilizan para recuperar, agregar, modificar y borrar datos almacenados en la base de datos.</li>
+</ul>
+<h3 id="62-instalación-y-uso">6.2 Instalación y uso<a hidden class="anchor" aria-hidden="true" href="#62-instalación-y-uso">#</a></h3>
+<ol>
+<li>En la página Microsoft SQL se elige la versión express, instalación personalizada, instalar, New standalone installation, aceptar e instalar</li>
+<li>Quitar selección de Azure, y Machine Learning y todo next</li>
+<li>Install SQL server management tools, Descargar los ssms</li>
+<li>Cerrar todo y abrir SQL Server Management Studio 20</li>
+<li>Colocar opcional, y conectar</li>
+<li>Al abrir dar conectar</li>
+<li>En la barra, New Query</li>
+<li>Seleccionar primera línea (CREATE DATABASE mydb;) y Execute, lo mismo con la segunda línea (Use mydb;)</li>
+</ol>
+<h4 id="notas-de-programar-en-sql">Notas de programar en SQL<a hidden class="anchor" aria-hidden="true" href="#notas-de-programar-en-sql">#</a></h4>
+<ul>
+<li>Declarar cada FK como una variable más</li>
+<li>Ejecutar cada tabla, primero escribir y ejecutar las tablas de las que otras dependen</li>
+<li>Cada insert debe seguir la jerarquía con la que se crearon las tablas</li>
+<li>Si se puso una numeración automática (IDENTITY(1,1)) en el id de una tabla, cuando se inserten datos no se colocan los id. Si es foránea si se pone, para saber con quién se conecta.</li>
+</ul>
+<h2 id="vii-estructura-y-configuración-inicial-en-sql-server">VII. Estructura y configuración inicial en SQL Server<a hidden class="anchor" aria-hidden="true" href="#vii-estructura-y-configuración-inicial-en-sql-server">#</a></h2>
+<h3 id="71-operaciones-básicas-de-sql">7.1 Operaciones básicas de SQL<a hidden class="anchor" aria-hidden="true" href="#71-operaciones-básicas-de-sql">#</a></h3>
+<ul>
+<li><strong>CREATE DATABASE</strong>: Crea una nueva base de datos</li>
+<li><strong>USE</strong>: Selecciona la base de datos en la que deseas trabajar. Después de ejecutar este comando, todas las operaciones de SQL se aplicarán a la base de datos seleccionada.</li>
+<li><strong>DROP DATABASE</strong> Elimina por completo una base de datos.</li>
+<li><strong>CREATE TABLE</strong>: Crea una nueva tabla. Al definirla, se especifican las columnas, tipos de datos y restricciones para almacenar información estructurada.</li>
+<li><strong>DROP TABLE</strong>: Elimina la tabla que se seleccione</li>
+<li><strong>INSERT</strong>: Permite agregar una nueva fila o registro en una tabla. Se puede especificar una lista de columnas y valores correspondientes.</li>
+<li><strong>UPDATE</strong>: Modifica los datos de las filas en una tabla. Permite actualizar uno o más valores en registros específicos utilizando una cláusula <code>WHERE</code> para limitar las filas afectadas.</li>
+<li><strong>SELECT</strong>: Corresponde a la operación de proyección del álgebra relacional, se utiliza para listar los atributos de una consulta.</li>
+<li><strong>FROM</strong>: Indica la tabla o tablas desde las cuales se extraerán los datos.</li>
+<li><strong>WHERE</strong>: Filtra los registros en función de una condición dada, similar a la operación de selección en el álgebra relacional.</li>
+<li><strong>INNER JOIN &hellip; ON</strong>: Combina filas de dos o más tablas en función de una condición de igualdad especificada en la cláusula ON. Solo devuelve las filas donde existe una coincidencia en ambas tablas.</li>
+</ul>
+<h3 id="72-creación-de-los-elementos-iniciales">7.2 Creación de los elementos iniciales<a hidden class="anchor" aria-hidden="true" href="#72-creación-de-los-elementos-iniciales">#</a></h3>
+<ol>
+<li><strong>Crear y usar la base de datos</strong></li>
+</ol>
+<pre tabindex="0"><code>CREATE DATABASE NombreDB;
+USE NombreDB;
+</code></pre><ol start="2">
+<li><strong>Crear tablas</strong>. Aquellas que no tienen llave foránea van primero.</li>
+</ol>
+<pre tabindex="0"><code>CREATE TABLE Departamentos
+(
+	id_departamento INT IDENTITY(1,1) PRIMARY KEY,
+	atributo VARCHAR(50),
+	atributo2 DATE,
+	atributo3 FLOAT(9),
+	atributo4 INT
+);
+
+CREATE TABLE Empleados
+(
+	id_empleado INT IDENTITY(1,1) PRIMARY KEY,
+	atributo VARCHAR(50),
+	atributo2 DATE,
+	atributo3 FLOAT(9),
+	atributo4 INT,
+	id_departamento INT,
+	FOREIGN KEY (id_departamento) REFERENCES Departamentos(id_departamento)
+);
+</code></pre><h3 id="73--manipulaciones-de-datos-en-tablas">7.3  Manipulaciones de datos en tablas<a hidden class="anchor" aria-hidden="true" href="#73--manipulaciones-de-datos-en-tablas">#</a></h3>
+<h4 id="insert">INSERT<a hidden class="anchor" aria-hidden="true" href="#insert">#</a></h4>
+<p>Insertar valores.</p>
+<p><strong>Ejemplo</strong></p>
+<pre tabindex="0"><code>INSERT INTO Departamentos
+VALUES
+(&#39;Sistemas&#39;, 2025-01-15, 50.2, 30),
+(&#39;RH&#39;, 2025-03-09, 50.2, 30);
+
+INSERT INTO Empleados
+VALUES
+(&#39;Ernesto&#39;, 2025-01-15, 25.5, 10, 1),
+(&#39;Laura&#39;, 2025-03-09, 25.5, 10, 2);
+</code></pre><h4 id="update">UPDATE<a hidden class="anchor" aria-hidden="true" href="#update">#</a></h4>
+<p>Actualizar valores. <strong>No omitir</strong> <code>WHERE</code> ya que sino se actualizarán todos los registros de la tabla.</p>
+<p><strong>Ejemplo</strong></p>
+<pre tabindex="0"><code>UPDATE Productos  
+SET nombreProducto = &#39;Frijol&#39;, precio = 19.99
+WHERE id_producto = 3;
+</code></pre><h4 id="delete">DELETE<a hidden class="anchor" aria-hidden="true" href="#delete">#</a></h4>
+<p>Borra valores. <strong>No omitir</strong> <code>WHERE</code> ya que sino se eliminarán todos los registros de la tabla.</p>
+<p><strong>Ejemplo</strong></p>
+<pre tabindex="0"><code>DELETE FROM Productos  
+WHERE idProducto = 5;
+</code></pre><h4 id="drop">DROP<a hidden class="anchor" aria-hidden="true" href="#drop">#</a></h4>
+<p>Eliminar una tabla. No se podrá eliminar si hay otra tabla que dependa de esta.</p>
+<p><strong>Ejemplo</strong></p>
+<pre tabindex="0"><code>DROP TABLE Productos;
+</code></pre><p>Eliminar una base de datos. No se puede eliminar la base de datos si está en uso, por lo que primero se debe usar otra tabla antes.</p>
+<p><strong>Ejemplo</strong></p>
+<pre tabindex="0"><code>USE master;
+
+DROP DATABASE NombreBD;
+</code></pre><h3 id="74-notas-generales-de-sql-server">7.4 Notas generales de SQL Server<a hidden class="anchor" aria-hidden="true" href="#74-notas-generales-de-sql-server">#</a></h3>
+<ul>
+<li>Declarar cada FK como una variable más</li>
+<li>Ejecutar cada tabla, primero escribir y ejecutar las tablas de las que otras dependen</li>
+<li>Cada insert debe seguir la jerarquía con la que se crearon las tablas</li>
+<li>Si se puso una numeración automática (IDENTITY(1,1)) en el id de una tabla, cuando se inserten datos no se colocan los id. Si es foránea si se pone, para saber con quién se conecta.</li>
+</ul>
+<h2 id="viii-consultas">VIII. Consultas<a hidden class="anchor" aria-hidden="true" href="#viii-consultas">#</a></h2>
+<h3 id="81-consultas-básicas">8.1 Consultas básicas<a hidden class="anchor" aria-hidden="true" href="#81-consultas-básicas">#</a></h3>
+<p>Se usa <code>SELECT</code> para iniciar, <code>*</code> para hacer una selección global o se especifican los datos para especificar la búsqueda. Adicionalmente se usa <code>FROM</code> para especificar la tabla y <code>WHERE</code> para especificar una condición.</p>
+<p><strong>Ejemplos</strong></p>
+<ul>
+<li>Consulta todos los archivos y sus características</li>
+</ul>
+<pre tabindex="0"><code>SELECT * FROM sys.master_files;
+</code></pre><ul>
+<li>Consulta todas las bases de datos</li>
+</ul>
+<pre tabindex="0"><code>SELECT * FROM sys.databases;
+</code></pre><ul>
+<li>Consulta las tablas, se cambia el nombre de la DB que se quiere ver</li>
+</ul>
+<pre tabindex="0"><code>SELECT object_id, &#39;[&#39;+SCHEMA_NAME(schema_id)+&#39;].[&#39;+name+&#39;]&#39;
+AS [schema_table], max_column_id_used, type, type_desc, create_date, modify_date, lock_escalation_desc
+FROM sys.tables;
+</code></pre><ul>
+<li>Consulta e texto o código fuente de un objeto en la base de datos, como una vista, procedimiento almacenado, función o disparador</li>
+</ul>
+<pre tabindex="0"><code>sp_helpText contarDepartamentos;
+</code></pre><ul>
+<li>Consulta todo de los clientes con apellido paterno &lsquo;Martinez&rsquo;</li>
+</ul>
+<pre tabindex="0"><code>SELECT * FROM Clientes WHERE apellidoP = &#39;Martinez&#39;;
+</code></pre><ul>
+<li>Consulta el precio y las ventas de los productos de color &lsquo;azul&rsquo;</li>
+</ul>
+<pre tabindex="0"><code>SELECT precio, ventas FROM Productos WHERE color = &#39;azul&#39;;
+</code></pre><h3 id="82-uso-de-join">8.2 Uso de JOIN<a hidden class="anchor" aria-hidden="true" href="#82-uso-de-join">#</a></h3>
+<h4 id="inner-join">INNER JOIN<a hidden class="anchor" aria-hidden="true" href="#inner-join">#</a></h4>
+<p>Combina filas de dos o más tablas en función de una condición de igualdad especificada en la cláusula <code>ON</code>. Solo devuelve las filas donde existe una coincidencia en ambas tablas. Se toma en cuenta la llave primaria y la foránea.</p>
+<p><img alt="Conceptos y Programación de Bases de Datos_26-07-2025.png" loading="lazy" src="/imagenes/Conceptos%20y%20Programaci%C3%B3n%20de%20Bases%20de%20Datos_26-07-2025.png"></p>
+<p><strong>Sintaxis</strong></p>
+<pre tabindex="0"><code>SELECT columnas FROM TablaA INNER JOIN TablaB ON TablaA.id_tablaA = TablaB.id_tablaA WHERE columna9 = &#39;valor&#39;
+</code></pre><p><strong>Ejemplos</strong></p>
+<ul>
+<li>Consulta los nombres de los clientes y las fechas de los pedidos</li>
+</ul>
+<pre tabindex="0"><code>SELECT Clientes.nombre, Pedidos.fecha FROM Clientes INNER JOIN Pedidos ON Clientes.id_cliente = Pedidos.id_cliente;
+</code></pre><ul>
+<li>Consulta el nombre del producto, la cantidad, la fecha y el nombre del cliente en 4 tablas</li>
+</ul>
+<pre tabindex="0"><code>SELECT p.nombreProducto, dp.cantidad, pe.fecha, cl.nombre FROM Productos p INNER JOIN DetallesPedidos dp ON p.id_producto = dp.id_producto INNER JOIN Pedidos pe ON dp.id_pedido = pe.id_pedido INNER JOIN Clientes cl ON pe.id_pedido = cl.id_cliente;
+</code></pre><h4 id="left-join">LEFT JOIN<a hidden class="anchor" aria-hidden="true" href="#left-join">#</a></h4>
+<p>EI <code>LEFT JOIN</code> devuelve todas las filas de la tabla de la izquierda (en
+este caso <code>clientes</code>), y las filas coincidentes de la tabla de la derecha
+(<code>pedidos</code>). Si no hay coincidencia, el resultado mostrará <code>NULL</code> en las
+columnas de la tabla de la derecha.</p>
+<p><strong>Sintaxis</strong></p>
+<pre tabindex="0"><code>SELECT columnas FROM TablaA LEFT JOIN TablaB ON TablaA.id_tablaA = TablaB.id_tablaA WHERE columna9 = &#39;valor&#39;
+</code></pre><p><strong>Ejemplo</strong></p>
+<ul>
+<li>En este caso la consulta de Promedio de ventas por cliente muestra únicamente los datos que se especifican y que coinciden en la tabla de la izquierda y pone en NULL las de la derecha que no.</li>
+</ul>
+<pre tabindex="0"><code>SELECT Clientes.nombre, AVG(totalVenta) AS promedioVenta FROM Clientes LEFT JOIN Ventas ON Clientes.id_cliente = Ventas.id_cliente GROUP BY nombre;
+</code></pre><h4 id="right-join">RIGHT JOIN<a hidden class="anchor" aria-hidden="true" href="#right-join">#</a></h4>
+<p>EI <code>RIGHT JOIN</code> es lo contrario al <code>LEFT JOIN</code>. Devuelve todas las filas de
+la tabla de la derecha (<code>pedidos</code>), y las filas coincidentes de la tabla de
+la izquierda (<code>clientes</code>). Si no hay coincidencia, se mostrarán <code>NULL</code> en
+las columnas de la tabla de la izquierda.</p>
+<p><strong>Sintaxis</strong></p>
+<pre tabindex="0"><code>SELECT columnas FROM TablaA RIGHT JOIN TablaB ON TablaA.id_tablaA = TablaB.id_tablaA WHERE columna9 = &#39;valor&#39;
+</code></pre><p><strong>Ejemplo</strong></p>
+<ul>
+<li>En este caso la consulta de Promedio de ventas por cliente muestra únicamente los datos que se especifican y que coinciden en la tabla de la derecha y pone en NULL las de la izquierda que no.</li>
+</ul>
+<pre tabindex="0"><code>SELECT Clientes.nombre, AVG(totalVenta) AS promedioVenta FROM Clientes RIGHT JOIN Ventas ON Clientes.id_cliente = Ventas.id_cliente GROUP BY nombre;
+</code></pre><h4 id="full-join">FULL JOIN<a hidden class="anchor" aria-hidden="true" href="#full-join">#</a></h4>
+<p>FULL JOIN Devuelve filas cuando hay una coincidencia en una de las tablas, o ambas.</p>
+<p><strong>Sintaxis</strong></p>
+<pre tabindex="0"><code>SELECT columnas FROM TablaA FULL JOIN TablaB ON TablaA.id_tablaA = TablaB.id_tablaA WHERE columna9 = &#39;valor&#39;
+</code></pre><p><strong>Ejemplo</strong></p>
+<ul>
+<li>En este caso se muestra tanto lo que coincide como lo que no</li>
+</ul>
+<pre tabindex="0"><code>SELECT Clientes.nombre, AVG(totalVenta) AS promedioVenta FROM Clientes FULL JOIN Ventas ON Clientes.id_cliente = Ventas.id_cliente GROUP BY nombre;
+</code></pre><h4 id="cross-join">CROSS JOIN<a hidden class="anchor" aria-hidden="true" href="#cross-join">#</a></h4>
+<p>Devuelve el producto cartesiano de ambas tablas, es decir, todas las combinaciones posibles de filas.</p>
+<p><strong>Sintaxis</strong></p>
+<pre tabindex="0"><code>SELECT * FROM Tabla1 CROSS JOIN Tabla2;
+</code></pre><p><strong>Ejemplo</strong></p>
+<ul>
+<li>En este caso se muestra el producto cartesiano de todos los datos de Clientes y Ventas</li>
+</ul>
+<pre tabindex="0"><code>SELECT * FROM Clientes CROSS JOIN Ventas;
+</code></pre><h3 id="83-funciones">8.3 Funciones<a hidden class="anchor" aria-hidden="true" href="#83-funciones">#</a></h3>
+<h4 id="concatx-y">CONCAT(X, Y)<a hidden class="anchor" aria-hidden="true" href="#concatx-y">#</a></h4>
+<p>Concatena dos cadenas de texto.</p>
+<p><strong>Ejemplo</strong></p>
+<ul>
+<li>Selecciona el <code>id</code> de <code>empleado</code> y el <code>nombre</code> con <code>apellido</code> y mostrar como <code>nombreCompleto</code>, de la tabla <code>empleados</code></li>
+</ul>
+<pre tabindex="0"><code>SELECT id_empleado, CONCAT(nombre, &#39; &#39;, apellido) AS nombreCompleto FROM Empleados;
+</code></pre><h4 id="lengthx">LENGTH(X)<a hidden class="anchor" aria-hidden="true" href="#lengthx">#</a></h4>
+<p>Devuelve la longitud de la cadena X.</p>
+<p><strong>Ejemplo</strong></p>
+<ul>
+<li>Muestra el nombre y el número de caracteres</li>
+</ul>
+<pre tabindex="0"><code>SELECT id_empleado, nombre, LEN(nombre) AS longitudNombre FROM Empleados;
+</code></pre><h4 id="substringx-start-length">SUBSTRING(X, Start, Length)<a hidden class="anchor" aria-hidden="true" href="#substringx-start-length">#</a></h4>
+<p>Extrae una sub-cadena de X a partir de la posición Start con la longitud indicada.</p>
+<p><strong>Ejemplo</strong></p>
+<ul>
+<li>Muestra el nombre y la versión en sub-cadena</li>
+</ul>
+<pre tabindex="0"><code>SELECT id_empleado, nombre, SUBSTRING(nombre, 1, 3) AS subcadena FROM Empleados;
+</code></pre><h4 id="upperx--lowerx">UPPER(X) / LOWER(X)<a hidden class="anchor" aria-hidden="true" href="#upperx--lowerx">#</a></h4>
+<p>Convierte X a mayúsculas o minúsculas, respectivamente.</p>
+<p><strong>Ejemplos</strong></p>
+<ul>
+<li>Muestra el nombre y en mayúsculas</li>
+</ul>
+<pre tabindex="0"><code>SELECT id_empleado, nombre, UPPER(nombre) AS nombreMayusculas FROM Empleados;
+</code></pre><ul>
+<li>Muestra el nombre y en minúsculas</li>
+</ul>
+<pre tabindex="0"><code>SELECT id_empleado, nombre, LOWER(nombre) AS nombreMinusculas FROM Empleados;
+</code></pre><h4 id="date">DATE<a hidden class="anchor" aria-hidden="true" href="#date">#</a></h4>
+<p><strong>Ejemplos</strong></p>
+<ul>
+<li>Obtener la fecha</li>
+</ul>
+<pre tabindex="0"><code>SELECT GETDATE() AS fechaHoraActual;
+</code></pre><ul>
+<li>Agregar a la fecha 5 días</li>
+</ul>
+<pre tabindex="0"><code>SELECT DATEADD(DAY, 5, &#39;2025-02-03&#39;) AS nuevaFecha;
+</code></pre><ul>
+<li>Obtiene la diferencia en días de una fecha menos otra</li>
+</ul>
+<pre tabindex="0"><code>SELECT DATEDIFF(DAY, &#39;2025-01-01&#39;, &#39;2025-02-03&#39;) AS diferenciaDias;
+</code></pre><ul>
+<li>Obtiene el año, mes y día separándolos de la fecha deseada</li>
+</ul>
+<pre tabindex="0"><code>SELECT
+YEAR(&#39;2025-02-03&#39;) AS anio,
+MONTH(&#39;2025-02-03&#39;) AS mes,
+DAY(&#39;2025-02-03&#39;) AS dia;
+</code></pre><ul>
+<li>Obtiene la diferencia en años de una fecha menos otra</li>
+</ul>
+<pre tabindex="0"><code>SELECT DATEDIFF(DAY, &#39;2020-01-01&#39;, &#39;2025-02-03&#39;)/365.25 AS diferenciaAnios;
+</code></pre><ul>
+<li>Añade 10 días y resta 3 meses a la fecha deseada</li>
+</ul>
+<pre tabindex="0"><code>SELECT
+DATEADD(DAY, 10, &#39;2025-02-03&#39;) AS nuevaFechaConDias,
+DATEADD(MONTH, -3, &#39;2025-02-03&#39;) AS nuevaFechaConMes;
+</code></pre><h3 id="84-operaciones">8.4 Operaciones<a hidden class="anchor" aria-hidden="true" href="#84-operaciones">#</a></h3>
+<h4 id="count">COUNT(<code>*</code>)<a hidden class="anchor" aria-hidden="true" href="#count">#</a></h4>
+<p>Cuenta el número total de registros de una tabla.</p>
+<p><strong>Ejemplo</strong></p>
+<ul>
+<li>Cuenta los registros en empleados.</li>
+</ul>
+<pre tabindex="0"><code>SELECT COUNT(*) AS totalEmpleados FROM Empleados;
+</code></pre><h4 id="sumcolumna">SUM(columna)<a hidden class="anchor" aria-hidden="true" href="#sumcolumna">#</a></h4>
+<p>Suma los valores de una columna numérica. Se pueden usar otros operadores para hacer operaciones dentro. Funciona mejor con INT.</p>
+<p><strong>Ejemplo</strong></p>
+<ul>
+<li>Suma los montos de ventas</li>
+</ul>
+<pre tabindex="0"><code>SELECT SUM(monto) AS totalVentasMonto FROM Ventas;
+</code></pre><h4 id="avgcolumna">AVG(columna)<a hidden class="anchor" aria-hidden="true" href="#avgcolumna">#</a></h4>
+<p>Calcula el promedio de los valores de una columna numérica.</p>
+<p><strong>Ejemplo</strong></p>
+<ul>
+<li>Promedia los montos de las ventas</li>
+</ul>
+<pre tabindex="0"><code>SELECT AVG(monto) AS promedioMonto FROM Ventas;
+</code></pre><h4 id="mincolumna">MIN(columna)<a hidden class="anchor" aria-hidden="true" href="#mincolumna">#</a></h4>
+<p>Devuelve el valor mínimo en una columna.</p>
+<p><strong>Ejemplo</strong></p>
+<ul>
+<li>Obtiene el monto más bajo de las ventas.</li>
+</ul>
+<pre tabindex="0"><code>SELECT MIN(monto) AS montoMinimoVenta FROM Ventas;
+</code></pre><h4 id="maxcolumna">MAX(columna)<a hidden class="anchor" aria-hidden="true" href="#maxcolumna">#</a></h4>
+<p>Devuelve el valor máximo en una columna.</p>
+<p><strong>Ejemplo</strong></p>
+<ul>
+<li>Obtiene el monto más alto de las ventas.</li>
+</ul>
+<pre tabindex="0"><code>SELECT MAX(monto) AS montoMinimoVenta FROM Ventas;
+</code></pre><h4 id="uso-de-group-by">Uso de GROUP BY<a hidden class="anchor" aria-hidden="true" href="#uso-de-group-by">#</a></h4>
+<p>Agrupa registros por una columna y cuenta cuántos existen en cada grupo. Se usa cuando se requieren dos o más registros.</p>
+<p><strong>Ejemplo</strong></p>
+<ul>
+<li>Obtiene las ventas por producto</li>
+</ul>
+<pre tabindex="0"><code>SELECT nombre, COUNT(*) AS cantidadVentas FROM Productos GROUP BY nombre;
+</code></pre><p>Dependiendo del elemento con el que se agrupa, se mostrarán diferentes resultados, y es posible agrupar por varios filtros (Se separan con una coma). Si se agrupa por <code>id</code> se mostrará solo una vez cada registro con ese <code>id</code> aunque aparezcan varias veces.</p>
+<h4 id="uso-de-order-by">Uso de ORDER BY<a hidden class="anchor" aria-hidden="true" href="#uso-de-order-by">#</a></h4>
+<p>El <code>ORDER BY</code> se usa para ordenar los resultados de una consulta según una o varias columnas. Se puede especificar el orden:</p>
+<ul>
+<li><strong>ASC</strong>: ascendente, por defecto.</li>
+<li><strong>DESC</strong>: descendente.</li>
+</ul>
+<p><strong>Ejemplos</strong></p>
+<ul>
+<li>Obtiene la lista de productos ordenada alfabéticamente:</li>
+</ul>
+<pre tabindex="0"><code>SELECT nombre, precio
+FROM Productos
+ORDER BY nombre ASC;
+</code></pre><ul>
+<li>Obtiene los productos más caros primero:</li>
+</ul>
+<pre tabindex="0"><code>SELECT nombre, precio
+FROM Productos
+ORDER BY precio DESC;
+</code></pre><h5 id="relación-con-group-by">Relación con GROUP BY<a hidden class="anchor" aria-hidden="true" href="#relación-con-group-by">#</a></h5>
+<p>Cuando se usa <code>GROUP BY</code>, el <code>ORDER BY</code> permite ordenar los grupos generados según los valores agregados.</p>
+<p><strong>Ejemplo</strong></p>
+<ul>
+<li>Obtiene las ventas por producto y las ordena de mayor a menor:</li>
+</ul>
+<pre tabindex="0"><code>SELECT nombre, COUNT(*) AS cantidadVentas  
+FROM Productos  
+GROUP BY nombre  
+ORDER BY cantidadVentas DESC;
+</code></pre><h3 id="85-vistas">8.5 Vistas<a hidden class="anchor" aria-hidden="true" href="#85-vistas">#</a></h3>
+<p>Las vistas en SQL son objetos virtuales que nos permiten acceder y manipular datos almacenados en una o varias tablas como si fueran tablas individuales. Sus ventajas son:</p>
+<ul>
+<li>Se simplifican las consultas</li>
+<li>Se organizan los datos y mejora el rendimiento.</li>
+<li>Son más seguras porque ya no se ve el join con los datos, solo se verá el nombre de la vista.</li>
+</ul>
+<h4 id="sintaxis-básica-de-una-vista">Sintaxis básica de una vista<a hidden class="anchor" aria-hidden="true" href="#sintaxis-básica-de-una-vista">#</a></h4>
+<ul>
+<li><strong>Crear una vista</strong></li>
+</ul>
+<pre tabindex="0"><code>CREATE VIEW nombre_vista
+AS consulta_deseada;
+</code></pre><ul>
+<li><strong>Consultar una vista</strong></li>
+</ul>
+<pre tabindex="0"><code>SELECT * FROM nombre_vista;
+</code></pre><ul>
+<li><strong>Modificar una vista</strong></li>
+</ul>
+<pre tabindex="0"><code>CREATE VIEW nombre_vista
+AS consulta_deseada;
+
+ALTER VIEW nombre_vista
+AS consulta_nueva;
+</code></pre><p><strong>Ejemplo</strong></p>
+<ul>
+<li>Vista que muestra todos los empleados del departamento de sistemas y de Puebla</li>
+</ul>
+<pre tabindex="0"><code>CREATE VIEW empleadosSistemasPuebla
+AS
+SELECT Personas.nombrePersona
+FROM Personas INNER JOIN Departamentos
+ON Personas.id_departamento = Departamentos.id_departamento INNER JOIN DepartamentosEstados
+ON Departamentos.id_departamento = DepartamentosEstados.id_departamento INNER JOIN Estados
+ON DepartamentosEstados.id_estado = Estados.id_estado
+WHERE Departamentos.nombreDepartamento = &#39;Sistemas&#39; AND Estados.nombreEstado = &#39;Puebla&#39;;
+
+SELECT * FROM empleadosSistemasPuebla;
+</code></pre><h4 id="cifrado-de-vistas">Cifrado de vistas<a hidden class="anchor" aria-hidden="true" href="#cifrado-de-vistas">#</a></h4>
+<p>El cifrado de vistas se usa para mantener la confidencialidad del código, especialmente si se contiene lógica o procesos sensibles.</p>
+<p><strong>Ejemplo</strong></p>
+<ul>
+<li>Se crea una nueva vista con cifrado</li>
+</ul>
+<pre tabindex="0"><code>CREATE VIEW nombre_vista WITH ENCRYPTION
+AS consulta_deseada;
+</code></pre><ul>
+<li>Se modifica una vista para que tenga cifrado</li>
+</ul>
+<pre tabindex="0"><code>CREATE VIEW nombre_vista
+AS consulta_deseada;
+
+ALTER VIEW nombre_vista WITH ENCRYPTION
+AS consulta_nueva;
+</code></pre><p>Para comprobar si está cifrada, se utiliza <code>sp_helpText</code>.</p>
+<h2 id="ix-automatización-y-seguridad">IX. Automatización y seguridad<a hidden class="anchor" aria-hidden="true" href="#ix-automatización-y-seguridad">#</a></h2>
+<h3 id="91-procedimientos-almacenados">9.1 Procedimientos almacenados<a hidden class="anchor" aria-hidden="true" href="#91-procedimientos-almacenados">#</a></h3>
+<p>Los stored procedures permiten agilizar los procesos de consulta de datos, aumentar la seguridad, reutilizar código y permiten un desarrollo de software más ágil. Dentro de SQL Server se les considera como un grupo de una o varias instrucciones Transact-SQL, mientras que en Microsoft .NET Framework se trata de una referencia a un método de Common Runtime Language (CLR).</p>
+<p>Los SP contienen instrucciones de programación que realizan operaciones en la base de datos, como llamar a otros procedimientos, devolver un valor de estado o realizar una llamada para indicar si la operación se ha realizado correctamente o se han producido errores y el motivo de estos.</p>
+<p><strong>Ejemplos</strong></p>
+<ul>
+<li>SP que inserta un registro en la tabla <code>Personas</code></li>
+</ul>
+<pre tabindex="0"><code>CREATE PROCEDURE sp_createPersona
+(
+	@nombrePersona VARCHAR(100),
+	@apellidoP VARCHAR(100),
+	@apellidoM VARCHAR(100),
+	@genero VARCHAR(100),
+	@correo VARCHAR(100),
+	@puesto VARCHAR(100),
+	@telefono VARCHAR(10),
+	@edad INT,
+	@sueldo INT,
+	@id_departamento INT
+)
+AS
+BEGIN
+INSERT INTO Personas
+VALUES (@nombrePersona, @apellidoP, @apellidoM, @genero, @correo, @puesto, @telefono, @edad, @sueldo, @id_departamento);
+END
+
+EXECUTE sp_createPersona &#39;Hernán&#39;, &#39;Lopez&#39;, &#39;Cortés&#39;, &#39;Masculino&#39;, &#39;hernan@gmail.com&#39;, &#39;Sistemas&#39;, &#39;2255487887&#39;, 38, 27000, 2;
+</code></pre><ul>
+<li>SP que actualiza un registro en la tabla <code>Personas</code></li>
+</ul>
+<pre tabindex="0"><code>CREATE PROCEDURE sp_updatePersona
+(
+	@id_persona INT,
+	@nombrePersona VARCHAR(100),
+	@apellidoP VARCHAR(100),
+	@apellidoM VARCHAR(100),
+	@genero VARCHAR(100),
+	@correo VARCHAR(100),
+	@puesto VARCHAR(100),
+	@telefono VARCHAR(10),
+	@edad INT,
+	@sueldo INT,
+	@id_departamento INT
+)
+AS
+BEGIN
+UPDATE Personas
+SET
+	nombrePersona = @nombrePersona,
+	apellidoP = @apellidoP,
+	apellidoM = @apellidoM,
+	genero = @genero,
+	correo = @correo,
+	puesto = @puesto,
+	telefono = @telefono,
+	edad = @edad,
+	sueldo = @sueldo,
+	id_departamento = @id_departamento
+WHERE id_persona = @id_persona;
+END
+
+EXECUTE sp_updatePersona 2, &#39;Laura&#39;, &#39;Sierra&#39;, &#39;Cayo&#39;, &#39;Femenino&#39;, &#39;laura@gmail.com&#39;, &#39;Administrador&#39;, &#39;2255489741&#39;, 32, 20000, 1;
+</code></pre><ul>
+<li>SP que consulta por el nombre de una persona y además muestra el departamento y estados con el que está relacionada mediante un <code>INNER JOIN</code></li>
+</ul>
+<pre tabindex="0"><code>CREATE PROCEDURE sp_searchPersona
+(
+	@nombrePersona VARCHAR(100)
+)
+AS
+BEGIN
+SELECT Personas.nombrePersona, Departamentos.nombreDepartamento, Estados.nombreEstado
+FROM Personas INNER JOIN Departamentos
+ON Personas.id_departamento = Departamentos.id_departamento INNER JOIN DepartamentosEstados
+ON Departamentos.id_departamento = DepartamentosEstados.id_departamento INNER JOIN Estados
+ON DepartamentosEstados.id_estado = Estados.id_estado
+WHERE Personas.nombrePersona = @nombrePersona;
+END
+
+EXECUTE sp_searchPersona &#39;Ernesto&#39;;
+</code></pre><ul>
+<li>Eliminar un stored procedure</li>
+</ul>
+<pre tabindex="0"><code>DROP sp_nombre;
+</code></pre><h3 id="92-checks">9.2 Checks<a hidden class="anchor" aria-hidden="true" href="#92-checks">#</a></h3>
+<p>El <code>CHECK</code> es una restricción que se utiliza para definir reglas en la inserción de valores de una tabla, asegurando que los valores insertados cumplan ciertas condiciones. Ayuda a mantener la integridad de los datos dentro de la tabla.</p>
+<p><strong>Ejemplos</strong></p>
+<ul>
+<li>Creación de una tabla con checks para que el género sea Masculino o Femenino, que la edad sea igual o mayor a 18, que el sueldo sea mayor o igual a 0 después de agregar el IVA del 16% y que el puesto solo sea en Sistemas, Administrador o Contador, Psicología.</li>
+</ul>
+<pre tabindex="0"><code>CREATE TABLE Personas
+(
+	id_persona INT IDENTITY(1,1) PRIMARY KEY,
+	nombrePersona VARCHAR(100),
+	apellidoP VARCHAR(100),
+	apellidoM VARCHAR(100),
+	genero VARCHAR(100),
+	correo VARCHAR(100),
+	puesto VARCHAR(100),
+	telefono VARCHAR(10),
+	edad INT,
+	sueldo INT,
+	id_departamento INT,
+	FOREIGN KEY (id_departamento) REFERENCES Departamentos(id_departamento),
+	CHECK(genero IN(&#39;Masculino&#39;, &#39;Femenino&#39;)),
+	CHECK(edad &gt;= 18),
+	CHECK(sueldo * 1.16 &gt;= 0),
+	CHECK(puesto IN(&#39;Sistemas&#39;, &#39;Administrador&#39;, &#39;Contador&#39;, &#39;Psicología&#39;))
+);
+
+-- Inserción correcta
+INSERT INTO Personas VALUES
+	(&#39;Ernesto&#39;, &#39;Silva&#39;, &#39;Ramos&#39;, &#39;Masculino&#39;, &#39;ernesto@gmail.com&#39;, &#39;Sistemas&#39;, &#39;2255489090&#39;, 38, 27000, 2);
+
+-- Inserción incorrecta por el puesto
+INSERT INTO Personas VALUES
+	(&#39;Raúl&#39;, &#39;Lopez&#39;, &#39;Ramos&#39;, &#39;Masculino&#39;, &#39;raul@gmail.com&#39;, &#39;Redes&#39;, &#39;2255489090&#39;, 38, 27000, 2);
+</code></pre><ul>
+<li>Tabla donde el estado sea igual a activo y la fecha de salida esté nulo o que el estado sea inactivo y la fecha de salida no esté nulo.</li>
+</ul>
+<pre tabindex="0"><code>CREATE TABLE Empleados
+(
+	id_empleado INT IDENTITY(1,1) PRIMARY KEY,
+	nombre VARCHAR(100) NOT NULL,
+	estado VARCHAR(100),
+	fecha_salida DATE,
+	CHECK(estado = &#39;activo&#39; AND fecha_salida IS NULL OR estado = &#39;inactivo&#39; AND fecha_salida IS NOT NULL)
+);
+</code></pre><ul>
+<li>Tabla donde se verifica que la fecha de nacimiento del empleado sea menor que su fecha de contratación.</li>
+</ul>
+<pre tabindex="0"><code>CREATE TABLE Empleados
+(
+	id_empleado INT IDENTITY(1,1) PRIMARY KEY,
+	nombre VARCHAR(100) NOT NULL,
+	estado VARCHAR(100),
+	fecha_nacimiento DATE,
+	fecha_contratacion DATE,
+	CHECK(fecha_nacimiento &lt; fecha_contratacion)
+);
+</code></pre><ul>
+<li>Tabla que verifica que el cargo del empleado no sea de Gerente o que el salario sea menos de 5000.</li>
+</ul>
+<pre tabindex="0"><code>CREATE TABLE Empleados
+(
+	id_empleado INT IDENTITY(1,1) PRIMARY KEY,
+	nombre VARCHAR(100) NOT NULL,
+	estado VARCHAR(100),
+	cargo VARCHAR(100),
+	salario DECIMAL(10, 2),
+	CHECK(cargo != &#39;Gerente&#39; OR salario &gt; 5000)
+);
+</code></pre><ul>
+<li>Tabla que verifica que el salario total sea mayor o igual al salario base <code>*</code> 0.75</li>
+</ul>
+<pre tabindex="0"><code>CREATE TABLE Empleados
+(
+	id_empleado INT IDENTITY(1,1) PRIMARY KEY,
+	nombre VARCHAR(100) NOT NULL,
+	estado VARCHAR(100),
+	salario_base DECIMAL(10, 2),
+	salario_total DECIMAL(10, 2),
+	CHECK(salario_total &gt;= salario_base * 0.75)
+);
+</code></pre><h3 id="93-triggers">9.3 Triggers<a hidden class="anchor" aria-hidden="true" href="#93-triggers">#</a></h3>
+<p>Un Trigger o disparador es un script que desencadena determinadas acciones de forma automática en las tablas de la base de datos cuando se insertan, modifican y se añaden nuevos datos, lo cual nos ayuda a mejorar la gestión de la BD y aumenta la integridad de la información.</p>
+<p><strong>Ventajas</strong>:</p>
+<ul>
+<li><strong>Generación automática de datos:</strong> Pueden rellenar valores automáticamente al insertar o actualizar registros.</li>
+<li><strong>Integridad referencial:</strong> Ayudan a mantener relaciones correctas entre tablas (como validar claves foráneas).</li>
+<li><strong>Registro de actividad:</strong> Guardan información de quién hizo qué y cuándo, útil para rastrear acciones.</li>
+<li><strong>Auditoría:</strong> Permiten monitorear y registrar cambios importantes en los datos.</li>
+<li><strong>Replicación en tiempo real:</strong> Copian datos automáticamente entre tablas cuando hay cambios.</li>
+<li><strong>Control de seguridad:</strong> Aplican reglas de acceso o validaciones antes de modificar datos.</li>
+<li><strong>Prevención de errores:</strong> Bloquean transacciones que no cumplen ciertas condiciones.</li>
+</ul>
+<h4 id="tipos-de-triggers">Tipos de triggers<a hidden class="anchor" aria-hidden="true" href="#tipos-de-triggers">#</a></h4>
+<ol>
+<li><strong>Disparadores de fila (Row Triggers):</strong> Se activan una vez por cada fila afectada en la tabla.
+<em>Por ejemplo</em>, si una acción modifica 5 filas, el trigger se ejecuta 5 veces, una por cada fila.</li>
+<li><strong>Disparadores de sentencia (Statement Triggers):</strong> Se ejecutan una sola vez por operación, sin importar cuántas filas se vean afectadas.
+<em>Por ejemplo</em>, si se actualizan 100 filas, el trigger se dispara solo una vez.</li>
+</ol>
+<h4 id="tipos-de-errores-en-los-triggers">Tipos de errores en los triggers<a hidden class="anchor" aria-hidden="true" href="#tipos-de-errores-en-los-triggers">#</a></h4>
+<p>RAISERROR se utiliza para generar un mensaje de error desde un procedimiento almacenado, una función o un lote de comandos.</p>
+<pre tabindex="0"><code>RAISERROR (&#39;Mensaje de error&#39;, #, #)
+</code></pre><p>Los números que contiene tienen un significado específico.</p>
+<p><strong>Primer parámetro</strong>: &ldquo;qué tan grave el error&rdquo;</p>
+<ul>
+<li><code>-1</code> Devuelve el valor de gravedad asociado al error.</li>
+<li><code>16</code> Es el nivel de gravedad del error. Este nivel va de 0 a 25, donde 0 es un error grave y 25 es un error menor. El nivel 16 indica un error grave, pero uno que no detiene la ejecución o de la instrucción actual.</li>
+<li><code>10</code> Indica un error informativo que no afecta la ejecución del lote o la instrucción.</li>
+<li><code>20</code> Indica un error crítico que finaliza la conexión de usuario actual.</li>
+<li><code>25</code> Indica un error grave que detiene la ejecución del servidor de SQL Server.</li>
+<li><code>0</code> Permite a los desarrolladores generar mensajes personalizados sin impacto en la ejecución del lote o instrucción.</li>
+</ul>
+<p><strong>Segundo parámetro</strong>: &ldquo;Estado del error&rdquo;</p>
+<ul>
+<li><code>-1</code> Devuelve el valor de gravedad asociado al error.</li>
+<li><code>1</code> El estado es un número de 1 a 127 que proporciona información adicional sobre el error. Puede ser util para distinguir diferentes causas de un mismo error.</li>
+<li><code>Estado 1</code>: Se utiliza para un error de división por cero.</li>
+<li><code>Estado 2</code>: Se utiliza para un error de validación de entrada.</li>
+<li><code>Estado 3</code>: Se utiliza para un error de violación de restricción (por ejemplo, edad no válida).</li>
+<li><code>Estado 4</code>: Se utiliza para un error de clave duplicada al intentar insertar registros en una tabla.</li>
+</ul>
+<p><strong>Ejemplos</strong>:</p>
+<ul>
+<li>Trigger al <strong>tratar de eliminar o alterar</strong> una tabla con <strong>RAISERROR</strong></li>
+</ul>
+<pre tabindex="0"><code>CREATE TRIGGER TriggerSeguridadD1
+ON DATABASE FOR Drop_Table, Alter_Table
+AS
+BEGIN
+RAISERROR (&#39;No se tiene permitido modificar o eliminar una tabla&#39;, -1, -1)
+ROLLBACK TRANSACTION
+END
+
+-- Se prueba el trigger
+DROP TABLE Productos;
+</code></pre><ul>
+<li>Trigger al <strong>insertar y actualizar</strong></li>
+</ul>
+<pre tabindex="0"><code>CREATE TRIGGER actualizarEInsertarDatosDisparador
+ON Estados
+AFTER INSERT, UPDATE
+AS RAISERROR (&#39;Se actualizaron o insertaron los datos&#39;, 16, 10);
+
+-- Se prueba el trigger
+INSERT INTO Estados
+VALUES (&#39;Guadalajara&#39;, 4500000);
+</code></pre><h4 id="ejecución-de-los-triggers">Ejecución de los triggers<a hidden class="anchor" aria-hidden="true" href="#ejecución-de-los-triggers">#</a></h4>
+<p>Los <strong>triggers</strong> se activan automáticamente cuando ocurre una acción en una tabla, como:</p>
+<ul>
+<li><strong>INSERT</strong> (cuando se insertan datos)</li>
+<li><strong>UPDATE</strong> (cuando se actualizan datos)</li>
+<li><strong>DELETE</strong> (cuando se eliminan datos)</li>
+</ul>
+<p>Y pueden ejecutarse en dos momentos:</p>
+<ul>
+<li><strong>BEFORE (antes):</strong> El trigger se ejecuta antes de que se realice la acción (útil para validar o modificar datos antes del cambio).</li>
+<li><strong>AFTER (después):</strong> El trigger se ejecuta después de que se realiza la acción.</li>
+</ul>
+<p><strong>Ejemplos</strong>:</p>
+<ul>
+<li>Trigger al <strong>insertar</strong></li>
+</ul>
+<pre tabindex="0"><code>CREATE TRIGGER insertarDatosDisparador
+ON Estados
+AFTER INSERT
+AS PRINT (&#39;Se insertó un registro a la tabla de Estados.&#39;);
+
+-- Se prueba el trigger
+INSERT INTO Estados
+VALUES (&#39;Yuacatán&#39;, 1500000);
+</code></pre><ul>
+<li>Trigger al <strong>actualizar</strong></li>
+</ul>
+<pre tabindex="0"><code>CREATE TRIGGER actualizarDatosDisparador
+ON Estados
+AFTER UPDATE
+AS PRINT (&#39;Se actualizó un registro de la tabla de Estados.&#39;);
+
+-- Se prueba el trigger
+UPDATE Estados
+SET nombreEstado = &#39;Monterrey&#39;, noHabitantes = 5800000
+WHERE id_estado = 4;
+</code></pre><ul>
+<li>Trigger al <strong>eliminar</strong></li>
+</ul>
+<pre tabindex="0"><code>CREATE TRIGGER eliminarDatosDisparador
+ON Estados
+AFTER DELETE
+AS PRINT (&#39;Se eliminó un registro de la tabla de Estados.&#39;);
+
+-- Se prueba el trigger
+DELETE FROM Estados
+WHERE id_estado = 2;
+</code></pre><ul>
+<li>Trigger que <strong>reemplaza</strong> el nombre del estado por la palabra &rsquo;new'</li>
+</ul>
+<pre tabindex="0"><code>CREATE TRIGGER triggerAfterInsertar
+ON Estados
+AFTER INSERT
+AS
+BEGIN
+UPDATE Estados
+SET nombreEstado = &#39;New&#39;
+WHERE id_estado IN (SELECT id_estado FROM INSERTED)
+END
+
+-- Se prueba el trigger
+INSERT INTO Estados
+VALUES (&#39;Guerrero&#39;, 4500000);
+</code></pre><ul>
+<li>Trigger de <strong>Insert</strong> de paletas con <strong>variables</strong></li>
+</ul>
+<pre tabindex="0"><code>CREATE TRIGGER tr_InsertarPaleta
+ON Paletas
+AFTER INSERT
+AS
+BEGIN
+    DECLARE @nombre VARCHAR(100);
+    SELECT @nombre = nombrePaleta FROM INSERTED;
+
+    PRINT &#39;Se ha insertado una nueva paleta: &#39; + @nombre;
+END;
+
+-- Se prueba el trigger
+INSERT INTO Paletas VALUES
+(&#39;Paleta Chocomil&#39;, &#39;50&#39;, 1.50, 0.80, 1);
+</code></pre><ul>
+<li><strong>Consultar</strong> los trigger de una DB</li>
+</ul>
+<pre tabindex="0"><code>USE Disparadores
+SELECT OBJECT_NAME(parent_id)
+AS Parent_Object_Name, *
+FROM sys.triggers
+</code></pre><ul>
+<li><strong>Borrar</strong> un trigger</li>
+</ul>
+<pre tabindex="0"><code>DROP TRIGGER IF EXISTS nombreTrigger;
+</code></pre><h2 id="x-operaciones-avanzadas">X. Operaciones avanzadas<a hidden class="anchor" aria-hidden="true" href="#x-operaciones-avanzadas">#</a></h2>
+<h3 id="101-procedimientos-almacenados-avanzados">10.1 Procedimientos almacenados avanzados<a hidden class="anchor" aria-hidden="true" href="#101-procedimientos-almacenados-avanzados">#</a></h3>
+<p>Se pueden declarar variables que almacenen resultados de consultas y permitan realizar operaciones. Así mismo se pueden generar cambios en base a cierta lógica o notificar.</p>
+<p><strong>Proceso</strong></p>
+<ol>
+<li>Se crea el PA y se le da un nombre.</li>
+<li>Se colocan los atributos de las tablas relevantes para el proceso.</li>
+<li>Se declaran las variables que vamos a usar (No existen en las tablas).</li>
+<li>Se realiza la selección para invocar los datos necesarios. Asignar esto a una variable.</li>
+<li>Se realiza la lógica requerida con las variables declaradas.</li>
+<li>Se ejecuta.</li>
+</ol>
+<p><strong>Ejemplos</strong></p>
+<p>Procedimiento para verificar el precio de los productos, si es mayor a 2000 aplicar descuento del 12 %, en caso contrario 2% y también recibir como parámetro la cantidad y regresar el monto total a pagar con descuento</p>
+<pre tabindex="0"><code>CREATE PROCEDURE SP_TotalConDescuento
+(
+    @producto_id INT,
+    @cantidad INT
+)
+AS
+BEGIN
+
+	DECLARE @precio DECIMAL(10,2);
+	DECLARE @descuento DECIMAL(10,2);
+	DECLARE @total DECIMAL(10,2);
+	
+	SELECT @precio = precio
+	FROM Productos
+	WHERE id_producto = @producto_id;
+	
+	IF @precio &gt; 2000
+		SET @descuento = 0.88; 
+	ELSE
+		SET @descuento = 0.98;  
+		SET @total = (@precio * @descuento) * @cantidad;
+		PRINT &#39;El total a pagar con descuento es: &#39; + CAST(@total AS VARCHAR(20));
+END
+
+EXECUTE SP_TotalConDescuento 1, 5;
+</code></pre><ul>
+<li>Validar la existencia de las paletas y aquellas con cantidad mayor a 100 descuento del 3%. Se busca por id.</li>
+</ul>
+<pre tabindex="0"><code>CREATE PROCEDURE SP_DescuentoPaletas
+(
+    @id_paleta INT
+)
+AS
+BEGIN
+
+	DECLARE @cantidad INT;
+	DECLARE @precio DECIMAL(10,2);
+	DECLARE @descuento DECIMAL(10,2) = 0.97;
+	DECLARE @total DECIMAL(10,2);
+
+	SELECT @cantidad = cantidad, @precio = precio
+	FROM Paletas
+	WHERE id_paleta = @id_paleta;
+
+	IF @cantidad &gt; 100
+		BEGIN
+			SET @total = (@precio * @descuento);
+
+			UPDATE Paletas
+			SET precio = @total
+			WHERE id_paleta = @id_paleta;
+
+			PRINT &#39;Se ha aplicado un descuento al precio original del 3%: &#39; + CAST(@total AS VARCHAR(20));
+		END
+	ELSE
+		BEGIN
+			PRINT &#39;El precio actual se mantiene: &#39; + CAST(@precio AS VARCHAR(20));
+		END
+
+END
+
+EXECUTE SP_DescuentoPaletas 1;
+</code></pre><ul>
+<li><strong>Actualización</strong> del precio de los que son menores a 50 pesos y actualizarlo con la suma de 20 pesos más. Afecta a todos los datos.</li>
+</ul>
+<pre tabindex="0"><code>CREATE PROCEDURE SP_AumentarPrecioPaletas
+AS
+BEGIN
+
+	DECLARE @precio DECIMAL(10,2);
+	DECLARE @totalDescuento DECIMAL(10,2);
+	
+	SELECT @precio = precio
+	FROM Paletas;
+
+	IF @precio &lt; 50
+		BEGIN
+			SET @totalDescuento = (@precio + 50);
+
+			UPDATE Paletas
+			SET precio = @totalDescuento;
+
+			PRINT &#39;Precios actualizados: &#39; + CAST(@precio AS VARCHAR(20)) + &#39; -&gt; &#39; + CAST(@totalDescuento AS VARCHAR(20)) ;
+		END
+	ELSE
+		BEGIN
+			PRINT &#39;Los precios actuales se mantienen: &#39; + CAST(@precio AS VARCHAR(20));
+		END
+END
+
+EXEC SP_AumentarPrecioPaletas;
+</code></pre><h2 id="xi-configuraciones-de-sql-server">XI. Configuraciones de SQL Server<a hidden class="anchor" aria-hidden="true" href="#xi-configuraciones-de-sql-server">#</a></h2>
+<h3 id="111-creación-de-diagramas">11.1 Creación de diagramas<a hidden class="anchor" aria-hidden="true" href="#111-creación-de-diagramas">#</a></h3>
+<ol>
+<li>Crear la base de datos</li>
+<li>Buscar la DB dentro de la lista de la carpeta databases en el lado izquierdo y expandir</li>
+<li>Expandir la carpeta de database diagram y aceptar el mensaje</li>
+<li>click derecho en esa misma carpeta y seleccionar añadir</li>
+<li>Seleccionar todas las tablas al mismo tiempo y seleccionar add</li>
+</ol>
+<h3 id="112-backups">11.2 Backups<a hidden class="anchor" aria-hidden="true" href="#112-backups">#</a></h3>
+<p>En SQL, los respaldos son una parte esencial, ya que permiten recuperar los datos en caso de fallos o pérdidas.</p>
+<p>Existen 2 formas de generar un archivo de backup:</p>
+<p>Mediante el gestor:</p>
+<ol>
+<li>Crear la base de datos</li>
+<li>Buscar la DB dentro de la lista de la carpeta databases en el lado izquierdo</li>
+<li>Click derecho en la base de datos, Task, Backup</li>
+<li>Configurar el tipo los componentes y el lugar donde se guardará, etc.</li>
+</ol>
+<p>Mediante un comando:</p>
+<pre tabindex="0"><code>BACKUP DATABASE PaleteriaLaMichoacana TO DISK = &#39;C:\empresa.bak&#39;;
+</code></pre><h3 id="113-creación-de-usuarios-y-permisos">11.3 Creación de usuarios y permisos<a hidden class="anchor" aria-hidden="true" href="#113-creación-de-usuarios-y-permisos">#</a></h3>
+<p>Dentro de SQL es posible crear usuarios y asignarle permisos según sea necesario.</p>
+<p><strong>Ejemplo</strong>:</p>
+<ul>
+<li>Creación de dos usuarios <code>uLectura</code> y <code>uEscritura</code> con diferentes contraseñas y permisos.</li>
+</ul>
+<pre tabindex="0"><code>CREATE LOGIN uLectura WITH PASSWORD = &#39;Segura123&#39;;
+
+USE PaleteriaLaMichoacana;
+
+CREATE USER uLectura FOR LOGIN uLectura;
+
+GRANT SELECT TO uLectura;
+DENY INSERT, UPDATE, DELETE TO uLectura;
+
+EXEC sp_addrolemember &#39;db_datareader&#39;, &#39;uLectura&#39;;
+
+
+CREATE LOGIN uEscritura WITH PASSWORD = &#39;OtraSegura123&#39;;
+
+USE PaleteriaLaMichoacana;
+
+CREATE USER uEscritura FOR LOGIN uEscritura;
+
+GRANT SELECT, INSERT, UPDATE, DELETE TO uEscritura;
+
+EXEC sp_addrolemember &#39;db_datawriter&#39;, &#39;uEscritura&#39;;
+</code></pre><p>Para utilizar los usuarios en SQL Server Management Studio 20:</p>
+<ol>
+<li>Crear el usuario y ejecutar los comandos en la base de datos</li>
+<li>Click derecho nombre de MSI SQLEXPRESS en la barra de la izquierda, propiedades, seguridad y seleccionar SQL Server</li>
+<li>En servicios de windows, buscar SQL Server (SQLEXPRESS) y reiniciar el servicio</li>
+<li>Cambiar la autenticación al abrir SQL poner SQL SERVER Auth</li>
+<li>Colocar login y password del usuario deseado</li>
+<li>Seleccionar opcional</li>
+<li>Entrar. Si hacemos uso de la BD podremos manipularla según se configuró el usuario.</li>
+</ol>
+<h3 id="114-consideraciones-de-una-bd-en-producción">11.4 Consideraciones de una BD en producción<a hidden class="anchor" aria-hidden="true" href="#114-consideraciones-de-una-bd-en-producción">#</a></h3>
+<ol>
+<li>Cada cuanto se respalda, a qué hora</li>
+<li>Autenticación</li>
+<li>Servidor en la nube o físico, cuidar mucho los accesos</li>
+</ol>
+<hr>
+<h2 id="preguntas-variadas">Preguntas variadas:<a hidden class="anchor" aria-hidden="true" href="#preguntas-variadas">#</a></h2>
+<p><strong>¿Qué es una función en SQL?</strong>
+Es un bloque de código que realiza una tarea específica y <strong>devuelve un resultado</strong>.</p>
+<p><strong>¿Qué es la cardinalidad?</strong>
+Es la <strong>cantidad de relaciones</strong> que puede haber entre las filas de dos tablas.<br>
+Por ejemplo:</p>
+<ul>
+<li>Uno a uno</li>
+<li>Uno a muchos</li>
+<li>Muchos a muchos</li>
+</ul>
+<p><strong>¿Qué es una entidad?</strong>
+Es un <strong>objeto o concepto real</strong> del que se desea guardar información en una base de datos.<br>
+Ejemplo: un cliente, un producto o un empleado.</p>
+<p><strong>¿Qué hace el <code>SET</code> en SQL?</strong>
+Se usa para <strong>asignar un valor a una variable</strong> o <strong>modificar valores en una tabla</strong>.</p>
+<p>Ejemplo:</p>
+<pre tabindex="0"><code>SET @nombre = &#39;Juan&#39;;
+</code></pre><p><strong>¿Para qué sirve el backup?</strong>
+Sirve para <strong>hacer una copia de seguridad</strong> de la base de datos, que permite <strong>restaurarla en caso de pérdida, daño o error</strong>.</p>
+<p><strong>¿Qué es un trigger y qué aspectos de seguridad tiene como ventaja?</strong></p>
+<p>Un <strong>trigger</strong> es un bloque de código que se ejecuta automáticamente cuando ocurre una acción como <code>INSERT</code>, <code>UPDATE</code> o <code>DELETE</code>.<br>
+<strong>Ventajas en seguridad:</strong></p>
+<ul>
+<li>Controla o bloquea cambios indebidos.</li>
+<li>Impone reglas automáticas.</li>
+<li>Lleva un registro de quién hizo qué (auditoría).</li>
+</ul>
+<p><strong>Diferencia entre <code>CROSS JOIN</code> y <code>JOIN</code> (INNER JOIN):</strong></p>
+<ul>
+<li><code>CROSS JOIN</code>: combina <strong>todas las filas de una tabla con todas las de otra</strong> (producto cartesiano).<br>
+Ejemplo: 3 filas × 2 filas = 6 combinaciones.</li>
+<li><code>INNER JOIN</code>: une las tablas <strong>solo donde hay coincidencia en una columna común</strong>.<br>
+Es más eficiente y común que el <code>CROSS JOIN</code>.</li>
+</ul>
+<p><strong>¿Para qué sirve el <code>CAST</code> en SQL?</strong></p>
+<p>Sirve para <strong>convertir un valor de un tipo de dato a otro</strong>.
+Ejemplo: convertir un número a texto o una fecha a string.</p>
+<pre tabindex="0"><code>SELECT CAST(123 AS VARCHAR);
+</code></pre><hr>
+<h2 id="-más-información">/ Más Información<a hidden class="anchor" aria-hidden="true" href="#-más-información">#</a></h2>
+<h3 id="lenguajes-de-programación">Lenguajes de programación<a hidden class="anchor" aria-hidden="true" href="#lenguajes-de-programación">#</a></h3>
+<ul>
+<li><code>[[C Sharp]]</code></li>
+<li><code>[[Java]]</code></li>
+<li><code>[[JavaScript]]</code></li>
+<li><code>[[Python]]</code></li>
+</ul>
+<hr>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/programacion/">Programacion</a></li>
+      <li><a href="http://localhost:1313/tags/enciclopedia/">Enciclopedia</a></li>
+      <li><a href="http://localhost:1313/tags/post/">Post</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="http://localhost:1313/">oscarzt20</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>
