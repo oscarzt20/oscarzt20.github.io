@@ -20,10 +20,10 @@ CuidadoAlimenticio: None
 ## Ingredientes
 
 - 1kg de harina
-- 45gr de levadura viva (en cubo) o 24gr de levadura en polvo.
+- 45gr de levadura viva (en cubo) o 24gr de levadura en polvo
 - 250gr de azúcar
-- 220gr de mantequilla sin sal a temperatura ambiente.
-- 50gr de manteca
+- 220gr de mantequilla sin sal a temperatura ambiente
+- 50gr de manteca vegetal
 - 8gr de sal
 - 2 1/2 huevos chicos
 - 1/2 cu. de extracto de vainilla
