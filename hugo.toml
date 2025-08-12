@@ -20,7 +20,7 @@ theme = 'PaperMod'
 
   [params.homeInfoParams]
     Title = "oscarzt20 | Blog & Notas"
-    Content = "Soy Oscar, desarrollador. En este blog comparto lo que hago, lo que aprendo y lo que me inspira, desde proyectos personales hasta apuntes técnicos o pasatiempos que me ayudan a seguir creando."
+    Content = "Soy Oscar, desarrollador. En este blog comparto lo que hago, lo que aprendo y lo que me inspira, desde proyectos personales hasta apuntes técnicos o pasatiempos."
 
   [[params.socialIcons]]
     name = "github"
@@ -41,21 +41,13 @@ theme = 'PaperMod'
     weight = 1
 
   [[menu.main]]
-    name = "Recursos / Guías"
-    url = "/recursos/"
+    identifier = "tags"
+    name = "Temas"
+    url = "/tags/"
     weight = 2
 
   [[menu.main]]
-    name = "Estudios"
-    url = "/apuntes/"
+    identifier = "archives"
+    name = "Archivo"
+    url = "/archives/"
     weight = 3
-
-  [[menu.main]]
-    name = "Entretenimiento"
-    url = "/pasatiempos/"
-    weight = 4
-
-  [[menu.main]]
-    name = "Recetas"
-    url = "/recetas/"
-    weight = 5

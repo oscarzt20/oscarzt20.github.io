@@ -8,6 +8,77 @@
     <language>es-mx</language>
     <atom:link href="http://localhost:1313/recetas/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Donas</title>
+      <link>http://localhost:1313/recetas/donas/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/recetas/donas/</guid>
+      <description>&lt;hr&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;Tiempo de Preparación (hrs)&lt;/th&gt;
+          &lt;th&gt;Porciones Aprox.&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;6&lt;/td&gt;
+          &lt;td&gt;28 de 7cm&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;ingredientes&#34;&gt;Ingredientes&lt;/h2&gt;
+&lt;h4 id=&#34;masa&#34;&gt;Masa&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;350ml de leche entera&lt;/li&gt;
+&lt;li&gt;8gr de levadura en polvo&lt;/li&gt;
+&lt;li&gt;68gr de azúcar&lt;/li&gt;
+&lt;li&gt;2u huevos y 1 yema (huevo chico o medio)&lt;/li&gt;
+&lt;li&gt;700gr de harina&lt;/li&gt;
+&lt;li&gt;6gr de sal&lt;/li&gt;
+&lt;li&gt;115gr de mantequilla sin sal&lt;/li&gt;
+&lt;li&gt;1.5 - 2L de Aceite vegetal para freír&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;glaseado-simple&#34;&gt;Glaseado simple&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;641gr de azúcar glass&lt;/li&gt;
+&lt;li&gt;100gr de agua caliente&lt;/li&gt;
+&lt;li&gt;1 cucharada de extracto de vainilla&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;preparación&#34;&gt;Preparación&lt;/h2&gt;
+&lt;h3 id=&#34;masa-1&#34;&gt;Masa&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;En un tazón grande (de preferencia para batidora), agregar la leche tibia junto con la levadura y la azúcar.&lt;/li&gt;
+&lt;li&gt;En un recipiente aparte, agregar el huevo y mezclar levemente, hasta incorporado.&lt;/li&gt;
+&lt;li&gt;En otro recipiente apartar la harina y agregar la sal, mezclar un poco.&lt;/li&gt;
+&lt;li&gt;Agregar la mezcla de huevo en el tazón de la levadura y comenzar a batir (con aspas de masa) a velocidad media.&lt;/li&gt;
+&lt;li&gt;Agregar poco a poco (de tres en tres cucharadas) la mezcla de harina. Una vez incluida por completo, bajar la velocidad a bajo, y ayudar a amasar con una espátula por 1 minuto.&lt;/li&gt;
+&lt;li&gt;Agregar la mantequilla y mezclar por 5 minutos más o hasta que la masa se comience a despegar de la pared del tazón.&lt;/li&gt;
+&lt;li&gt;Amasar un poco a mano y pasar a otro tazón aceitado o en una superficie plana aceitada, y cubrir con plástico. Dejar a temperatura ambiente por 1 hora y media o hasta que duplique su tamaño.&lt;/li&gt;
+&lt;li&gt;Aplanar la masa a mano levemente para sacar el aire y pasar a una superficie plana con harina. Agregar un poco más de harina encima.&lt;/li&gt;
+&lt;li&gt;Con un rodillo, aplanar levemente la masa a la forma de un rectángulo, con un grosor de 1.6cm.&lt;/li&gt;
+&lt;li&gt;Recortar la figura de la dona con un molde. Juntar los pedazos restantes, amasar levemente hasta incorporado, dejar reposar unos minutos y volver a crear las formas de las donas.&lt;/li&gt;
+&lt;li&gt;Tapar con plástico y dejar reposar por 30 minutos o hasta esponjado.&lt;/li&gt;
+&lt;li&gt;En una olla, agregar el aceite a un poco más de la mitad de su profundidad y precalentar a 175°C.&lt;/li&gt;
+&lt;li&gt;Freír por 45s - 1min. por lado.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;glaseado-simple-1&#34;&gt;Glaseado simple&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;En un tazón, agrega la azúcar e incorporar poco a poco el agua, ajustando la cantidad.&lt;/li&gt;
+&lt;li&gt;Agregar la vainilla y terminar de mezclar.&lt;/li&gt;
+&lt;li&gt;Sumergir las donas y dejar secar.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;notas&#34;&gt;Notas&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;anexos&#34;&gt;Anexos&lt;/h2&gt;
+&lt;hr&gt;</description>
+    </item>
+    <item>
       <title>Pan de Muerto - Hojaldras Tradicionales</title>
       <link>http://localhost:1313/recetas/pan-de-muerto---hojaldras-tradicionales/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -48,7 +119,7 @@
 &lt;li&gt;En un recipiente colocar y revolver levemente 260gr de agua a temperatura ambiente, la levadura, 5gr de azúcar y 5gr de harina. Dejar reposar por 1 hora o hasta que duplique su tamaño.&lt;/li&gt;
 &lt;li&gt;Hacer un volcán con 400gr de harina. Dentro, verter la mezcla de levadura, e integrarla con la harina. Dejar reposar, preferentemente dentro de un recipiente tapado con un trapo, por 1 hora o hasta duplicado su tamaño.&lt;/li&gt;
 &lt;li&gt;En una batidora, colocar la mantequilla y manteca con la azúcar restante y batir con aspas normales.&lt;/li&gt;
-&lt;li&gt;Agregar a la batidora la harina restante con la sal (incorporar harina y sal primero), color, vainilla, canela y &lt;em&gt;al final&lt;/em&gt; los huevos, y seguir batiendo hasta que se incorpore levemente. Cambiar a aspas para masa y terminar de incorporar los ingredientes. Dejar reposar hasta que la primera masa este lista.&lt;/li&gt;
+&lt;li&gt;Agregar a la batidora la harina restante con la sal (incorporar harina y sal primero), color, vainilla, canela y &lt;em&gt;al final&lt;/em&gt; el huevo, y seguir batiendo hasta que se incorpore levemente. Cambiar a aspas para masa y terminar de incorporar los ingredientes. Dejar reposar hasta que la primera masa este lista.&lt;/li&gt;
 &lt;li&gt;Una vez habiendo reposado, mezclar a mano las dos masas hasta integrarse y seguir por 1 hora, dando azotes contra la mesa ocasionales. Dejar reposar por 15min.&lt;/li&gt;
 &lt;li&gt;Precalentar el horno a 380-400ºF.&lt;/li&gt;
 &lt;li&gt;Pesar porciones de 100gr más las canillas y bolitas. Decorar al gusto con pasas, nueces, polvo de colorado, etc.&lt;/li&gt;

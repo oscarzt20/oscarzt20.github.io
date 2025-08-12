@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>Bases de Datos VI - Estructura Básica de SQL | oscarzt20</title>
+<meta name="keywords" content="enciclopedia, post">
+<meta name="description" content="
+I. Estructura y configuración inicial en SQL Server
+1.1 Operaciones básicas de SQL
+
+CREATE DATABASE: Crea una nueva base de datos
+USE: Selecciona la base de datos en la que deseas trabajar. Después de ejecutar este comando, todas las operaciones de SQL se aplicarán a la base de datos seleccionada.
+DROP DATABASE Elimina por completo una base de datos.
+CREATE TABLE: Crea una nueva tabla. Al definirla, se especifican las columnas, tipos de datos y restricciones para almacenar información estructurada.
+DROP TABLE: Elimina la tabla que se seleccione
+INSERT: Permite agregar una nueva fila o registro en una tabla. Se puede especificar una lista de columnas y valores correspondientes.
+UPDATE: Modifica los datos de las filas en una tabla. Permite actualizar uno o más valores en registros específicos utilizando una cláusula WHERE para limitar las filas afectadas.
+SELECT: Corresponde a la operación de proyección del álgebra relacional, se utiliza para listar los atributos de una consulta.
+FROM: Indica la tabla o tablas desde las cuales se extraerán los datos.
+WHERE: Filtra los registros en función de una condición dada, similar a la operación de selección en el álgebra relacional.
+INNER JOIN &hellip; ON: Combina filas de dos o más tablas en función de una condición de igualdad especificada en la cláusula ON. Solo devuelve las filas donde existe una coincidencia en ambas tablas.
+
+1.2 Creación de los elementos iniciales
+
+Crear y usar la base de datos
+
+CREATE DATABASE NombreDB;
+USE NombreDB;
+
+Crear tablas. Aquellas que no tienen llave foránea van primero.
+
+CREATE TABLE Departamentos
+(
+	id_departamento INT IDENTITY(1,1) PRIMARY KEY,
+	atributo VARCHAR(50),
+	atributo2 DATE,
+	atributo3 FLOAT(9),
+	atributo4 INT
+);
+
+CREATE TABLE Empleados
+(
+	id_empleado INT IDENTITY(1,1) PRIMARY KEY,
+	atributo VARCHAR(50),
+	atributo2 DATE,
+	atributo3 FLOAT(9),
+	atributo4 INT,
+	id_departamento INT,
+	FOREIGN KEY (id_departamento) REFERENCES Departamentos(id_departamento)
+);
+1.3  Manipulaciones de datos en tablas
+INSERT
+Insertar valores.">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/apuntes/bases-de-datos-vi---estructura-b%C3%A1sica-de-sql/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.81c898f5a2238b061825acde445de1b10e9825286bc566504cbb22ca1b9d1f73.css" integrity="sha256-gciY9aIjiwYYJazeRF3hsQ6YJShrxWZQTLsiyhudH3M=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/apuntes/bases-de-datos-vi---estructura-b%C3%A1sica-de-sql/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="oscarzt20 (Alt + H)">oscarzt20</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/proyectos/" title="Portafolio">
+                    <span>Portafolio</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/tags/" title="Temas">
+                    <span>Temas</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/archives/" title="Archivo">
+                    <span>Archivo</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/apuntes/">Apuntes</a></div>
+    <h1 class="post-title entry-hint-parent">
+      Bases de Datos VI - Estructura Básica de SQL
+    </h1>
+    <div class="post-meta">
+
+</div>
+  </header> <div class="toc">
+    <details  open>
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#i-estructura-y-configuraci%c3%b3n-inicial-en-sql-server" aria-label="I. Estructura y configuración inicial en SQL Server">I. Estructura y configuración inicial en SQL Server</a><ul>
+                        
+                <li>
+                    <a href="#11-operaciones-b%c3%a1sicas-de-sql" aria-label="1.1 Operaciones básicas de SQL">1.1 Operaciones básicas de SQL</a></li>
+                <li>
+                    <a href="#12-creaci%c3%b3n-de-los-elementos-iniciales" aria-label="1.2 Creación de los elementos iniciales">1.2 Creación de los elementos iniciales</a></li>
+                <li>
+                    <a href="#13--manipulaciones-de-datos-en-tablas" aria-label="1.3  Manipulaciones de datos en tablas">1.3  Manipulaciones de datos en tablas</a><ul>
+                        
+                <li>
+                    <a href="#insert" aria-label="INSERT">INSERT</a></li>
+                <li>
+                    <a href="#update" aria-label="UPDATE">UPDATE</a></li>
+                <li>
+                    <a href="#delete" aria-label="DELETE">DELETE</a></li>
+                <li>
+                    <a href="#drop" aria-label="DROP">DROP</a></li></ul>
+                </li>
+                <li>
+                    <a href="#14-notas-generales-de-sql-server" aria-label="1.4 Notas generales de SQL Server">1.4 Notas generales de SQL Server</a></li></ul>
+                </li>
+                <li>
+                    <a href="#-m%c3%a1s-informaci%c3%b3n" aria-label="/ Más Información">/ Más Información</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><hr>
+<h2 id="i-estructura-y-configuración-inicial-en-sql-server">I. Estructura y configuración inicial en SQL Server<a hidden class="anchor" aria-hidden="true" href="#i-estructura-y-configuración-inicial-en-sql-server">#</a></h2>
+<h3 id="11-operaciones-básicas-de-sql">1.1 Operaciones básicas de SQL<a hidden class="anchor" aria-hidden="true" href="#11-operaciones-básicas-de-sql">#</a></h3>
+<ul>
+<li><strong>CREATE DATABASE</strong>: Crea una nueva base de datos</li>
+<li><strong>USE</strong>: Selecciona la base de datos en la que deseas trabajar. Después de ejecutar este comando, todas las operaciones de SQL se aplicarán a la base de datos seleccionada.</li>
+<li><strong>DROP DATABASE</strong> Elimina por completo una base de datos.</li>
+<li><strong>CREATE TABLE</strong>: Crea una nueva tabla. Al definirla, se especifican las columnas, tipos de datos y restricciones para almacenar información estructurada.</li>
+<li><strong>DROP TABLE</strong>: Elimina la tabla que se seleccione</li>
+<li><strong>INSERT</strong>: Permite agregar una nueva fila o registro en una tabla. Se puede especificar una lista de columnas y valores correspondientes.</li>
+<li><strong>UPDATE</strong>: Modifica los datos de las filas en una tabla. Permite actualizar uno o más valores en registros específicos utilizando una cláusula <code>WHERE</code> para limitar las filas afectadas.</li>
+<li><strong>SELECT</strong>: Corresponde a la operación de proyección del álgebra relacional, se utiliza para listar los atributos de una consulta.</li>
+<li><strong>FROM</strong>: Indica la tabla o tablas desde las cuales se extraerán los datos.</li>
+<li><strong>WHERE</strong>: Filtra los registros en función de una condición dada, similar a la operación de selección en el álgebra relacional.</li>
+<li><strong>INNER JOIN &hellip; ON</strong>: Combina filas de dos o más tablas en función de una condición de igualdad especificada en la cláusula ON. Solo devuelve las filas donde existe una coincidencia en ambas tablas.</li>
+</ul>
+<h3 id="12-creación-de-los-elementos-iniciales">1.2 Creación de los elementos iniciales<a hidden class="anchor" aria-hidden="true" href="#12-creación-de-los-elementos-iniciales">#</a></h3>
+<ol>
+<li><strong>Crear y usar la base de datos</strong></li>
+</ol>
+<pre tabindex="0"><code>CREATE DATABASE NombreDB;
+USE NombreDB;
+</code></pre><ol start="2">
+<li><strong>Crear tablas</strong>. Aquellas que no tienen llave foránea van primero.</li>
+</ol>
+<pre tabindex="0"><code>CREATE TABLE Departamentos
+(
+	id_departamento INT IDENTITY(1,1) PRIMARY KEY,
+	atributo VARCHAR(50),
+	atributo2 DATE,
+	atributo3 FLOAT(9),
+	atributo4 INT
+);
+
+CREATE TABLE Empleados
+(
+	id_empleado INT IDENTITY(1,1) PRIMARY KEY,
+	atributo VARCHAR(50),
+	atributo2 DATE,
+	atributo3 FLOAT(9),
+	atributo4 INT,
+	id_departamento INT,
+	FOREIGN KEY (id_departamento) REFERENCES Departamentos(id_departamento)
+);
+</code></pre><h3 id="13--manipulaciones-de-datos-en-tablas">1.3  Manipulaciones de datos en tablas<a hidden class="anchor" aria-hidden="true" href="#13--manipulaciones-de-datos-en-tablas">#</a></h3>
+<h4 id="insert">INSERT<a hidden class="anchor" aria-hidden="true" href="#insert">#</a></h4>
+<p>Insertar valores.</p>
+<p><strong>Ejemplo</strong></p>
+<pre tabindex="0"><code>INSERT INTO Departamentos
+VALUES
+(&#39;Sistemas&#39;, 2025-01-15, 50.2, 30),
+(&#39;RH&#39;, 2025-03-09, 50.2, 30);
+
+INSERT INTO Empleados
+VALUES
+(&#39;Ernesto&#39;, 2025-01-15, 25.5, 10, 1),
+(&#39;Laura&#39;, 2025-03-09, 25.5, 10, 2);
+</code></pre><h4 id="update">UPDATE<a hidden class="anchor" aria-hidden="true" href="#update">#</a></h4>
+<p>Actualizar valores. <strong>No omitir</strong> <code>WHERE</code> ya que sino se actualizarán todos los registros de la tabla.</p>
+<p><strong>Ejemplo</strong></p>
+<pre tabindex="0"><code>UPDATE Productos  
+SET nombreProducto = &#39;Frijol&#39;, precio = 19.99
+WHERE id_producto = 3;
+</code></pre><h4 id="delete">DELETE<a hidden class="anchor" aria-hidden="true" href="#delete">#</a></h4>
+<p>Borra valores. <strong>No omitir</strong> <code>WHERE</code> ya que sino se eliminarán todos los registros de la tabla.</p>
+<p><strong>Ejemplo</strong></p>
+<pre tabindex="0"><code>DELETE FROM Productos  
+WHERE idProducto = 5;
+</code></pre><h4 id="drop">DROP<a hidden class="anchor" aria-hidden="true" href="#drop">#</a></h4>
+<p>Eliminar una tabla. No se podrá eliminar si hay otra tabla que dependa de esta.</p>
+<p><strong>Ejemplo</strong></p>
+<pre tabindex="0"><code>DROP TABLE Productos;
+</code></pre><p>Eliminar una base de datos. No se puede eliminar la base de datos si está en uso, por lo que primero se debe usar otra tabla antes.</p>
+<p><strong>Ejemplo</strong></p>
+<pre tabindex="0"><code>USE master;
+
+DROP DATABASE NombreBD;
+</code></pre><h3 id="14-notas-generales-de-sql-server">1.4 Notas generales de SQL Server<a hidden class="anchor" aria-hidden="true" href="#14-notas-generales-de-sql-server">#</a></h3>
+<ul>
+<li>Declarar cada FK como una variable más</li>
+<li>Ejecutar cada tabla, primero escribir y ejecutar las tablas de las que otras dependen</li>
+<li>Cada insert debe seguir la jerarquía con la que se crearon las tablas</li>
+<li>Si se puso una numeración automática (IDENTITY(1,1)) en el id de una tabla, cuando se inserten datos no se colocan los id. Si es foránea si se pone, para saber con quién se conecta.</li>
+</ul>
+<hr>
+<h2 id="-más-información">/ Más Información<a hidden class="anchor" aria-hidden="true" href="#-más-información">#</a></h2>
+<ul>
+<li><a href="/apuntes/bases-de-datos-i---conceptos-b%C3%A1sicos/">Bases de Datos I - Conceptos Básicos</a></li>
+<li><a href="/apuntes/bases-de-datos-ii---diagramas-y-documentaci%C3%B3n/">Bases de Datos II - Diagramas y Documentación</a></li>
+<li><a href="/apuntes/bases-de-datos-iii---reglas-de-normalizaci%C3%B3n/">Bases de Datos III - Reglas de Normalización</a></li>
+<li><a href="/apuntes/bases-de-datos-iv---%C3%A1lgebra-relacional/">Bases de Datos IV - Álgebra Relacional</a></li>
+<li><a href="/apuntes/bases-de-datos-v---microsoft-sql/">Bases de Datos V - Microsoft SQL</a></li>
+<li><a href="/apuntes/bases-de-datos-vi---estructura-b%C3%A1sica-de-sql/">Bases de Datos VI - Estructura Básica de SQL</a></li>
+<li><a href="/apuntes/bases-de-datos-vii---consultas-de-datos/">Bases de Datos VII - Consultas de Datos</a></li>
+<li><a href="/apuntes/bases-de-datos-viii---automatizaci%C3%B3n-y-seguridad/">Bases de Datos VIII - Automatización y Seguridad</a></li>
+<li><a href="/apuntes/bases-de-datos-ix---operaciones-avanzadas-de-sql/">Bases de Datos IX - Operaciones Avanzadas de SQL</a></li>
+</ul>
+<hr>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/enciclopedia/">Enciclopedia</a></li>
+      <li><a href="http://localhost:1313/tags/post/">Post</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="http://localhost:1313/">oscarzt20</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

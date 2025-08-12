@@ -1,8 +1,9 @@
 ---
 Title: Bases de Datos I - Conceptos Básicos
-Fecha: 2025-08-08
+Date: 2025-08-08
 Hora: 02:10
 tags: ['enciclopedia', 'post']
+categories: Bases de Datos
 ---
 
 ---

@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>Programación I - Algoritmos | oscarzt20</title>
+<meta name="keywords" content="enciclopedia, post">
+<meta name="description" content="
+La programación es el proceso de escribir instrucciones para que una computadora realice tareas específicas. Antes de empezar a programar, es importante conocer los fundamentos necesarios para entender cómo funciona la programación.
+Para programar, los desarrolladores crean algoritmos, que son secuencias ordenadas de pasos que resuelven un problema o llevan a cabo una tarea.
+I. Características de los algoritmos
+
+Finito: Un algoritmo debe terminar después de un número determinado de pasos. Se evitan los bucles sin fin.
+Preciso: No debe haber interpretaciones subjetivas sobre lo que se debe hacer en cada instrucción.
+Con inicio y final/es: Debe tener un inicio y puede contener más de un final.
+Eficaz en la solución del problema: El algoritmo debe resolver el problema de manera correcta y óptima, evitando pasos innecesarios o ineficientes.
+
+1.1 Tipos de algoritmos
+
+Cualitativos: Emplean palabras, ej. receta de cocina.
+Cuantitativos: Utilizan cálculos numéricos, ej. resolver una ecuación de 2° grado.
+
+II. Lenguajes algorítmicos
+Conjunto de símbolos y reglas que permiten explicar un proceso.">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/apuntes/programaci%C3%B3n-i---algoritmos/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.81c898f5a2238b061825acde445de1b10e9825286bc566504cbb22ca1b9d1f73.css" integrity="sha256-gciY9aIjiwYYJazeRF3hsQ6YJShrxWZQTLsiyhudH3M=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/apuntes/programaci%C3%B3n-i---algoritmos/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="oscarzt20 (Alt + H)">oscarzt20</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/proyectos/" title="Portafolio">
+                    <span>Portafolio</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/tags/" title="Temas">
+                    <span>Temas</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/archives/" title="Archivo">
+                    <span>Archivo</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/apuntes/">Apuntes</a></div>
+    <h1 class="post-title entry-hint-parent">
+      Programación I - Algoritmos
+    </h1>
+    <div class="post-meta">
+
+</div>
+  </header> <div class="toc">
+    <details  open>
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#i-caracter%c3%adsticas-de-los-algoritmos" aria-label="I. Características de los algoritmos">I. Características de los algoritmos</a><ul>
+                        
+                <li>
+                    <a href="#11-tipos-de-algoritmos" aria-label="1.1 Tipos de algoritmos">1.1 Tipos de algoritmos</a></li></ul>
+                </li>
+                <li>
+                    <a href="#ii-lenguajes-algor%c3%adtmicos" aria-label="II. Lenguajes algorítmicos">II. Lenguajes algorítmicos</a><ul>
+                        
+                <li>
+                    <a href="#21-lenguajes-algor%c3%adtmicos-gr%c3%a1ficos" aria-label="2.1 Lenguajes algorítmicos gráficos">2.1 Lenguajes algorítmicos gráficos</a></li>
+                <li>
+                    <a href="#22-lenguajes-algor%c3%adtmicos-no-gr%c3%a1ficos" aria-label="2.2 Lenguajes algorítmicos no gráficos">2.2 Lenguajes algorítmicos no gráficos</a></li></ul>
+                </li>
+                <li>
+                    <a href="#iii-metodolog%c3%ada-general-para-solucionar-algoritmos" aria-label="III. Metodología general para solucionar algoritmos">III. Metodología general para solucionar algoritmos</a></li>
+                <li>
+                    <a href="#-m%c3%a1s-informaci%c3%b3n" aria-label="/ Más Información">/ Más Información</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><hr>
+<p>La programación es el proceso de escribir instrucciones para que una computadora realice tareas específicas. Antes de empezar a programar, es importante conocer los fundamentos necesarios para entender cómo funciona la programación.</p>
+<p>Para programar, los desarrolladores crean algoritmos, que son secuencias ordenadas de pasos que resuelven un problema o llevan a cabo una tarea.</p>
+<h2 id="i-características-de-los-algoritmos">I. Características de los algoritmos<a hidden class="anchor" aria-hidden="true" href="#i-características-de-los-algoritmos">#</a></h2>
+<ul>
+<li><strong>Finito</strong>: Un algoritmo debe terminar después de un número determinado de pasos. Se evitan los bucles sin fin.</li>
+<li><strong>Preciso</strong>: No debe haber interpretaciones subjetivas sobre lo que se debe hacer en cada instrucción.</li>
+<li><strong>Con inicio y final/es</strong>: Debe tener un inicio y puede contener más de un final.</li>
+<li><strong>Eficaz en la solución del problema</strong>: El algoritmo debe resolver el problema de manera correcta y óptima, evitando pasos innecesarios o ineficientes.</li>
+</ul>
+<h3 id="11-tipos-de-algoritmos">1.1 Tipos de algoritmos<a hidden class="anchor" aria-hidden="true" href="#11-tipos-de-algoritmos">#</a></h3>
+<ul>
+<li><strong>Cualitativos</strong>: Emplean palabras, ej. receta de cocina.</li>
+<li><strong>Cuantitativos</strong>: Utilizan cálculos numéricos, ej. resolver una ecuación de 2° grado.</li>
+</ul>
+<h2 id="ii-lenguajes-algorítmicos">II. Lenguajes algorítmicos<a hidden class="anchor" aria-hidden="true" href="#ii-lenguajes-algorítmicos">#</a></h2>
+<p>Conjunto de símbolos y reglas que permiten explicar un proceso.</p>
+<h3 id="21-lenguajes-algorítmicos-gráficos">2.1 Lenguajes algorítmicos gráficos<a hidden class="anchor" aria-hidden="true" href="#21-lenguajes-algorítmicos-gráficos">#</a></h3>
+<ul>
+<li><strong>Diagrama de flujo</strong>: Es una representación gráfica de un algoritmo o proceso, utilizando distintos símbolos conectados por flechas que indican el flujo de ejecución. Se usa para facilitar la comprensión del programa y ayudar a detectar errores. Los símbolos usados son:
+<ul>
+<li><strong>Círculo</strong>: Indica el inicio y el fin del algoritmo.</li>
+<li><strong>Rectángulo</strong>: Expresa una acción o proceso a realizar.</li>
+<li><strong>Rombo</strong>: Representa una decisión (condición lógica).</li>
+<li><strong>Flechas</strong>: Indican el flujo del proceso.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Ejemplo de diagrama de flujo</strong>:</p>
+<p>Algoritmo que determina si un número es par o impar.</p>
+<p><img alt="Conceptos Generales de Programación_05-06-2025-1.png" loading="lazy" src="/imagenes/Conceptos%20Generales%20de%20Programaci%C3%B3n_05-06-2025-1.png"></p>
+<h3 id="22-lenguajes-algorítmicos-no-gráficos">2.2 Lenguajes algorítmicos no gráficos<a hidden class="anchor" aria-hidden="true" href="#22-lenguajes-algorítmicos-no-gráficos">#</a></h3>
+<ul>
+<li><strong>Pseudocódigo</strong>: Es una forma de representar algoritmos utilizando un lenguaje intermedio entre el lenguaje natural y un lenguaje de programación. Sirve para planificar la lógica de un programa y facilitar su comprensión antes de escribir código.</li>
+</ul>
+<p><strong>Ejemplo de pseudocódigo</strong>:</p>
+<p>Algoritmo para anotar un gol en un partido de fútbol.</p>
+<pre tabindex="0"><code>1. Inicio.
+2. Entrar a la cancha de fútbol con el equipo adecuado.
+3. Esperar la indicación del inicio del partido.
+4. Localizar el balón.
+5. Correr hacia el balón.
+6. Ganar control del balón.
+7. ¿Se tiene posesión del balón?
+	1. Sí, continuar al paso 8.
+	2. No, regresar al paso 4.
+8. Localizar la portería deseada.
+9. Patear la pelota levemente y repetidamente en dirección a la portería.
+10. Evitar intentos del equipo contrario de arrebatar el control del balón.
+11. ¿Se mantuvo el control del balón?
+	1. Sí, continuar al paso 12.
+	2. No, regresar al paso 4.
+12. Una vez frente a la portería, a un mínimo de 5 metros de distancia, cambiar rápidamente a posición de tiro.
+13. Identificar un espacio en la portería donde sea menos accesible para el portero.
+14. Patear la pelota con suficiente fuerza en dirección hacia dentro de la portería, usando el empeine del pie hábil.
+15. ¿Se logró anotar el gol?
+	1. Sí, festejar con el equipo propio.
+	2. No, regresar al paso 4.
+16. Fin.
+</code></pre><h2 id="iii-metodología-general-para-solucionar-algoritmos">III. Metodología general para solucionar algoritmos<a hidden class="anchor" aria-hidden="true" href="#iii-metodología-general-para-solucionar-algoritmos">#</a></h2>
+<ol>
+<li><strong>Definición del problema</strong>: Debe ser clara y precisa.</li>
+<li><strong>Análisis del problema</strong>: Colocarse en el lugar del ordenador y buscar lo que se necesita para cumplir la tarea. Lleva:
+<ul>
+<li>Datos de entrada.</li>
+<li>Información a producir (salida)</li>
+<li>Métodos y fórmulas para analizar datos.</li>
+</ul>
+</li>
+<li><strong>Diseño del algoritmo</strong>:
+<ul>
+<li>Debe tener un punto particular de inicio.</li>
+<li>No debe ser ambiguo.</li>
+<li>Debe ir de lo general a lo particular.</li>
+<li>Debe ser finito en tamaño y tiempo de ejecución.</li>
+<li>Debe hacerse la prueba de escritorio (se toman datos límite de entrada y se sigue el algoritmo para validarlo).</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="-más-información">/ Más Información<a hidden class="anchor" aria-hidden="true" href="#-más-información">#</a></h2>
+<ul>
+<li><a href="/apuntes/programaci%C3%B3n-i---algoritmos/">Programación I - Algoritmos</a></li>
+<li><a href="/apuntes/programaci%C3%B3n-ii---conceptos-b%C3%A1sicos/">Programación II - Conceptos Básicos</a></li>
+<li><a href="/apuntes/programaci%C3%B3n-iii---introducci%C3%B3n-a-la-programaci%C3%B3n-orientada-a-objetos/">Programación III - Introducción a la Programación Orientada a Objetos</a></li>
+<li><a href="/apuntes/programaci%C3%B3n-iv---conceptos-b%C3%A1sicos-de-poo/">Programación IV - Conceptos Básicos de POO</a></li>
+<li><a href="/apuntes/programaci%C3%B3n-v---mecanismos-de-poo/">Programación V - Mecanismos de POO</a></li>
+<li><a href="/apuntes/programaci%C3%B3n-vi---estructuras-de-datos-abstractos/">Programación VI - Estructuras de Datos Abstractos</a></li>
+<li><a href="/apuntes/programaci%C3%B3n-vii---manejo-de-datos/">Programación VII - Manejo de Datos</a></li>
+<li><a href="/apuntes/programaci%C3%B3n-viii---poo-y-la-programaci%C3%B3n-orientada-a-eventos/">Programación VIII - POO y la Programación Orientada a Eventos</a></li>
+<li><a href="/apuntes/programaci%C3%B3n-ix---patrones-de-dise%C3%B1o/">Programación IX - Patrones de Diseño</a></li>
+<li><a href="/apuntes/programaci%C3%B3n---gu%C3%ADas-documentaci%C3%B3n-y-buenas-pr%C3%A1cticas/">Programación - Guías Documentación y Buenas Prácticas</a></li>
+</ul>
+<hr>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/enciclopedia/">Enciclopedia</a></li>
+      <li><a href="http://localhost:1313/tags/post/">Post</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="http://localhost:1313/">oscarzt20</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

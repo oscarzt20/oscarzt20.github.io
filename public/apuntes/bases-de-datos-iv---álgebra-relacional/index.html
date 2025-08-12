@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>Bases de Datos IV - Álgebra Relacional | oscarzt20</title>
+<meta name="keywords" content="enciclopedia, post">
+<meta name="description" content="
+I. Álgebra relacional
+Las bases de datos relacionales requieren de un conjunto de operaciones que permiten manipular la base de datos. Date (2001) menciona que el álgebra relacional es un conjunto de operadores que toman sus relaciones como sus operandos y regresan una relación como resultado.
+1.1 Operadores relacionales
+
+σ (sigma): Representa la operación de selección, que filtra las filas de una relación basándose en una condición.
+π (pi): Representa la operación de proyección, que selecciona columnas específicas de una relación.
+∪ (unión): Representa la unión de dos relaciones.
+
+1.2 Operadores de condición
+
+&lt; (Menor que): Compara si un valor es menor que otro.
+&gt; (Mayor que): Compara si un valor es mayor que otro.
+&lt;= (Menor o igual a que): Compara si un valor es menor o igual a otro.
+&gt;= (Mayor o igual a que): Compara si un valor es mayor o igual a otro.
+= (Igual a): Verifica si dos valores son iguales.
+
+1.3 Representación de una expresión
+Se puede representar de 3 maneras:">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/apuntes/bases-de-datos-iv---%C3%A1lgebra-relacional/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.81c898f5a2238b061825acde445de1b10e9825286bc566504cbb22ca1b9d1f73.css" integrity="sha256-gciY9aIjiwYYJazeRF3hsQ6YJShrxWZQTLsiyhudH3M=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/apuntes/bases-de-datos-iv---%C3%A1lgebra-relacional/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="oscarzt20 (Alt + H)">oscarzt20</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/proyectos/" title="Portafolio">
+                    <span>Portafolio</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/tags/" title="Temas">
+                    <span>Temas</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/archives/" title="Archivo">
+                    <span>Archivo</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/apuntes/">Apuntes</a></div>
+    <h1 class="post-title entry-hint-parent">
+      Bases de Datos IV - Álgebra Relacional
+    </h1>
+    <div class="post-meta">
+
+</div>
+  </header> <div class="toc">
+    <details  open>
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#i-%c3%a1lgebra-relacional" aria-label="I. Álgebra relacional">I. Álgebra relacional</a><ul>
+                        
+                <li>
+                    <a href="#11-operadores-relacionales" aria-label="1.1 Operadores relacionales">1.1 Operadores relacionales</a></li>
+                <li>
+                    <a href="#12-operadores-de-condici%c3%b3n" aria-label="1.2 Operadores de condición">1.2 Operadores de condición</a></li>
+                <li>
+                    <a href="#13-representaci%c3%b3n-de-una-expresi%c3%b3n" aria-label="1.3 Representación de una expresión">1.3 Representación de una expresión</a></li></ul>
+                </li>
+                <li>
+                    <a href="#-m%c3%a1s-informaci%c3%b3n" aria-label="/ Más Información">/ Más Información</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><hr>
+<h2 id="i-álgebra-relacional">I. Álgebra relacional<a hidden class="anchor" aria-hidden="true" href="#i-álgebra-relacional">#</a></h2>
+<p>Las bases de datos relacionales requieren de un conjunto de operaciones que permiten manipular la base de datos. Date (2001) menciona que el álgebra relacional es un conjunto de operadores que toman sus relaciones como sus operandos y regresan una relación como resultado.</p>
+<h3 id="11-operadores-relacionales">1.1 Operadores relacionales<a hidden class="anchor" aria-hidden="true" href="#11-operadores-relacionales">#</a></h3>
+<ul>
+<li><strong>σ (sigma)</strong>: Representa la <strong>operación de selección</strong>, que filtra las filas de una relación basándose en una condición.</li>
+<li><strong>π (pi)</strong>: Representa la <strong>operación de proyección</strong>, que selecciona columnas específicas de una relación.</li>
+<li><strong>∪ (unión)</strong>: Representa la <strong>unión</strong> de dos relaciones.</li>
+</ul>
+<h3 id="12-operadores-de-condición">1.2 Operadores de condición<a hidden class="anchor" aria-hidden="true" href="#12-operadores-de-condición">#</a></h3>
+<ul>
+<li><strong>&lt; (Menor que)</strong>: Compara si un valor es menor que otro.</li>
+<li><strong>&gt; (Mayor que)</strong>: Compara si un valor es mayor que otro.</li>
+<li><strong>&lt;= (Menor o igual a que)</strong>: Compara si un valor es menor o igual a otro.</li>
+<li><strong>&gt;= (Mayor o igual a que)</strong>: Compara si un valor es mayor o igual a otro.</li>
+<li><strong>= (Igual a)</strong>: Verifica si dos valores son iguales.</li>
+</ul>
+<h3 id="13-representación-de-una-expresión">1.3 Representación de una expresión<a hidden class="anchor" aria-hidden="true" href="#13-representación-de-una-expresión">#</a></h3>
+<p>Se puede representar de 3 maneras:</p>
+<ul>
+<li><strong>Texto</strong>: Descripción.</li>
+</ul>
+<blockquote>
+<p>Muestra <em>todos</em> los datos de <em>empleados</em> que tengan un <em>salario de 4000</em></p></blockquote>
+<ul>
+<li><strong>Álgebra Relacional</strong>: Expresión Relacional.
+$$\sigma({\pi\text{salario} = 4000} (\text{Empleados})) $$</li>
+<li><strong>Código SQL</strong>: Código.</li>
+</ul>
+<pre tabindex="0"><code>SELECT * FROM Empleados WHERE salario = 4000;
+</code></pre><hr>
+<h2 id="-más-información">/ Más Información<a hidden class="anchor" aria-hidden="true" href="#-más-información">#</a></h2>
+<ul>
+<li><a href="/apuntes/bases-de-datos-i---conceptos-b%C3%A1sicos/">Bases de Datos I - Conceptos Básicos</a></li>
+<li><a href="/apuntes/bases-de-datos-ii---diagramas-y-documentaci%C3%B3n/">Bases de Datos II - Diagramas y Documentación</a></li>
+<li><a href="/apuntes/bases-de-datos-iii---reglas-de-normalizaci%C3%B3n/">Bases de Datos III - Reglas de Normalización</a></li>
+<li><a href="/apuntes/bases-de-datos-iv---%C3%A1lgebra-relacional/">Bases de Datos IV - Álgebra Relacional</a></li>
+<li><a href="/apuntes/bases-de-datos-v---microsoft-sql/">Bases de Datos V - Microsoft SQL</a></li>
+<li><a href="/apuntes/bases-de-datos-vi---estructura-b%C3%A1sica-de-sql/">Bases de Datos VI - Estructura Básica de SQL</a></li>
+<li><a href="/apuntes/bases-de-datos-vii---consultas-de-datos/">Bases de Datos VII - Consultas de Datos</a></li>
+<li><a href="/apuntes/bases-de-datos-viii---automatizaci%C3%B3n-y-seguridad/">Bases de Datos VIII - Automatización y Seguridad</a></li>
+<li><a href="/apuntes/bases-de-datos-ix---operaciones-avanzadas-de-sql/">Bases de Datos IX - Operaciones Avanzadas de SQL</a></li>
+</ul>
+<hr>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/enciclopedia/">Enciclopedia</a></li>
+      <li><a href="http://localhost:1313/tags/post/">Post</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="http://localhost:1313/">oscarzt20</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

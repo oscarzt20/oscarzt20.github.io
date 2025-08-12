@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Bases De Datos on oscarzt20</title>
+    <link>http://localhost:1313/categories/bases-de-datos/</link>
+    <description>Recent content in Bases De Datos on oscarzt20</description>
+    <generator>Hugo -- 0.148.1</generator>
+    <language>es-mx</language>
+    <lastBuildDate>Fri, 08 Aug 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/bases-de-datos/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Bases de Datos I - Conceptos Básicos</title>
+      <link>http://localhost:1313/apuntes/bases-de-datos-i---conceptos-b%C3%A1sicos/</link>
+      <pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/apuntes/bases-de-datos-i---conceptos-b%C3%A1sicos/</guid>
+      <description>&lt;hr&gt;
+&lt;h2 id=&#34;i-bases-de-datos&#34;&gt;I. Bases de datos&lt;/h2&gt;
+&lt;p&gt;Una base de datos se puede percibir como un gran almacén de datos, que se utiliza al mismo tiempo por distintos usuarios.&lt;/p&gt;
+&lt;p&gt;En relevante tanto a nivel persona (permite desarrollar software sin estar en una empresa), como a nivel empresa (análisis de datos).&lt;/p&gt;
+&lt;p&gt;Un registro es una fila o dupla: Registro = Filas = Dupla
+Los componentes de las bases de datos son:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Datos&lt;/li&gt;
+&lt;li&gt;Software&lt;/li&gt;
+&lt;li&gt;Recursos humanos&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;11-back-end&#34;&gt;1.1 Back-end&lt;/h3&gt;
+&lt;p&gt;Administración de los datos en relación con la interacción con los usuarios. Es vital para el funcionamiento de las funciones de una página o programa.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>Bases de Datos III - Reglas de Normalización | oscarzt20</title>
+<meta name="keywords" content="enciclopedia, post">
+<meta name="description" content="
+I. Normalización
+Es la transformación del diseño de la base de datos a uno más simple y estable, sin ambigüedad.
+Esto es importante para optimizar y garantizar que no haya ambigüedades (Pérdida de datos, etc.).
+1.1 Regla/Forma 1
+Una tabla está en Primera Forma Normal (1NF) si cumple con lo siguiente:
+
+Atomicidad: Cada celda contiene un único valor atómico (no listas, conjuntos ni estructuras anidadas).
+Clave primaria: Debe existir una clave primaria que identifique unívocamente cada fila.
+Sin duplicados: No debe haber filas duplicadas.
+Uniformidad: Cada columna debe contener valores de un solo tipo de dato (coherentes para cada fila).
+
+Recomendación: Los datos compuestos (como nombres completos) o valores múltiples (como listas de teléfonos) deben descomponerse en datos atómicos. No se permiten rangos ni conjuntos de valores en una celda.">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/apuntes/bases-de-datos-iii---reglas-de-normalizaci%C3%B3n/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.81c898f5a2238b061825acde445de1b10e9825286bc566504cbb22ca1b9d1f73.css" integrity="sha256-gciY9aIjiwYYJazeRF3hsQ6YJShrxWZQTLsiyhudH3M=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/apuntes/bases-de-datos-iii---reglas-de-normalizaci%C3%B3n/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="oscarzt20 (Alt + H)">oscarzt20</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/proyectos/" title="Portafolio">
+                    <span>Portafolio</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/tags/" title="Temas">
+                    <span>Temas</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/archives/" title="Archivo">
+                    <span>Archivo</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/apuntes/">Apuntes</a></div>
+    <h1 class="post-title entry-hint-parent">
+      Bases de Datos III - Reglas de Normalización
+    </h1>
+    <div class="post-meta">
+
+</div>
+  </header> <div class="toc">
+    <details  open>
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#i-normalizaci%c3%b3n" aria-label="I. Normalización">I. Normalización</a><ul>
+                        
+                <li>
+                    <a href="#11-reglaforma-1" aria-label="1.1 Regla/Forma 1">1.1 Regla/Forma 1</a></li>
+                <li>
+                    <a href="#12-reglaforma-2" aria-label="1.2 Regla/Forma 2">1.2 Regla/Forma 2</a></li>
+                <li>
+                    <a href="#13-reglaforma-3" aria-label="1.3 Regla/Forma 3">1.3 Regla/Forma 3</a></li>
+                <li>
+                    <a href="#14-reglaforma-35-boyce-codd" aria-label="1.4 Regla/Forma 3.5 Boyce Codd">1.4 Regla/Forma 3.5 Boyce Codd</a></li>
+                <li>
+                    <a href="#15-reglaforma-4" aria-label="1.5 Regla/Forma 4">1.5 Regla/Forma 4</a></li>
+                <li>
+                    <a href="#16-reglaforma-5" aria-label="1.6 Regla/Forma 5">1.6 Regla/Forma 5</a></li>
+                <li>
+                    <a href="#17-notas-de-normalizaci%c3%b3n" aria-label="1.7 Notas de normalización">1.7 Notas de normalización</a><ul>
+                        
+                <li>
+                    <a href="#dependencia-transitiva" aria-label="Dependencia transitiva">Dependencia transitiva</a></li>
+                <li>
+                    <a href="#creaci%c3%b3n-de-tablas-normalizadas-en-diagrama-relacional" aria-label="Creación de tablas normalizadas en diagrama relacional">Creación de tablas normalizadas en diagrama relacional</a></li></ul>
+                </li></ul>
+                </li>
+                <li>
+                    <a href="#-m%c3%a1s-informaci%c3%b3n" aria-label="/ Más Información">/ Más Información</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><hr>
+<h2 id="i-normalización">I. Normalización<a hidden class="anchor" aria-hidden="true" href="#i-normalización">#</a></h2>
+<p>Es la transformación del diseño de la base de datos a uno más simple y estable, sin ambigüedad.</p>
+<p>Esto es importante para optimizar y garantizar que no haya ambigüedades (Pérdida de datos, etc.).</p>
+<h3 id="11-reglaforma-1">1.1 Regla/Forma 1<a hidden class="anchor" aria-hidden="true" href="#11-reglaforma-1">#</a></h3>
+<p>Una tabla está en <strong>Primera Forma Normal (1NF)</strong> si cumple con lo siguiente:</p>
+<ul>
+<li><strong>Atomicidad:</strong> Cada celda contiene un único valor atómico (no listas, conjuntos ni estructuras anidadas).</li>
+<li><strong>Clave primaria:</strong> Debe existir una clave primaria que identifique unívocamente cada fila.</li>
+<li><strong>Sin duplicados:</strong> No debe haber filas duplicadas.</li>
+<li><strong>Uniformidad:</strong> Cada columna debe contener valores de un solo tipo de dato (coherentes para cada fila).</li>
+</ul>
+<p><strong>Recomendación:</strong> Los datos compuestos (como nombres completos) o valores múltiples (como listas de teléfonos) deben descomponerse en datos atómicos. No se permiten rangos ni conjuntos de valores en una celda.</p>
+<h3 id="12-reglaforma-2">1.2 Regla/Forma 2<a hidden class="anchor" aria-hidden="true" href="#12-reglaforma-2">#</a></h3>
+<p>Una tabla está en <strong>Segunda Forma Normal (2NF)</strong> si:</p>
+<ul>
+<li>Está en 1NF.</li>
+<li><strong>Sin dependencias parciales</strong> Ocurren cuando un atributo depende de parte de una clave primaria compuesta y no de la clave primaria completa. Es decir, se crean tablas independientes para conjuntos de valores que se apliquen a varios registros.</li>
+<li><strong>Llaves foráneas</strong>: Las tablas se relacionan mediante llaves foráneas.</li>
+</ul>
+<h3 id="13-reglaforma-3">1.3 Regla/Forma 3<a hidden class="anchor" aria-hidden="true" href="#13-reglaforma-3">#</a></h3>
+<p>Una tabla está en <strong>Tercera Forma Normal (3NF)</strong> si:</p>
+<ul>
+<li>Está en 2NF.</li>
+<li><strong>Sin dependencias transitivas</strong>: Los atributos no clave dependen exclusivamente de la clave primaria y no de otros atributos no clave. Es decir, al tener dos entidades conectadas de muchos a muchos, se crea una tabla intermedia que incluye las claves primarias de ambas tablas como claves foráneas y con el nombre de ambas entidades.</li>
+<li><strong>Se separan los catálogos</strong>: Surge el catálogo, donde los datos ya están definidos, como tipos de categorías. (Dato de un atributo, que tiene un rango limitado).</li>
+</ul>
+<h3 id="14-reglaforma-35-boyce-codd">1.4 Regla/Forma 3.5 Boyce Codd<a hidden class="anchor" aria-hidden="true" href="#14-reglaforma-35-boyce-codd">#</a></h3>
+<p>La <strong>Forma Normal de Boyce-Codd</strong> es una versión más estricta de la 3NF, y se cumple si:</p>
+<ul>
+<li>Está en 3NF.</li>
+<li><strong>Cada determinante es una clave candidata</strong>: Cada atributo que determine a otro debe ser una clave candidata, o debe dividirse la tabla si causa dependencias funcionales. Es decir, si para cada dependencia funcional X - Y en la tabla, el conjunto X es una superclave. Una superclave es un conjunto de uno o más atributos de una tabla que puede identificar de manera única todas las filas de las tablas.</li>
+<li><strong>Sin dependencias funcionales</strong>: No deben existir relaciones entre atributos fuera de las claves candidatas.</li>
+<li>En general, todos los atributos tienen que depender de la superclave. Ejemplo: Si tenemos la tabla Estudiantes: id_estudiante, nombreEstudiante, nombre_curso, profesor. Los datos de curso y el profesor no van en la tabla Estudiantes ya que no dependen de la superclave (id_estudiante), por lo que se separan en otra tabla donde se conecten.</li>
+</ul>
+<h3 id="15-reglaforma-4">1.5 Regla/Forma 4<a hidden class="anchor" aria-hidden="true" href="#15-reglaforma-4">#</a></h3>
+<p>Una tabla está en <strong>Cuarta Forma Normal (4NF)</strong> si:</p>
+<ul>
+<li>Está en 3.5NF.</li>
+<li><strong>Sin dependencias multivaluadas:</strong> En una tabla sólo pueden haber 2 llaves foráneas. Se puede resolver al separar la tercera tabla y conectarla con otra. Ejemplo: Se tienen varias tablas que se relacionan a una sola y esto crea muchas combinaciones posibles, que pueden confundir, como un juguete que tiene aspectos de las tablas materiales colores tamaños, venta etc..</li>
+</ul>
+<h3 id="16-reglaforma-5">1.6 Regla/Forma 5<a hidden class="anchor" aria-hidden="true" href="#16-reglaforma-5">#</a></h3>
+<p>Una tabla está en <strong>Quinta Forma Normal (5NF)</strong> si:</p>
+<ul>
+<li>Está en 5NF.</li>
+<li><strong>Sin dependencias de unión</strong>: Depuración, es decir, se optimizan las tablas para eliminar redundancias entre las tablas con relaciones.</li>
+</ul>
+<h3 id="17-notas-de-normalización">1.7 Notas de normalización<a hidden class="anchor" aria-hidden="true" href="#17-notas-de-normalización">#</a></h3>
+<ul>
+<li>Pensar en cómo interaccionan los datos con el front-end.</li>
+<li>Los datos generados automáticamente, o que se ponen con un menú específico en la interfaz, no se coloca como tabla. Ejemplo: Fecha, en caso de que el usuario pueda elegirla de un calendario, ya que tiene un formato estándar. Es decir, si un dato se consigue en la interfaz, mediante un algoritmo programado y no de una base de datos. Por lo tanto, no va una tabla.</li>
+</ul>
+<h4 id="dependencia-transitiva">Dependencia transitiva<a hidden class="anchor" aria-hidden="true" href="#dependencia-transitiva">#</a></h4>
+<p>Se da al romper la ambigüedad generada por dos elementos que dependen entre ellos.</p>
+<h4 id="creación-de-tablas-normalizadas-en-diagrama-relacional">Creación de tablas normalizadas en diagrama relacional<a hidden class="anchor" aria-hidden="true" href="#creación-de-tablas-normalizadas-en-diagrama-relacional">#</a></h4>
+<p><strong>¿Cuándo se separa un atributo de una tabla?</strong></p>
+<p><em>Depende mucho de los requerimientos pero para darse una idea inicial:</em></p>
+<ol>
+<li>¿El valor del atributo cambia con cierta frecuencia?
+<ul>
+<li>Sí: Se separa de la tabla.</li>
+<li>No:</li>
+</ul>
+</li>
+<li>¿Varias instancias del mismo elemento podrían compartir un mismo valor?
+<ul>
+<li>Si:</li>
+<li>No: Se queda en la tabla.</li>
+</ul>
+</li>
+<li>¿El atributo se trata de un catálogo? (Datos que pueden representarse en una lista o que tienen un rango de datos ya establecido)
+<ul>
+<li>Si: Se separa de la tabla.</li>
+<li>No: Se queda en la tabla. (Ejemplo: Nombre)</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="-más-información">/ Más Información<a hidden class="anchor" aria-hidden="true" href="#-más-información">#</a></h2>
+<ul>
+<li><a href="/apuntes/bases-de-datos-i---conceptos-b%C3%A1sicos/">Bases de Datos I - Conceptos Básicos</a></li>
+<li><a href="/apuntes/bases-de-datos-ii---diagramas-y-documentaci%C3%B3n/">Bases de Datos II - Diagramas y Documentación</a></li>
+<li><a href="/apuntes/bases-de-datos-iii---reglas-de-normalizaci%C3%B3n/">Bases de Datos III - Reglas de Normalización</a></li>
+<li><a href="/apuntes/bases-de-datos-iv---%C3%A1lgebra-relacional/">Bases de Datos IV - Álgebra Relacional</a></li>
+<li><a href="/apuntes/bases-de-datos-v---microsoft-sql/">Bases de Datos V - Microsoft SQL</a></li>
+<li><a href="/apuntes/bases-de-datos-vi---estructura-b%C3%A1sica-de-sql/">Bases de Datos VI - Estructura Básica de SQL</a></li>
+<li><a href="/apuntes/bases-de-datos-vii---consultas-de-datos/">Bases de Datos VII - Consultas de Datos</a></li>
+<li><a href="/apuntes/bases-de-datos-viii---automatizaci%C3%B3n-y-seguridad/">Bases de Datos VIII - Automatización y Seguridad</a></li>
+<li><a href="/apuntes/bases-de-datos-ix---operaciones-avanzadas-de-sql/">Bases de Datos IX - Operaciones Avanzadas de SQL</a></li>
+</ul>
+<hr>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/enciclopedia/">Enciclopedia</a></li>
+      <li><a href="http://localhost:1313/tags/post/">Post</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="http://localhost:1313/">oscarzt20</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

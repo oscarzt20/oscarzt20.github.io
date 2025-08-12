@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>Programación V - Mecanismos de POO | oscarzt20</title>
+<meta name="keywords" content="enciclopedia, post">
+<meta name="description" content="
+I. Mecanismos de POO
+1.1 Encapsulación y acceso
+La encapsulación es un principio fundamental de la POO que protege los datos dentro de un objeto y regula su acceso. Para lograrlo, se emplean los controles de acceso, los cuales determinan:
+
+Visibilidad: Define qué partes del código pueden acceder a los atributos y métodos.
+Manipulación: Controla cómo y cuándo los atributos de un objeto pueden modificarse.
+
+El uso adecuado de estos controles permite garantizar que solo las partes autorizadas del código puedan interactuar con su contenido. Para ello, se deben comprender los modificadores de acceso y los métodos específicos que permiten acceder o modificar los datos de manera segura (accessors y mutators).">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/apuntes/programaci%C3%B3n-v---mecanismos-de-poo/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.81c898f5a2238b061825acde445de1b10e9825286bc566504cbb22ca1b9d1f73.css" integrity="sha256-gciY9aIjiwYYJazeRF3hsQ6YJShrxWZQTLsiyhudH3M=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/apuntes/programaci%C3%B3n-v---mecanismos-de-poo/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="oscarzt20 (Alt + H)">oscarzt20</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/proyectos/" title="Portafolio">
+                    <span>Portafolio</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/tags/" title="Temas">
+                    <span>Temas</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/archives/" title="Archivo">
+                    <span>Archivo</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/apuntes/">Apuntes</a></div>
+    <h1 class="post-title entry-hint-parent">
+      Programación V - Mecanismos de POO
+    </h1>
+    <div class="post-meta">
+
+</div>
+  </header> <div class="toc">
+    <details  open>
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#i-mecanismos-de-poo" aria-label="I. Mecanismos de POO">I. Mecanismos de POO</a><ul>
+                        
+                <li>
+                    <a href="#11-encapsulaci%c3%b3n-y-acceso" aria-label="1.1 Encapsulación y acceso">1.1 Encapsulación y acceso</a><ul>
+                        
+                <li>
+                    <a href="#modificadores-de-acceso" aria-label="Modificadores de acceso">Modificadores de acceso</a></li>
+                <li>
+                    <a href="#accessors" aria-label="Accessors">Accessors</a><ul>
+                        
+                <li>
+                    <a href="#funciones-de-interfaz" aria-label="Funciones de interfaz">Funciones de interfaz</a></li>
+                <li>
+                    <a href="#propiedades" aria-label="Propiedades">Propiedades</a></li></ul>
+                </li>
+                <li>
+                    <a href="#mutators" aria-label="Mutators">Mutators</a></li>
+                <li>
+                    <a href="#%c3%a1mbito-o-scope" aria-label="Ámbito o scope">Ámbito o scope</a><ul>
+                        
+                <li>
+                    <a href="#this" aria-label="This">This</a></li>
+                <li>
+                    <a href="#static" aria-label="Static">Static</a></li></ul>
+                </li></ul>
+                </li>
+                <li>
+                    <a href="#12-abstracci%c3%b3n-e-interfaces-propias" aria-label="1.2 Abstracción e interfaces propias">1.2 Abstracción e interfaces propias</a><ul>
+                        
+                <li>
+                    <a href="#interfaz-propia" aria-label="Interfaz propia">Interfaz propia</a><ul>
+                        
+                <li>
+                    <a href="#implementaci%c3%b3n" aria-label="Implementación">Implementación</a></li></ul>
+                </li></ul>
+                </li>
+                <li>
+                    <a href="#13-herencia-y-especializaci%c3%b3n" aria-label="1.3 Herencia y especialización">1.3 Herencia y especialización</a><ul>
+                        
+                <li>
+                    <a href="#jerarqu%c3%ada-de-clases" aria-label="Jerarquía de clases">Jerarquía de clases</a></li></ul>
+                </li>
+                <li>
+                    <a href="#14-polimorfismo-din%c3%a1mico-y-est%c3%a1tico" aria-label="1.4 Polimorfismo dinámico y estático">1.4 Polimorfismo dinámico y estático</a><ul>
+                        
+                <li>
+                    <a href="#sobreescritura-overriding" aria-label="Sobreescritura (Overriding)">Sobreescritura (Overriding)</a></li>
+                <li>
+                    <a href="#sobrecarga-overloading" aria-label="Sobrecarga (Overloading)">Sobrecarga (Overloading)</a><ul>
+                        
+                <li>
+                    <a href="#sobrecarga-de-m%c3%a9todos" aria-label="Sobrecarga de métodos">Sobrecarga de métodos</a></li>
+                <li>
+                    <a href="#sobrecarga-de-constructores" aria-label="Sobrecarga de constructores">Sobrecarga de constructores</a></li>
+                <li>
+                    <a href="#sobrecarga-de-operadores" aria-label="Sobrecarga de operadores">Sobrecarga de operadores</a><ul>
+                        
+                <li>
+                    <a href="#sobrecarga-de-operadores-aritm%c3%a9ticos" aria-label="Sobrecarga de operadores aritméticos">Sobrecarga de operadores aritméticos</a></li>
+                <li>
+                    <a href="#sobrecarga-de-operadores-de-comparaci%c3%b3n" aria-label="Sobrecarga de operadores de comparación">Sobrecarga de operadores de comparación</a></li>
+                <li>
+                    <a href="#sobrecarga-de-operadores-de-incrementodecremento" aria-label="Sobrecarga de operadores de incremento/decremento">Sobrecarga de operadores de incremento/decremento</a></li>
+                <li>
+                    <a href="#sobrecarga-de-operadores-de-conversi%c3%b3n" aria-label="Sobrecarga de operadores de conversión">Sobrecarga de operadores de conversión</a></li></ul>
+                </li></ul>
+                </li></ul>
+                </li>
+                <li>
+                    <a href="#15-composici%c3%b3n" aria-label="1.5 Composición">1.5 Composición</a><ul>
+                        
+                <li>
+                    <a href="#decoraci%c3%b3n" aria-label="Decoración">Decoración</a></li></ul>
+                </li></ul>
+                </li>
+                <li>
+                    <a href="#-m%c3%a1s-informaci%c3%b3n" aria-label="/ Más Información">/ Más Información</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><hr>
+<h2 id="i-mecanismos-de-poo">I. Mecanismos de POO<a hidden class="anchor" aria-hidden="true" href="#i-mecanismos-de-poo">#</a></h2>
+<h3 id="11-encapsulación-y-acceso">1.1 Encapsulación y acceso<a hidden class="anchor" aria-hidden="true" href="#11-encapsulación-y-acceso">#</a></h3>
+<p>La encapsulación es un principio fundamental de la POO que protege los datos dentro de un objeto y regula su acceso. Para lograrlo, se emplean los <em>controles de acceso</em>, los cuales determinan:</p>
+<ul>
+<li><strong>Visibilidad</strong>: Define qué partes del código pueden acceder a los atributos y métodos.</li>
+<li><strong>Manipulación</strong>: Controla cómo y cuándo los atributos de un objeto pueden modificarse.</li>
+</ul>
+<p>El uso adecuado de estos controles permite garantizar que solo las partes autorizadas del código puedan interactuar con su contenido. Para ello, se deben comprender los <em>modificadores de acceso</em> y los métodos específicos que permiten acceder o modificar los datos de manera segura (<em>accessors</em> y <em>mutators</em>).</p>
+<h4 id="modificadores-de-acceso">Modificadores de acceso<a hidden class="anchor" aria-hidden="true" href="#modificadores-de-acceso">#</a></h4>
+<p>Utilizando estos modificadores podemos indicar el tipo de acceso a los datos del programa. Estos se colocan antes de la declaración de la clase, atributo o método, y se pueden combinar según sea requerido.</p>
+<ul>
+<li><strong>Público (public)</strong>: El exterior tiene acceso.</li>
+<li><strong>Privado (private)</strong>: Solo el mismo objeto puede acceder.</li>
+<li><strong>Protegido (protected)</strong>: Únicamente tienen acceso los objetos dentro de la cadena de herencia.</li>
+<li><strong>Estático (static)</strong>: Indica que un atributo o método pertenece a una clase y puede ser utilizado por todas sus instancias.</li>
+<li><strong>Final (final)</strong>: Vuelve inmutable a un elemento:
+<ul>
+<li><strong>En atributos</strong>, evita que el valor cambie después de su inicialización.</li>
+<li><strong>En métodos</strong>, evita que sea sobrescrito por una clase heredada.</li>
+<li><strong>En clases</strong>, evita que la clase sea heredada.</li>
+</ul>
+</li>
+</ul>
+<h4 id="accessors">Accessors<a hidden class="anchor" aria-hidden="true" href="#accessors">#</a></h4>
+<p>Por defecto, todos los atributos deben ser privados, por lo que para poder acceder a ellos se utilizan los accessors, los cuales permiten el acceso a los datos internos de un objeto por medio de reglas controladas. Pueden implementarse mediante métodos (<em>getters</em> y <em>setters</em> tradicionales) o <em>propiedades</em>:</p>
+<h5 id="funciones-de-interfaz">Funciones de interfaz<a hidden class="anchor" aria-hidden="true" href="#funciones-de-interfaz">#</a></h5>
+<ul>
+<li><strong>Getters</strong>: Métodos que devuelven el valor de un atributo.</li>
+</ul>
+<p><strong>Ejemplo en C#</strong></p>
+<p>Método que permite obtener el valor del atributo <code>edad</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> getEdad() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> edad;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><ul>
+<li><strong>Setters</strong>: Métodos que permiten asignar un nuevo valor a un atributo.</li>
+</ul>
+<p><strong>Ejemplo en C#</strong></p>
+<p>Método que permite asignar un nuevo valor al atributo <code>edad</code>, asegurando que solo se permita si <code>nuevaEdad</code> es mayor a <code>0</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> setEdad(<span style="color:#66d9ef">int</span> nuevaEdad) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (nuevaEdad &gt; <span style="color:#ae81ff">0</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.edad = nuevaEdad;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="propiedades">Propiedades<a hidden class="anchor" aria-hidden="true" href="#propiedades">#</a></h5>
+<p>Se suelen utilizar propiedades Getter y Setter en lugar de los métodos.</p>
+<p><strong>Ejemplo en C#</strong></p>
+<p>Método donde <code>get</code> permite obtener el valor de <code>edad</code>, mientras que el <code>set</code> permite modificar <code>edad</code> solo si <code>value</code> es mayor a <code>0</code>. <code>value</code> es una palabra asignada en C# que representa el valor que se intenta asignar.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#75715e">// Se declara la variable como private</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">int</span> edad;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Se declara la propiedad como public para que pueda ser accesada. Se cambia a PascalCase.</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> Edad {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">get</span> { <span style="color:#66d9ef">return</span> edad; }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">set</span> { <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">value</span> &gt; <span style="color:#ae81ff">0</span>) edad = <span style="color:#66d9ef">value</span>; }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h4 id="mutators">Mutators<a hidden class="anchor" aria-hidden="true" href="#mutators">#</a></h4>
+<p>Son aquellos métodos que permiten modificar progresivamente el estado interno del objeto. Aunque los setters también son mutators, no todos los mutators son setters.</p>
+<p><strong>Ejemplo en C#</strong></p>
+<p>Método que incrementa el valor de <code>saldo</code> sumando a este el valor de <code>cantidad</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> depositar(<span style="color:#66d9ef">double</span> cantidad) {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> (cantidad &gt; <span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>	{
+</span></span><span style="display:flex;"><span>		saldo += cantidad;
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h4 id="ámbito-o-scope">Ámbito o scope<a hidden class="anchor" aria-hidden="true" href="#ámbito-o-scope">#</a></h4>
+<p>El ámbito (scope) en POO define la zona del código donde una variable, atributo o método es accesible. Este concepto es esencial para controlar la visibilidad y el uso de los datos dentro de una clase o función.</p>
+<p>En C#, el ámbito de una variable o método se define según dónde y cómo se declara:</p>
+<ul>
+<li><strong>Ámbito de variables locales</strong>: Una variable declarada dentro de un método solo existe dentro de ese método y no puede ser accedida fuera de él.</li>
+<li><strong>Ámbito de atributos de clase</strong>: Un atributo declarado dentro de una clase pero fuera de cualquier método puede ser accedido por los métodos de la misma clase y, dependiendo de su modificador de acceso, por otras clases.</li>
+<li><strong>Ámbito de parámetros</strong>: Los parámetros de un método solo existen dentro del método donde fueron declarados y no pueden ser accedidos fuera de él.</li>
+</ul>
+<p><strong>Ejemplo en C#</strong></p>
+<p>Tenemos una clase <code>Coche</code> que almacena la marca de un automóvil. Usamos diferentes tipos de variables para demostrar cómo el ámbito (scope) afecta su uso. Esto ayuda a entender qué variables pueden usarse en distintos lugares del código y cuáles solo existen por un momento.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Coche</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Variable de instancia (ámbito de clase)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">string</span> marca;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Método para asignar una marca al coche</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> AsignarMarca(<span style="color:#66d9ef">string</span> nuevaMarca)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Variable local (solo existe dentro de este método)</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">string</span> mensaje = <span style="color:#e6db74">&#34;Marca asignada correctamente.&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Asignamos el valor del parámetro a la variable de instancia</span>
+</span></span><span style="display:flex;"><span>        marca = nuevaMarca;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Mostramos el mensaje</span>
+</span></span><span style="display:flex;"><span>        Console.WriteLine(mensaje);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Método para obtener la marca del coche</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">string</span> ObtenerMarca()
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> marca;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Program</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> Main()
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        Coche miCoche = <span style="color:#66d9ef">new</span> Coche();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Llamamos al método y pasamos un parámetro</span>
+</span></span><span style="display:flex;"><span>        miCoche.AsignarMarca(<span style="color:#e6db74">&#34;Toyota&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Mostramos la marca asignada</span>
+</span></span><span style="display:flex;"><span>        Console.WriteLine(<span style="color:#e6db74">&#34;La marca del coche es: &#34;</span> + miCoche.ObtenerMarca());
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="this">This<a hidden class="anchor" aria-hidden="true" href="#this">#</a></h5>
+<p>Cuando una variable local o un parámetro de método tiene el mismo nombre que un atributo de clase, se puede usar la palabra clave <code>this</code> para diferenciar entre ambos.</p>
+<p><strong>Ejemplo en C#</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Coche</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">string</span> marca;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> AsignarMarca(<span style="color:#66d9ef">string</span> marca)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Sin this: se refiere al parámetro</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Con this: se refiere al atributo de la instancia</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.marca = marca;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="static">Static<a hidden class="anchor" aria-hidden="true" href="#static">#</a></h5>
+<p>La palabra clave <code>static</code> se utiliza para declarar atributos o métodos que pertenecen a la clase y a todas sus instancias y se puede acceder a él sin crear un objeto de la clase.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Contador</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Atributo estático compartido por todos los objetos</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">int</span> totalObjetos = <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> Contador()
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Al crear una nueva instancia, incrementamos el contador compartido</span>
+</span></span><span style="display:flex;"><span>        totalObjetos++;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> MostrarTotal()
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        Console.WriteLine(<span style="color:#e6db74">&#34;Total de objetos creados: &#34;</span> + totalObjetos);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Program</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> Main()
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        Contador c1 = <span style="color:#66d9ef">new</span> Contador();
+</span></span><span style="display:flex;"><span>        Contador c2 = <span style="color:#66d9ef">new</span> Contador();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Llamamos a un método estático sin crear una instancia</span>
+</span></span><span style="display:flex;"><span>        Contador.MostrarTotal(); <span style="color:#75715e">// Output: Total de objetos creados: 2</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="12-abstracción-e-interfaces-propias">1.2 Abstracción e interfaces propias<a hidden class="anchor" aria-hidden="true" href="#12-abstracción-e-interfaces-propias">#</a></h3>
+<p>La abstracción es un principio que permite mostrar solo los elementos esenciales de un objeto al usuario final, ocultando los detalles internos de su implementación. En otras palabras, se enfoca en &ldquo;qué hace&rdquo; un objeto en lugar de &ldquo;cómo lo hace&rdquo;, facilitando su uso para el usuario final sin necesidad de que conozca su funcionamiento interno. Un mecanismo clave para lograr la abstracción son las <em>interfaces</em>.</p>
+<h4 id="interfaz-propia">Interfaz propia<a hidden class="anchor" aria-hidden="true" href="#interfaz-propia">#</a></h4>
+<p>La interfaz es la forma fundamental de comunicación entre objetos, la cual es compuesta por aquellos atributos y métodos que necesitamos mostrar al exterior, y es aquella que define cómo los usuarios finales de esa clase/objeto interactúan con ella. Algunas características importantes son:</p>
+<ul>
+<li>Podemos empezar una clase sin interfaz y sólo crearla si es necesario. La interfaz debe ser mínima.</li>
+<li>Hay que tomar en cuenta quién es el usuario y sus necesidades.</li>
+<li>La interfaz incluye la sintaxis para invocar al método y saber lo que regresa.</li>
+<li>Requiere de una <em>implementación</em> para ser efectiva.</li>
+</ul>
+<p><strong>Ejemplo en C#</strong></p>
+<p>La interfaz declara el método <code>HacerSonido()</code>, pero no dice cómo debe hacerlo.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">IAnimal</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">void</span> HacerSonido(); <span style="color:#75715e">// Solo se declara, sin implementación</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="implementación">Implementación<a hidden class="anchor" aria-hidden="true" href="#implementación">#</a></h5>
+<p>Para que una clase esté bien construida se requiere la interfaz y la implementación. Mientras que la interfaz define un método pero no el cómo, la implementación define cómo funcionan esos métodos.</p>
+<p><strong>Ejemplo en C#</strong></p>
+<p>Aquí la clase <code>Perro</code> implementa la interfaz <code>IAnimal</code> y le da su propio comportamiento.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Perro</span> : IAnimal <span style="color:#75715e">//Implementa la interfaz</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// Se define el comportamiento</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> HacerSonido() {
+</span></span><span style="display:flex;"><span>        Console.WriteLine(<span style="color:#e6db74">&#34;¡Guau!&#34;</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Aquí la clase <code>Gato</code> implementa la interfaz <code>IAnimal</code> y le da su propio comportamiento.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Gato</span> : IAnimal <span style="color:#75715e">//Implementa la interfaz</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// Se define el comportamiento</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> HacerSonido() {
+</span></span><span style="display:flex;"><span>        Console.WriteLine(<span style="color:#e6db74">&#34;¡Miau!&#34;</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Ahora creamos un objeto <code>Perro</code> y llamamos su método <code>HacerSonido()</code>. Hacemos lo mismo con un objeto <code>Gato</code> Esto es la aplicación de la interfaz y la implementación.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Program</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> Main()
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// Se crea un objeto de la clase Perro dentro de una variable de tipo IAnimal llamada Tomasina.</span>
+</span></span><span style="display:flex;"><span>        IAnimal Tomasina = <span style="color:#66d9ef">new</span> Perro();
+</span></span><span style="display:flex;"><span>	    <span style="color:#75715e">// Se aplica la interfaz e implementación. Salida: ¡Guau!</span>
+</span></span><span style="display:flex;"><span>        Tomasina.HacerSonido();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// Se crea un objeto de la clase Gato dentro de una variable de tipo IAnimal llamada Selina.</span>
+</span></span><span style="display:flex;"><span>        IAnimal Selina = <span style="color:#66d9ef">new</span> Gato();
+</span></span><span style="display:flex;"><span>	    <span style="color:#75715e">// Se aplica la interfaz e implementación. Salida: ¡Miau!</span>
+</span></span><span style="display:flex;"><span>        Selina.HacerSonido();
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="13-herencia-y-especialización">1.3 Herencia y especialización<a hidden class="anchor" aria-hidden="true" href="#13-herencia-y-especialización">#</a></h3>
+<p>La herencia es una característica esencial en la reutilización de código, ya que permite que una clase herede el contenido de otra, es decir, permite que una clase aproveche los atributos y métodos de una ya existente sin tener que repetir el código, sino únicamente adicionando lo que le falte.</p>
+<p>Al aplicar la herencia, se define primero la <em>clase principal</em>, que será la más abstracta, es decir, la que establece la estructura general sin implementar todos los detalles. Por su parte, las <em>clases heredadas</em>, más concretas, se encargan de implementar los detalles específicos del objeto.</p>
+<p>Algunos lenguajes permiten la <em>herencia múltiple</em>, donde una clase hereda de más de una clase principal. Sin embargo, puede generar conflictos y aumentar la complejidad, por lo que lenguajes como C# y Java no la admiten y usan <em>interfaces</em> en su lugar.</p>
+<h4 id="jerarquía-de-clases">Jerarquía de clases<a hidden class="anchor" aria-hidden="true" href="#jerarquía-de-clases">#</a></h4>
+<ul>
+<li><strong>Superclase (Clase padre)</strong>: Contiene todos los atributos y métodos que son comunes a las clases que descienden de ella. <em>Ej.</em> Persona.</li>
+<li><strong>Subclase (Clase hija)</strong>: Es una extensión de la superclase, donde toma toda su información de esta y adiciona lo propio. <em>Ej.</em> Persona &ndash;&gt; Empleado.</li>
+</ul>
+<p>La relación &ldquo;es-un&rdquo; describe cómo se establece la herencia entre clases, ya que una clase hija hereda características y comportamientos de una clase padre.</p>
+<h3 id="14-polimorfismo-dinámico-y-estático">1.4 Polimorfismo dinámico y estático<a hidden class="anchor" aria-hidden="true" href="#14-polimorfismo-dinámico-y-estático">#</a></h3>
+<p>El polimorfismo es la capacidad que tiene un método para comportarse de distintas maneras según el objeto que lo esté usando.</p>
+<p>Existen dos tipos:</p>
+<ul>
+<li><strong>Polimorfismo dinámico</strong>: El método se decide cuando el programa se está ejecutando, es decir, el programa elige qué método ejecutar mientras está corriendo.</li>
+<li><strong>Polimorfismo estático</strong>: El método se elige antes de que el programa se ejecute, al compilar, es decir, el compilador elige cuál versión del método usar al momento de traducir el código.</li>
+</ul>
+<h4 id="sobreescritura-overriding">Sobreescritura (Overriding)<a hidden class="anchor" aria-hidden="true" href="#sobreescritura-overriding">#</a></h4>
+<p>Es la técnica por la cual una subclase reemplaza la implementación de un método heredado de su clase padre, sin cambiar la estructura original.</p>
+<p>Esto es útil porque las subclases pueden mantener la misma interfaz, pero con un comportamiento propio según sus necesidades.</p>
+<p>La sobreescritura requiere de la herencia y se considera <em>dinámica</em> porque ocurre en el tiempo de ejecución.</p>
+<p><strong>Ejemplo</strong></p>
+<p>Se tiene una superclase llamada <code>Animal</code> con un método <code>HacerSonido()</code>. Cada subclase (como <code>Perro</code> o <code>Gato</code>) hereda este método, pero lo implementa de manera distinta:</p>
+<ul>
+<li><code>Perro.HacerSonido()</code> → 🐶 &ldquo;¡Guau!&rdquo;</li>
+<li><code>Gato.HacerSonido()</code> → 🐱 &ldquo;¡Miau!&rdquo;</li>
+</ul>
+<h4 id="sobrecarga-overloading">Sobrecarga (Overloading)<a hidden class="anchor" aria-hidden="true" href="#sobrecarga-overloading">#</a></h4>
+<p>Ocurre cuando hay varios métodos con el mismo nombre, pero con diferentes parámetros. El compilador decide cuál método usar dependiendo de los argumentos.</p>
+<p>La sobrecarga no requiere de la herencia y se considera <em>estática</em> porque ocurre en el tiempo de compilación.</p>
+<h5 id="sobrecarga-de-métodos">Sobrecarga de métodos<a hidden class="anchor" aria-hidden="true" href="#sobrecarga-de-métodos">#</a></h5>
+<p>La sobrecarga de métodos permite definir varios métodos con el mismo nombre, pero con diferentes parámetros. Esto permite flexibilidad, ya que se pueden usar diferentes versiones del método según la necesidad.</p>
+<p><strong>Reglas de sobrecarga</strong>:</p>
+<ol>
+<li>Deben tener el mismo nombre.</li>
+<li>Deben diferenciarse por el número o tipo de parámetros.</li>
+<li>No pueden diferenciarse solo por el tipo de retorno.</li>
+</ol>
+<p><strong>Ejemplo en C#</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Calculadora</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Método para sumar dos números enteros</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> Sumar(<span style="color:#66d9ef">int</span> a, <span style="color:#66d9ef">int</span> b)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> a + b;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Sobrecarga del método para sumar tres números</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> Sumar(<span style="color:#66d9ef">int</span> a, <span style="color:#66d9ef">int</span> b, <span style="color:#66d9ef">int</span> c)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> a + b + c;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Program</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> Main()
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        Calculadora calc = <span style="color:#66d9ef">new</span> Calculadora();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Uso del método con dos parámetros</span>
+</span></span><span style="display:flex;"><span>        Console.WriteLine(calc.Sumar(<span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">5</span>)); <span style="color:#75715e">// Salida: 8</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Uso del método sobrecargado con tres parámetros</span>
+</span></span><span style="display:flex;"><span>        Console.WriteLine(calc.Sumar(<span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">2</span>)); <span style="color:#75715e">// Salida: 10</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="sobrecarga-de-constructores">Sobrecarga de constructores<a hidden class="anchor" aria-hidden="true" href="#sobrecarga-de-constructores">#</a></h5>
+<p>La sobrecarga implica tener más de una versión del constructor, diferenciándolos por la cantidad y tipo de parámetros que reciben. Esto nos da flexibilidad al instanciar objetos, ya que se pueden crear con diferentes niveles de información según las necesidades del programa.</p>
+<p><strong>Ejemplo en C#</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Persona</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">string</span> nombre;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">int</span> edad;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Constructor con dos parámetros</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> Persona(<span style="color:#66d9ef">string</span> nombre, <span style="color:#66d9ef">int</span> edad)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.nombre = nombre;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.edad = edad;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Constructor con solo el nombre (edad por defecto)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> Persona(<span style="color:#66d9ef">string</span> nombre)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.nombre = nombre;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.edad = <span style="color:#ae81ff">0</span>; <span style="color:#75715e">// Valor por defecto</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> MostrarInfo()
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        Console.WriteLine(<span style="color:#e6db74">$&#34;Nombre: {nombre}, Edad: {edad}&#34;</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Program</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> Main()
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Usando el constructor con nombre y edad</span>
+</span></span><span style="display:flex;"><span>        Persona persona1 = <span style="color:#66d9ef">new</span> Persona(<span style="color:#e6db74">&#34;Juan&#34;</span>, <span style="color:#ae81ff">25</span>);
+</span></span><span style="display:flex;"><span>        persona1.MostrarInfo(); <span style="color:#75715e">// Salida: Nombre: Juan, Edad: 25</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Usando el constructor con solo el nombre</span>
+</span></span><span style="display:flex;"><span>        Persona persona2 = <span style="color:#66d9ef">new</span> Persona(<span style="color:#e6db74">&#34;Ana&#34;</span>);
+</span></span><span style="display:flex;"><span>        persona2.MostrarInfo(); <span style="color:#75715e">// Salida: Nombre: Ana, Edad: 0</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="sobrecarga-de-operadores">Sobrecarga de operadores<a hidden class="anchor" aria-hidden="true" href="#sobrecarga-de-operadores">#</a></h5>
+<p>La sobrecarga de operadores es una técnica que permite redefinir el comportamiento de operadores ( +,  -,  *,  ==, etc.) cuando se usan con objetos de una clase personalizada, más no reemplaza su función original en el programa. Es decir, en lugar de recurrir a métodos tradicionales para realizar ciertas operaciones, la sobrecarga permite que los objetos interactúen de forma más intuitiva, como si estos fueran tipos de datos sencillos.</p>
+<p>La sobrecarga de operadores se usa cuando queremos que las operaciones con objetos sean más naturales en lugar de depender de métodos específicos. Sin embargo, no todos los operadores son sobrecargables, y su abuso puede hacer que el código sea menos claro si no se usan adecuadamente.</p>
+<p>Sus características principales son:</p>
+<ul>
+<li>El significado de un operador puede cambiar según los tipos de datos que opera.</li>
+<li>Se puede definir el comportamiento de los operadores para que actúen sobre nuestros propios tipos.</li>
+<li>No todos los lenguajes de programación permiten la sobrecarga de operadores.</li>
+<li>La sobrecarga debe ser implementada de manera que mantenga la lógica esperada del operador y no genere confusión.</li>
+</ul>
+<p><strong>Ejemplo en C#</strong></p>
+<p>Vamos a sobrecargar el operador <code>+</code> para que pueda sumar dos objetos <code>Punto</code>, combinando sus coordenadas <code>x</code> e <code>y</code>. Sin esta sobrecarga, <code>PuntoA + PuntoB</code> daría error, pero al definir su comportamiento, podemos hacer que devuelva un nuevo punto con la suma de las coordenadas.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Punto</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Propiedades para almacenar las coordenadas X e Y</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> X { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> Y { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Constructor que inicializa un punto con valores X e Y</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> Punto(<span style="color:#66d9ef">int</span> x, <span style="color:#66d9ef">int</span> y)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        X = x;
+</span></span><span style="display:flex;"><span>        Y = y;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Sobrecarga del operador + para sumar dos objetos Punto</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> Punto <span style="color:#66d9ef">operator</span> +(Punto a, Punto b)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Devuelve un nuevo Punto con la suma de las coordenadas</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> Punto(a.X + b.X, a.Y + b.Y);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Método para mostrar el punto en consola</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> Mostrar()
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        Console.WriteLine(<span style="color:#e6db74">$&#34;Punto ({X}, {Y})&#34;</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Program</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> Main()
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Creación de dos objetos Punto</span>
+</span></span><span style="display:flex;"><span>        Punto p1 = <span style="color:#66d9ef">new</span> Punto(<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>);
+</span></span><span style="display:flex;"><span>        Punto p2 = <span style="color:#66d9ef">new</span> Punto(<span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">5</span>);
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Uso de la sobrecarga del operador + para sumar los puntos</span>
+</span></span><span style="display:flex;"><span>        Punto resultado = p1 + p2; <span style="color:#75715e">// Equivalente a resultado = new Punto(6, 8);</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Muestra el resultado en consola</span>
+</span></span><span style="display:flex;"><span>        resultado.Mostrar(); <span style="color:#75715e">// Salida: Punto (6, 8)</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h6 id="sobrecarga-de-operadores-aritméticos">Sobrecarga de operadores aritméticos<a hidden class="anchor" aria-hidden="true" href="#sobrecarga-de-operadores-aritméticos">#</a></h6>
+<ul>
+<li><strong><code>+</code> (suma)</strong> → Puede sumar dos objetos, como combinar coordenadas de dos puntos o concatenar información personalizada.
+<strong>Ejemplo</strong>: <code>VectorA + VectorB</code> suma sus componentes y devuelve un nuevo vector.</li>
+<li><strong><code>-</code> (resta)</strong> → Puede definir una diferencia entre objetos, como restar valores de dos cuentas bancarias.
+<strong>Ejemplo</strong>: <code>CuentaA - CuentaB</code> podría calcular la diferencia de saldo.</li>
+<li><strong><code>*</code> (multiplicación)</strong> → Puede escalar objetos, como multiplicar un vector por un número.
+<strong>Ejemplo</strong>: <code>Vector * 2</code> duplica sus valores.</li>
+<li><strong><code>/</code> (división)</strong> → Puede definir una relación entre objetos, como dividir un objeto en partes.
+Ejemplo: <code>Pizza / 4</code> podría representar repartir la pizza en 4 porciones.</li>
+</ul>
+<h6 id="sobrecarga-de-operadores-de-comparación">Sobrecarga de operadores de comparación<a hidden class="anchor" aria-hidden="true" href="#sobrecarga-de-operadores-de-comparación">#</a></h6>
+<ul>
+<li><strong>== (igualdad)</strong> → Compara si dos objetos son equivalentes según sus atributos.
+<strong>Ejemplo</strong>: <code>PersonaA</code> == <code>PersonaB</code> podría verificar si tienen el mismo nombre y edad.</li>
+<li><strong>!= (desigualdad)</strong> → Verifica si dos objetos son distintos.
+<strong>Ejemplo</strong>: <code>AutoA</code> != <code>AutoB</code> podría comparar si tienen diferentes placas.</li>
+<li>** &lt; y  &gt; (menor o mayor que)** → Permiten comparar objetos según un criterio específico.
+<strong>Ejemplo</strong>: <code>EmpleadoA &gt; EmpleadoB</code> podría significar que gana más salario.</li>
+</ul>
+<h6 id="sobrecarga-de-operadores-de-incrementodecremento">Sobrecarga de operadores de incremento/decremento<a hidden class="anchor" aria-hidden="true" href="#sobrecarga-de-operadores-de-incrementodecremento">#</a></h6>
+<ul>
+<li><strong><code>++</code> (incremento)</strong> → Puede aumentar el valor de un objeto.
+<strong>Ejemplo</strong>: <code>Nivel++</code> podría aumentar el nivel de un personaje en un juego.</li>
+<li><strong><code>--</code> (decremento)</strong> → Puede reducir el valor de un objeto.
+<strong>Ejemplo</strong>: <code>Cupo--</code> podría disminuir la cantidad de espacios disponibles en un evento.</li>
+</ul>
+<h6 id="sobrecarga-de-operadores-de-conversión">Sobrecarga de operadores de conversión<a hidden class="anchor" aria-hidden="true" href="#sobrecarga-de-operadores-de-conversión">#</a></h6>
+<ul>
+<li><strong><code>explicit</code> / <code>implicit</code></strong> → Permiten convertir un objeto en otro tipo.
+<strong>Ejemplo</strong>: <code>Producto</code> podría convertirse en <code>string</code> para mostrar su nombre en una factura.</li>
+</ul>
+<h3 id="15-composición">1.5 Composición<a hidden class="anchor" aria-hidden="true" href="#15-composición">#</a></h3>
+<p>La composición es un principio en el que un objeto está formado por otros objetos, estableciendo una relación de dependencia entre ellos. En programación, este enfoque nos ayuda a la reutilización de código y la modularidad, permitiéndonos construir clases complejas combinando múltiples clases más pequeñas y especializadas.</p>
+<p>La relación &ldquo;tiene-un&rdquo; describe cómo se establece la composición entre clases, ya que un objeto posee o contiene otros objetos en su interior.</p>
+<h4 id="decoración">Decoración<a hidden class="anchor" aria-hidden="true" href="#decoración">#</a></h4>
+<p>Es un patrón de diseño que permite envolver un objeto en tiempo de ejecución con otro objeto para extender o modificar su comportamiento sin tener que crear otras sub clases.</p>
+<p>También se definen dos tipos de decoradores:</p>
+<ul>
+<li>
+<p><strong>Decorador base</strong>: Clase que implementa la misma interfaz que el componente original y contiene una referencia al objeto que se desea decorar.</p>
+</li>
+<li>
+<p><strong>Decorador concreto</strong>: Clase que extiende al decorador base y agrega funcionalidades específicas.</p>
+</li>
+<li>
+<p>Interfaz</p>
+<ul>
+<li>Clase Base
+<ul>
+<li>Decorador base
+<ul>
+<li>Decorador conceto</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="-más-información">/ Más Información<a hidden class="anchor" aria-hidden="true" href="#-más-información">#</a></h2>
+<ul>
+<li><a href="/apuntes/programaci%C3%B3n-i---algoritmos/">Programación I - Algoritmos</a></li>
+<li><a href="/apuntes/programaci%C3%B3n-ii---conceptos-b%C3%A1sicos/">Programación II - Conceptos Básicos</a></li>
+<li><a href="/apuntes/programaci%C3%B3n-iii---introducci%C3%B3n-a-la-programaci%C3%B3n-orientada-a-objetos/">Programación III - Introducción a la Programación Orientada a Objetos</a></li>
+<li><a href="/apuntes/programaci%C3%B3n-iv---conceptos-b%C3%A1sicos-de-poo/">Programación IV - Conceptos Básicos de POO</a></li>
+<li><a href="/apuntes/programaci%C3%B3n-v---mecanismos-de-poo/">Programación V - Mecanismos de POO</a></li>
+<li><a href="/apuntes/programaci%C3%B3n-vi---estructuras-de-datos-abstractos/">Programación VI - Estructuras de Datos Abstractos</a></li>
+<li><a href="/apuntes/programaci%C3%B3n-vii---manejo-de-datos/">Programación VII - Manejo de Datos</a></li>
+<li><a href="/apuntes/programaci%C3%B3n-viii---poo-y-la-programaci%C3%B3n-orientada-a-eventos/">Programación VIII - POO y la Programación Orientada a Eventos</a></li>
+<li><a href="/apuntes/programaci%C3%B3n-ix---patrones-de-dise%C3%B1o/">Programación IX - Patrones de Diseño</a></li>
+<li><a href="/apuntes/programaci%C3%B3n---gu%C3%ADas-documentaci%C3%B3n-y-buenas-pr%C3%A1cticas/">Programación - Guías Documentación y Buenas Prácticas</a></li>
+</ul>
+<hr>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/enciclopedia/">Enciclopedia</a></li>
+      <li><a href="http://localhost:1313/tags/post/">Post</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="http://localhost:1313/">oscarzt20</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

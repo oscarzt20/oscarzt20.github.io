@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>Programación VI - Estructuras de Datos Abstractos | oscarzt20</title>
+<meta name="keywords" content="enciclopedia, post">
+<meta name="description" content="
+I. Estructuras de datos abstractos
+En POO, son modelos que permiten organizar y gestionar datos de manera eficiente. Estas estructuras permiten almacenar objetos y manipularlos según ciertas reglas de acceso y recorrido.
+1.1 Estructuras de datos lineales
+Son aquellas estructuras donde los elementos están organizados de forma secuencial, uno después del otro.
+Arreglo (Array)
+Un arreglo es una colección de tamaño fijo que almacena elementos del mismo tipo en posiciones contiguas de memoria. A diferencia de estructuras como las listas, los arreglos no pueden crecer o reducirse después de su creación. Además, el índice con el que inicia es 0.">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/apuntes/programaci%C3%B3n-vi---estructuras-de-datos-abstractos/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.81c898f5a2238b061825acde445de1b10e9825286bc566504cbb22ca1b9d1f73.css" integrity="sha256-gciY9aIjiwYYJazeRF3hsQ6YJShrxWZQTLsiyhudH3M=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/apuntes/programaci%C3%B3n-vi---estructuras-de-datos-abstractos/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="oscarzt20 (Alt + H)">oscarzt20</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/proyectos/" title="Portafolio">
+                    <span>Portafolio</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/tags/" title="Temas">
+                    <span>Temas</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/archives/" title="Archivo">
+                    <span>Archivo</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/apuntes/">Apuntes</a></div>
+    <h1 class="post-title entry-hint-parent">
+      Programación VI - Estructuras de Datos Abstractos
+    </h1>
+    <div class="post-meta">
+
+</div>
+  </header> <div class="toc">
+    <details  open>
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#i-estructuras-de-datos-abstractos" aria-label="I. Estructuras de datos abstractos">I. Estructuras de datos abstractos</a><ul>
+                        
+                <li>
+                    <a href="#11-estructuras-de-datos-lineales" aria-label="1.1 Estructuras de datos lineales">1.1 Estructuras de datos lineales</a><ul>
+                        
+                <li>
+                    <a href="#arreglo-array" aria-label="Arreglo (Array)">Arreglo (Array)</a><ul>
+                        
+                <li>
+                    <a href="#referenciar-objetos" aria-label="Referenciar objetos">Referenciar objetos</a></li>
+                <li>
+                    <a href="#indexer" aria-label="Indexer">Indexer</a></li></ul>
+                </li>
+                <li>
+                    <a href="#lista-ligada-linked-list" aria-label="Lista Ligada (Linked List)">Lista Ligada (Linked List)</a></li>
+                <li>
+                    <a href="#pila-stack" aria-label="Pila (Stack)">Pila (Stack)</a></li>
+                <li>
+                    <a href="#cola-queue" aria-label="Cola (Queue)">Cola (Queue)</a></li>
+                <li>
+                    <a href="#hash-tables-diccionarios-maps" aria-label="Hash tables (Diccionarios, Maps)">Hash tables (Diccionarios, Maps)</a></li></ul>
+                </li>
+                <li>
+                    <a href="#12-estructura-de-datos-no-lineales" aria-label="1.2 Estructura de datos no lineales">1.2 Estructura de datos no lineales</a><ul>
+                        
+                <li>
+                    <a href="#%c3%a1rbol-tree" aria-label="Árbol (Tree)">Árbol (Tree)</a></li>
+                <li>
+                    <a href="#grafo" aria-label="Grafo">Grafo</a></li></ul>
+                </li></ul>
+                </li>
+                <li>
+                    <a href="#-m%c3%a1s-informaci%c3%b3n" aria-label="/ Más Información">/ Más Información</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><hr>
+<h2 id="i-estructuras-de-datos-abstractos">I. Estructuras de datos abstractos<a hidden class="anchor" aria-hidden="true" href="#i-estructuras-de-datos-abstractos">#</a></h2>
+<p>En POO, son modelos que permiten organizar y gestionar datos de manera eficiente. Estas estructuras permiten almacenar objetos y manipularlos según ciertas reglas de acceso y recorrido.</p>
+<h3 id="11-estructuras-de-datos-lineales">1.1 Estructuras de datos lineales<a hidden class="anchor" aria-hidden="true" href="#11-estructuras-de-datos-lineales">#</a></h3>
+<p>Son aquellas estructuras donde los elementos están organizados de forma secuencial, uno después del otro.</p>
+<h4 id="arreglo-array">Arreglo (Array)<a hidden class="anchor" aria-hidden="true" href="#arreglo-array">#</a></h4>
+<p>Un arreglo es una colección de tamaño fijo que almacena elementos del mismo tipo en posiciones contiguas de memoria. A diferencia de estructuras como las listas, los arreglos no pueden crecer o reducirse después de su creación. Además, el índice con el que inicia es 0.</p>
+<p>Se usa cuando se conoce el número exacto de elementos y no se necesita cambiar su tamaño, como al tener registros fijos.</p>
+<p><strong>Ejemplo en C#</strong></p>
+<p>Se crea un arreglo con tres enteros. Si quieres acceder al segundo elemento: <code>numeros[1]</code> devuelve <code>20</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">int</span>[] numeros = <span style="color:#66d9ef">new</span> <span style="color:#66d9ef">int</span>[<span style="color:#ae81ff">3</span>] { <span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">20</span>, <span style="color:#ae81ff">30</span> };
+</span></span></code></pre></div><h5 id="referenciar-objetos">Referenciar objetos<a hidden class="anchor" aria-hidden="true" href="#referenciar-objetos">#</a></h5>
+<p>Un arreglo también puede contener objetos. Al acceder a un elemento se obtiene una referencia, no una copia.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span>CAuto miAuto = miTienda[<span style="color:#ae81ff">1</span>];
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// miAuto apunta al mismo objeto que está en el índice 1 del arreglo</span>
+</span></span></code></pre></div><p>Esto significa que si se modifica <code>miAuto</code>, también se está modificando <code>miTienda[1]</code>, porque ambos apuntan al mismo espacio en memoria.</p>
+<h5 id="indexer">Indexer<a hidden class="anchor" aria-hidden="true" href="#indexer">#</a></h5>
+<p>Es una especie de propiedad para arreglos, que permite acceder a una colección. En C#, solo se puede tener uno por clase. Colocar un indexer nos permite poner el arreglo en privado.</p>
+<p><strong>Ejemplo en C#</strong></p>
+<p>Implementación del indexer.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">TiendaAutos</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> CAuto[] autos = <span style="color:#66d9ef">new</span> CAuto[<span style="color:#ae81ff">10</span>];
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> CAuto <span style="color:#66d9ef">this</span>[<span style="color:#66d9ef">int</span> i]
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">get</span> =&gt; autos[i];
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">set</span> =&gt; autos[i] = <span style="color:#66d9ef">value</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Esto permite ocultar directamente el arreglo autos y accederlo desde fuera con:</span>
+</span></span><span style="display:flex;"><span>CAuto miAuto = tienda[<span style="color:#ae81ff">2</span>];
+</span></span></code></pre></div><h4 id="lista-ligada-linked-list">Lista Ligada (Linked List)<a hidden class="anchor" aria-hidden="true" href="#lista-ligada-linked-list">#</a></h4>
+<p>Una lista ligada es una colección donde cada elemento (nodo) apunta al siguiente. No hay acceso directo por índice, sino que se recorre desde el inicio.</p>
+<p>Se usa cuando necesitas insertar o eliminar elementos frecuentemente en cualquier parte de la lista.</p>
+<p><strong>Ejemplo en C#</strong></p>
+<p>Se crea una lista ligada de nombres. En este caso el recorrido se hace con un ciclo.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span>LinkedList&lt;<span style="color:#66d9ef">string</span>&gt; nombres = <span style="color:#66d9ef">new</span> LinkedList&lt;<span style="color:#66d9ef">string</span>&gt;();
+</span></span><span style="display:flex;"><span>nombres.AddLast(<span style="color:#e6db74">&#34;Ana&#34;</span>);
+</span></span><span style="display:flex;"><span>nombres.AddFirst(<span style="color:#e6db74">&#34;Luis&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">foreach</span> (<span style="color:#66d9ef">var</span> nombre <span style="color:#66d9ef">in</span> nombres)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    Console.WriteLine(nombre);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Salida: Luis, Ana</span>
+</span></span></code></pre></div><h4 id="pila-stack">Pila (Stack)<a hidden class="anchor" aria-hidden="true" href="#pila-stack">#</a></h4>
+<p>Una pila es una estructura donde el último elemento en entrar es el primero en salir (Last In, First Out).</p>
+<p>Se usa para manejar flujos reversibles, como en el caso de un historial de navegación.</p>
+<p><strong>Ejemplo en C#</strong></p>
+<p>Se agregan dos elementos a la pila por medio de <code>Push()</code>, mientras que <code>Pop()</code> elimina de la pila al último que entró y la guarda en la variable <code>actual</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span>Stack&lt;<span style="color:#66d9ef">string</span>&gt; historial = <span style="color:#66d9ef">new</span> Stack&lt;<span style="color:#66d9ef">string</span>&gt;();
+</span></span><span style="display:flex;"><span>historial.Push(<span style="color:#e6db74">&#34;Página1&#34;</span>);
+</span></span><span style="display:flex;"><span>historial.Push(<span style="color:#e6db74">&#34;Página2&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">string</span> actual = historial.Pop(); <span style="color:#75715e">// Página2</span>
+</span></span><span style="display:flex;"><span>Console.WriteLine(actual);
+</span></span></code></pre></div><h4 id="cola-queue">Cola (Queue)<a hidden class="anchor" aria-hidden="true" href="#cola-queue">#</a></h4>
+<p>Una cola es una estructura donde el primer elemento en entrar es el primero en salir (First In, First Out).</p>
+<p>Se usa cuando se necesitan procesar elementos en el orden en que llegaron, como en colas de impresión, tickets de atención a clientes, etc.</p>
+<p><strong>Ejemplo en C#</strong></p>
+<p>Se agregan dos tareas a la cola. Al hacer <code>Dequeue()</code>, se extrae la primera tarea ingresada (&ldquo;Tarea1&rdquo;), eliminándola de la cola, respetando el orden en el que llegaron.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span>Queue&lt;<span style="color:#66d9ef">string</span>&gt; tareas = <span style="color:#66d9ef">new</span> Queue&lt;<span style="color:#66d9ef">string</span>&gt;();
+</span></span><span style="display:flex;"><span>tareas.Enqueue(<span style="color:#e6db74">&#34;Tarea1&#34;</span>);
+</span></span><span style="display:flex;"><span>tareas.Enqueue(<span style="color:#e6db74">&#34;Tarea2&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">string</span> siguiente = tareas.Dequeue(); <span style="color:#75715e">// Tarea1</span>
+</span></span><span style="display:flex;"><span>Console.WriteLine(siguiente);
+</span></span></code></pre></div><h4 id="hash-tables-diccionarios-maps">Hash tables (Diccionarios, Maps)<a hidden class="anchor" aria-hidden="true" href="#hash-tables-diccionarios-maps">#</a></h4>
+<p>Una tabla hash almacena datos en pares clave-valor. Internamente, usa una función hash que permite localizar rápidamente un valor a partir de su clave.</p>
+<p>Se usa para buscar datos rápidamente mediante una clave única, como directorios, catálogos, etc.</p>
+<p><strong>Ejemplo en C#</strong></p>
+<p>Se crea un diccionario donde las claves son nombres y los valores son edades. Al pedir <code>edades[&quot;Ana&quot;]</code>, se accede directamente al valor 30 sin necesidad de recorrer toda la colección.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span>Dictionary&lt;<span style="color:#66d9ef">string</span>, <span style="color:#66d9ef">int</span>&gt; edades = <span style="color:#66d9ef">new</span> Dictionary&lt;<span style="color:#66d9ef">string</span>, <span style="color:#66d9ef">int</span>&gt;();
+</span></span><span style="display:flex;"><span>edades[<span style="color:#e6db74">&#34;Juan&#34;</span>] = <span style="color:#ae81ff">25</span>;
+</span></span><span style="display:flex;"><span>edades[<span style="color:#e6db74">&#34;Ana&#34;</span>] = <span style="color:#ae81ff">30</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Console.WriteLine(edades[<span style="color:#e6db74">&#34;Ana&#34;</span>]); <span style="color:#75715e">// 30</span>
+</span></span></code></pre></div><h3 id="12-estructura-de-datos-no-lineales">1.2 Estructura de datos no lineales<a hidden class="anchor" aria-hidden="true" href="#12-estructura-de-datos-no-lineales">#</a></h3>
+<p>Estas estructuras no siguen un orden secuencial, y permiten representar relaciones más complejas entre elementos.</p>
+<h4 id="árbol-tree">Árbol (Tree)<a hidden class="anchor" aria-hidden="true" href="#árbol-tree">#</a></h4>
+<p>Un árbol es una estructura jerárquica donde cada nodo puede tener múltiples hijos, pero solo un padre. Existen varios tipos.</p>
+<p>Se usa en sistemas jerárquicos como menús, organización de archivos, árboles de decisiones, etc.</p>
+<p><strong>Ejemplo en C#</strong></p>
+<p>Se crea un árbol binario manualmente, con un nodo raíz que tiene dos hijos: uno a la izquierda con valor 5 y otro a la derecha con valor 15. Cada nodo puede expandirse.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Nodo</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> Valor;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> Nodo Izquierda;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> Nodo Derecha;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Nodo raiz = <span style="color:#66d9ef">new</span> Nodo { Valor = <span style="color:#ae81ff">10</span> };
+</span></span><span style="display:flex;"><span>raiz.Izquierda = <span style="color:#66d9ef">new</span> Nodo { Valor = <span style="color:#ae81ff">5</span> };
+</span></span><span style="display:flex;"><span>raiz.Derecha = <span style="color:#66d9ef">new</span> Nodo { Valor = <span style="color:#ae81ff">15</span> };
+</span></span></code></pre></div><h4 id="grafo">Grafo<a hidden class="anchor" aria-hidden="true" href="#grafo">#</a></h4>
+<p>Un grafo es una estructura formada por nodos (vértices) y conexiones (aristas). Representa relaciones complejas entre elementos.</p>
+<p>Se usa para representar mapas, relaciones entre entidades, etc.</p>
+<p><strong>Ejemplo en C#</strong></p>
+<p>Se construye un grafo no dirigido: el nodo &ldquo;A&rdquo; está conectado a &ldquo;B&rdquo; y &ldquo;C&rdquo;, y &ldquo;B&rdquo; también conecta con &ldquo;A&rdquo; y &ldquo;D&rdquo;. Se usa un diccionario donde cada nodo tiene una lista de vecinos.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span>Dictionary&lt;<span style="color:#66d9ef">string</span>, List&lt;<span style="color:#66d9ef">string</span>&gt;&gt; grafo = <span style="color:#66d9ef">new</span> Dictionary&lt;<span style="color:#66d9ef">string</span>, List&lt;<span style="color:#66d9ef">string</span>&gt;&gt;();
+</span></span><span style="display:flex;"><span>grafo[<span style="color:#e6db74">&#34;A&#34;</span>] = <span style="color:#66d9ef">new</span> List&lt;<span style="color:#66d9ef">string</span>&gt; { <span style="color:#e6db74">&#34;B&#34;</span>, <span style="color:#e6db74">&#34;C&#34;</span> };
+</span></span><span style="display:flex;"><span>grafo[<span style="color:#e6db74">&#34;B&#34;</span>] = <span style="color:#66d9ef">new</span> List&lt;<span style="color:#66d9ef">string</span>&gt; { <span style="color:#e6db74">&#34;A&#34;</span>, <span style="color:#e6db74">&#34;D&#34;</span> };
+</span></span></code></pre></div><hr>
+<h2 id="-más-información">/ Más Información<a hidden class="anchor" aria-hidden="true" href="#-más-información">#</a></h2>
+<ul>
+<li><a href="/apuntes/programaci%C3%B3n-i---algoritmos/">Programación I - Algoritmos</a></li>
+<li><a href="/apuntes/programaci%C3%B3n-ii---conceptos-b%C3%A1sicos/">Programación II - Conceptos Básicos</a></li>
+<li><a href="/apuntes/programaci%C3%B3n-iii---introducci%C3%B3n-a-la-programaci%C3%B3n-orientada-a-objetos/">Programación III - Introducción a la Programación Orientada a Objetos</a></li>
+<li><a href="/apuntes/programaci%C3%B3n-iv---conceptos-b%C3%A1sicos-de-poo/">Programación IV - Conceptos Básicos de POO</a></li>
+<li><a href="/apuntes/programaci%C3%B3n-v---mecanismos-de-poo/">Programación V - Mecanismos de POO</a></li>
+<li><a href="/apuntes/programaci%C3%B3n-vi---estructuras-de-datos-abstractos/">Programación VI - Estructuras de Datos Abstractos</a></li>
+<li><a href="/apuntes/programaci%C3%B3n-vii---manejo-de-datos/">Programación VII - Manejo de Datos</a></li>
+<li><a href="/apuntes/programaci%C3%B3n-viii---poo-y-la-programaci%C3%B3n-orientada-a-eventos/">Programación VIII - POO y la Programación Orientada a Eventos</a></li>
+<li><a href="/apuntes/programaci%C3%B3n-ix---patrones-de-dise%C3%B1o/">Programación IX - Patrones de Diseño</a></li>
+<li><a href="/apuntes/programaci%C3%B3n---gu%C3%ADas-documentaci%C3%B3n-y-buenas-pr%C3%A1cticas/">Programación - Guías Documentación y Buenas Prácticas</a></li>
+</ul>
+<hr>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/enciclopedia/">Enciclopedia</a></li>
+      <li><a href="http://localhost:1313/tags/post/">Post</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="http://localhost:1313/">oscarzt20</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

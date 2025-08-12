@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>Programación IV - Conceptos Básicos de POO | oscarzt20</title>
+<meta name="keywords" content="enciclopedia, post">
+<meta name="description" content="
+I. Conceptos básicos de POO
+1.1 Objetos
+Son elementos que componen un sistema. Este contiene datos y comportamientos.
+Ejemplo
+En un automóvil las distintas partes que lo conforman son objetos, los cuales se pueden comunicar entre sí para funcionar.
+Características de los objetos
+Atributos
+Los atributos representan las propiedades de un objeto y almacenan su información en un momento dado. Estos definen el estado del objeto y pueden cambiar durante la ejecución del programa.">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/apuntes/programaci%C3%B3n-iv---conceptos-b%C3%A1sicos-de-poo/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.81c898f5a2238b061825acde445de1b10e9825286bc566504cbb22ca1b9d1f73.css" integrity="sha256-gciY9aIjiwYYJazeRF3hsQ6YJShrxWZQTLsiyhudH3M=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/apuntes/programaci%C3%B3n-iv---conceptos-b%C3%A1sicos-de-poo/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="oscarzt20 (Alt + H)">oscarzt20</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/proyectos/" title="Portafolio">
+                    <span>Portafolio</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/tags/" title="Temas">
+                    <span>Temas</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/archives/" title="Archivo">
+                    <span>Archivo</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/apuntes/">Apuntes</a></div>
+    <h1 class="post-title entry-hint-parent">
+      Programación IV - Conceptos Básicos de POO
+    </h1>
+    <div class="post-meta">
+
+</div>
+  </header> <div class="toc">
+    <details  open>
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#i-conceptos-b%c3%a1sicos-de-poo" aria-label="I. Conceptos básicos de POO">I. Conceptos básicos de POO</a><ul>
+                        
+                <li>
+                    <a href="#11-objetos" aria-label="1.1 Objetos">1.1 Objetos</a><ul>
+                        
+                <li>
+                    <a href="#caracter%c3%adsticas-de-los-objetos" aria-label="Características de los objetos">Características de los objetos</a><ul>
+                        
+                <li>
+                    <a href="#atributos" aria-label="Atributos">Atributos</a></li>
+                <li>
+                    <a href="#m%c3%a9todos" aria-label="Métodos">Métodos</a></li></ul>
+                </li>
+                <li>
+                    <a href="#ciclo-de-vida-de-un-objeto" aria-label="Ciclo de vida de un objeto">Ciclo de vida de un objeto</a><ul>
+                        
+                <li>
+                    <a href="#creaci%c3%b3n-del-objeto" aria-label="Creación del objeto">Creación del objeto</a><ul>
+                        
+                <li>
+                    <a href="#constructores" aria-label="Constructores">Constructores</a></li>
+                <li>
+                    <a href="#instanciaci%c3%b3n" aria-label="Instanciación">Instanciación</a></li>
+                <li>
+                    <a href="#operadores-de-instanciaci%c3%b3n" aria-label="Operadores de instanciación">Operadores de instanciación</a></li></ul>
+                </li>
+                <li>
+                    <a href="#uso-del-objeto" aria-label="Uso del objeto">Uso del objeto</a><ul>
+                        
+                <li>
+                    <a href="#acceso-a-atributos-y-m%c3%a9todos" aria-label="Acceso a atributos y métodos">Acceso a atributos y métodos</a></li></ul>
+                </li>
+                <li>
+                    <a href="#alcance-y-duraci%c3%b3n-del-objeto" aria-label="Alcance y duración del objeto">Alcance y duración del objeto</a><ul>
+                        
+                <li>
+                    <a href="#variables-de-instancia-y-variables-locales" aria-label="Variables de instancia y variables locales">Variables de instancia y variables locales</a></li></ul>
+                </li>
+                <li>
+                    <a href="#destrucci%c3%b3n-y-gesti%c3%b3n-de-memoria" aria-label="Destrucción y gestión de memoria">Destrucción y gestión de memoria</a><ul>
+                        
+                <li>
+                    <a href="#destructores" aria-label="Destructores">Destructores</a></li></ul>
+                </li></ul>
+                </li></ul>
+                </li>
+                <li>
+                    <a href="#12-clases" aria-label="1.2 Clases">1.2 Clases</a><ul>
+                        
+                <li>
+                    <a href="#elementos-en-una-clase" aria-label="Elementos en una clase">Elementos en una clase</a></li>
+                <li>
+                    <a href="#relaciones-entre-clases" aria-label="Relaciones entre clases">Relaciones entre clases</a><ul>
+                        
+                <li>
+                    <a href="#dependencia---usa" aria-label="Dependencia - &ldquo;usa&rdquo;">Dependencia - &ldquo;usa&rdquo;</a></li>
+                <li>
+                    <a href="#asociaci%c3%b3n---conoce-a-o-trabaja-con" aria-label="Asociación - &ldquo;conoce a&rdquo; o &ldquo;trabaja con&rdquo;">Asociación - &ldquo;conoce a&rdquo; o &ldquo;trabaja con&rdquo;</a></li>
+                <li>
+                    <a href="#agregaci%c3%b3n---tiene-un-existe-por-separado" aria-label="Agregación - &ldquo;tiene un&rdquo; (Existe por separado)">Agregación - &ldquo;tiene un&rdquo; (Existe por separado)</a></li>
+                <li>
+                    <a href="#composici%c3%b3n---tiene-un-no-existe-por-separado" aria-label="Composición - &ldquo;tiene un&rdquo; (No existe por separado)">Composición - &ldquo;tiene un&rdquo; (No existe por separado)</a></li>
+                <li>
+                    <a href="#herencia---es-un" aria-label="Herencia - &ldquo;es un&rdquo;">Herencia - &ldquo;es un&rdquo;</a></li></ul>
+                </li>
+                <li>
+                    <a href="#tipos-de-clases" aria-label="Tipos de clases">Tipos de clases</a><ul>
+                        
+                <li>
+                    <a href="#clase-concreta" aria-label="Clase concreta">Clase concreta</a></li>
+                <li>
+                    <a href="#clase-abstracta" aria-label="Clase abstracta">Clase abstracta</a></li>
+                <li>
+                    <a href="#clase-est%c3%a1tica" aria-label="Clase estática">Clase estática</a></li>
+                <li>
+                    <a href="#clase-sellada" aria-label="Clase sellada">Clase sellada</a></li>
+                <li>
+                    <a href="#interfaz" aria-label="Interfaz">Interfaz</a></li>
+                <li>
+                    <a href="#clase-parcial" aria-label="Clase parcial">Clase parcial</a></li>
+                <li>
+                    <a href="#clase-gen%c3%a9rica" aria-label="Clase genérica">Clase genérica</a></li></ul>
+                </li>
+                <li>
+                    <a href="#cardinalidad" aria-label="Cardinalidad">Cardinalidad</a></li></ul>
+                </li>
+                <li>
+                    <a href="#13-tipos-de-datos-no-primitivos" aria-label="1.3 Tipos de datos no primitivos">1.3 Tipos de datos no primitivos</a></li></ul>
+                </li>
+                <li>
+                    <a href="#-m%c3%a1s-informaci%c3%b3n" aria-label="/ Más Información">/ Más Información</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><hr>
+<h2 id="i-conceptos-básicos-de-poo">I. Conceptos básicos de POO<a hidden class="anchor" aria-hidden="true" href="#i-conceptos-básicos-de-poo">#</a></h2>
+<h3 id="11-objetos">1.1 Objetos<a hidden class="anchor" aria-hidden="true" href="#11-objetos">#</a></h3>
+<p>Son elementos que componen un sistema. Este contiene datos y comportamientos.</p>
+<p><strong>Ejemplo</strong></p>
+<p>En un automóvil las distintas partes que lo conforman son <em>objetos</em>, los cuales se pueden comunicar entre sí para funcionar.</p>
+<h4 id="características-de-los-objetos">Características de los objetos<a hidden class="anchor" aria-hidden="true" href="#características-de-los-objetos">#</a></h4>
+<h5 id="atributos">Atributos<a hidden class="anchor" aria-hidden="true" href="#atributos">#</a></h5>
+<p>Los atributos representan las propiedades de un objeto y almacenan su información en un momento dado. Estos definen el <em>estado</em> del objeto y pueden cambiar durante la ejecución del programa.</p>
+<p><strong>Elementos de un atributo</strong></p>
+<ul>
+<li><strong>Un nombre</strong>, que lo identifica dentro de la clase.</li>
+<li><strong>Un tipo de dato</strong>, que determina qué valores puede almacenar.</li>
+<li><strong>Un nivel de acceso</strong>, que controla cómo se puede modificar o leer.</li>
+</ul>
+<p><strong>Ejemplo en C#</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Persona</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Atributos de la clase Persona (nivel de acceso, tipo de dato y nombre)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">string</span> nombre;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">int</span> edad;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="métodos">Métodos<a hidden class="anchor" aria-hidden="true" href="#métodos">#</a></h5>
+<p>Representan lo que el objeto puede hacer.</p>
+<p>La diferencia entre un método y una función es que los <em>métodos</em> son parte de los objetos y pueden acceder a sus datos, mientras que las <em>funciones</em> solo trabajan con los valores que se les pasan como parámetros.</p>
+<p><strong>Elementos de un método</strong></p>
+<ul>
+<li><strong>Nombre</strong>: Identifica al método dentro de la clase.</li>
+<li><strong>Parámetros</strong>: Valores de entrada que el método puede recibir para procesar (puede no tener parámetros).</li>
+<li><strong>Tipo de retorno</strong>: El tipo de dato que el método devuelve al terminar su ejecución. Puede ser un tipo de dato (<code>int</code>, <code>string</code>, <code>bool</code>, etc.) o <code>void</code> si no devuelve nada.</li>
+<li><strong>Cuerpo</strong>: Conjunto de instrucciones o código que define qué hace el método.</li>
+<li><strong>Modificadores de acceso</strong>: Palabras clave que controlan el acceso (public, private) o comportamiento especial (static, virtual, etc.) del método.</li>
+</ul>
+<p><strong>Los métodos se pueden activar/invocar al</strong>:</p>
+<ul>
+<li><strong>Recibir un mensaje</strong>: Se invocó el método desde otro objeto</li>
+<li><strong>Con un cambio de estado</strong>: Un atributo cambió en el objeto.</li>
+</ul>
+<p><strong>Para que el método sea invocado, se requiere conocer</strong>:</p>
+<ul>
+<li><strong>Nombre</strong> del método.</li>
+<li><strong>Parámetros</strong> a pasar al método (Si es que el método los acepta).</li>
+<li><strong>Tipo de dato</strong> que va a retornar el método.</li>
+</ul>
+<p><strong>Ejemplo en C#</strong></p>
+<p>La clase <code>Persona</code> se define con dos atributos (<code>nombre</code> y <code>edad</code>) y un método <code>MostrarInfo()</code> que imprime esos datos. En <code>Main</code>, se crea una instancia basada en <code>Persona</code>, se le asignan valores y se llama al método para mostrar la información.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Persona</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// Declaración de variables</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">string</span> nombre;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> edad;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Método para mostrar información de la persona</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> MostrarInfo()
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        Console.WriteLine(<span style="color:#e6db74">$&#34;Nombre: {nombre}, Edad: {edad}&#34;</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Program</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> Main()
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Creación de un objeto Persona y asignación de valores</span>
+</span></span><span style="display:flex;"><span>        Persona persona1 = <span style="color:#66d9ef">new</span> Persona();
+</span></span><span style="display:flex;"><span>        persona1.nombre = <span style="color:#e6db74">&#34;Juan&#34;</span>;
+</span></span><span style="display:flex;"><span>        persona1.edad = <span style="color:#ae81ff">25</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Llamada al método MostrarInfo()</span>
+</span></span><span style="display:flex;"><span>        persona1.MostrarInfo(); <span style="color:#75715e">// Salida: Nombre: Juan, Edad: 25</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h4 id="ciclo-de-vida-de-un-objeto">Ciclo de vida de un objeto<a hidden class="anchor" aria-hidden="true" href="#ciclo-de-vida-de-un-objeto">#</a></h4>
+<h5 id="creación-del-objeto">Creación del objeto<a hidden class="anchor" aria-hidden="true" href="#creación-del-objeto">#</a></h5>
+<h6 id="constructores">Constructores<a hidden class="anchor" aria-hidden="true" href="#constructores">#</a></h6>
+<p>Los constructores son métodos especiales que se ejecutan automáticamente cuando se crea una instancia de una clase (objeto). Su función principal es inicializar el objeto, asignando valores iniciales a sus atributos si es necesario.</p>
+<p>Algunas características clave son:</p>
+<ul>
+<li>Tienen el mismo nombre que la clase en la que está definido.</li>
+<li>No tienen un tipo de retorno (ni siquiera <code>void</code>).</li>
+<li>Suelen ser públicos para permitir la creación de instancias.</li>
+<li>Si no se programa un constructor explícitamente, algunos lenguajes como C# generan un constructor vacío por defecto (<code>default</code>) que invoca al constructor de la clase base y permite crear instancias sin inicializar valores específicos.</li>
+<li>Si nuestra clase tiene atributos es buena práctica incluir un constructor.</li>
+</ul>
+<p><strong>Ejemplo en C#</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Persona</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Atributos de la clase</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">string</span> Nombre;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> Edad;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Constructor de la clase</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> Persona(<span style="color:#66d9ef">string</span> pNombre, <span style="color:#66d9ef">int</span> pEdad)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        Nombre = pNombre;
+</span></span><span style="display:flex;"><span>        Edad = pEdad;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Método para mostrar información</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> MostrarInfo()
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        Console.WriteLine(<span style="color:#e6db74">$&#34;Nombre: {Nombre}, Edad: {Edad}&#34;</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h6 id="instanciación">Instanciación<a hidden class="anchor" aria-hidden="true" href="#instanciación">#</a></h6>
+<p>Un constructor es invocado cuando se utiliza el operador de instanciación <code>new</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Program</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> Main()
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Creación de un objeto Persona utilizando el constructor</span>
+</span></span><span style="display:flex;"><span>        Persona persona1 = <span style="color:#66d9ef">new</span> Persona(<span style="color:#e6db74">&#34;Juan&#34;</span>, <span style="color:#ae81ff">25</span>);
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// Invocación del método MostrarInfo() con los parámetros del objeto persona1</span>
+</span></span><span style="display:flex;"><span>        persona1.MostrarInfo(); <span style="color:#75715e">// Salida: Nombre: Juan, Edad: 25</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h6 id="operadores-de-instanciación">Operadores de instanciación<a hidden class="anchor" aria-hidden="true" href="#operadores-de-instanciación">#</a></h6>
+<p>Los operadores de instanciación se usan para crear nuevos objetos en memoria. Su propósito es asignar espacio y ejecutar el constructor de una clase o estructura para inicializarla. Gracias a estos operadores, podemos trabajar con objetos de manera flexible y reutilizar código fácilmente.</p>
+<ul>
+<li>
+<p><strong><code>new</code></strong>: Crea una nueva instancia de una clase, estructura, arreglo o delegado. Llama automáticamente al constructor de la clase o estructura.</p>
+<p><strong>Ejemplo en C#</strong></p>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span>Persona juan = <span style="color:#66d9ef">new</span> Persona();
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span>[] numeros = <span style="color:#66d9ef">new</span> <span style="color:#66d9ef">int</span>[<span style="color:#ae81ff">5</span>];
+</span></span></code></pre></div><ul>
+<li>
+<p><strong><code>typeof</code></strong>: Devuelve un objeto <code>Type</code> que representa un tipo en tiempo de ejecución. No crea una instancia, pero es útil para obtener información sobre un tipo.</p>
+<p><strong>Ejemplo en C#</strong></p>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span>Type tipoPersona = <span style="color:#66d9ef">typeof</span>(Persona);
+</span></span></code></pre></div><ul>
+<li>
+<p><strong><code>Activator.CreateInstance&lt;T&gt;()</code></strong>: Crea dinámicamente una instancia de una clase sin usar <code>new</code>. Útil cuando el tipo se desconoce en tiempo de compilación.</p>
+<p><strong>Ejemplo en C#</strong></p>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span>Persona juan = Activator.CreateInstance&lt;Persona&gt;();
+</span></span></code></pre></div><ul>
+<li>
+<p><strong><code>default</code></strong>: Asigna el valor predeterminado a un tipo. Para tipos de referencia, devuelve <code>null</code>. Para tipos de valor, devuelve <code>0</code>, <code>false</code> o equivalente.</p>
+<p><strong>Ejemplo en C#</strong></p>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span>Persona personaPorDefecto = <span style="color:#66d9ef">default</span>(Persona);  <span style="color:#75715e">// null</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> numero = <span style="color:#66d9ef">default</span>(<span style="color:#66d9ef">int</span>);  <span style="color:#75715e">// 0</span>
+</span></span></code></pre></div><h5 id="uso-del-objeto">Uso del objeto<a hidden class="anchor" aria-hidden="true" href="#uso-del-objeto">#</a></h5>
+<h6 id="acceso-a-atributos-y-métodos">Acceso a atributos y métodos<a hidden class="anchor" aria-hidden="true" href="#acceso-a-atributos-y-métodos">#</a></h6>
+<p>Una vez que un objeto ha sido creado (instanciado), podemos acceder a sus atributos y métodos para realizar operaciones y manipular sus datos.</p>
+<p>Se accede a los miembros de un objeto usando el operador punto (<code>.</code>).
+Por ejemplo, si <code>persona1</code> es un objeto, <code>persona1.Nombre</code> accede al atributo <code>Nombre</code> y <code>persona1.MostrarInfo()</code> llama al método.</p>
+<h5 id="alcance-y-duración-del-objeto">Alcance y duración del objeto<a hidden class="anchor" aria-hidden="true" href="#alcance-y-duración-del-objeto">#</a></h5>
+<h6 id="variables-de-instancia-y-variables-locales">Variables de instancia y variables locales<a hidden class="anchor" aria-hidden="true" href="#variables-de-instancia-y-variables-locales">#</a></h6>
+<ul>
+<li><strong>Variables de instancia</strong>: Existen mientras el objeto esté en memoria y pertenecen a cada instancia.</li>
+<li><strong>Variables locales</strong>: Solo existen dentro del método donde se declaran y desaparecen al terminar la ejecución de ese método.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Animal</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">string</span> nombre; <span style="color:#75715e">// Variable de instancia</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> AsignarNombre()
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">string</span> mensaje = <span style="color:#e6db74">&#34;Nombre asignado&#34;</span>; <span style="color:#75715e">// Variable local</span>
+</span></span><span style="display:flex;"><span>        nombre = <span style="color:#e6db74">&#34;Perro&#34;</span>;
+</span></span><span style="display:flex;"><span>        Console.WriteLine(mensaje);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="destrucción-y-gestión-de-memoria">Destrucción y gestión de memoria<a hidden class="anchor" aria-hidden="true" href="#destrucción-y-gestión-de-memoria">#</a></h5>
+<p>En C#, la gestión de memoria es automática gracias al recolector de basura (GC), que elimina objetos cuando ya no se usan. No es necesario liberar memoria manualmente en la mayoría de los casos.</p>
+<p>Para liberar recursos externos como archivos, conexiones o streams, se usa el patrón <code>Dispose()</code> junto con la palabra clave <code>using</code>. Esto garantiza que el recurso se cierre correctamente al terminar su uso.</p>
+<p><strong>Ejemplo en C#</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">using</span> (StreamReader lector = <span style="color:#66d9ef">new</span> StreamReader(<span style="color:#e6db74">&#34;archivo.txt&#34;</span>))
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">string</span> linea = lector.ReadLine();
+</span></span><span style="display:flex;"><span>    Console.WriteLine(linea);
+</span></span><span style="display:flex;"><span>} <span style="color:#75715e">// Aquí se llama automáticamente a Dispose()</span>
+</span></span></code></pre></div><h6 id="destructores">Destructores<a hidden class="anchor" aria-hidden="true" href="#destructores">#</a></h6>
+<p>Los destructores sirven para limpiar memoria, cerrar archivos, o finalizar cualquier cosa que lo requiera, y se invocan automáticamente cuando el objeto deja de existir. No todos los lenguajes lo implementan. Lleva el mismo nombre de la clase pero lleva <code>~</code> al inicio.</p>
+<h3 id="12-clases">1.2 Clases<a hidden class="anchor" aria-hidden="true" href="#12-clases">#</a></h3>
+<p>Una clase es el plano a partir del cual se determinan los atributos y métodos que contendrá un objeto. Esto permite reutilizar código para crear múltiples instancias del mismo objeto.</p>
+<p><strong>Ejemplo</strong></p>
+<p>Una empresa que tiene varios empleados. Cada empleado es un <em>objeto</em>, pero todos se crean a partir de una misma <em>clase</em> llamada <code>Empleado</code>.</p>
+<h4 id="elementos-en-una-clase">Elementos en una clase<a hidden class="anchor" aria-hidden="true" href="#elementos-en-una-clase">#</a></h4>
+<p>En una clase, el orden de los elementos presentes debe ser:</p>
+<ol>
+<li><strong>Nombre de la clase</strong></li>
+<li><strong>Atributos</strong></li>
+<li><strong>Constructores</strong></li>
+<li><strong>Funciones de interfaz (Getters y Setters)</strong></li>
+<li><strong>Demás métodos</strong></li>
+</ol>
+<h4 id="relaciones-entre-clases">Relaciones entre clases<a hidden class="anchor" aria-hidden="true" href="#relaciones-entre-clases">#</a></h4>
+<p>En sistemas POO las clases no suelen trabajar de forma aislada, sino que estas se relacionan entre sí de diversas maneras para representar interacciones, dependencias y jerarquías. Estas relaciones ayudan a estructurar el código de forma más clara, reutilizable y mantenible.</p>
+<p>Se entiende que una clase puede ser &ldquo;propietaria&rdquo; de otra cuando es responsable de su creación, gestión y eliminación. Además, algunas relaciones se consideran más &ldquo;fuertes&rdquo;, ya que implican una mayor relación, mientras que otras son más &ldquo;débiles&rdquo;, porque solo llevan a cabo una interacción temporal.</p>
+<h5 id="dependencia---usa">Dependencia - &ldquo;usa&rdquo;<a hidden class="anchor" aria-hidden="true" href="#dependencia---usa">#</a></h5>
+<p>Una clase depende de otra cuando utiliza temporalmente sus datos o comportamiento para cumplir una operación. La clase dependiente no necesita almacenar una referencia al objeto, solo usarlo mientras dura el método.</p>
+<p>Se usa cuando una clase necesita ayuda de otra para ejecutar una acción puntual.</p>
+<p><strong>Ejemplo en C#:</strong></p>
+<p>Una <code>Impresora</code> <em>usa</em> un <code>Documento</code> para imprimir su contenido.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Documento</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">string</span> Contenido { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Clase dependiente</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Impresora</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> Imprimir(Documento doc)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        Console.WriteLine(<span style="color:#e6db74">&#34;Imprimiendo: &#34;</span> + doc.Contenido);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="asociación---conoce-a-o-trabaja-con">Asociación - &ldquo;conoce a&rdquo; o &ldquo;trabaja con&rdquo;<a hidden class="anchor" aria-hidden="true" href="#asociación---conoce-a-o-trabaja-con">#</a></h5>
+<p>Una clase puede estar relacionada a otra mediante la referencia de uno de sus atributos. Sin embargo, esto no implica que una controle a la otra. Esta relación puede ser unidireccional o bidireccional.</p>
+<p>Suele usarse cuando dos clases colaboran entre sí pero sin depender mutuamente una de la otra.</p>
+<p><strong>Ejemplo en C#</strong></p>
+<p>El <code>Profesor</code> <em>conoce a</em> un <code>Estudiante</code>, es decir, solo lo tiene de referencia.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Estudiante</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">string</span> Nombre { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Profesor</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> Estudiante Alumno { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }  <span style="color:#75715e">// Asociación: conoce a Estudiante</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="agregación---tiene-un-existe-por-separado">Agregación - &ldquo;tiene un&rdquo; (Existe por separado)<a hidden class="anchor" aria-hidden="true" href="#agregación---tiene-un-existe-por-separado">#</a></h5>
+<p>Una clase puede contener objetos de otra clase, pero esos objetos pueden vivir por sí mismos fuera del contenedor.</p>
+<p>Se puede usar para representar componentes que son parte de otros, pero que a su vez pueden existir de manera independiente.</p>
+<p><strong>Ejemplo en C#</strong></p>
+<p>Una <code>Universidad</code> <em>tiene</em> <code>Carrera</code>(s) pero podrían existir fuera de ella también, como en otra universidad diferente.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Carrera</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">string</span> Nombre { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Universidad</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> List&lt;Carrera&gt; Carreras { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; } = <span style="color:#66d9ef">new</span> List&lt;Carrera&gt;();
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="composición---tiene-un-no-existe-por-separado">Composición - &ldquo;tiene un&rdquo; (No existe por separado)<a hidden class="anchor" aria-hidden="true" href="#composición---tiene-un-no-existe-por-separado">#</a></h5>
+<p>Una clase puede poseer objetos de otras clases, pero a diferencia de la agregación, estos no pueden existir independientemente, ya que si la clase contenedora desaparece, los objetos controlados también desaparecen.</p>
+<p>Se suele usar cuando un objeto forma parte inseparable de otro y no tiene sentido que exista por si solo.</p>
+<p><strong>Ejemplo en C#</strong></p>
+<p>Una <code>Casa</code> <em>tiene</em> <code>Habitacion</code>(es), y estas solo pueden ser creadas y gestionadas por la misma <code>Casa</code>, por lo que no podrían estar fuera de ella.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Habitacion</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> Numero { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Casa</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> List&lt;Habitacion&gt; habitaciones = <span style="color:#66d9ef">new</span> List&lt;Habitacion&gt;();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> Casa()
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        habitaciones.Add(<span style="color:#66d9ef">new</span> Habitacion { Numero = <span style="color:#ae81ff">1</span> });
+</span></span><span style="display:flex;"><span>        habitaciones.Add(<span style="color:#66d9ef">new</span> Habitacion { Numero = <span style="color:#ae81ff">2</span> });
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="herencia---es-un">Herencia - &ldquo;es un&rdquo;<a hidden class="anchor" aria-hidden="true" href="#herencia---es-un">#</a></h5>
+<p>Las clases pueden tener una relación jerárquica, donde una clase hereda los atributos y comportamientos de otra (Clase base y clase hija) con el fin de crear una clase más especializada.</p>
+<p>Se usa la herencia cuando una clase comparte funcionalidad con otra pero también necesita comportamientos propios.</p>
+<p><strong>Ejemplo en C#</strong></p>
+<p><code>Perro</code> <em>es un</em> <code>Animal</code> ya que hereda esa descripción y comportamientos, pero también añade los comportamientos propios de esa especie, como ladrar.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Animal</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> Comer()
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        Console.WriteLine(<span style="color:#e6db74">&#34;El animal está comiendo.&#34;</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Perro</span> : Animal
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> Ladrar()
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        Console.WriteLine(<span style="color:#e6db74">&#34;Guau!&#34;</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h4 id="tipos-de-clases">Tipos de clases<a hidden class="anchor" aria-hidden="true" href="#tipos-de-clases">#</a></h4>
+<p>Así como existen diferentes formas en las que se relacionan las clases, también existen distintos tipos de clases según su propósito, restricciones y forma de implementación. Estos tipos permiten organizar el código de forma más clara, flexible y segura.</p>
+<h5 id="clase-concreta">Clase concreta<a hidden class="anchor" aria-hidden="true" href="#clase-concreta">#</a></h5>
+<p>Es la clase tradicional que se puede instanciar directamente. Contiene la implementación completa de todos sus métodos y puede heredar o ser heredada.</p>
+<p>Se usa para crear objetos funcionales que representen entidades del sistema.</p>
+<p><strong>Ejemplo en C#</strong></p>
+<p><code>Persona</code> es una clase funcional que se puede usar normalmente.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Persona</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">string</span> Nombre { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> Saludar()
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        Console.WriteLine(<span style="color:#e6db74">$&#34;Hola, soy {Nombre}&#34;</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="clase-abstracta">Clase abstracta<a hidden class="anchor" aria-hidden="true" href="#clase-abstracta">#</a></h5>
+<p>Una clase abstracta no puede ser instanciada directamente. Sirve como clase base para otras clases. Puede contener métodos abstractos (sin implementación) que deben ser definidos por las clases hijas, así como métodos normales.</p>
+<p>Se usa para definir una estructura base común que otras clases deben completar y especializar.</p>
+<p><strong>Ejemplo en C#</strong></p>
+<p><code>Animal</code> define lo general, <code>Perro</code> completa lo específico.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">abstract</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Animal</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">abstract</span> <span style="color:#66d9ef">void</span> HacerSonido();  <span style="color:#75715e">// Método obligatorio sin implementar</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> Dormir() =&gt; Console.WriteLine(<span style="color:#e6db74">&#34;Zzz...&#34;</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Perro</span> : Animal
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">override</span> <span style="color:#66d9ef">void</span> HacerSonido()
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        Console.WriteLine(<span style="color:#e6db74">&#34;Guau!&#34;</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="clase-estática">Clase estática<a hidden class="anchor" aria-hidden="true" href="#clase-estática">#</a></h5>
+<p>Una clase estática no puede ser instanciada ni heredada. Todos sus miembros también deben ser <code>static</code>. Es decir, no trabaja con datos de objetos, sino que ofrece funciones o utilidades que se pueden usar directamente desde la clase.</p>
+<p>Se utiliza para agrupar métodos que no necesitan mantener estado, como funciones matemáticas, validaciones, conversiones, u otras herramientas.</p>
+<p><strong>Ejemplo en C#</strong></p>
+<p>La clase <code>Calculadora</code> contiene métodos que se pueden usar sin necesidad de crear una instancia.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Calculadora</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">int</span> Sumar(<span style="color:#66d9ef">int</span> a, <span style="color:#66d9ef">int</span> b) =&gt; a + b;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Posible implementación en otra parte del programa</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> resultado = Calculadora.Sumar(<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>); <span style="color:#75715e">// Salida: 8</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Implementación incorrecta</span>
+</span></span><span style="display:flex;"><span>Calculadora calc = <span style="color:#66d9ef">new</span> Calculadora();
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> resultado = calc.Sumar(<span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>);
+</span></span></code></pre></div><h5 id="clase-sellada">Clase sellada<a hidden class="anchor" aria-hidden="true" href="#clase-sellada">#</a></h5>
+<p>Una clase sellada no puede ser heredada. Esto impide que otras clases modifiquen o extiendan su comportamiento. También puede mejorar el rendimiento del sistema en tiempo de ejecución.</p>
+<p>Se usa cuando se quiere proteger una clase para que nadie más la extienda o modifique, especialmente en bibliotecas, servicios, o clases críticas.</p>
+<p><strong>Ejemplo en C#</strong></p>
+<p><code>Logger</code> registra los eventos en una aplicación. No queremos que alguien herede de ella y cambie la forma en que se registran los mensajes, como su formato, por lo que se crea como clase sellada.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">sealed</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Logger</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> LogInfo(<span style="color:#66d9ef">string</span> mensaje)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        Console.WriteLine(<span style="color:#e6db74">$&#34;[INFO] {mensaje}&#34;</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> LogError(<span style="color:#66d9ef">string</span> mensaje)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        Console.WriteLine(<span style="color:#e6db74">$&#34;[ERROR] {mensaje}&#34;</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="interfaz">Interfaz<a hidden class="anchor" aria-hidden="true" href="#interfaz">#</a></h5>
+<p>Una interfaz garantiza que cualquier clase que la implemente tendrá cierto comportamiento, sin importar cómo lo haga, lo cual se define mediante un conjunto de métodos y propiedades sin implementación. Las clases que implementan la interfaz están obligadas a proporcionar su propia versión de esos miembros.</p>
+<p>Se usa para definir contratos que distintas clases pueden implementar de manera diferente.</p>
+<p><strong>Ejemplo en C#</strong></p>
+<p><code>Auto : IVehiculo</code> se compromete a implementar el comportamiento definido por la interfaz <code>IVehiculo</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">IVehiculo</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">void</span> Encender();
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Auto</span> : IVehiculo
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> Encender()
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        Console.WriteLine(<span style="color:#e6db74">&#34;Auto encendido.&#34;</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="clase-parcial">Clase parcial<a hidden class="anchor" aria-hidden="true" href="#clase-parcial">#</a></h5>
+<p>Una clase parcial se puede dividir en varios archivos del mismo proyecto. Todos los fragmentos se unen en tiempo de compilación como si fuera una sola clase.</p>
+<p>Se utiliza para organizar mejor el código, especialmente en proyectos grandes o con código generado automáticamente (como en Windows Forms), y el programador añade lógica personalizada en otro archivo.</p>
+<p><strong>Ejemplo C#</strong></p>
+<p>El compilador trata como una sola clase a los siguientes archivos:</p>
+<p>Archivo <code>Persona.cs</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">partial</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Persona</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">string</span> Nombre { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Archivo <code>Persona.Saludo.cs</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">partial</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Persona</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> Saludar() =&gt; Console.WriteLine(<span style="color:#e6db74">$&#34;Hola, soy {Nombre}&#34;</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="clase-genérica">Clase genérica<a hidden class="anchor" aria-hidden="true" href="#clase-genérica">#</a></h5>
+<p>Una clase <strong>genérica</strong> permite trabajar con distintos tipos de datos sin duplicar código. Se define con un parámetro de tipo <code>&lt;T&gt;</code>, el cual se especifica al momento de crear una instancia.</p>
+<p>Se suele utilizar para colecciones, contenedores, utilidades y estructuras reutilizables.</p>
+<p><strong>Ejemplo en C#</strong></p>
+<p>Se puede usar una instancia de <code>Caja</code> con cualquier tipo de dato.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Caja</span>&lt;T&gt;
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> T Contenido { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Posibles implementaciones en el programa</span>
+</span></span><span style="display:flex;"><span>Caja caja1 = <span style="color:#66d9ef">new</span> Caja&lt;<span style="color:#66d9ef">int</span>&gt; { Contenido = <span style="color:#ae81ff">100</span> }; 
+</span></span><span style="display:flex;"><span>Caja caja2 = <span style="color:#66d9ef">new</span> Caja&lt;<span style="color:#66d9ef">string</span>&gt; { Contenido = <span style="color:#e6db74">&#34;Hola&#34;</span> };
+</span></span></code></pre></div><h4 id="cardinalidad">Cardinalidad<a hidden class="anchor" aria-hidden="true" href="#cardinalidad">#</a></h4>
+<p>Expresa las relaciones entre clases, mediante el número de entidades a las que otra entidad puede estar relacionada. Cada caso se puede dar según los requerimientos del sistema.</p>
+<ul>
+<li><strong>1 a 1</strong>: Cada instancia de una clase se relaciona con <strong>una sola</strong> instancia de la otra clase. <strong>Ejemplo</strong>: Un <code>Docente</code> imparte <strong>exactamente un</strong> <code>Curso</code>, y ese <code>Curso</code> es impartido por <strong>exactamente un</strong> <code>Docente</code>.</li>
+<li><strong>1 a muchos</strong>: Una instancia de una clase se relaciona con <strong>múltiples</strong> instancias de otra clase, pero no al revés. <strong>Ejemplo:</strong> Un <code>Docente</code> puede impartir <strong>muchos</strong> <code>Cursos</code>, pero cada <code>Curso</code> es impartido por <strong>solo un</strong> <code>Docente</code>.</li>
+<li><strong>Muchos a muchos</strong>: Varias instancias de una clase se pueden relacionar con <strong>varias</strong> instancias de otra clase, y viceversa. <strong>Ejemplo:</strong> Un <code>Docente</code> puede impartir varios <code>Cursos</code>, y un mismo <code>Curso</code> puede ser impartido por varios <code>Docentes</code> (por ejemplo, en equipo).</li>
+</ul>
+<h3 id="13-tipos-de-datos-no-primitivos">1.3 Tipos de datos no primitivos<a hidden class="anchor" aria-hidden="true" href="#13-tipos-de-datos-no-primitivos">#</a></h3>
+<p>Los tipos de datos no primitivos son estructuras más complejas que los datos simples y se crean a partir de estos. Algunos de los tipos más comunes son:</p>
+<ul>
+<li><strong>Objetos</strong>: Instancias de clases que combinan datos (atributos) y funcionalidades (métodos).</li>
+<li><strong>Arreglos (Arrays)</strong>: Conjuntos de elementos del mismo tipo organizados de manera que cada valor se almacena en una posición específica identificada por un índice.</li>
+<li><strong>Matrices</strong>: Son arreglos de dos o más dimensiones que organizan los datos en filas y columnas, permitiendo representar estructuras como tablas o gráficos.</li>
+<li><strong>Listas</strong>: Son colecciones dinámicas de elementos, similares a los arreglos, pero con la diferencia de que pueden cambiar de tamaño y permiten agregar o eliminar datos con facilidad.</li>
+</ul>
+<hr>
+<h2 id="-más-información">/ Más Información<a hidden class="anchor" aria-hidden="true" href="#-más-información">#</a></h2>
+<ul>
+<li><a href="/apuntes/programaci%C3%B3n-i---algoritmos/">Programación I - Algoritmos</a></li>
+<li><a href="/apuntes/programaci%C3%B3n-ii---conceptos-b%C3%A1sicos/">Programación II - Conceptos Básicos</a></li>
+<li><a href="/apuntes/programaci%C3%B3n-iii---introducci%C3%B3n-a-la-programaci%C3%B3n-orientada-a-objetos/">Programación III - Introducción a la Programación Orientada a Objetos</a></li>
+<li><a href="/apuntes/programaci%C3%B3n-iv---conceptos-b%C3%A1sicos-de-poo/">Programación IV - Conceptos Básicos de POO</a></li>
+<li><a href="/apuntes/programaci%C3%B3n-v---mecanismos-de-poo/">Programación V - Mecanismos de POO</a></li>
+<li><a href="/apuntes/programaci%C3%B3n-vi---estructuras-de-datos-abstractos/">Programación VI - Estructuras de Datos Abstractos</a></li>
+<li><a href="/apuntes/programaci%C3%B3n-vii---manejo-de-datos/">Programación VII - Manejo de Datos</a></li>
+<li><a href="/apuntes/programaci%C3%B3n-viii---poo-y-la-programaci%C3%B3n-orientada-a-eventos/">Programación VIII - POO y la Programación Orientada a Eventos</a></li>
+<li><a href="/apuntes/programaci%C3%B3n-ix---patrones-de-dise%C3%B1o/">Programación IX - Patrones de Diseño</a></li>
+<li><a href="/apuntes/programaci%C3%B3n---gu%C3%ADas-documentaci%C3%B3n-y-buenas-pr%C3%A1cticas/">Programación - Guías Documentación y Buenas Prácticas</a></li>
+</ul>
+<hr>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/enciclopedia/">Enciclopedia</a></li>
+      <li><a href="http://localhost:1313/tags/post/">Post</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="http://localhost:1313/">oscarzt20</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

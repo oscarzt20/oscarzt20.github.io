@@ -6,36 +6,13 @@
     <description>Recent content in Apuntes on oscarzt20</description>
     <generator>Hugo -- 0.148.1</generator>
     <language>es-mx</language>
+    <lastBuildDate>Fri, 08 Aug 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/apuntes/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Conceptos Generales de Programación</title>
-      <link>http://localhost:1313/apuntes/conceptos-generales-de-programaci%C3%B3n/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/apuntes/conceptos-generales-de-programaci%C3%B3n/</guid>
-      <description>&lt;hr&gt;
-&lt;p&gt;La programación es el proceso de escribir instrucciones para que una computadora realice tareas específicas. Antes de empezar a programar, es importante conocer los fundamentos necesarios para entender cómo funciona la programación.&lt;/p&gt;
-&lt;h2 id=&#34;i-algoritmos&#34;&gt;I. Algoritmos&lt;/h2&gt;
-&lt;p&gt;Para programar, los desarrolladores crean algoritmos, que son secuencias ordenadas de pasos que resuelven un problema o llevan a cabo una tarea.&lt;/p&gt;
-&lt;h3 id=&#34;11-características-de-los-algoritmos&#34;&gt;1.1 Características de los algoritmos&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Finito&lt;/strong&gt;: Un algoritmo debe terminar después de un número determinado de pasos. Se evitan los bucles sin fin.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Preciso&lt;/strong&gt;: No debe haber interpretaciones subjetivas sobre lo que se debe hacer en cada instrucción.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Con inicio y final/es&lt;/strong&gt;: Debe tener un inicio y puede contener más de un final.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Eficaz en la solución del problema&lt;/strong&gt;: El algoritmo debe resolver el problema de manera correcta y óptima, evitando pasos innecesarios o ineficientes.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;12-tipos-de-algoritmos&#34;&gt;1.2 Tipos de algoritmos&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Cualitativos&lt;/strong&gt;: Emplean palabras, ej. receta de cocina.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Cuantitativos&lt;/strong&gt;: Utilizan cálculos numéricos, ej. resolver una ecuación de 2° grado.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;13-lenguajes-algorítmicos&#34;&gt;1.3 Lenguajes algorítmicos&lt;/h3&gt;
-&lt;p&gt;Conjunto de símbolos y reglas que permiten explicar un proceso.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Conceptos y Programación de Bases de Datos</title>
-      <link>http://localhost:1313/apuntes/conceptos-y-programaci%C3%B3n-de-bases-de-datos/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/apuntes/conceptos-y-programaci%C3%B3n-de-bases-de-datos/</guid>
+      <title>Bases de Datos I - Conceptos Básicos</title>
+      <link>http://localhost:1313/apuntes/bases-de-datos-i---conceptos-b%C3%A1sicos/</link>
+      <pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/apuntes/bases-de-datos-i---conceptos-b%C3%A1sicos/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;i-bases-de-datos&#34;&gt;I. Bases de datos&lt;/h2&gt;
 &lt;p&gt;Una base de datos se puede percibir como un gran almacén de datos, que se utiliza al mismo tiempo por distintos usuarios.&lt;/p&gt;
@@ -51,10 +28,385 @@ Los componentes de las bases de datos son:&lt;/p&gt;
 &lt;p&gt;Administración de los datos en relación con la interacción con los usuarios. Es vital para el funcionamiento de las funciones de una página o programa.&lt;/p&gt;</description>
     </item>
     <item>
-      <title>Programación Orientada a Objetos</title>
-      <link>http://localhost:1313/apuntes/programaci%C3%B3n-orientada-a-objetos/</link>
+      <title>Bases de Datos II - Diagramas y Documentación</title>
+      <link>http://localhost:1313/apuntes/bases-de-datos-ii---diagramas-y-documentaci%C3%B3n/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/apuntes/programaci%C3%B3n-orientada-a-objetos/</guid>
+      <guid>http://localhost:1313/apuntes/bases-de-datos-ii---diagramas-y-documentaci%C3%B3n/</guid>
+      <description>&lt;hr&gt;
+&lt;h2 id=&#34;i-diagramas-representativos&#34;&gt;I. Diagramas representativos&lt;/h2&gt;
+&lt;h3 id=&#34;11-diagrama-de-entidad-relación&#34;&gt;1.1 Diagrama de entidad relación&lt;/h3&gt;
+&lt;p&gt;Es la representación gráfica de cada uno de los requerimientos representados en entidades, atributos y relaciones.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Entidad: Es un objeto o una cosa del mundo real que es distinguible de los demás objetos. Ejemplo: Mesa&lt;/li&gt;
+&lt;li&gt;Atributos: Son las características de a entidad. Ejemplo: Material&lt;/li&gt;
+&lt;li&gt;Relaciones: Cardinalidad&lt;/li&gt;
+&lt;/ul&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;&lt;strong&gt;Figura&lt;/strong&gt;&lt;/th&gt;
+          &lt;th&gt;&lt;strong&gt;Representación&lt;/strong&gt;&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Rectángulo&lt;/td&gt;
+          &lt;td&gt;Entidades. Ejemplo: Cliente, Proveedores&amp;hellip;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Elipse&lt;/td&gt;
+          &lt;td&gt;Atributos: Puntuado derivadas, doble para multivaluado, subrayado es clave primaria. Ejemplo: Teléfono&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Rombo&lt;/td&gt;
+          &lt;td&gt;Conjunto de Relaciones. Ejemplo: Compra, Vende, Atiende&amp;hellip;&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;12-diagrama-relacional&#34;&gt;1.2 Diagrama relacional&lt;/h3&gt;
+&lt;p&gt;Es una representación en forma de tablas que representa una base de datos relacional, donde sus columnas (atributos) y las relaciones entre ellas mediante llaves foráneas y primarias.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Bases de Datos III - Reglas de Normalización</title>
+      <link>http://localhost:1313/apuntes/bases-de-datos-iii---reglas-de-normalizaci%C3%B3n/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/apuntes/bases-de-datos-iii---reglas-de-normalizaci%C3%B3n/</guid>
+      <description>&lt;hr&gt;
+&lt;h2 id=&#34;i-normalización&#34;&gt;I. Normalización&lt;/h2&gt;
+&lt;p&gt;Es la transformación del diseño de la base de datos a uno más simple y estable, sin ambigüedad.&lt;/p&gt;
+&lt;p&gt;Esto es importante para optimizar y garantizar que no haya ambigüedades (Pérdida de datos, etc.).&lt;/p&gt;
+&lt;h3 id=&#34;11-reglaforma-1&#34;&gt;1.1 Regla/Forma 1&lt;/h3&gt;
+&lt;p&gt;Una tabla está en &lt;strong&gt;Primera Forma Normal (1NF)&lt;/strong&gt; si cumple con lo siguiente:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Atomicidad:&lt;/strong&gt; Cada celda contiene un único valor atómico (no listas, conjuntos ni estructuras anidadas).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Clave primaria:&lt;/strong&gt; Debe existir una clave primaria que identifique unívocamente cada fila.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Sin duplicados:&lt;/strong&gt; No debe haber filas duplicadas.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Uniformidad:&lt;/strong&gt; Cada columna debe contener valores de un solo tipo de dato (coherentes para cada fila).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Recomendación:&lt;/strong&gt; Los datos compuestos (como nombres completos) o valores múltiples (como listas de teléfonos) deben descomponerse en datos atómicos. No se permiten rangos ni conjuntos de valores en una celda.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Bases de Datos IV - Álgebra Relacional</title>
+      <link>http://localhost:1313/apuntes/bases-de-datos-iv---%C3%A1lgebra-relacional/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/apuntes/bases-de-datos-iv---%C3%A1lgebra-relacional/</guid>
+      <description>&lt;hr&gt;
+&lt;h2 id=&#34;i-álgebra-relacional&#34;&gt;I. Álgebra relacional&lt;/h2&gt;
+&lt;p&gt;Las bases de datos relacionales requieren de un conjunto de operaciones que permiten manipular la base de datos. Date (2001) menciona que el álgebra relacional es un conjunto de operadores que toman sus relaciones como sus operandos y regresan una relación como resultado.&lt;/p&gt;
+&lt;h3 id=&#34;11-operadores-relacionales&#34;&gt;1.1 Operadores relacionales&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;σ (sigma)&lt;/strong&gt;: Representa la &lt;strong&gt;operación de selección&lt;/strong&gt;, que filtra las filas de una relación basándose en una condición.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;π (pi)&lt;/strong&gt;: Representa la &lt;strong&gt;operación de proyección&lt;/strong&gt;, que selecciona columnas específicas de una relación.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;∪ (unión)&lt;/strong&gt;: Representa la &lt;strong&gt;unión&lt;/strong&gt; de dos relaciones.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;12-operadores-de-condición&#34;&gt;1.2 Operadores de condición&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&amp;lt; (Menor que)&lt;/strong&gt;: Compara si un valor es menor que otro.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&amp;gt; (Mayor que)&lt;/strong&gt;: Compara si un valor es mayor que otro.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&amp;lt;= (Menor o igual a que)&lt;/strong&gt;: Compara si un valor es menor o igual a otro.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&amp;gt;= (Mayor o igual a que)&lt;/strong&gt;: Compara si un valor es mayor o igual a otro.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;= (Igual a)&lt;/strong&gt;: Verifica si dos valores son iguales.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;13-representación-de-una-expresión&#34;&gt;1.3 Representación de una expresión&lt;/h3&gt;
+&lt;p&gt;Se puede representar de 3 maneras:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Bases de Datos IX - Operaciones Avanzadas de SQL</title>
+      <link>http://localhost:1313/apuntes/bases-de-datos-ix---operaciones-avanzadas-de-sql/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/apuntes/bases-de-datos-ix---operaciones-avanzadas-de-sql/</guid>
+      <description>&lt;hr&gt;
+&lt;h2 id=&#34;i-operaciones-avanzadas&#34;&gt;I. Operaciones avanzadas&lt;/h2&gt;
+&lt;h3 id=&#34;11-procedimientos-almacenados-avanzados&#34;&gt;1.1 Procedimientos almacenados avanzados&lt;/h3&gt;
+&lt;p&gt;Se pueden declarar variables que almacenen resultados de consultas y permitan realizar operaciones. Así mismo se pueden generar cambios en base a cierta lógica o notificar.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Proceso&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Se crea el PA y se le da un nombre.&lt;/li&gt;
+&lt;li&gt;Se colocan los atributos de las tablas relevantes para el proceso.&lt;/li&gt;
+&lt;li&gt;Se declaran las variables que vamos a usar (No existen en las tablas).&lt;/li&gt;
+&lt;li&gt;Se realiza la selección para invocar los datos necesarios. Asignar esto a una variable.&lt;/li&gt;
+&lt;li&gt;Se realiza la lógica requerida con las variables declaradas.&lt;/li&gt;
+&lt;li&gt;Se ejecuta.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;Ejemplos&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Bases de Datos V - Microsoft SQL</title>
+      <link>http://localhost:1313/apuntes/bases-de-datos-v---microsoft-sql/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/apuntes/bases-de-datos-v---microsoft-sql/</guid>
+      <description>&lt;hr&gt;
+&lt;h2 id=&#34;i-microsoft-sql&#34;&gt;I. Microsoft SQL&lt;/h2&gt;
+&lt;p&gt;El SQL (Lenguaje Estructurado de Consultas) es un lenguaje declarativo basado en el modelo relacional, es decir, se indican instrucciones y la acción que realizarán sobre una base de datos relacional.&lt;/p&gt;
+&lt;h3 id=&#34;11-categorías-de-sql&#34;&gt;1.1 Categorías de SQL&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Lenguaje de definición de datos (DDL, Data Definition Language)&lt;/strong&gt;: Son instrucciones que se utilizan para crear, modificar y borrar objetos de la base de datos, como tablas, vistas, esquemas, dominios, activadores y procedimientos almacenados.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Lenguaje de control de datos (DCL, Data Control Language)&lt;/strong&gt;: Son instrucciones que permiten controlar quién o qué tiene acceso a objetos específicos de la base de datos. Dentro de estas instrucciones se pueden encontrar aquellas asociadas a la administración de usuarios, para otorgar o revocar permisos a objetos de las bases de datos.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Lenguaje de manipulación de datos (DML, Data Manipulation Language)&lt;/strong&gt;: Son instrucciones que se utilizan para recuperar, agregar, modificar y borrar datos almacenados en la base de datos.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;12-instalación-y-uso&#34;&gt;1.2 Instalación y uso&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;En la página Microsoft SQL se elige la versión express, instalación personalizada, instalar, New standalone installation, aceptar e instalar&lt;/li&gt;
+&lt;li&gt;Quitar selección de Azure, y Machine Learning y todo next&lt;/li&gt;
+&lt;li&gt;Install SQL server management tools, Descargar los ssms&lt;/li&gt;
+&lt;li&gt;Cerrar todo y abrir SQL Server Management Studio 20&lt;/li&gt;
+&lt;li&gt;Colocar opcional, y conectar&lt;/li&gt;
+&lt;li&gt;Al abrir dar conectar&lt;/li&gt;
+&lt;li&gt;En la barra, New Query&lt;/li&gt;
+&lt;li&gt;Seleccionar primera línea (CREATE DATABASE mydb;) y Execute, lo mismo con la segunda línea (Use mydb;)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;notas-de-programar-en-sql&#34;&gt;Notas de programar en SQL&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Declarar cada FK como una variable más&lt;/li&gt;
+&lt;li&gt;Ejecutar cada tabla, primero escribir y ejecutar las tablas de las que otras dependen&lt;/li&gt;
+&lt;li&gt;Cada insert debe seguir la jerarquía con la que se crearon las tablas&lt;/li&gt;
+&lt;li&gt;Si se puso una numeración automática (IDENTITY(1,1)) en el id de una tabla, cuando se inserten datos no se colocan los id. Si es foránea si se pone, para saber con quién se conecta.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;ii-configuraciones-de-sql-server&#34;&gt;II. Configuraciones de SQL Server&lt;/h2&gt;
+&lt;h3 id=&#34;21-creación-de-diagramas&#34;&gt;2.1 Creación de diagramas&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Crear la base de datos&lt;/li&gt;
+&lt;li&gt;Buscar la DB dentro de la lista de la carpeta databases en el lado izquierdo y expandir&lt;/li&gt;
+&lt;li&gt;Expandir la carpeta de database diagram y aceptar el mensaje&lt;/li&gt;
+&lt;li&gt;click derecho en esa misma carpeta y seleccionar añadir&lt;/li&gt;
+&lt;li&gt;Seleccionar todas las tablas al mismo tiempo y seleccionar add&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;22-backups&#34;&gt;2.2 Backups&lt;/h3&gt;
+&lt;p&gt;En SQL, los respaldos son una parte esencial, ya que permiten recuperar los datos en caso de fallos o pérdidas.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Bases de Datos VI - Estructura Básica de SQL</title>
+      <link>http://localhost:1313/apuntes/bases-de-datos-vi---estructura-b%C3%A1sica-de-sql/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/apuntes/bases-de-datos-vi---estructura-b%C3%A1sica-de-sql/</guid>
+      <description>&lt;hr&gt;
+&lt;h2 id=&#34;i-estructura-y-configuración-inicial-en-sql-server&#34;&gt;I. Estructura y configuración inicial en SQL Server&lt;/h2&gt;
+&lt;h3 id=&#34;11-operaciones-básicas-de-sql&#34;&gt;1.1 Operaciones básicas de SQL&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;CREATE DATABASE&lt;/strong&gt;: Crea una nueva base de datos&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;USE&lt;/strong&gt;: Selecciona la base de datos en la que deseas trabajar. Después de ejecutar este comando, todas las operaciones de SQL se aplicarán a la base de datos seleccionada.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;DROP DATABASE&lt;/strong&gt; Elimina por completo una base de datos.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;CREATE TABLE&lt;/strong&gt;: Crea una nueva tabla. Al definirla, se especifican las columnas, tipos de datos y restricciones para almacenar información estructurada.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;DROP TABLE&lt;/strong&gt;: Elimina la tabla que se seleccione&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;INSERT&lt;/strong&gt;: Permite agregar una nueva fila o registro en una tabla. Se puede especificar una lista de columnas y valores correspondientes.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;UPDATE&lt;/strong&gt;: Modifica los datos de las filas en una tabla. Permite actualizar uno o más valores en registros específicos utilizando una cláusula &lt;code&gt;WHERE&lt;/code&gt; para limitar las filas afectadas.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;SELECT&lt;/strong&gt;: Corresponde a la operación de proyección del álgebra relacional, se utiliza para listar los atributos de una consulta.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;FROM&lt;/strong&gt;: Indica la tabla o tablas desde las cuales se extraerán los datos.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;WHERE&lt;/strong&gt;: Filtra los registros en función de una condición dada, similar a la operación de selección en el álgebra relacional.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;INNER JOIN &amp;hellip; ON&lt;/strong&gt;: Combina filas de dos o más tablas en función de una condición de igualdad especificada en la cláusula ON. Solo devuelve las filas donde existe una coincidencia en ambas tablas.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;12-creación-de-los-elementos-iniciales&#34;&gt;1.2 Creación de los elementos iniciales&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Crear y usar la base de datos&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;CREATE DATABASE NombreDB;
+USE NombreDB;
+&lt;/code&gt;&lt;/pre&gt;&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;&lt;strong&gt;Crear tablas&lt;/strong&gt;. Aquellas que no tienen llave foránea van primero.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;CREATE TABLE Departamentos
+(
+	id_departamento INT IDENTITY(1,1) PRIMARY KEY,
+	atributo VARCHAR(50),
+	atributo2 DATE,
+	atributo3 FLOAT(9),
+	atributo4 INT
+);
+
+CREATE TABLE Empleados
+(
+	id_empleado INT IDENTITY(1,1) PRIMARY KEY,
+	atributo VARCHAR(50),
+	atributo2 DATE,
+	atributo3 FLOAT(9),
+	atributo4 INT,
+	id_departamento INT,
+	FOREIGN KEY (id_departamento) REFERENCES Departamentos(id_departamento)
+);
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;13--manipulaciones-de-datos-en-tablas&#34;&gt;1.3  Manipulaciones de datos en tablas&lt;/h3&gt;
+&lt;h4 id=&#34;insert&#34;&gt;INSERT&lt;/h4&gt;
+&lt;p&gt;Insertar valores.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Bases de Datos VII - Consultas de Datos</title>
+      <link>http://localhost:1313/apuntes/bases-de-datos-vii---consultas-de-datos/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/apuntes/bases-de-datos-vii---consultas-de-datos/</guid>
+      <description>&lt;hr&gt;
+&lt;h2 id=&#34;i-consultas&#34;&gt;I. Consultas&lt;/h2&gt;
+&lt;h3 id=&#34;11-consultas-básicas&#34;&gt;1.1 Consultas básicas&lt;/h3&gt;
+&lt;p&gt;Se usa &lt;code&gt;SELECT&lt;/code&gt; para iniciar, &lt;code&gt;*&lt;/code&gt; para hacer una selección global o se especifican los datos para especificar la búsqueda. Adicionalmente se usa &lt;code&gt;FROM&lt;/code&gt; para especificar la tabla y &lt;code&gt;WHERE&lt;/code&gt; para especificar una condición.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Ejemplos&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Consulta todos los archivos y sus características&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;SELECT * FROM sys.master_files;
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;Consulta todas las bases de datos&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;SELECT * FROM sys.databases;
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;Consulta las tablas, se cambia el nombre de la DB que se quiere ver&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;SELECT object_id, &amp;#39;[&amp;#39;+SCHEMA_NAME(schema_id)+&amp;#39;].[&amp;#39;+name+&amp;#39;]&amp;#39;
+AS [schema_table], max_column_id_used, type, type_desc, create_date, modify_date, lock_escalation_desc
+FROM sys.tables;
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;Consulta e texto o código fuente de un objeto en la base de datos, como una vista, procedimiento almacenado, función o disparador&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;sp_helpText contarDepartamentos;
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;Consulta todo de los clientes con apellido paterno &amp;lsquo;Martinez&amp;rsquo;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;SELECT * FROM Clientes WHERE apellidoP = &amp;#39;Martinez&amp;#39;;
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;Consulta el precio y las ventas de los productos de color &amp;lsquo;azul&amp;rsquo;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;SELECT precio, ventas FROM Productos WHERE color = &amp;#39;azul&amp;#39;;
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;12-uso-de-join&#34;&gt;1.2 Uso de JOIN&lt;/h3&gt;
+&lt;h4 id=&#34;inner-join&#34;&gt;INNER JOIN&lt;/h4&gt;
+&lt;p&gt;Combina filas de dos o más tablas en función de una condición de igualdad especificada en la cláusula &lt;code&gt;ON&lt;/code&gt;. Solo devuelve las filas donde existe una coincidencia en ambas tablas. Se toma en cuenta la llave primaria y la foránea.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Bases de Datos VIII - Automatización y Seguridad</title>
+      <link>http://localhost:1313/apuntes/bases-de-datos-viii---automatizaci%C3%B3n-y-seguridad/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/apuntes/bases-de-datos-viii---automatizaci%C3%B3n-y-seguridad/</guid>
+      <description>&lt;hr&gt;
+&lt;h2 id=&#34;i-automatización-y-seguridad&#34;&gt;I. Automatización y seguridad&lt;/h2&gt;
+&lt;h3 id=&#34;11-procedimientos-almacenados&#34;&gt;1.1 Procedimientos almacenados&lt;/h3&gt;
+&lt;p&gt;Los stored procedures permiten agilizar los procesos de consulta de datos, aumentar la seguridad, reutilizar código y permiten un desarrollo de software más ágil. Dentro de SQL Server se les considera como un grupo de una o varias instrucciones Transact-SQL, mientras que en Microsoft .NET Framework se trata de una referencia a un método de Common Runtime Language (CLR).&lt;/p&gt;
+&lt;p&gt;Los SP contienen instrucciones de programación que realizan operaciones en la base de datos, como llamar a otros procedimientos, devolver un valor de estado o realizar una llamada para indicar si la operación se ha realizado correctamente o se han producido errores y el motivo de estos.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Programación - Guías y Buenas Prácticas</title>
+      <link>http://localhost:1313/apuntes/programaci%C3%B3n---gu%C3%ADas-documentaci%C3%B3n-y-buenas-pr%C3%A1cticas/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/apuntes/programaci%C3%B3n---gu%C3%ADas-documentaci%C3%B3n-y-buenas-pr%C3%A1cticas/</guid>
+      <description>&lt;hr&gt;
+&lt;h2 id=&#34;i-guía-de-nomenclatura-en-programación&#34;&gt;I. Guía de nomenclatura en programación&lt;/h2&gt;
+&lt;p&gt;Las convenciones ampliamente aceptadas en la industria para la nomenclatura en programación son:&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;&lt;strong&gt;Elemento&lt;/strong&gt;&lt;/th&gt;
+          &lt;th&gt;&lt;strong&gt;Convención&lt;/strong&gt;&lt;/th&gt;
+          &lt;th&gt;&lt;strong&gt;Ejemplo&lt;/strong&gt;&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;Nombre del proyecto&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;PascalCase&lt;/code&gt; o &lt;code&gt;kebab-case&lt;/code&gt; Usa nombres claros, únicos y profesionales.&lt;/td&gt;
+          &lt;td&gt;MiProyecto, mi-proyecto&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;Organización de carpetas&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;lowercase&lt;/code&gt; o &lt;code&gt;kebab-case&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;controllers/, user-data/&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;Variables&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;camelCase&lt;/code&gt; Nombres significativos, evita abreviaciones ambiguas. Singular para datos únicos, plural para colecciones&lt;/td&gt;
+          &lt;td&gt;userName, totalItems&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;Constantes&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;UPPER_SNAKE_CASE&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;PI, API_BASE_URL&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;Funciones y Métodos&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;camelCase&lt;/code&gt; o &lt;code&gt;PascalCase&lt;/code&gt; Usa verbos&lt;/td&gt;
+          &lt;td&gt;getUser(), ProcessOrder()&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;Clases y Objetos&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;PascalCase&lt;/code&gt; con sustantivos para clases, &lt;code&gt;kebab-case&lt;/code&gt; para archivos con sufijos descriptivos&lt;/td&gt;
+          &lt;td&gt;ShoppingCart, user-profile.js, cart.service.js&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;Propiedades&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;Se toma el nombre del atributo y se pasa a &lt;code&gt;PascalCase&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;public int Edad { get {  } set {  } }&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;Assets (Recursos)&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;kebab-case&lt;/code&gt; o &lt;code&gt;snake_case&lt;/code&gt;, agrupados en carpetas&lt;/td&gt;
+          &lt;td&gt;icon-home.svg, assets/images/, assets/fonts/&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;Commits&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;&amp;lt;tipo&amp;gt;(área): descripción breve&lt;/code&gt; Tipos: feat, fix, docs, test&lt;/td&gt;
+          &lt;td&gt;feat(auth): add login feature&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;Configuración del Proyecto&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;Ramas&lt;/code&gt; y &lt;code&gt;versiones organizadas&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;feature/login-page, v1.0.0&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;Bases de Datos y Eventos&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;Tablas/campos en &lt;code&gt;snake_case&lt;/code&gt;y eventos en &lt;code&gt;verbo-nombre&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;user_profiles, created_at, user-logged-in&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;blockquote&gt;
+&lt;p&gt;[!NOTE]
+Siempre evitar utilizar las palabras reservadas de cada lenguaje.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Programación I - Algoritmos</title>
+      <link>http://localhost:1313/apuntes/programaci%C3%B3n-i---algoritmos/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/apuntes/programaci%C3%B3n-i---algoritmos/</guid>
+      <description>&lt;hr&gt;
+&lt;p&gt;La programación es el proceso de escribir instrucciones para que una computadora realice tareas específicas. Antes de empezar a programar, es importante conocer los fundamentos necesarios para entender cómo funciona la programación.&lt;/p&gt;
+&lt;p&gt;Para programar, los desarrolladores crean algoritmos, que son secuencias ordenadas de pasos que resuelven un problema o llevan a cabo una tarea.&lt;/p&gt;
+&lt;h2 id=&#34;i-características-de-los-algoritmos&#34;&gt;I. Características de los algoritmos&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Finito&lt;/strong&gt;: Un algoritmo debe terminar después de un número determinado de pasos. Se evitan los bucles sin fin.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Preciso&lt;/strong&gt;: No debe haber interpretaciones subjetivas sobre lo que se debe hacer en cada instrucción.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Con inicio y final/es&lt;/strong&gt;: Debe tener un inicio y puede contener más de un final.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Eficaz en la solución del problema&lt;/strong&gt;: El algoritmo debe resolver el problema de manera correcta y óptima, evitando pasos innecesarios o ineficientes.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;11-tipos-de-algoritmos&#34;&gt;1.1 Tipos de algoritmos&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Cualitativos&lt;/strong&gt;: Emplean palabras, ej. receta de cocina.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Cuantitativos&lt;/strong&gt;: Utilizan cálculos numéricos, ej. resolver una ecuación de 2° grado.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;ii-lenguajes-algorítmicos&#34;&gt;II. Lenguajes algorítmicos&lt;/h2&gt;
+&lt;p&gt;Conjunto de símbolos y reglas que permiten explicar un proceso.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Programación II - Conceptos Básicos</title>
+      <link>http://localhost:1313/apuntes/programaci%C3%B3n-ii---conceptos-b%C3%A1sicos/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/apuntes/programaci%C3%B3n-ii---conceptos-b%C3%A1sicos/</guid>
+      <description>&lt;hr&gt;
+&lt;h2 id=&#34;i-clasificación-de-los-lenguajes-de-programación&#34;&gt;I. Clasificación de los lenguajes de programación&lt;/h2&gt;
+&lt;h3 id=&#34;11-niveles-de-abstracción&#34;&gt;1.1 Niveles de abstracción&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Bajo nivel&lt;/strong&gt;: Aquellos lenguajes que controlan el hardware del ordenador. Ej. Lenguaje Ensamblador, Código Máquina o Binario.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Alto nivel&lt;/strong&gt;: Son más parecidos al lenguaje natural humano y abarca el 99% de lenguajes de programación.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Nivel intermedio&lt;/strong&gt;: Puede usar elementos de los dos anteriores. El único que lo hace es el C.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;12-lenguajes-compilados-e-interpretados&#34;&gt;1.2 Lenguajes compilados e interpretados&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Lenguaje compilado&lt;/strong&gt;: Se toma el código en alto nivel y lo convierte en bytes, y al final nos dará un archivo ejecutable. Tiene mejor rendimiento al ejecutarse aunque ocupa más memoria que el interpretado.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Lenguaje interpretado&lt;/strong&gt;: Se interpreta línea a línea en tiempo real al ejecutarse (Ej. JavaScript, Python). Tiene un rendimiento algo más lento que el compilado pero ocupa menos memoria.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Lenguaje híbrido&lt;/strong&gt;: Algunos lenguajes combinan ambos enfoques, primero, el código es compilado a un formato intermedio llamado bytecode, luego este bytecode es ejecutado por un intérprete o máquina virtual (JVM en Java, CLR en C#) (Ej. Java, C#, Kotlin).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;ii-componentes-básicos-de-la-programación&#34;&gt;II. Componentes básicos de la programación&lt;/h2&gt;
+&lt;h3 id=&#34;21-tipos-de-datos-simples&#34;&gt;2.1 Tipos de datos simples&lt;/h3&gt;
+&lt;p&gt;Algunos de los tipos de datos comunes simples son:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Programación III - Introducción a la Programación Orientada a Objetos</title>
+      <link>http://localhost:1313/apuntes/programaci%C3%B3n-iii---introducci%C3%B3n-a-la-programaci%C3%B3n-orientada-a-objetos/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/apuntes/programaci%C3%B3n-iii---introducci%C3%B3n-a-la-programaci%C3%B3n-orientada-a-objetos/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;i-introducción-a-la-programación-orientada-a-objetos-poo&#34;&gt;I. Introducción a la Programación Orientada a Objetos (POO)&lt;/h2&gt;
 &lt;p&gt;La programación orientada a objetos es un paradigma que organiza el código en objetos, cada uno con sus propios datos (&lt;em&gt;atributos&lt;/em&gt;) y comportamientos (&lt;em&gt;métodos&lt;/em&gt;), evitando que otros objetos tengan acceso a estos elementos de manera no controlada.&lt;/p&gt;
@@ -69,6 +421,88 @@ Los componentes de las bases de datos son:&lt;/p&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;11-diferencias-entre-poo-y-la-programación-estructurada&#34;&gt;1.1 Diferencias entre POO y la programación estructurada&lt;/h3&gt;
 &lt;p&gt;A diferencia de la programación estructurada, donde el código se escribe en &lt;em&gt;funciones&lt;/em&gt; que resuelven un problema lógico y este se ejecuta en orden de arriba hacia abajo, la POO organiza el código en un sistema conectado basado en &lt;em&gt;objetos&lt;/em&gt;, y el orden en que se escriben las partes de una clase no afecta su funcionamiento.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Programación IV - Conceptos Básicos de POO</title>
+      <link>http://localhost:1313/apuntes/programaci%C3%B3n-iv---conceptos-b%C3%A1sicos-de-poo/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/apuntes/programaci%C3%B3n-iv---conceptos-b%C3%A1sicos-de-poo/</guid>
+      <description>&lt;hr&gt;
+&lt;h2 id=&#34;i-conceptos-básicos-de-poo&#34;&gt;I. Conceptos básicos de POO&lt;/h2&gt;
+&lt;h3 id=&#34;11-objetos&#34;&gt;1.1 Objetos&lt;/h3&gt;
+&lt;p&gt;Son elementos que componen un sistema. Este contiene datos y comportamientos.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Ejemplo&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;En un automóvil las distintas partes que lo conforman son &lt;em&gt;objetos&lt;/em&gt;, los cuales se pueden comunicar entre sí para funcionar.&lt;/p&gt;
+&lt;h4 id=&#34;características-de-los-objetos&#34;&gt;Características de los objetos&lt;/h4&gt;
+&lt;h5 id=&#34;atributos&#34;&gt;Atributos&lt;/h5&gt;
+&lt;p&gt;Los atributos representan las propiedades de un objeto y almacenan su información en un momento dado. Estos definen el &lt;em&gt;estado&lt;/em&gt; del objeto y pueden cambiar durante la ejecución del programa.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Programación IX - Patrones de Diseño</title>
+      <link>http://localhost:1313/apuntes/programaci%C3%B3n-ix---patrones-de-dise%C3%B1o/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/apuntes/programaci%C3%B3n-ix---patrones-de-dise%C3%B1o/</guid>
+      <description>&lt;hr&gt;
+&lt;h2 id=&#34;i-patrones-de-diseño-en-poo&#34;&gt;I. Patrones de diseño en POO&lt;/h2&gt;
+&lt;p&gt;Un patrón de diseño es una solución reutilizable, comprobada y estructurada a un problema común que aparece constantemente al diseñar sistemas orientados a objetos.&lt;/p&gt;
+&lt;p&gt;Básicamente, son guías o plantillas que ayudan a resolver un problema específico de diseño.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Sus elementos son&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Nombre&lt;/strong&gt;: Forma de referirse al patrón de diseño.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Problema&lt;/strong&gt;: Explica cuándo debe usarse el patrón.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;La solución&lt;/strong&gt;: Describe la estructura general, las clases involucradas, las relaciones entre ellas y cómo colaboran para resolver el problema.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Las consecuencias&lt;/strong&gt;: Analiza el impacto del patrón, tomando en cuenta el costo/beneficio, espacio/tiempo, lenguaje, impacto en flexibilidad, extensión y portabilidad.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Los patrones de diseño se agrupan en tres categorías, según el tipo de problema que ayudan a resolver.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Programación V - Mecanismos de POO</title>
+      <link>http://localhost:1313/apuntes/programaci%C3%B3n-v---mecanismos-de-poo/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/apuntes/programaci%C3%B3n-v---mecanismos-de-poo/</guid>
+      <description>&lt;hr&gt;
+&lt;h2 id=&#34;i-mecanismos-de-poo&#34;&gt;I. Mecanismos de POO&lt;/h2&gt;
+&lt;h3 id=&#34;11-encapsulación-y-acceso&#34;&gt;1.1 Encapsulación y acceso&lt;/h3&gt;
+&lt;p&gt;La encapsulación es un principio fundamental de la POO que protege los datos dentro de un objeto y regula su acceso. Para lograrlo, se emplean los &lt;em&gt;controles de acceso&lt;/em&gt;, los cuales determinan:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Visibilidad&lt;/strong&gt;: Define qué partes del código pueden acceder a los atributos y métodos.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Manipulación&lt;/strong&gt;: Controla cómo y cuándo los atributos de un objeto pueden modificarse.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;El uso adecuado de estos controles permite garantizar que solo las partes autorizadas del código puedan interactuar con su contenido. Para ello, se deben comprender los &lt;em&gt;modificadores de acceso&lt;/em&gt; y los métodos específicos que permiten acceder o modificar los datos de manera segura (&lt;em&gt;accessors&lt;/em&gt; y &lt;em&gt;mutators&lt;/em&gt;).&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Programación VI - Estructuras de Datos Abstractos</title>
+      <link>http://localhost:1313/apuntes/programaci%C3%B3n-vi---estructuras-de-datos-abstractos/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/apuntes/programaci%C3%B3n-vi---estructuras-de-datos-abstractos/</guid>
+      <description>&lt;hr&gt;
+&lt;h2 id=&#34;i-estructuras-de-datos-abstractos&#34;&gt;I. Estructuras de datos abstractos&lt;/h2&gt;
+&lt;p&gt;En POO, son modelos que permiten organizar y gestionar datos de manera eficiente. Estas estructuras permiten almacenar objetos y manipularlos según ciertas reglas de acceso y recorrido.&lt;/p&gt;
+&lt;h3 id=&#34;11-estructuras-de-datos-lineales&#34;&gt;1.1 Estructuras de datos lineales&lt;/h3&gt;
+&lt;p&gt;Son aquellas estructuras donde los elementos están organizados de forma secuencial, uno después del otro.&lt;/p&gt;
+&lt;h4 id=&#34;arreglo-array&#34;&gt;Arreglo (Array)&lt;/h4&gt;
+&lt;p&gt;Un arreglo es una colección de tamaño fijo que almacena elementos del mismo tipo en posiciones contiguas de memoria. A diferencia de estructuras como las listas, los arreglos no pueden crecer o reducirse después de su creación. Además, el índice con el que inicia es 0.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Programación VII - Manejo de Datos</title>
+      <link>http://localhost:1313/apuntes/programaci%C3%B3n-vii---manejo-de-datos/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/apuntes/programaci%C3%B3n-vii---manejo-de-datos/</guid>
+      <description>&lt;hr&gt;
+&lt;h2 id=&#34;i-manejo-de-datos-en-poo&#34;&gt;I. Manejo de datos en POO&lt;/h2&gt;
+&lt;p&gt;Es común que los objetos contengan información importante que debe conservarse incluso después de que el programa finaliza. Para lograr esto se aplican técnicas como la serialización, que permiten guardar y recuperar el estado de los objetos desde archivos. Esto hace posible mantener configuraciones o datos entre ejecuciones, así como permitir que la información se comparta fácilmente entre distintos sistemas o plataformas.&lt;/p&gt;
+&lt;h3 id=&#34;11-persistencia&#34;&gt;1.1 Persistencia&lt;/h3&gt;
+&lt;p&gt;En POO, la persistencia se refiere a guardar el estado de un objeto para luego reconstruirlo cuando se necesite. Es decir, permite que los datos de un programa no se pierdan cuando el programa finaliza.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Programación VIII - POO y la Programación Orientada a Eventos</title>
+      <link>http://localhost:1313/apuntes/programaci%C3%B3n-viii---poo-y-la-programaci%C3%B3n-orientada-a-eventos/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/apuntes/programaci%C3%B3n-viii---poo-y-la-programaci%C3%B3n-orientada-a-eventos/</guid>
+      <description>&lt;hr&gt;
+&lt;h2 id=&#34;i-poo-y-la-programación-orientada-a-eventos&#34;&gt;I. POO y la programación orientada a eventos&lt;/h2&gt;
+&lt;p&gt;La Programación Orientada a Eventos (POE) es un paradigma que se basa en la interacción con eventos, es decir, acciones que ocurren en el sistema, como hacer clic en un botón, mover el mouse, o recibir una notificación externa.&lt;/p&gt;
+&lt;p&gt;Cuando se combina con la Programación Orientada a Objetos (POO), permite crear aplicaciones interactivas donde los objetos pueden reaccionar a eventos. Este enfoque es común en interfaces gráficas de usuario y en sistemas donde las acciones del usuario determinan el flujo del programa como videojuegos.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

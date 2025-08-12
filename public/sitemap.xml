@@ -3,16 +3,48 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>http://localhost:1313/apuntes/</loc>
+    <lastmod>2025-08-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/categories/bases-de-datos/</loc>
+    <lastmod>2025-08-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/apuntes/bases-de-datos-i---conceptos-b%C3%A1sicos/</loc>
+    <lastmod>2025-08-08T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/categories/</loc>
-  </url><url>
-    <loc>http://localhost:1313/apuntes/conceptos-generales-de-programaci%C3%B3n/</loc>
-  </url><url>
-    <loc>http://localhost:1313/apuntes/conceptos-y-programaci%C3%B3n-de-bases-de-datos/</loc>
+    <lastmod>2025-08-08T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/enciclopedia/</loc>
+    <lastmod>2025-08-08T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/</loc>
+    <lastmod>2025-08-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/post/</loc>
+    <lastmod>2025-08-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2025-08-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/archives/</loc>
+  </url><url>
+    <loc>http://localhost:1313/apuntes/bases-de-datos-ii---diagramas-y-documentaci%C3%B3n/</loc>
+  </url><url>
+    <loc>http://localhost:1313/apuntes/bases-de-datos-iii---reglas-de-normalizaci%C3%B3n/</loc>
+  </url><url>
+    <loc>http://localhost:1313/apuntes/bases-de-datos-iv---%C3%A1lgebra-relacional/</loc>
+  </url><url>
+    <loc>http://localhost:1313/apuntes/bases-de-datos-ix---operaciones-avanzadas-de-sql/</loc>
+  </url><url>
+    <loc>http://localhost:1313/apuntes/bases-de-datos-v---microsoft-sql/</loc>
+  </url><url>
+    <loc>http://localhost:1313/apuntes/bases-de-datos-vi---estructura-b%C3%A1sica-de-sql/</loc>
+  </url><url>
+    <loc>http://localhost:1313/apuntes/bases-de-datos-vii---consultas-de-datos/</loc>
+  </url><url>
+    <loc>http://localhost:1313/apuntes/bases-de-datos-viii---automatizaci%C3%B3n-y-seguridad/</loc>
+  </url><url>
+    <loc>http://localhost:1313/recetas/donas/</loc>
   </url><url>
     <loc>http://localhost:1313/recetas/pan-de-muerto---hojaldras-tradicionales/</loc>
   </url><url>
@@ -20,16 +52,28 @@
   </url><url>
     <loc>http://localhost:1313/recetas/pizza/</loc>
   </url><url>
-    <loc>http://localhost:1313/tags/post/</loc>
+    <loc>http://localhost:1313/apuntes/programaci%C3%B3n---gu%C3%ADas-documentaci%C3%B3n-y-buenas-pr%C3%A1cticas/</loc>
   </url><url>
-    <loc>http://localhost:1313/tags/programacion/</loc>
+    <loc>http://localhost:1313/apuntes/programaci%C3%B3n-i---algoritmos/</loc>
   </url><url>
-    <loc>http://localhost:1313/apuntes/programaci%C3%B3n-orientada-a-objetos/</loc>
+    <loc>http://localhost:1313/apuntes/programaci%C3%B3n-ii---conceptos-b%C3%A1sicos/</loc>
+  </url><url>
+    <loc>http://localhost:1313/apuntes/programaci%C3%B3n-iii---introducci%C3%B3n-a-la-programaci%C3%B3n-orientada-a-objetos/</loc>
+  </url><url>
+    <loc>http://localhost:1313/apuntes/programaci%C3%B3n-iv---conceptos-b%C3%A1sicos-de-poo/</loc>
+  </url><url>
+    <loc>http://localhost:1313/apuntes/programaci%C3%B3n-ix---patrones-de-dise%C3%B1o/</loc>
+  </url><url>
+    <loc>http://localhost:1313/apuntes/programaci%C3%B3n-v---mecanismos-de-poo/</loc>
+  </url><url>
+    <loc>http://localhost:1313/apuntes/programaci%C3%B3n-vi---estructuras-de-datos-abstractos/</loc>
+  </url><url>
+    <loc>http://localhost:1313/apuntes/programaci%C3%B3n-vii---manejo-de-datos/</loc>
+  </url><url>
+    <loc>http://localhost:1313/apuntes/programaci%C3%B3n-viii---poo-y-la-programaci%C3%B3n-orientada-a-eventos/</loc>
   </url><url>
     <loc>http://localhost:1313/tags/receta/</loc>
   </url><url>
     <loc>http://localhost:1313/recetas/</loc>
-  </url><url>
-    <loc>http://localhost:1313/tags/</loc>
   </url>
 </urlset>

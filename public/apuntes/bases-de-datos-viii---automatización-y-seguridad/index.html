@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>Bases de Datos VIII - Automatización y Seguridad | oscarzt20</title>
+<meta name="keywords" content="enciclopedia, post">
+<meta name="description" content="
+I. Automatización y seguridad
+1.1 Procedimientos almacenados
+Los stored procedures permiten agilizar los procesos de consulta de datos, aumentar la seguridad, reutilizar código y permiten un desarrollo de software más ágil. Dentro de SQL Server se les considera como un grupo de una o varias instrucciones Transact-SQL, mientras que en Microsoft .NET Framework se trata de una referencia a un método de Common Runtime Language (CLR).
+Los SP contienen instrucciones de programación que realizan operaciones en la base de datos, como llamar a otros procedimientos, devolver un valor de estado o realizar una llamada para indicar si la operación se ha realizado correctamente o se han producido errores y el motivo de estos.">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/apuntes/bases-de-datos-viii---automatizaci%C3%B3n-y-seguridad/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.81c898f5a2238b061825acde445de1b10e9825286bc566504cbb22ca1b9d1f73.css" integrity="sha256-gciY9aIjiwYYJazeRF3hsQ6YJShrxWZQTLsiyhudH3M=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/apuntes/bases-de-datos-viii---automatizaci%C3%B3n-y-seguridad/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="oscarzt20 (Alt + H)">oscarzt20</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/proyectos/" title="Portafolio">
+                    <span>Portafolio</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/tags/" title="Temas">
+                    <span>Temas</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/archives/" title="Archivo">
+                    <span>Archivo</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/apuntes/">Apuntes</a></div>
+    <h1 class="post-title entry-hint-parent">
+      Bases de Datos VIII - Automatización y Seguridad
+    </h1>
+    <div class="post-meta">
+
+</div>
+  </header> <div class="toc">
+    <details  open>
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#i-automatizaci%c3%b3n-y-seguridad" aria-label="I. Automatización y seguridad">I. Automatización y seguridad</a><ul>
+                        
+                <li>
+                    <a href="#11-procedimientos-almacenados" aria-label="1.1 Procedimientos almacenados">1.1 Procedimientos almacenados</a></li>
+                <li>
+                    <a href="#12-checks" aria-label="1.2 Checks">1.2 Checks</a></li>
+                <li>
+                    <a href="#13-triggers" aria-label="1.3 Triggers">1.3 Triggers</a><ul>
+                        
+                <li>
+                    <a href="#tipos-de-triggers" aria-label="Tipos de triggers">Tipos de triggers</a></li>
+                <li>
+                    <a href="#tipos-de-errores-en-los-triggers" aria-label="Tipos de errores en los triggers">Tipos de errores en los triggers</a></li>
+                <li>
+                    <a href="#ejecuci%c3%b3n-de-los-triggers" aria-label="Ejecución de los triggers">Ejecución de los triggers</a></li></ul>
+                </li></ul>
+                </li>
+                <li>
+                    <a href="#-m%c3%a1s-informaci%c3%b3n" aria-label="/ Más Información">/ Más Información</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><hr>
+<h2 id="i-automatización-y-seguridad">I. Automatización y seguridad<a hidden class="anchor" aria-hidden="true" href="#i-automatización-y-seguridad">#</a></h2>
+<h3 id="11-procedimientos-almacenados">1.1 Procedimientos almacenados<a hidden class="anchor" aria-hidden="true" href="#11-procedimientos-almacenados">#</a></h3>
+<p>Los stored procedures permiten agilizar los procesos de consulta de datos, aumentar la seguridad, reutilizar código y permiten un desarrollo de software más ágil. Dentro de SQL Server se les considera como un grupo de una o varias instrucciones Transact-SQL, mientras que en Microsoft .NET Framework se trata de una referencia a un método de Common Runtime Language (CLR).</p>
+<p>Los SP contienen instrucciones de programación que realizan operaciones en la base de datos, como llamar a otros procedimientos, devolver un valor de estado o realizar una llamada para indicar si la operación se ha realizado correctamente o se han producido errores y el motivo de estos.</p>
+<p><strong>Ejemplos</strong></p>
+<ul>
+<li>SP que inserta un registro en la tabla <code>Personas</code></li>
+</ul>
+<pre tabindex="0"><code>CREATE PROCEDURE sp_createPersona
+(
+	@nombrePersona VARCHAR(100),
+	@apellidoP VARCHAR(100),
+	@apellidoM VARCHAR(100),
+	@genero VARCHAR(100),
+	@correo VARCHAR(100),
+	@puesto VARCHAR(100),
+	@telefono VARCHAR(10),
+	@edad INT,
+	@sueldo INT,
+	@id_departamento INT
+)
+AS
+BEGIN
+INSERT INTO Personas
+VALUES (@nombrePersona, @apellidoP, @apellidoM, @genero, @correo, @puesto, @telefono, @edad, @sueldo, @id_departamento);
+END
+
+EXECUTE sp_createPersona &#39;Hernán&#39;, &#39;Lopez&#39;, &#39;Cortés&#39;, &#39;Masculino&#39;, &#39;hernan@gmail.com&#39;, &#39;Sistemas&#39;, &#39;2255487887&#39;, 38, 27000, 2;
+</code></pre><ul>
+<li>SP que actualiza un registro en la tabla <code>Personas</code></li>
+</ul>
+<pre tabindex="0"><code>CREATE PROCEDURE sp_updatePersona
+(
+	@id_persona INT,
+	@nombrePersona VARCHAR(100),
+	@apellidoP VARCHAR(100),
+	@apellidoM VARCHAR(100),
+	@genero VARCHAR(100),
+	@correo VARCHAR(100),
+	@puesto VARCHAR(100),
+	@telefono VARCHAR(10),
+	@edad INT,
+	@sueldo INT,
+	@id_departamento INT
+)
+AS
+BEGIN
+UPDATE Personas
+SET
+	nombrePersona = @nombrePersona,
+	apellidoP = @apellidoP,
+	apellidoM = @apellidoM,
+	genero = @genero,
+	correo = @correo,
+	puesto = @puesto,
+	telefono = @telefono,
+	edad = @edad,
+	sueldo = @sueldo,
+	id_departamento = @id_departamento
+WHERE id_persona = @id_persona;
+END
+
+EXECUTE sp_updatePersona 2, &#39;Laura&#39;, &#39;Sierra&#39;, &#39;Cayo&#39;, &#39;Femenino&#39;, &#39;laura@gmail.com&#39;, &#39;Administrador&#39;, &#39;2255489741&#39;, 32, 20000, 1;
+</code></pre><ul>
+<li>SP que consulta por el nombre de una persona y además muestra el departamento y estados con el que está relacionada mediante un <code>INNER JOIN</code></li>
+</ul>
+<pre tabindex="0"><code>CREATE PROCEDURE sp_searchPersona
+(
+	@nombrePersona VARCHAR(100)
+)
+AS
+BEGIN
+SELECT Personas.nombrePersona, Departamentos.nombreDepartamento, Estados.nombreEstado
+FROM Personas INNER JOIN Departamentos
+ON Personas.id_departamento = Departamentos.id_departamento INNER JOIN DepartamentosEstados
+ON Departamentos.id_departamento = DepartamentosEstados.id_departamento INNER JOIN Estados
+ON DepartamentosEstados.id_estado = Estados.id_estado
+WHERE Personas.nombrePersona = @nombrePersona;
+END
+
+EXECUTE sp_searchPersona &#39;Ernesto&#39;;
+</code></pre><ul>
+<li>Eliminar un stored procedure</li>
+</ul>
+<pre tabindex="0"><code>DROP sp_nombre;
+</code></pre><h3 id="12-checks">1.2 Checks<a hidden class="anchor" aria-hidden="true" href="#12-checks">#</a></h3>
+<p>El <code>CHECK</code> es una restricción que se utiliza para definir reglas en la inserción de valores de una tabla, asegurando que los valores insertados cumplan ciertas condiciones. Ayuda a mantener la integridad de los datos dentro de la tabla.</p>
+<p><strong>Ejemplos</strong></p>
+<ul>
+<li>Creación de una tabla con checks para que el género sea Masculino o Femenino, que la edad sea igual o mayor a 18, que el sueldo sea mayor o igual a 0 después de agregar el IVA del 16% y que el puesto solo sea en Sistemas, Administrador o Contador, Psicología.</li>
+</ul>
+<pre tabindex="0"><code>CREATE TABLE Personas
+(
+	id_persona INT IDENTITY(1,1) PRIMARY KEY,
+	nombrePersona VARCHAR(100),
+	apellidoP VARCHAR(100),
+	apellidoM VARCHAR(100),
+	genero VARCHAR(100),
+	correo VARCHAR(100),
+	puesto VARCHAR(100),
+	telefono VARCHAR(10),
+	edad INT,
+	sueldo INT,
+	id_departamento INT,
+	FOREIGN KEY (id_departamento) REFERENCES Departamentos(id_departamento),
+	CHECK(genero IN(&#39;Masculino&#39;, &#39;Femenino&#39;)),
+	CHECK(edad &gt;= 18),
+	CHECK(sueldo * 1.16 &gt;= 0),
+	CHECK(puesto IN(&#39;Sistemas&#39;, &#39;Administrador&#39;, &#39;Contador&#39;, &#39;Psicología&#39;))
+);
+
+-- Inserción correcta
+INSERT INTO Personas VALUES
+	(&#39;Ernesto&#39;, &#39;Silva&#39;, &#39;Ramos&#39;, &#39;Masculino&#39;, &#39;ernesto@gmail.com&#39;, &#39;Sistemas&#39;, &#39;2255489090&#39;, 38, 27000, 2);
+
+-- Inserción incorrecta por el puesto
+INSERT INTO Personas VALUES
+	(&#39;Raúl&#39;, &#39;Lopez&#39;, &#39;Ramos&#39;, &#39;Masculino&#39;, &#39;raul@gmail.com&#39;, &#39;Redes&#39;, &#39;2255489090&#39;, 38, 27000, 2);
+</code></pre><ul>
+<li>Tabla donde el estado sea igual a activo y la fecha de salida esté nulo o que el estado sea inactivo y la fecha de salida no esté nulo.</li>
+</ul>
+<pre tabindex="0"><code>CREATE TABLE Empleados
+(
+	id_empleado INT IDENTITY(1,1) PRIMARY KEY,
+	nombre VARCHAR(100) NOT NULL,
+	estado VARCHAR(100),
+	fecha_salida DATE,
+	CHECK(estado = &#39;activo&#39; AND fecha_salida IS NULL OR estado = &#39;inactivo&#39; AND fecha_salida IS NOT NULL)
+);
+</code></pre><ul>
+<li>Tabla donde se verifica que la fecha de nacimiento del empleado sea menor que su fecha de contratación.</li>
+</ul>
+<pre tabindex="0"><code>CREATE TABLE Empleados
+(
+	id_empleado INT IDENTITY(1,1) PRIMARY KEY,
+	nombre VARCHAR(100) NOT NULL,
+	estado VARCHAR(100),
+	fecha_nacimiento DATE,
+	fecha_contratacion DATE,
+	CHECK(fecha_nacimiento &lt; fecha_contratacion)
+);
+</code></pre><ul>
+<li>Tabla que verifica que el cargo del empleado no sea de Gerente o que el salario sea menos de 5000.</li>
+</ul>
+<pre tabindex="0"><code>CREATE TABLE Empleados
+(
+	id_empleado INT IDENTITY(1,1) PRIMARY KEY,
+	nombre VARCHAR(100) NOT NULL,
+	estado VARCHAR(100),
+	cargo VARCHAR(100),
+	salario DECIMAL(10, 2),
+	CHECK(cargo != &#39;Gerente&#39; OR salario &gt; 5000)
+);
+</code></pre><ul>
+<li>Tabla que verifica que el salario total sea mayor o igual al salario base <code>*</code> 0.75</li>
+</ul>
+<pre tabindex="0"><code>CREATE TABLE Empleados
+(
+	id_empleado INT IDENTITY(1,1) PRIMARY KEY,
+	nombre VARCHAR(100) NOT NULL,
+	estado VARCHAR(100),
+	salario_base DECIMAL(10, 2),
+	salario_total DECIMAL(10, 2),
+	CHECK(salario_total &gt;= salario_base * 0.75)
+);
+</code></pre><h3 id="13-triggers">1.3 Triggers<a hidden class="anchor" aria-hidden="true" href="#13-triggers">#</a></h3>
+<p>Un Trigger o disparador es un script que desencadena determinadas acciones de forma automática en las tablas de la base de datos cuando se insertan, modifican y se añaden nuevos datos, lo cual nos ayuda a mejorar la gestión de la BD y aumenta la integridad de la información.</p>
+<p><strong>Ventajas</strong>:</p>
+<ul>
+<li><strong>Generación automática de datos:</strong> Pueden rellenar valores automáticamente al insertar o actualizar registros.</li>
+<li><strong>Integridad referencial:</strong> Ayudan a mantener relaciones correctas entre tablas (como validar claves foráneas).</li>
+<li><strong>Registro de actividad:</strong> Guardan información de quién hizo qué y cuándo, útil para rastrear acciones.</li>
+<li><strong>Auditoría:</strong> Permiten monitorear y registrar cambios importantes en los datos.</li>
+<li><strong>Replicación en tiempo real:</strong> Copian datos automáticamente entre tablas cuando hay cambios.</li>
+<li><strong>Control de seguridad:</strong> Aplican reglas de acceso o validaciones antes de modificar datos.</li>
+<li><strong>Prevención de errores:</strong> Bloquean transacciones que no cumplen ciertas condiciones.</li>
+</ul>
+<h4 id="tipos-de-triggers">Tipos de triggers<a hidden class="anchor" aria-hidden="true" href="#tipos-de-triggers">#</a></h4>
+<ol>
+<li><strong>Disparadores de fila (Row Triggers):</strong> Se activan una vez por cada fila afectada en la tabla.
+<em>Por ejemplo</em>, si una acción modifica 5 filas, el trigger se ejecuta 5 veces, una por cada fila.</li>
+<li><strong>Disparadores de sentencia (Statement Triggers):</strong> Se ejecutan una sola vez por operación, sin importar cuántas filas se vean afectadas.
+<em>Por ejemplo</em>, si se actualizan 100 filas, el trigger se dispara solo una vez.</li>
+</ol>
+<h4 id="tipos-de-errores-en-los-triggers">Tipos de errores en los triggers<a hidden class="anchor" aria-hidden="true" href="#tipos-de-errores-en-los-triggers">#</a></h4>
+<p>RAISERROR se utiliza para generar un mensaje de error desde un procedimiento almacenado, una función o un lote de comandos.</p>
+<pre tabindex="0"><code>RAISERROR (&#39;Mensaje de error&#39;, #, #)
+</code></pre><p>Los números que contiene tienen un significado específico.</p>
+<p><strong>Primer parámetro</strong>: &ldquo;qué tan grave el error&rdquo;</p>
+<ul>
+<li><code>-1</code> Devuelve el valor de gravedad asociado al error.</li>
+<li><code>16</code> Es el nivel de gravedad del error. Este nivel va de 0 a 25, donde 0 es un error grave y 25 es un error menor. El nivel 16 indica un error grave, pero uno que no detiene la ejecución o de la instrucción actual.</li>
+<li><code>10</code> Indica un error informativo que no afecta la ejecución del lote o la instrucción.</li>
+<li><code>20</code> Indica un error crítico que finaliza la conexión de usuario actual.</li>
+<li><code>25</code> Indica un error grave que detiene la ejecución del servidor de SQL Server.</li>
+<li><code>0</code> Permite a los desarrolladores generar mensajes personalizados sin impacto en la ejecución del lote o instrucción.</li>
+</ul>
+<p><strong>Segundo parámetro</strong>: &ldquo;Estado del error&rdquo;</p>
+<ul>
+<li><code>-1</code> Devuelve el valor de gravedad asociado al error.</li>
+<li><code>1</code> El estado es un número de 1 a 127 que proporciona información adicional sobre el error. Puede ser util para distinguir diferentes causas de un mismo error.</li>
+<li><code>Estado 1</code>: Se utiliza para un error de división por cero.</li>
+<li><code>Estado 2</code>: Se utiliza para un error de validación de entrada.</li>
+<li><code>Estado 3</code>: Se utiliza para un error de violación de restricción (por ejemplo, edad no válida).</li>
+<li><code>Estado 4</code>: Se utiliza para un error de clave duplicada al intentar insertar registros en una tabla.</li>
+</ul>
+<p><strong>Ejemplos</strong>:</p>
+<ul>
+<li>Trigger al <strong>tratar de eliminar o alterar</strong> una tabla con <strong>RAISERROR</strong></li>
+</ul>
+<pre tabindex="0"><code>CREATE TRIGGER TriggerSeguridadD1
+ON DATABASE FOR Drop_Table, Alter_Table
+AS
+BEGIN
+RAISERROR (&#39;No se tiene permitido modificar o eliminar una tabla&#39;, -1, -1)
+ROLLBACK TRANSACTION
+END
+
+-- Se prueba el trigger
+DROP TABLE Productos;
+</code></pre><ul>
+<li>Trigger al <strong>insertar y actualizar</strong></li>
+</ul>
+<pre tabindex="0"><code>CREATE TRIGGER actualizarEInsertarDatosDisparador
+ON Estados
+AFTER INSERT, UPDATE
+AS RAISERROR (&#39;Se actualizaron o insertaron los datos&#39;, 16, 10);
+
+-- Se prueba el trigger
+INSERT INTO Estados
+VALUES (&#39;Guadalajara&#39;, 4500000);
+</code></pre><h4 id="ejecución-de-los-triggers">Ejecución de los triggers<a hidden class="anchor" aria-hidden="true" href="#ejecución-de-los-triggers">#</a></h4>
+<p>Los <strong>triggers</strong> se activan automáticamente cuando ocurre una acción en una tabla, como:</p>
+<ul>
+<li><strong>INSERT</strong> (cuando se insertan datos)</li>
+<li><strong>UPDATE</strong> (cuando se actualizan datos)</li>
+<li><strong>DELETE</strong> (cuando se eliminan datos)</li>
+</ul>
+<p>Y pueden ejecutarse en dos momentos:</p>
+<ul>
+<li><strong>BEFORE (antes):</strong> El trigger se ejecuta antes de que se realice la acción (útil para validar o modificar datos antes del cambio).</li>
+<li><strong>AFTER (después):</strong> El trigger se ejecuta después de que se realiza la acción.</li>
+</ul>
+<p><strong>Ejemplos</strong>:</p>
+<ul>
+<li>Trigger al <strong>insertar</strong></li>
+</ul>
+<pre tabindex="0"><code>CREATE TRIGGER insertarDatosDisparador
+ON Estados
+AFTER INSERT
+AS PRINT (&#39;Se insertó un registro a la tabla de Estados.&#39;);
+
+-- Se prueba el trigger
+INSERT INTO Estados
+VALUES (&#39;Yuacatán&#39;, 1500000);
+</code></pre><ul>
+<li>Trigger al <strong>actualizar</strong></li>
+</ul>
+<pre tabindex="0"><code>CREATE TRIGGER actualizarDatosDisparador
+ON Estados
+AFTER UPDATE
+AS PRINT (&#39;Se actualizó un registro de la tabla de Estados.&#39;);
+
+-- Se prueba el trigger
+UPDATE Estados
+SET nombreEstado = &#39;Monterrey&#39;, noHabitantes = 5800000
+WHERE id_estado = 4;
+</code></pre><ul>
+<li>Trigger al <strong>eliminar</strong></li>
+</ul>
+<pre tabindex="0"><code>CREATE TRIGGER eliminarDatosDisparador
+ON Estados
+AFTER DELETE
+AS PRINT (&#39;Se eliminó un registro de la tabla de Estados.&#39;);
+
+-- Se prueba el trigger
+DELETE FROM Estados
+WHERE id_estado = 2;
+</code></pre><ul>
+<li>Trigger que <strong>reemplaza</strong> el nombre del estado por la palabra &rsquo;new'</li>
+</ul>
+<pre tabindex="0"><code>CREATE TRIGGER triggerAfterInsertar
+ON Estados
+AFTER INSERT
+AS
+BEGIN
+UPDATE Estados
+SET nombreEstado = &#39;New&#39;
+WHERE id_estado IN (SELECT id_estado FROM INSERTED)
+END
+
+-- Se prueba el trigger
+INSERT INTO Estados
+VALUES (&#39;Guerrero&#39;, 4500000);
+</code></pre><ul>
+<li>Trigger de <strong>Insert</strong> de paletas con <strong>variables</strong></li>
+</ul>
+<pre tabindex="0"><code>CREATE TRIGGER tr_InsertarPaleta
+ON Paletas
+AFTER INSERT
+AS
+BEGIN
+    DECLARE @nombre VARCHAR(100);
+    SELECT @nombre = nombrePaleta FROM INSERTED;
+
+    PRINT &#39;Se ha insertado una nueva paleta: &#39; + @nombre;
+END;
+
+-- Se prueba el trigger
+INSERT INTO Paletas VALUES
+(&#39;Paleta Chocomil&#39;, &#39;50&#39;, 1.50, 0.80, 1);
+</code></pre><ul>
+<li><strong>Consultar</strong> los trigger de una DB</li>
+</ul>
+<pre tabindex="0"><code>USE Disparadores
+SELECT OBJECT_NAME(parent_id)
+AS Parent_Object_Name, *
+FROM sys.triggers
+</code></pre><ul>
+<li><strong>Borrar</strong> un trigger</li>
+</ul>
+<pre tabindex="0"><code>DROP TRIGGER IF EXISTS nombreTrigger;
+</code></pre><hr>
+<h2 id="-más-información">/ Más Información<a hidden class="anchor" aria-hidden="true" href="#-más-información">#</a></h2>
+<ul>
+<li><a href="/apuntes/bases-de-datos-i---conceptos-b%C3%A1sicos/">Bases de Datos I - Conceptos Básicos</a></li>
+<li><a href="/apuntes/bases-de-datos-ii---diagramas-y-documentaci%C3%B3n/">Bases de Datos II - Diagramas y Documentación</a></li>
+<li><a href="/apuntes/bases-de-datos-iii---reglas-de-normalizaci%C3%B3n/">Bases de Datos III - Reglas de Normalización</a></li>
+<li><a href="/apuntes/bases-de-datos-iv---%C3%A1lgebra-relacional/">Bases de Datos IV - Álgebra Relacional</a></li>
+<li><a href="/apuntes/bases-de-datos-v---microsoft-sql/">Bases de Datos V - Microsoft SQL</a></li>
+<li><a href="/apuntes/bases-de-datos-vi---estructura-b%C3%A1sica-de-sql/">Bases de Datos VI - Estructura Básica de SQL</a></li>
+<li><a href="/apuntes/bases-de-datos-vii---consultas-de-datos/">Bases de Datos VII - Consultas de Datos</a></li>
+<li><a href="/apuntes/bases-de-datos-viii---automatizaci%C3%B3n-y-seguridad/">Bases de Datos VIII - Automatización y Seguridad</a></li>
+<li><a href="/apuntes/bases-de-datos-ix---operaciones-avanzadas-de-sql/">Bases de Datos IX - Operaciones Avanzadas de SQL</a></li>
+</ul>
+<hr>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/enciclopedia/">Enciclopedia</a></li>
+      <li><a href="http://localhost:1313/tags/post/">Post</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="http://localhost:1313/">oscarzt20</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>
