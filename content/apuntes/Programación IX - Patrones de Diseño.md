@@ -1,0 +1,76 @@
+---
+Title: Programación IX - Patrones de Diseño
+Fecha: 2025-08-08
+Hora: 02:06
+tags: ['enciclopedia', 'post']
+---
+
+---
+
+## I. Patrones de diseño en POO
+
+Un patrón de diseño es una solución reutilizable, comprobada y estructurada a un problema común que aparece constantemente al diseñar sistemas orientados a objetos.
+
+Básicamente, son guías o plantillas que ayudan a resolver un problema específico de diseño.
+
+**Sus elementos son**
+
+- **Nombre**: Forma de referirse al patrón de diseño.
+- **Problema**: Explica cuándo debe usarse el patrón.
+- **La solución**: Describe la estructura general, las clases involucradas, las relaciones entre ellas y cómo colaboran para resolver el problema.
+- **Las consecuencias**: Analiza el impacto del patrón, tomando en cuenta el costo/beneficio, espacio/tiempo, lenguaje, impacto en flexibilidad, extensión y portabilidad.
+
+Los patrones de diseño se agrupan en tres categorías, según el tipo de problema que ayudan a resolver.
+### 1.1 Patrones de creación
+
+Se enfocan en cómo se crean los objetos. Permiten crear instancias de forma flexible.
+
+- **Fábrica abstracta**: Permite crear objetos relacionados sin especificar sus clases concretas.
+- **Método fábrica**: Delega la creación de objetos a una subclase.
+- **Prototipo**: Clona objetos a partir de una instancia de prototipo existente.
+- **Singleton**: Asegura que solo exista una instancia de una clase y provee un punto de acceso global.
+
+### 1.2 Patrones de estructura
+
+Ayudan a organizar las clases u objetos en estructuras más grandes sin perder flexibilidad. Mejoran la reutilización de componentes.
+
+- **Adaptador**: Convierte la interfaz de una clase en otra esperada por el cliente.
+- **Puente**: Separa una abstracción de su implementación para que ambas puedan variar.
+- **Decorador**: Añade funcionalidades a un objeto de forma dinámica sin modificar su clase.
+- **Fachada**: Proporciona una interfaz simplificada a un conjunto complejo de clases.
+- **Proxy**: Controla el acceso a un objeto, actuando como intermediario.
+
+### 1.3 Patrones de comportamiento
+
+Ayudan a definir la comunicación entre objetos en el sistema y cómo es controlado el flujo.
+
+- **Comando**: Encapsula una solicitud como un objeto, permitiendo parametrizar y deshacer operaciones.
+- **Interprete**: Define una gramática y un intérprete para entender y procesar expresiones.
+- **Iterador**: Permite recorrer una colección sin exponer su implementación interna.
+- **Observador**: Notifica automáticamente a múltiples objetos cuando el estado de otro cambia.
+- **Estrategia**: Permite definir una familia de algoritmos y seleccionarlos dinámicamente.
+
+### 1.4 Anti-patrones
+
+Los anti-patrones representan malas soluciones que se aplican comúnmente a problemas de diseño, pero que resultan en malos resultados.
+
+- Muestran prácticas que parecen buenas al inicio, pero fallan a largo plazo.
+- También incluyen recomendaciones sobre cómo salir de una mala implementación hacia una solución más adecuada.
+
+
+---
+
+## / Más Información
+
+- [Programación I - Algoritmos](/apuntes/programación-i---algoritmos/)
+- [Programación II - Conceptos Básicos](/apuntes/programación-ii---conceptos-básicos/)
+- [Programación III - Introducción a la Programación Orientada a Objetos](/apuntes/programación-iii---introducción-a-la-programación-orientada-a-objetos/)
+- [Programación IV - Conceptos Básicos de POO](/apuntes/programación-iv---conceptos-básicos-de-poo/)
+- [Programación V - Mecanismos de POO](/apuntes/programación-v---mecanismos-de-poo/)
+- [Programación VI - Estructuras de Datos Abstractos](/apuntes/programación-vi---estructuras-de-datos-abstractos/)
+- [Programación VII - Manejo de Datos](/apuntes/programación-vii---manejo-de-datos/)
+- [Programación VIII - POO y la Programación Orientada a Eventos](/apuntes/programación-viii---poo-y-la-programación-orientada-a-eventos/)
+- [Programación IX - Patrones de Diseño](/apuntes/programación-ix---patrones-de-diseño/)
+- [Programación - Guías Documentación y Buenas Prácticas](/apuntes/programación---guías-documentación-y-buenas-prácticas/)
+
+---
