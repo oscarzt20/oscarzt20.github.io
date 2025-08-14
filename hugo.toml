@@ -23,7 +23,7 @@ defaultContentLanguage = "es"
   [params.profileMode]
     enabled = true
     title = "oscarzt20 | Blog & Notas"
-    subtitle = "Soy Oscar, desarrollador. En este blog comparto lo que hago, lo que aprendo y lo que me inspira. Me gusta aprender cosas nuevas y estoy abierto a colaborar."
+    subtitle = "Soy Oscar, desarrollador. En este blog comparto lo que hago, lo que aprendo y lo que me inspira. Siempre estoy abierto a colaborar."
     imageUrl = "perfil.jpg"
     imageTitle = "Foto de perfil"
     imageWidth = 160

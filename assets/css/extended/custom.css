@@ -91,16 +91,3 @@ h3 {
 .dark.list {
     background: var(--theme);
 }
-
-/* Barra de navegación */
-@media (min-width: 768px) {
-  .header {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    background-color: var(--theme);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    border-bottom: 1px solid var(--border);
-  }
-}
