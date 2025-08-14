@@ -1,8 +1,8 @@
 ---
 Title: Bases de Datos VI - Estructura Básica de SQL
-Fecha: 2025-08-08
+Date: 2025-08-08
 Hora: 02:19
-tags: ['enciclopedia', 'post']
+tags: ['enciclopedia', 'aprenderBD']
 ---
 
 ---

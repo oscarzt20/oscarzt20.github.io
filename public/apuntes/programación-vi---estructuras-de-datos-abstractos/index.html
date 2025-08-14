@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en" dir="auto">
+<html lang="es" dir="auto">
 
 <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="noindex, nofollow">
 <title>Programación VI - Estructuras de Datos Abstractos | oscarzt20</title>
-<meta name="keywords" content="enciclopedia, post">
+<meta name="keywords" content="enciclopedia">
 <meta name="description" content="
 I. Estructuras de datos abstractos
 En POO, son modelos que permiten organizar y gestionar datos de manera eficiente. Estas estructuras permiten almacenar objetos y manipularlos según ciertas reglas de acceso y recorrido.
@@ -14,7 +14,7 @@ En POO, son modelos que permiten organizar y gestionar datos de manera eficiente
 Son aquellas estructuras donde los elementos están organizados de forma secuencial, uno después del otro.
 Arreglo (Array)
 Un arreglo es una colección de tamaño fijo que almacena elementos del mismo tipo en posiciones contiguas de memoria. A diferencia de estructuras como las listas, los arreglos no pueden crecer o reducirse después de su creación. Además, el índice con el que inicia es 0.">
-<meta name="author" content="">
+<meta name="author" content="Oscar Juarez">
 <link rel="canonical" href="http://localhost:1313/apuntes/programaci%C3%B3n-vi---estructuras-de-datos-abstractos/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.81c898f5a2238b061825acde445de1b10e9825286bc566504cbb22ca1b9d1f73.css" integrity="sha256-gciY9aIjiwYYJazeRF3hsQ6YJShrxWZQTLsiyhudH3M=" rel="preload stylesheet" as="style">
 <link rel="icon" href="http://localhost:1313/favicon.ico">
@@ -24,7 +24,7 @@ Un arreglo es una colección de tamaño fijo que almacena elementos del mismo ti
 <link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="http://localhost:1313/apuntes/programaci%C3%B3n-vi---estructuras-de-datos-abstractos/">
+<link rel="alternate" hreflang="es" href="http://localhost:1313/apuntes/programaci%C3%B3n-vi---estructuras-de-datos-abstractos/">
 <noscript>
     <style>
         #theme-toggle,
@@ -110,8 +110,8 @@ Un arreglo es una colección de tamaño fijo que almacena elementos del mismo ti
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/tags/" title="Temas">
-                    <span>Temas</span>
+                <a href="http://localhost:1313/tags/" title="Tags">
+                    <span>Tags</span>
                 </a>
             </li>
             <li>
@@ -126,17 +126,17 @@ Un arreglo es una colección de tamaño fijo que almacena elementos del mismo ti
 
 <article class="post-single">
   <header class="post-header">
-    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/apuntes/">Apuntes</a></div>
+    <div class="breadcrumbs"><a href="http://localhost:1313/">Inicio</a>&nbsp;»&nbsp;<a href="http://localhost:1313/apuntes/">Apuntes</a></div>
     <h1 class="post-title entry-hint-parent">
       Programación VI - Estructuras de Datos Abstractos
     </h1>
-    <div class="post-meta">
+    <div class="post-meta"><span title='2025-08-08 00:00:00 +0000 UTC'>agosto 8, 2025</span>&nbsp;·&nbsp;Oscar Juarez
 
 </div>
   </header> <div class="toc">
     <details  open>
         <summary accesskey="c" title="(Alt + C)">
-            <span class="details">Table of Contents</span>
+            <span class="details">Tabla de Contenidos</span>
         </summary>
 
         <div class="inner"><ul>
@@ -306,7 +306,6 @@ Un arreglo es una colección de tamaño fijo que almacena elementos del mismo ti
   <footer class="post-footer">
     <ul class="post-tags">
       <li><a href="http://localhost:1313/tags/enciclopedia/">Enciclopedia</a></li>
-      <li><a href="http://localhost:1313/tags/post/">Post</a></li>
     </ul>
   </footer>
 </article>
@@ -387,12 +386,12 @@ Un arreglo es una colección de tamaño fijo que almacena elementos del mismo ti
 
         const copybutton = document.createElement('button');
         copybutton.classList.add('copy-code');
-        copybutton.innerHTML = 'copy';
+        copybutton.innerHTML = 'copiar';
 
         function copyingDone() {
-            copybutton.innerHTML = 'copied!';
+            copybutton.innerHTML = '¡copiado!';
             setTimeout(() => {
-                copybutton.innerHTML = 'copy';
+                copybutton.innerHTML = 'copiar';
             }, 2000);
         }
 

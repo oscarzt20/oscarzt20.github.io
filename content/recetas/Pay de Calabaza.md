@@ -1,8 +1,8 @@
 ---
 Title: Pay de Calabaza
-Fecha: 2025-06-02
+Date: 2025-06-02
 Hora: 1250
-tags: ['receta', 'post']
+tags: ['receta']
 TiempoPreparación: 6
 Porciones: 1
 TipoReceta: Postre

@@ -1,8 +1,8 @@
 ---
 Title: Pan de Muerto - Hojaldras Tradicionales
-Fecha: 2025-06-02
+Date: 2025-06-02
 Hora: 1252
-tags: ['receta', 'post']
+tags: ['receta']
 TiempoPreparación: 8
 Porciones: 17
 TipoReceta: Panadería

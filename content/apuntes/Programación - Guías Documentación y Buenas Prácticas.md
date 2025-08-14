@@ -1,8 +1,8 @@
 ---
 Title: Programación - Guías y Buenas Prácticas
-Fecha: 2025-08-08
+Date: 2025-08-08
 Hora: 02:07
-tags: ['enciclopedia', 'post']
+tags: ['enciclopedia', 'aprenderProgramacion']
 ---
 
 ---

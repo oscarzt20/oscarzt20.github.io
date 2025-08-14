@@ -1,8 +1,8 @@
 ---
 Title: Programación III - Introducción a la Programación Orientada a Objetos
-Fecha: 2025-08-08
+Date: 2025-08-08
 Hora: 01:52
-tags: ['enciclopedia', 'post']
+tags: ['enciclopedia', 'aprenderProgramacion']
 ---
 
 ---

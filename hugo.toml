@@ -2,6 +2,7 @@ baseURL = 'https://oscarzt20.github.io/'
 languageCode = 'es-mx'
 title = 'oscarzt20'
 theme = 'PaperMod'
+defaultContentLanguage = "es"
 
 [caches]
   [caches.images]
@@ -16,11 +17,41 @@ theme = 'PaperMod'
   ShowPostNavLinks = false
   ShowCodeCopyButtons = true
   hideSummary = false
-  mainSections = ["proyectos", "recursos", "apuntes", "pasatiempos", "recetas"]
+  author = "Oscar Juarez"
+  mainSections = ["proyectos", "recursos", "apuntes", "pasatiempos", "recetas", "articulos"]
 
-  [params.homeInfoParams]
-    Title = "oscarzt20 | Blog & Notas"
-    Content = "Soy Oscar, desarrollador. En este blog comparto lo que hago, lo que aprendo y lo que me inspira, desde proyectos personales hasta apuntes técnicos o pasatiempos."
+  [params.profileMode]
+    enabled = true
+    title = "oscarzt20 | Blog & Notas"
+    subtitle = "Soy Oscar, desarrollador. En este blog comparto lo que hago, lo que aprendo y lo que me inspira. Me gusta aprender cosas nuevas y estoy abierto a colaborar."
+    imageUrl = "perfil.jpg"
+    imageTitle = "Foto de perfil"
+    imageWidth = 160
+    imageHeight = 160
+
+    [[params.profileMode.buttons]]
+      name = "Proyectos"
+      url = "/proyectos/"
+
+    [[params.profileMode.buttons]]
+      name = "Recursos"
+      url = "/recursos/"
+
+    [[params.profileMode.buttons]]
+      name = "Apuntes"
+      url = "/apuntes/"
+
+    [[params.profileMode.buttons]]
+      name = "Pasatiempos"
+      url = "/pasatiempos/"
+
+    [[params.profileMode.buttons]]
+      name = "Recetas"
+      url = "/recetas/"
+
+    [[params.profileMode.buttons]]
+      name = "Artículos"
+      url = "/articulos/"
 
   [[params.socialIcons]]
     name = "github"
@@ -42,7 +73,7 @@ theme = 'PaperMod'
 
   [[menu.main]]
     identifier = "tags"
-    name = "Temas"
+    name = "Tags"
     url = "/tags/"
     weight = 2
 

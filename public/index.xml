@@ -30,7 +30,7 @@ Los componentes de las bases de datos son:&lt;/p&gt;
     <item>
       <title>Bases de Datos II - Diagramas y Documentación</title>
       <link>http://localhost:1313/apuntes/bases-de-datos-ii---diagramas-y-documentaci%C3%B3n/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/apuntes/bases-de-datos-ii---diagramas-y-documentaci%C3%B3n/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;i-diagramas-representativos&#34;&gt;I. Diagramas representativos&lt;/h2&gt;
@@ -69,7 +69,7 @@ Los componentes de las bases de datos son:&lt;/p&gt;
     <item>
       <title>Bases de Datos III - Reglas de Normalización</title>
       <link>http://localhost:1313/apuntes/bases-de-datos-iii---reglas-de-normalizaci%C3%B3n/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/apuntes/bases-de-datos-iii---reglas-de-normalizaci%C3%B3n/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;i-normalización&#34;&gt;I. Normalización&lt;/h2&gt;
@@ -88,7 +88,7 @@ Los componentes de las bases de datos son:&lt;/p&gt;
     <item>
       <title>Bases de Datos IV - Álgebra Relacional</title>
       <link>http://localhost:1313/apuntes/bases-de-datos-iv---%C3%A1lgebra-relacional/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/apuntes/bases-de-datos-iv---%C3%A1lgebra-relacional/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;i-álgebra-relacional&#34;&gt;I. Álgebra relacional&lt;/h2&gt;
@@ -113,7 +113,7 @@ Los componentes de las bases de datos son:&lt;/p&gt;
     <item>
       <title>Bases de Datos IX - Operaciones Avanzadas de SQL</title>
       <link>http://localhost:1313/apuntes/bases-de-datos-ix---operaciones-avanzadas-de-sql/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/apuntes/bases-de-datos-ix---operaciones-avanzadas-de-sql/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;i-operaciones-avanzadas&#34;&gt;I. Operaciones avanzadas&lt;/h2&gt;
@@ -133,7 +133,7 @@ Los componentes de las bases de datos son:&lt;/p&gt;
     <item>
       <title>Bases de Datos V - Microsoft SQL</title>
       <link>http://localhost:1313/apuntes/bases-de-datos-v---microsoft-sql/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/apuntes/bases-de-datos-v---microsoft-sql/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;i-microsoft-sql&#34;&gt;I. Microsoft SQL&lt;/h2&gt;
@@ -177,7 +177,7 @@ Los componentes de las bases de datos son:&lt;/p&gt;
     <item>
       <title>Bases de Datos VI - Estructura Básica de SQL</title>
       <link>http://localhost:1313/apuntes/bases-de-datos-vi---estructura-b%C3%A1sica-de-sql/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/apuntes/bases-de-datos-vi---estructura-b%C3%A1sica-de-sql/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;i-estructura-y-configuración-inicial-en-sql-server&#34;&gt;I. Estructura y configuración inicial en SQL Server&lt;/h2&gt;
@@ -230,7 +230,7 @@ CREATE TABLE Empleados
     <item>
       <title>Bases de Datos VII - Consultas de Datos</title>
       <link>http://localhost:1313/apuntes/bases-de-datos-vii---consultas-de-datos/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/apuntes/bases-de-datos-vii---consultas-de-datos/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;i-consultas&#34;&gt;I. Consultas&lt;/h2&gt;
@@ -270,7 +270,7 @@ FROM sys.tables;
     <item>
       <title>Bases de Datos VIII - Automatización y Seguridad</title>
       <link>http://localhost:1313/apuntes/bases-de-datos-viii---automatizaci%C3%B3n-y-seguridad/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/apuntes/bases-de-datos-viii---automatizaci%C3%B3n-y-seguridad/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;i-automatización-y-seguridad&#34;&gt;I. Automatización y seguridad&lt;/h2&gt;
@@ -279,10 +279,236 @@ FROM sys.tables;
 &lt;p&gt;Los SP contienen instrucciones de programación que realizan operaciones en la base de datos, como llamar a otros procedimientos, devolver un valor de estado o realizar una llamada para indicar si la operación se ha realizado correctamente o se han producido errores y el motivo de estos.&lt;/p&gt;</description>
     </item>
     <item>
+      <title>Programación - Guías y Buenas Prácticas</title>
+      <link>http://localhost:1313/apuntes/programaci%C3%B3n---gu%C3%ADas-documentaci%C3%B3n-y-buenas-pr%C3%A1cticas/</link>
+      <pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/apuntes/programaci%C3%B3n---gu%C3%ADas-documentaci%C3%B3n-y-buenas-pr%C3%A1cticas/</guid>
+      <description>&lt;hr&gt;
+&lt;h2 id=&#34;i-guía-de-nomenclatura-en-programación&#34;&gt;I. Guía de nomenclatura en programación&lt;/h2&gt;
+&lt;p&gt;Las convenciones ampliamente aceptadas en la industria para la nomenclatura en programación son:&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;&lt;strong&gt;Elemento&lt;/strong&gt;&lt;/th&gt;
+          &lt;th&gt;&lt;strong&gt;Convención&lt;/strong&gt;&lt;/th&gt;
+          &lt;th&gt;&lt;strong&gt;Ejemplo&lt;/strong&gt;&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;Nombre del proyecto&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;PascalCase&lt;/code&gt; o &lt;code&gt;kebab-case&lt;/code&gt; Usa nombres claros, únicos y profesionales.&lt;/td&gt;
+          &lt;td&gt;MiProyecto, mi-proyecto&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;Organización de carpetas&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;lowercase&lt;/code&gt; o &lt;code&gt;kebab-case&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;controllers/, user-data/&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;Variables&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;camelCase&lt;/code&gt; Nombres significativos, evita abreviaciones ambiguas. Singular para datos únicos, plural para colecciones&lt;/td&gt;
+          &lt;td&gt;userName, totalItems&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;Constantes&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;UPPER_SNAKE_CASE&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;PI, API_BASE_URL&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;Funciones y Métodos&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;camelCase&lt;/code&gt; o &lt;code&gt;PascalCase&lt;/code&gt; Usa verbos&lt;/td&gt;
+          &lt;td&gt;getUser(), ProcessOrder()&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;Clases y Objetos&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;PascalCase&lt;/code&gt; con sustantivos para clases, &lt;code&gt;kebab-case&lt;/code&gt; para archivos con sufijos descriptivos&lt;/td&gt;
+          &lt;td&gt;ShoppingCart, user-profile.js, cart.service.js&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;Propiedades&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;Se toma el nombre del atributo y se pasa a &lt;code&gt;PascalCase&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;public int Edad { get {  } set {  } }&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;Assets (Recursos)&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;kebab-case&lt;/code&gt; o &lt;code&gt;snake_case&lt;/code&gt;, agrupados en carpetas&lt;/td&gt;
+          &lt;td&gt;icon-home.svg, assets/images/, assets/fonts/&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;Commits&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;&amp;lt;tipo&amp;gt;(área): descripción breve&lt;/code&gt; Tipos: feat, fix, docs, test&lt;/td&gt;
+          &lt;td&gt;feat(auth): add login feature&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;Configuración del Proyecto&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;Ramas&lt;/code&gt; y &lt;code&gt;versiones organizadas&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;feature/login-page, v1.0.0&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;Bases de Datos y Eventos&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;Tablas/campos en &lt;code&gt;snake_case&lt;/code&gt;y eventos en &lt;code&gt;verbo-nombre&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;user_profiles, created_at, user-logged-in&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;blockquote&gt;
+&lt;p&gt;[!NOTE]
+Siempre evitar utilizar las palabras reservadas de cada lenguaje.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Programación I - Algoritmos</title>
+      <link>http://localhost:1313/apuntes/programaci%C3%B3n-i---algoritmos/</link>
+      <pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/apuntes/programaci%C3%B3n-i---algoritmos/</guid>
+      <description>&lt;hr&gt;
+&lt;p&gt;La programación es el proceso de escribir instrucciones para que una computadora realice tareas específicas. Antes de empezar a programar, es importante conocer los fundamentos necesarios para entender cómo funciona la programación.&lt;/p&gt;
+&lt;p&gt;Para programar, los desarrolladores crean algoritmos, que son secuencias ordenadas de pasos que resuelven un problema o llevan a cabo una tarea.&lt;/p&gt;
+&lt;h2 id=&#34;i-características-de-los-algoritmos&#34;&gt;I. Características de los algoritmos&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Finito&lt;/strong&gt;: Un algoritmo debe terminar después de un número determinado de pasos. Se evitan los bucles sin fin.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Preciso&lt;/strong&gt;: No debe haber interpretaciones subjetivas sobre lo que se debe hacer en cada instrucción.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Con inicio y final/es&lt;/strong&gt;: Debe tener un inicio y puede contener más de un final.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Eficaz en la solución del problema&lt;/strong&gt;: El algoritmo debe resolver el problema de manera correcta y óptima, evitando pasos innecesarios o ineficientes.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;11-tipos-de-algoritmos&#34;&gt;1.1 Tipos de algoritmos&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Cualitativos&lt;/strong&gt;: Emplean palabras, ej. receta de cocina.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Cuantitativos&lt;/strong&gt;: Utilizan cálculos numéricos, ej. resolver una ecuación de 2° grado.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;ii-lenguajes-algorítmicos&#34;&gt;II. Lenguajes algorítmicos&lt;/h2&gt;
+&lt;p&gt;Conjunto de símbolos y reglas que permiten explicar un proceso.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Programación II - Conceptos Básicos</title>
+      <link>http://localhost:1313/apuntes/programaci%C3%B3n-ii---conceptos-b%C3%A1sicos/</link>
+      <pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/apuntes/programaci%C3%B3n-ii---conceptos-b%C3%A1sicos/</guid>
+      <description>&lt;hr&gt;
+&lt;h2 id=&#34;i-clasificación-de-los-lenguajes-de-programación&#34;&gt;I. Clasificación de los lenguajes de programación&lt;/h2&gt;
+&lt;h3 id=&#34;11-niveles-de-abstracción&#34;&gt;1.1 Niveles de abstracción&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Bajo nivel&lt;/strong&gt;: Aquellos lenguajes que controlan el hardware del ordenador. Ej. Lenguaje Ensamblador, Código Máquina o Binario.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Alto nivel&lt;/strong&gt;: Son más parecidos al lenguaje natural humano y abarca el 99% de lenguajes de programación.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Nivel intermedio&lt;/strong&gt;: Puede usar elementos de los dos anteriores. El único que lo hace es el C.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;12-lenguajes-compilados-e-interpretados&#34;&gt;1.2 Lenguajes compilados e interpretados&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Lenguaje compilado&lt;/strong&gt;: Se toma el código en alto nivel y lo convierte en bytes, y al final nos dará un archivo ejecutable. Tiene mejor rendimiento al ejecutarse aunque ocupa más memoria que el interpretado.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Lenguaje interpretado&lt;/strong&gt;: Se interpreta línea a línea en tiempo real al ejecutarse (Ej. JavaScript, Python). Tiene un rendimiento algo más lento que el compilado pero ocupa menos memoria.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Lenguaje híbrido&lt;/strong&gt;: Algunos lenguajes combinan ambos enfoques, primero, el código es compilado a un formato intermedio llamado bytecode, luego este bytecode es ejecutado por un intérprete o máquina virtual (JVM en Java, CLR en C#) (Ej. Java, C#, Kotlin).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;ii-componentes-básicos-de-la-programación&#34;&gt;II. Componentes básicos de la programación&lt;/h2&gt;
+&lt;h3 id=&#34;21-tipos-de-datos-simples&#34;&gt;2.1 Tipos de datos simples&lt;/h3&gt;
+&lt;p&gt;Algunos de los tipos de datos comunes simples son:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Programación III - Introducción a la Programación Orientada a Objetos</title>
+      <link>http://localhost:1313/apuntes/programaci%C3%B3n-iii---introducci%C3%B3n-a-la-programaci%C3%B3n-orientada-a-objetos/</link>
+      <pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/apuntes/programaci%C3%B3n-iii---introducci%C3%B3n-a-la-programaci%C3%B3n-orientada-a-objetos/</guid>
+      <description>&lt;hr&gt;
+&lt;h2 id=&#34;i-introducción-a-la-programación-orientada-a-objetos-poo&#34;&gt;I. Introducción a la Programación Orientada a Objetos (POO)&lt;/h2&gt;
+&lt;p&gt;La programación orientada a objetos es un paradigma que organiza el código en objetos, cada uno con sus propios datos (&lt;em&gt;atributos&lt;/em&gt;) y comportamientos (&lt;em&gt;métodos&lt;/em&gt;), evitando que otros objetos tengan acceso a estos elementos de manera no controlada.&lt;/p&gt;
+&lt;p&gt;Los beneficios y objetivos de POO son:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Natural&lt;/strong&gt;: Permite construir un sistema que modele elementos del mundo real.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Confiable&lt;/strong&gt;: Un programa bien diseñado y codificado va a funcionar como es esperado sin importar el tamaño, y el testing se vuelve más sencillo.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Reusable&lt;/strong&gt;: Una vez un problema es resuelto se puede volver a usar la solución.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Fácil de mantener&lt;/strong&gt;: Se estima que del 60%-80% del trabajo en un programa es el mantenimiento, el 20% es el desarrollo. Un bug se puede resolver corrigiendo una sola parte.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Extendible&lt;/strong&gt;: Un software creado en POO puede crecer y cambiar sin muchas dificultades.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Oportuno&lt;/strong&gt;: Varias partes del programa se pueden desarrollar en paralelo. Es esencial realizar correctamente el análisis y diseño.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;11-diferencias-entre-poo-y-la-programación-estructurada&#34;&gt;1.1 Diferencias entre POO y la programación estructurada&lt;/h3&gt;
+&lt;p&gt;A diferencia de la programación estructurada, donde el código se escribe en &lt;em&gt;funciones&lt;/em&gt; que resuelven un problema lógico y este se ejecuta en orden de arriba hacia abajo, la POO organiza el código en un sistema conectado basado en &lt;em&gt;objetos&lt;/em&gt;, y el orden en que se escriben las partes de una clase no afecta su funcionamiento.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Programación IV - Conceptos Básicos de POO</title>
+      <link>http://localhost:1313/apuntes/programaci%C3%B3n-iv---conceptos-b%C3%A1sicos-de-poo/</link>
+      <pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/apuntes/programaci%C3%B3n-iv---conceptos-b%C3%A1sicos-de-poo/</guid>
+      <description>&lt;hr&gt;
+&lt;h2 id=&#34;i-conceptos-básicos-de-poo&#34;&gt;I. Conceptos básicos de POO&lt;/h2&gt;
+&lt;h3 id=&#34;11-objetos&#34;&gt;1.1 Objetos&lt;/h3&gt;
+&lt;p&gt;Son elementos que componen un sistema. Este contiene datos y comportamientos.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Ejemplo&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;En un automóvil las distintas partes que lo conforman son &lt;em&gt;objetos&lt;/em&gt;, los cuales se pueden comunicar entre sí para funcionar.&lt;/p&gt;
+&lt;h4 id=&#34;características-de-los-objetos&#34;&gt;Características de los objetos&lt;/h4&gt;
+&lt;h5 id=&#34;atributos&#34;&gt;Atributos&lt;/h5&gt;
+&lt;p&gt;Los atributos representan las propiedades de un objeto y almacenan su información en un momento dado. Estos definen el &lt;em&gt;estado&lt;/em&gt; del objeto y pueden cambiar durante la ejecución del programa.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Programación IX - Patrones de Diseño</title>
+      <link>http://localhost:1313/apuntes/programaci%C3%B3n-ix---patrones-de-dise%C3%B1o/</link>
+      <pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/apuntes/programaci%C3%B3n-ix---patrones-de-dise%C3%B1o/</guid>
+      <description>&lt;hr&gt;
+&lt;h2 id=&#34;i-patrones-de-diseño-en-poo&#34;&gt;I. Patrones de diseño en POO&lt;/h2&gt;
+&lt;p&gt;Un patrón de diseño es una solución reutilizable, comprobada y estructurada a un problema común que aparece constantemente al diseñar sistemas orientados a objetos.&lt;/p&gt;
+&lt;p&gt;Básicamente, son guías o plantillas que ayudan a resolver un problema específico de diseño.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Sus elementos son&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Nombre&lt;/strong&gt;: Forma de referirse al patrón de diseño.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Problema&lt;/strong&gt;: Explica cuándo debe usarse el patrón.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;La solución&lt;/strong&gt;: Describe la estructura general, las clases involucradas, las relaciones entre ellas y cómo colaboran para resolver el problema.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Las consecuencias&lt;/strong&gt;: Analiza el impacto del patrón, tomando en cuenta el costo/beneficio, espacio/tiempo, lenguaje, impacto en flexibilidad, extensión y portabilidad.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Los patrones de diseño se agrupan en tres categorías, según el tipo de problema que ayudan a resolver.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Programación V - Mecanismos de POO</title>
+      <link>http://localhost:1313/apuntes/programaci%C3%B3n-v---mecanismos-de-poo/</link>
+      <pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/apuntes/programaci%C3%B3n-v---mecanismos-de-poo/</guid>
+      <description>&lt;hr&gt;
+&lt;h2 id=&#34;i-mecanismos-de-poo&#34;&gt;I. Mecanismos de POO&lt;/h2&gt;
+&lt;h3 id=&#34;11-encapsulación-y-acceso&#34;&gt;1.1 Encapsulación y acceso&lt;/h3&gt;
+&lt;p&gt;La encapsulación es un principio fundamental de la POO que protege los datos dentro de un objeto y regula su acceso. Para lograrlo, se emplean los &lt;em&gt;controles de acceso&lt;/em&gt;, los cuales determinan:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Visibilidad&lt;/strong&gt;: Define qué partes del código pueden acceder a los atributos y métodos.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Manipulación&lt;/strong&gt;: Controla cómo y cuándo los atributos de un objeto pueden modificarse.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;El uso adecuado de estos controles permite garantizar que solo las partes autorizadas del código puedan interactuar con su contenido. Para ello, se deben comprender los &lt;em&gt;modificadores de acceso&lt;/em&gt; y los métodos específicos que permiten acceder o modificar los datos de manera segura (&lt;em&gt;accessors&lt;/em&gt; y &lt;em&gt;mutators&lt;/em&gt;).&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Programación VI - Estructuras de Datos Abstractos</title>
+      <link>http://localhost:1313/apuntes/programaci%C3%B3n-vi---estructuras-de-datos-abstractos/</link>
+      <pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/apuntes/programaci%C3%B3n-vi---estructuras-de-datos-abstractos/</guid>
+      <description>&lt;hr&gt;
+&lt;h2 id=&#34;i-estructuras-de-datos-abstractos&#34;&gt;I. Estructuras de datos abstractos&lt;/h2&gt;
+&lt;p&gt;En POO, son modelos que permiten organizar y gestionar datos de manera eficiente. Estas estructuras permiten almacenar objetos y manipularlos según ciertas reglas de acceso y recorrido.&lt;/p&gt;
+&lt;h3 id=&#34;11-estructuras-de-datos-lineales&#34;&gt;1.1 Estructuras de datos lineales&lt;/h3&gt;
+&lt;p&gt;Son aquellas estructuras donde los elementos están organizados de forma secuencial, uno después del otro.&lt;/p&gt;
+&lt;h4 id=&#34;arreglo-array&#34;&gt;Arreglo (Array)&lt;/h4&gt;
+&lt;p&gt;Un arreglo es una colección de tamaño fijo que almacena elementos del mismo tipo en posiciones contiguas de memoria. A diferencia de estructuras como las listas, los arreglos no pueden crecer o reducirse después de su creación. Además, el índice con el que inicia es 0.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Programación VII - Manejo de Datos</title>
+      <link>http://localhost:1313/apuntes/programaci%C3%B3n-vii---manejo-de-datos/</link>
+      <pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/apuntes/programaci%C3%B3n-vii---manejo-de-datos/</guid>
+      <description>&lt;hr&gt;
+&lt;h2 id=&#34;i-manejo-de-datos-en-poo&#34;&gt;I. Manejo de datos en POO&lt;/h2&gt;
+&lt;p&gt;Es común que los objetos contengan información importante que debe conservarse incluso después de que el programa finaliza. Para lograr esto se aplican técnicas como la serialización, que permiten guardar y recuperar el estado de los objetos desde archivos. Esto hace posible mantener configuraciones o datos entre ejecuciones, así como permitir que la información se comparta fácilmente entre distintos sistemas o plataformas.&lt;/p&gt;
+&lt;h3 id=&#34;11-persistencia&#34;&gt;1.1 Persistencia&lt;/h3&gt;
+&lt;p&gt;En POO, la persistencia se refiere a guardar el estado de un objeto para luego reconstruirlo cuando se necesite. Es decir, permite que los datos de un programa no se pierdan cuando el programa finaliza.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Programación VIII - POO y la Programación Orientada a Eventos</title>
+      <link>http://localhost:1313/apuntes/programaci%C3%B3n-viii---poo-y-la-programaci%C3%B3n-orientada-a-eventos/</link>
+      <pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/apuntes/programaci%C3%B3n-viii---poo-y-la-programaci%C3%B3n-orientada-a-eventos/</guid>
+      <description>&lt;hr&gt;
+&lt;h2 id=&#34;i-poo-y-la-programación-orientada-a-eventos&#34;&gt;I. POO y la programación orientada a eventos&lt;/h2&gt;
+&lt;p&gt;La Programación Orientada a Eventos (POE) es un paradigma que se basa en la interacción con eventos, es decir, acciones que ocurren en el sistema, como hacer clic en un botón, mover el mouse, o recibir una notificación externa.&lt;/p&gt;
+&lt;p&gt;Cuando se combina con la Programación Orientada a Objetos (POO), permite crear aplicaciones interactivas donde los objetos pueden reaccionar a eventos. Este enfoque es común en interfaces gráficas de usuario y en sistemas donde las acciones del usuario determinan el flujo del programa como videojuegos.&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>Donas</title>
-      <link>http://localhost:1313/recetas/donas/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/recetas/donas/</guid>
+      <link>http://localhost:1313/recetas/donas-glaseadas/</link>
+      <pubDate>Sun, 03 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/recetas/donas-glaseadas/</guid>
       <description>&lt;hr&gt;
 &lt;table&gt;
   &lt;thead&gt;
@@ -352,7 +578,7 @@ FROM sys.tables;
     <item>
       <title>Pan de Muerto - Hojaldras Tradicionales</title>
       <link>http://localhost:1313/recetas/pan-de-muerto---hojaldras-tradicionales/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 02 Jun 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/recetas/pan-de-muerto---hojaldras-tradicionales/</guid>
       <description>&lt;hr&gt;
 &lt;table&gt;
@@ -413,7 +639,7 @@ FROM sys.tables;
     <item>
       <title>Pay de Calabaza</title>
       <link>http://localhost:1313/recetas/pay-de-calabaza/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 02 Jun 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/recetas/pay-de-calabaza/</guid>
       <description>&lt;hr&gt;
 &lt;table&gt;
@@ -499,7 +725,7 @@ FROM sys.tables;
     <item>
       <title>Pizza</title>
       <link>http://localhost:1313/recetas/pizza/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 02 Jun 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/recetas/pizza/</guid>
       <description>&lt;hr&gt;
 &lt;table&gt;
@@ -544,232 +770,6 @@ FROM sys.tables;
 &lt;li&gt;Agregar la levadura en polvo y 150gr de harina. Revolver no muy rápido hasta que se incorpore todo.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;img alt=&#34;Pizza_24-06-2025.png&#34; loading=&#34;lazy&#34; src=&#34;http://localhost:1313/imagenes/Pizza_24-06-2025.png&#34;&gt;&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Programación - Guías y Buenas Prácticas</title>
-      <link>http://localhost:1313/apuntes/programaci%C3%B3n---gu%C3%ADas-documentaci%C3%B3n-y-buenas-pr%C3%A1cticas/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/apuntes/programaci%C3%B3n---gu%C3%ADas-documentaci%C3%B3n-y-buenas-pr%C3%A1cticas/</guid>
-      <description>&lt;hr&gt;
-&lt;h2 id=&#34;i-guía-de-nomenclatura-en-programación&#34;&gt;I. Guía de nomenclatura en programación&lt;/h2&gt;
-&lt;p&gt;Las convenciones ampliamente aceptadas en la industria para la nomenclatura en programación son:&lt;/p&gt;
-&lt;table&gt;
-  &lt;thead&gt;
-      &lt;tr&gt;
-          &lt;th&gt;&lt;strong&gt;Elemento&lt;/strong&gt;&lt;/th&gt;
-          &lt;th&gt;&lt;strong&gt;Convención&lt;/strong&gt;&lt;/th&gt;
-          &lt;th&gt;&lt;strong&gt;Ejemplo&lt;/strong&gt;&lt;/th&gt;
-      &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-      &lt;tr&gt;
-          &lt;td&gt;&lt;strong&gt;Nombre del proyecto&lt;/strong&gt;&lt;/td&gt;
-          &lt;td&gt;&lt;code&gt;PascalCase&lt;/code&gt; o &lt;code&gt;kebab-case&lt;/code&gt; Usa nombres claros, únicos y profesionales.&lt;/td&gt;
-          &lt;td&gt;MiProyecto, mi-proyecto&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;&lt;strong&gt;Organización de carpetas&lt;/strong&gt;&lt;/td&gt;
-          &lt;td&gt;&lt;code&gt;lowercase&lt;/code&gt; o &lt;code&gt;kebab-case&lt;/code&gt;&lt;/td&gt;
-          &lt;td&gt;controllers/, user-data/&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;&lt;strong&gt;Variables&lt;/strong&gt;&lt;/td&gt;
-          &lt;td&gt;&lt;code&gt;camelCase&lt;/code&gt; Nombres significativos, evita abreviaciones ambiguas. Singular para datos únicos, plural para colecciones&lt;/td&gt;
-          &lt;td&gt;userName, totalItems&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;&lt;strong&gt;Constantes&lt;/strong&gt;&lt;/td&gt;
-          &lt;td&gt;&lt;code&gt;UPPER_SNAKE_CASE&lt;/code&gt;&lt;/td&gt;
-          &lt;td&gt;PI, API_BASE_URL&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;&lt;strong&gt;Funciones y Métodos&lt;/strong&gt;&lt;/td&gt;
-          &lt;td&gt;&lt;code&gt;camelCase&lt;/code&gt; o &lt;code&gt;PascalCase&lt;/code&gt; Usa verbos&lt;/td&gt;
-          &lt;td&gt;getUser(), ProcessOrder()&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;&lt;strong&gt;Clases y Objetos&lt;/strong&gt;&lt;/td&gt;
-          &lt;td&gt;&lt;code&gt;PascalCase&lt;/code&gt; con sustantivos para clases, &lt;code&gt;kebab-case&lt;/code&gt; para archivos con sufijos descriptivos&lt;/td&gt;
-          &lt;td&gt;ShoppingCart, user-profile.js, cart.service.js&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;&lt;strong&gt;Propiedades&lt;/strong&gt;&lt;/td&gt;
-          &lt;td&gt;Se toma el nombre del atributo y se pasa a &lt;code&gt;PascalCase&lt;/code&gt;&lt;/td&gt;
-          &lt;td&gt;public int Edad { get {  } set {  } }&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;&lt;strong&gt;Assets (Recursos)&lt;/strong&gt;&lt;/td&gt;
-          &lt;td&gt;&lt;code&gt;kebab-case&lt;/code&gt; o &lt;code&gt;snake_case&lt;/code&gt;, agrupados en carpetas&lt;/td&gt;
-          &lt;td&gt;icon-home.svg, assets/images/, assets/fonts/&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;&lt;strong&gt;Commits&lt;/strong&gt;&lt;/td&gt;
-          &lt;td&gt;&lt;code&gt;&amp;lt;tipo&amp;gt;(área): descripción breve&lt;/code&gt; Tipos: feat, fix, docs, test&lt;/td&gt;
-          &lt;td&gt;feat(auth): add login feature&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;&lt;strong&gt;Configuración del Proyecto&lt;/strong&gt;&lt;/td&gt;
-          &lt;td&gt;&lt;code&gt;Ramas&lt;/code&gt; y &lt;code&gt;versiones organizadas&lt;/code&gt;&lt;/td&gt;
-          &lt;td&gt;feature/login-page, v1.0.0&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;&lt;strong&gt;Bases de Datos y Eventos&lt;/strong&gt;&lt;/td&gt;
-          &lt;td&gt;Tablas/campos en &lt;code&gt;snake_case&lt;/code&gt;y eventos en &lt;code&gt;verbo-nombre&lt;/code&gt;&lt;/td&gt;
-          &lt;td&gt;user_profiles, created_at, user-logged-in&lt;/td&gt;
-      &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-&lt;blockquote&gt;
-&lt;p&gt;[!NOTE]
-Siempre evitar utilizar las palabras reservadas de cada lenguaje.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Programación I - Algoritmos</title>
-      <link>http://localhost:1313/apuntes/programaci%C3%B3n-i---algoritmos/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/apuntes/programaci%C3%B3n-i---algoritmos/</guid>
-      <description>&lt;hr&gt;
-&lt;p&gt;La programación es el proceso de escribir instrucciones para que una computadora realice tareas específicas. Antes de empezar a programar, es importante conocer los fundamentos necesarios para entender cómo funciona la programación.&lt;/p&gt;
-&lt;p&gt;Para programar, los desarrolladores crean algoritmos, que son secuencias ordenadas de pasos que resuelven un problema o llevan a cabo una tarea.&lt;/p&gt;
-&lt;h2 id=&#34;i-características-de-los-algoritmos&#34;&gt;I. Características de los algoritmos&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Finito&lt;/strong&gt;: Un algoritmo debe terminar después de un número determinado de pasos. Se evitan los bucles sin fin.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Preciso&lt;/strong&gt;: No debe haber interpretaciones subjetivas sobre lo que se debe hacer en cada instrucción.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Con inicio y final/es&lt;/strong&gt;: Debe tener un inicio y puede contener más de un final.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Eficaz en la solución del problema&lt;/strong&gt;: El algoritmo debe resolver el problema de manera correcta y óptima, evitando pasos innecesarios o ineficientes.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;11-tipos-de-algoritmos&#34;&gt;1.1 Tipos de algoritmos&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Cualitativos&lt;/strong&gt;: Emplean palabras, ej. receta de cocina.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Cuantitativos&lt;/strong&gt;: Utilizan cálculos numéricos, ej. resolver una ecuación de 2° grado.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;ii-lenguajes-algorítmicos&#34;&gt;II. Lenguajes algorítmicos&lt;/h2&gt;
-&lt;p&gt;Conjunto de símbolos y reglas que permiten explicar un proceso.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Programación II - Conceptos Básicos</title>
-      <link>http://localhost:1313/apuntes/programaci%C3%B3n-ii---conceptos-b%C3%A1sicos/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/apuntes/programaci%C3%B3n-ii---conceptos-b%C3%A1sicos/</guid>
-      <description>&lt;hr&gt;
-&lt;h2 id=&#34;i-clasificación-de-los-lenguajes-de-programación&#34;&gt;I. Clasificación de los lenguajes de programación&lt;/h2&gt;
-&lt;h3 id=&#34;11-niveles-de-abstracción&#34;&gt;1.1 Niveles de abstracción&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Bajo nivel&lt;/strong&gt;: Aquellos lenguajes que controlan el hardware del ordenador. Ej. Lenguaje Ensamblador, Código Máquina o Binario.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Alto nivel&lt;/strong&gt;: Son más parecidos al lenguaje natural humano y abarca el 99% de lenguajes de programación.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Nivel intermedio&lt;/strong&gt;: Puede usar elementos de los dos anteriores. El único que lo hace es el C.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;12-lenguajes-compilados-e-interpretados&#34;&gt;1.2 Lenguajes compilados e interpretados&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Lenguaje compilado&lt;/strong&gt;: Se toma el código en alto nivel y lo convierte en bytes, y al final nos dará un archivo ejecutable. Tiene mejor rendimiento al ejecutarse aunque ocupa más memoria que el interpretado.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Lenguaje interpretado&lt;/strong&gt;: Se interpreta línea a línea en tiempo real al ejecutarse (Ej. JavaScript, Python). Tiene un rendimiento algo más lento que el compilado pero ocupa menos memoria.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Lenguaje híbrido&lt;/strong&gt;: Algunos lenguajes combinan ambos enfoques, primero, el código es compilado a un formato intermedio llamado bytecode, luego este bytecode es ejecutado por un intérprete o máquina virtual (JVM en Java, CLR en C#) (Ej. Java, C#, Kotlin).&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;ii-componentes-básicos-de-la-programación&#34;&gt;II. Componentes básicos de la programación&lt;/h2&gt;
-&lt;h3 id=&#34;21-tipos-de-datos-simples&#34;&gt;2.1 Tipos de datos simples&lt;/h3&gt;
-&lt;p&gt;Algunos de los tipos de datos comunes simples son:&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Programación III - Introducción a la Programación Orientada a Objetos</title>
-      <link>http://localhost:1313/apuntes/programaci%C3%B3n-iii---introducci%C3%B3n-a-la-programaci%C3%B3n-orientada-a-objetos/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/apuntes/programaci%C3%B3n-iii---introducci%C3%B3n-a-la-programaci%C3%B3n-orientada-a-objetos/</guid>
-      <description>&lt;hr&gt;
-&lt;h2 id=&#34;i-introducción-a-la-programación-orientada-a-objetos-poo&#34;&gt;I. Introducción a la Programación Orientada a Objetos (POO)&lt;/h2&gt;
-&lt;p&gt;La programación orientada a objetos es un paradigma que organiza el código en objetos, cada uno con sus propios datos (&lt;em&gt;atributos&lt;/em&gt;) y comportamientos (&lt;em&gt;métodos&lt;/em&gt;), evitando que otros objetos tengan acceso a estos elementos de manera no controlada.&lt;/p&gt;
-&lt;p&gt;Los beneficios y objetivos de POO son:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Natural&lt;/strong&gt;: Permite construir un sistema que modele elementos del mundo real.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Confiable&lt;/strong&gt;: Un programa bien diseñado y codificado va a funcionar como es esperado sin importar el tamaño, y el testing se vuelve más sencillo.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Reusable&lt;/strong&gt;: Una vez un problema es resuelto se puede volver a usar la solución.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Fácil de mantener&lt;/strong&gt;: Se estima que del 60%-80% del trabajo en un programa es el mantenimiento, el 20% es el desarrollo. Un bug se puede resolver corrigiendo una sola parte.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Extendible&lt;/strong&gt;: Un software creado en POO puede crecer y cambiar sin muchas dificultades.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Oportuno&lt;/strong&gt;: Varias partes del programa se pueden desarrollar en paralelo. Es esencial realizar correctamente el análisis y diseño.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;11-diferencias-entre-poo-y-la-programación-estructurada&#34;&gt;1.1 Diferencias entre POO y la programación estructurada&lt;/h3&gt;
-&lt;p&gt;A diferencia de la programación estructurada, donde el código se escribe en &lt;em&gt;funciones&lt;/em&gt; que resuelven un problema lógico y este se ejecuta en orden de arriba hacia abajo, la POO organiza el código en un sistema conectado basado en &lt;em&gt;objetos&lt;/em&gt;, y el orden en que se escriben las partes de una clase no afecta su funcionamiento.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Programación IV - Conceptos Básicos de POO</title>
-      <link>http://localhost:1313/apuntes/programaci%C3%B3n-iv---conceptos-b%C3%A1sicos-de-poo/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/apuntes/programaci%C3%B3n-iv---conceptos-b%C3%A1sicos-de-poo/</guid>
-      <description>&lt;hr&gt;
-&lt;h2 id=&#34;i-conceptos-básicos-de-poo&#34;&gt;I. Conceptos básicos de POO&lt;/h2&gt;
-&lt;h3 id=&#34;11-objetos&#34;&gt;1.1 Objetos&lt;/h3&gt;
-&lt;p&gt;Son elementos que componen un sistema. Este contiene datos y comportamientos.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Ejemplo&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;En un automóvil las distintas partes que lo conforman son &lt;em&gt;objetos&lt;/em&gt;, los cuales se pueden comunicar entre sí para funcionar.&lt;/p&gt;
-&lt;h4 id=&#34;características-de-los-objetos&#34;&gt;Características de los objetos&lt;/h4&gt;
-&lt;h5 id=&#34;atributos&#34;&gt;Atributos&lt;/h5&gt;
-&lt;p&gt;Los atributos representan las propiedades de un objeto y almacenan su información en un momento dado. Estos definen el &lt;em&gt;estado&lt;/em&gt; del objeto y pueden cambiar durante la ejecución del programa.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Programación IX - Patrones de Diseño</title>
-      <link>http://localhost:1313/apuntes/programaci%C3%B3n-ix---patrones-de-dise%C3%B1o/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/apuntes/programaci%C3%B3n-ix---patrones-de-dise%C3%B1o/</guid>
-      <description>&lt;hr&gt;
-&lt;h2 id=&#34;i-patrones-de-diseño-en-poo&#34;&gt;I. Patrones de diseño en POO&lt;/h2&gt;
-&lt;p&gt;Un patrón de diseño es una solución reutilizable, comprobada y estructurada a un problema común que aparece constantemente al diseñar sistemas orientados a objetos.&lt;/p&gt;
-&lt;p&gt;Básicamente, son guías o plantillas que ayudan a resolver un problema específico de diseño.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Sus elementos son&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Nombre&lt;/strong&gt;: Forma de referirse al patrón de diseño.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Problema&lt;/strong&gt;: Explica cuándo debe usarse el patrón.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;La solución&lt;/strong&gt;: Describe la estructura general, las clases involucradas, las relaciones entre ellas y cómo colaboran para resolver el problema.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Las consecuencias&lt;/strong&gt;: Analiza el impacto del patrón, tomando en cuenta el costo/beneficio, espacio/tiempo, lenguaje, impacto en flexibilidad, extensión y portabilidad.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Los patrones de diseño se agrupan en tres categorías, según el tipo de problema que ayudan a resolver.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Programación V - Mecanismos de POO</title>
-      <link>http://localhost:1313/apuntes/programaci%C3%B3n-v---mecanismos-de-poo/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/apuntes/programaci%C3%B3n-v---mecanismos-de-poo/</guid>
-      <description>&lt;hr&gt;
-&lt;h2 id=&#34;i-mecanismos-de-poo&#34;&gt;I. Mecanismos de POO&lt;/h2&gt;
-&lt;h3 id=&#34;11-encapsulación-y-acceso&#34;&gt;1.1 Encapsulación y acceso&lt;/h3&gt;
-&lt;p&gt;La encapsulación es un principio fundamental de la POO que protege los datos dentro de un objeto y regula su acceso. Para lograrlo, se emplean los &lt;em&gt;controles de acceso&lt;/em&gt;, los cuales determinan:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Visibilidad&lt;/strong&gt;: Define qué partes del código pueden acceder a los atributos y métodos.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Manipulación&lt;/strong&gt;: Controla cómo y cuándo los atributos de un objeto pueden modificarse.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;El uso adecuado de estos controles permite garantizar que solo las partes autorizadas del código puedan interactuar con su contenido. Para ello, se deben comprender los &lt;em&gt;modificadores de acceso&lt;/em&gt; y los métodos específicos que permiten acceder o modificar los datos de manera segura (&lt;em&gt;accessors&lt;/em&gt; y &lt;em&gt;mutators&lt;/em&gt;).&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Programación VI - Estructuras de Datos Abstractos</title>
-      <link>http://localhost:1313/apuntes/programaci%C3%B3n-vi---estructuras-de-datos-abstractos/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/apuntes/programaci%C3%B3n-vi---estructuras-de-datos-abstractos/</guid>
-      <description>&lt;hr&gt;
-&lt;h2 id=&#34;i-estructuras-de-datos-abstractos&#34;&gt;I. Estructuras de datos abstractos&lt;/h2&gt;
-&lt;p&gt;En POO, son modelos que permiten organizar y gestionar datos de manera eficiente. Estas estructuras permiten almacenar objetos y manipularlos según ciertas reglas de acceso y recorrido.&lt;/p&gt;
-&lt;h3 id=&#34;11-estructuras-de-datos-lineales&#34;&gt;1.1 Estructuras de datos lineales&lt;/h3&gt;
-&lt;p&gt;Son aquellas estructuras donde los elementos están organizados de forma secuencial, uno después del otro.&lt;/p&gt;
-&lt;h4 id=&#34;arreglo-array&#34;&gt;Arreglo (Array)&lt;/h4&gt;
-&lt;p&gt;Un arreglo es una colección de tamaño fijo que almacena elementos del mismo tipo en posiciones contiguas de memoria. A diferencia de estructuras como las listas, los arreglos no pueden crecer o reducirse después de su creación. Además, el índice con el que inicia es 0.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Programación VII - Manejo de Datos</title>
-      <link>http://localhost:1313/apuntes/programaci%C3%B3n-vii---manejo-de-datos/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/apuntes/programaci%C3%B3n-vii---manejo-de-datos/</guid>
-      <description>&lt;hr&gt;
-&lt;h2 id=&#34;i-manejo-de-datos-en-poo&#34;&gt;I. Manejo de datos en POO&lt;/h2&gt;
-&lt;p&gt;Es común que los objetos contengan información importante que debe conservarse incluso después de que el programa finaliza. Para lograr esto se aplican técnicas como la serialización, que permiten guardar y recuperar el estado de los objetos desde archivos. Esto hace posible mantener configuraciones o datos entre ejecuciones, así como permitir que la información se comparta fácilmente entre distintos sistemas o plataformas.&lt;/p&gt;
-&lt;h3 id=&#34;11-persistencia&#34;&gt;1.1 Persistencia&lt;/h3&gt;
-&lt;p&gt;En POO, la persistencia se refiere a guardar el estado de un objeto para luego reconstruirlo cuando se necesite. Es decir, permite que los datos de un programa no se pierdan cuando el programa finaliza.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Programación VIII - POO y la Programación Orientada a Eventos</title>
-      <link>http://localhost:1313/apuntes/programaci%C3%B3n-viii---poo-y-la-programaci%C3%B3n-orientada-a-eventos/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/apuntes/programaci%C3%B3n-viii---poo-y-la-programaci%C3%B3n-orientada-a-eventos/</guid>
-      <description>&lt;hr&gt;
-&lt;h2 id=&#34;i-poo-y-la-programación-orientada-a-eventos&#34;&gt;I. POO y la programación orientada a eventos&lt;/h2&gt;
-&lt;p&gt;La Programación Orientada a Eventos (POE) es un paradigma que se basa en la interacción con eventos, es decir, acciones que ocurren en el sistema, como hacer clic en un botón, mover el mouse, o recibir una notificación externa.&lt;/p&gt;
-&lt;p&gt;Cuando se combina con la Programación Orientada a Objetos (POO), permite crear aplicaciones interactivas donde los objetos pueden reaccionar a eventos. Este enfoque es común en interfaces gráficas de usuario y en sistemas donde las acciones del usuario determinan el flujo del programa como videojuegos.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

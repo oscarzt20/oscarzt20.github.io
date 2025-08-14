@@ -30,7 +30,7 @@ Los componentes de las bases de datos son:&lt;/p&gt;
     <item>
       <title>Bases de Datos II - Diagramas y Documentación</title>
       <link>http://localhost:1313/apuntes/bases-de-datos-ii---diagramas-y-documentaci%C3%B3n/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/apuntes/bases-de-datos-ii---diagramas-y-documentaci%C3%B3n/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;i-diagramas-representativos&#34;&gt;I. Diagramas representativos&lt;/h2&gt;
@@ -69,7 +69,7 @@ Los componentes de las bases de datos son:&lt;/p&gt;
     <item>
       <title>Bases de Datos III - Reglas de Normalización</title>
       <link>http://localhost:1313/apuntes/bases-de-datos-iii---reglas-de-normalizaci%C3%B3n/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/apuntes/bases-de-datos-iii---reglas-de-normalizaci%C3%B3n/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;i-normalización&#34;&gt;I. Normalización&lt;/h2&gt;
@@ -88,7 +88,7 @@ Los componentes de las bases de datos son:&lt;/p&gt;
     <item>
       <title>Bases de Datos IV - Álgebra Relacional</title>
       <link>http://localhost:1313/apuntes/bases-de-datos-iv---%C3%A1lgebra-relacional/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/apuntes/bases-de-datos-iv---%C3%A1lgebra-relacional/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;i-álgebra-relacional&#34;&gt;I. Álgebra relacional&lt;/h2&gt;
@@ -113,7 +113,7 @@ Los componentes de las bases de datos son:&lt;/p&gt;
     <item>
       <title>Bases de Datos IX - Operaciones Avanzadas de SQL</title>
       <link>http://localhost:1313/apuntes/bases-de-datos-ix---operaciones-avanzadas-de-sql/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/apuntes/bases-de-datos-ix---operaciones-avanzadas-de-sql/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;i-operaciones-avanzadas&#34;&gt;I. Operaciones avanzadas&lt;/h2&gt;
@@ -133,7 +133,7 @@ Los componentes de las bases de datos son:&lt;/p&gt;
     <item>
       <title>Bases de Datos V - Microsoft SQL</title>
       <link>http://localhost:1313/apuntes/bases-de-datos-v---microsoft-sql/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/apuntes/bases-de-datos-v---microsoft-sql/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;i-microsoft-sql&#34;&gt;I. Microsoft SQL&lt;/h2&gt;
@@ -177,7 +177,7 @@ Los componentes de las bases de datos son:&lt;/p&gt;
     <item>
       <title>Bases de Datos VI - Estructura Básica de SQL</title>
       <link>http://localhost:1313/apuntes/bases-de-datos-vi---estructura-b%C3%A1sica-de-sql/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/apuntes/bases-de-datos-vi---estructura-b%C3%A1sica-de-sql/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;i-estructura-y-configuración-inicial-en-sql-server&#34;&gt;I. Estructura y configuración inicial en SQL Server&lt;/h2&gt;
@@ -230,7 +230,7 @@ CREATE TABLE Empleados
     <item>
       <title>Bases de Datos VII - Consultas de Datos</title>
       <link>http://localhost:1313/apuntes/bases-de-datos-vii---consultas-de-datos/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/apuntes/bases-de-datos-vii---consultas-de-datos/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;i-consultas&#34;&gt;I. Consultas&lt;/h2&gt;
@@ -270,7 +270,7 @@ FROM sys.tables;
     <item>
       <title>Bases de Datos VIII - Automatización y Seguridad</title>
       <link>http://localhost:1313/apuntes/bases-de-datos-viii---automatizaci%C3%B3n-y-seguridad/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/apuntes/bases-de-datos-viii---automatizaci%C3%B3n-y-seguridad/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;i-automatización-y-seguridad&#34;&gt;I. Automatización y seguridad&lt;/h2&gt;
@@ -281,7 +281,7 @@ FROM sys.tables;
     <item>
       <title>Programación - Guías y Buenas Prácticas</title>
       <link>http://localhost:1313/apuntes/programaci%C3%B3n---gu%C3%ADas-documentaci%C3%B3n-y-buenas-pr%C3%A1cticas/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/apuntes/programaci%C3%B3n---gu%C3%ADas-documentaci%C3%B3n-y-buenas-pr%C3%A1cticas/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;i-guía-de-nomenclatura-en-programación&#34;&gt;I. Guía de nomenclatura en programación&lt;/h2&gt;
@@ -359,7 +359,7 @@ Siempre evitar utilizar las palabras reservadas de cada lenguaje.&lt;/p&gt;</des
     <item>
       <title>Programación I - Algoritmos</title>
       <link>http://localhost:1313/apuntes/programaci%C3%B3n-i---algoritmos/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/apuntes/programaci%C3%B3n-i---algoritmos/</guid>
       <description>&lt;hr&gt;
 &lt;p&gt;La programación es el proceso de escribir instrucciones para que una computadora realice tareas específicas. Antes de empezar a programar, es importante conocer los fundamentos necesarios para entender cómo funciona la programación.&lt;/p&gt;
@@ -382,7 +382,7 @@ Siempre evitar utilizar las palabras reservadas de cada lenguaje.&lt;/p&gt;</des
     <item>
       <title>Programación II - Conceptos Básicos</title>
       <link>http://localhost:1313/apuntes/programaci%C3%B3n-ii---conceptos-b%C3%A1sicos/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/apuntes/programaci%C3%B3n-ii---conceptos-b%C3%A1sicos/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;i-clasificación-de-los-lenguajes-de-programación&#34;&gt;I. Clasificación de los lenguajes de programación&lt;/h2&gt;
@@ -405,7 +405,7 @@ Siempre evitar utilizar las palabras reservadas de cada lenguaje.&lt;/p&gt;</des
     <item>
       <title>Programación III - Introducción a la Programación Orientada a Objetos</title>
       <link>http://localhost:1313/apuntes/programaci%C3%B3n-iii---introducci%C3%B3n-a-la-programaci%C3%B3n-orientada-a-objetos/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/apuntes/programaci%C3%B3n-iii---introducci%C3%B3n-a-la-programaci%C3%B3n-orientada-a-objetos/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;i-introducción-a-la-programación-orientada-a-objetos-poo&#34;&gt;I. Introducción a la Programación Orientada a Objetos (POO)&lt;/h2&gt;
@@ -425,7 +425,7 @@ Siempre evitar utilizar las palabras reservadas de cada lenguaje.&lt;/p&gt;</des
     <item>
       <title>Programación IV - Conceptos Básicos de POO</title>
       <link>http://localhost:1313/apuntes/programaci%C3%B3n-iv---conceptos-b%C3%A1sicos-de-poo/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/apuntes/programaci%C3%B3n-iv---conceptos-b%C3%A1sicos-de-poo/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;i-conceptos-básicos-de-poo&#34;&gt;I. Conceptos básicos de POO&lt;/h2&gt;
@@ -440,7 +440,7 @@ Siempre evitar utilizar las palabras reservadas de cada lenguaje.&lt;/p&gt;</des
     <item>
       <title>Programación IX - Patrones de Diseño</title>
       <link>http://localhost:1313/apuntes/programaci%C3%B3n-ix---patrones-de-dise%C3%B1o/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/apuntes/programaci%C3%B3n-ix---patrones-de-dise%C3%B1o/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;i-patrones-de-diseño-en-poo&#34;&gt;I. Patrones de diseño en POO&lt;/h2&gt;
@@ -458,7 +458,7 @@ Siempre evitar utilizar las palabras reservadas de cada lenguaje.&lt;/p&gt;</des
     <item>
       <title>Programación V - Mecanismos de POO</title>
       <link>http://localhost:1313/apuntes/programaci%C3%B3n-v---mecanismos-de-poo/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/apuntes/programaci%C3%B3n-v---mecanismos-de-poo/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;i-mecanismos-de-poo&#34;&gt;I. Mecanismos de POO&lt;/h2&gt;
@@ -473,7 +473,7 @@ Siempre evitar utilizar las palabras reservadas de cada lenguaje.&lt;/p&gt;</des
     <item>
       <title>Programación VI - Estructuras de Datos Abstractos</title>
       <link>http://localhost:1313/apuntes/programaci%C3%B3n-vi---estructuras-de-datos-abstractos/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/apuntes/programaci%C3%B3n-vi---estructuras-de-datos-abstractos/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;i-estructuras-de-datos-abstractos&#34;&gt;I. Estructuras de datos abstractos&lt;/h2&gt;
@@ -486,7 +486,7 @@ Siempre evitar utilizar las palabras reservadas de cada lenguaje.&lt;/p&gt;</des
     <item>
       <title>Programación VII - Manejo de Datos</title>
       <link>http://localhost:1313/apuntes/programaci%C3%B3n-vii---manejo-de-datos/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/apuntes/programaci%C3%B3n-vii---manejo-de-datos/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;i-manejo-de-datos-en-poo&#34;&gt;I. Manejo de datos en POO&lt;/h2&gt;
@@ -497,7 +497,7 @@ Siempre evitar utilizar las palabras reservadas de cada lenguaje.&lt;/p&gt;</des
     <item>
       <title>Programación VIII - POO y la Programación Orientada a Eventos</title>
       <link>http://localhost:1313/apuntes/programaci%C3%B3n-viii---poo-y-la-programaci%C3%B3n-orientada-a-eventos/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/apuntes/programaci%C3%B3n-viii---poo-y-la-programaci%C3%B3n-orientada-a-eventos/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;i-poo-y-la-programación-orientada-a-eventos&#34;&gt;I. POO y la programación orientada a eventos&lt;/h2&gt;

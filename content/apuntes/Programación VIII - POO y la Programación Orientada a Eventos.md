@@ -1,8 +1,8 @@
 ---
 Title: Programación VIII - POO y la Programación Orientada a Eventos
-Fecha: 2025-08-08
+Date: 2025-08-08
 Hora: 02:05
-tags: ['enciclopedia', 'post']
+tags: ['enciclopedia', 'aprenderProgramacion']
 ---
 
 ---

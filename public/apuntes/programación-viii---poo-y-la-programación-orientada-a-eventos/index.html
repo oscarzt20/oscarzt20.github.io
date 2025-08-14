@@ -1,17 +1,17 @@
 <!DOCTYPE html>
-<html lang="en" dir="auto">
+<html lang="es" dir="auto">
 
 <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="noindex, nofollow">
 <title>Programación VIII - POO y la Programación Orientada a Eventos | oscarzt20</title>
-<meta name="keywords" content="enciclopedia, post">
+<meta name="keywords" content="enciclopedia">
 <meta name="description" content="
 I. POO y la programación orientada a eventos
 La Programación Orientada a Eventos (POE) es un paradigma que se basa en la interacción con eventos, es decir, acciones que ocurren en el sistema, como hacer clic en un botón, mover el mouse, o recibir una notificación externa.
 Cuando se combina con la Programación Orientada a Objetos (POO), permite crear aplicaciones interactivas donde los objetos pueden reaccionar a eventos. Este enfoque es común en interfaces gráficas de usuario y en sistemas donde las acciones del usuario determinan el flujo del programa como videojuegos.">
-<meta name="author" content="">
+<meta name="author" content="Oscar Juarez">
 <link rel="canonical" href="http://localhost:1313/apuntes/programaci%C3%B3n-viii---poo-y-la-programaci%C3%B3n-orientada-a-eventos/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.81c898f5a2238b061825acde445de1b10e9825286bc566504cbb22ca1b9d1f73.css" integrity="sha256-gciY9aIjiwYYJazeRF3hsQ6YJShrxWZQTLsiyhudH3M=" rel="preload stylesheet" as="style">
 <link rel="icon" href="http://localhost:1313/favicon.ico">
@@ -21,7 +21,7 @@ Cuando se combina con la Programación Orientada a Objetos (POO), permite crear 
 <link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="http://localhost:1313/apuntes/programaci%C3%B3n-viii---poo-y-la-programaci%C3%B3n-orientada-a-eventos/">
+<link rel="alternate" hreflang="es" href="http://localhost:1313/apuntes/programaci%C3%B3n-viii---poo-y-la-programaci%C3%B3n-orientada-a-eventos/">
 <noscript>
     <style>
         #theme-toggle,
@@ -107,8 +107,8 @@ Cuando se combina con la Programación Orientada a Objetos (POO), permite crear 
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/tags/" title="Temas">
-                    <span>Temas</span>
+                <a href="http://localhost:1313/tags/" title="Tags">
+                    <span>Tags</span>
                 </a>
             </li>
             <li>
@@ -123,17 +123,17 @@ Cuando se combina con la Programación Orientada a Objetos (POO), permite crear 
 
 <article class="post-single">
   <header class="post-header">
-    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/apuntes/">Apuntes</a></div>
+    <div class="breadcrumbs"><a href="http://localhost:1313/">Inicio</a>&nbsp;»&nbsp;<a href="http://localhost:1313/apuntes/">Apuntes</a></div>
     <h1 class="post-title entry-hint-parent">
       Programación VIII - POO y la Programación Orientada a Eventos
     </h1>
-    <div class="post-meta">
+    <div class="post-meta"><span title='2025-08-08 00:00:00 +0000 UTC'>agosto 8, 2025</span>&nbsp;·&nbsp;Oscar Juarez
 
 </div>
   </header> <div class="toc">
     <details  open>
         <summary accesskey="c" title="(Alt + C)">
-            <span class="details">Table of Contents</span>
+            <span class="details">Tabla de Contenidos</span>
         </summary>
 
         <div class="inner"><ul>
@@ -203,7 +203,6 @@ Cuando se combina con la Programación Orientada a Objetos (POO), permite crear 
   <footer class="post-footer">
     <ul class="post-tags">
       <li><a href="http://localhost:1313/tags/enciclopedia/">Enciclopedia</a></li>
-      <li><a href="http://localhost:1313/tags/post/">Post</a></li>
     </ul>
   </footer>
 </article>
@@ -284,12 +283,12 @@ Cuando se combina con la Programación Orientada a Objetos (POO), permite crear 
 
         const copybutton = document.createElement('button');
         copybutton.classList.add('copy-code');
-        copybutton.innerHTML = 'copy';
+        copybutton.innerHTML = 'copiar';
 
         function copyingDone() {
-            copybutton.innerHTML = 'copied!';
+            copybutton.innerHTML = '¡copiado!';
             setTimeout(() => {
-                copybutton.innerHTML = 'copy';
+                copybutton.innerHTML = 'copiar';
             }, 2000);
         }
 

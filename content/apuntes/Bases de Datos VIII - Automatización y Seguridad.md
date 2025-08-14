@@ -1,8 +1,8 @@
 ---
 Title: Bases de Datos VIII - Automatización y Seguridad
-Fecha: 2025-08-08
+Date: 2025-08-08
 Hora: 02:22
-tags: ['enciclopedia', 'post']
+tags: ['enciclopedia', 'aprenderBD']
 ---
 
 ---

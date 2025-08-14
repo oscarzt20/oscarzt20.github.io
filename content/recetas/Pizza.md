@@ -1,8 +1,8 @@
 ---
 Title: Pizza
-Fecha: 2025-06-02
+Date: 2025-06-02
 Hora: 1243
-tags: ['receta', 'post']
+tags: ['receta']
 TiempoPreparación: 12
 Porciones: 5
 TipoReceta: Plato Principal

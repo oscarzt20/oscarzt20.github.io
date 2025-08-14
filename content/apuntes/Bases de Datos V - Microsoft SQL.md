@@ -1,8 +1,8 @@
 ---
 Title: Bases de Datos V - Microsoft SQL
-Fecha: 2025-08-08
+Date: 2025-08-08
 Hora: 02:18
-tags: ['enciclopedia', 'post']
+tags: ['enciclopedia', 'aprenderBD']
 ---
 
 ---
@@ -98,7 +98,7 @@ EXEC sp_addrolemember 'db_datawriter', 'uEscritura';
 Para utilizar los usuarios en SQL Server Management Studio 20:
 
 1. Crear el usuario y ejecutar los comandos en la base de datos
-2. Click derecho nombre de MSI SQLEXPRESS en la barra de la izquierda, propiedades, seguridad y seleccionar SQL Server
+2. Click derecho nombre de SQLEXPRESS en la barra de la izquierda, propiedades, seguridad y seleccionar SQL Server
 3. En servicios de windows, buscar SQL Server (SQLEXPRESS) y reiniciar el servicio
 4. Cambiar la autenticación al abrir SQL poner SQL SERVER Auth
 5. Colocar login y password del usuario deseado

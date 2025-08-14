@@ -1,8 +1,8 @@
 ---
-Title: Donas
-Fecha: 2025-08-03
+Title: Donas Glaseadas
+Date: 2025-08-03
 Hora: 00:48
-tags: ['receta', 'post']
+tags: ['receta']
 TiempoPreparación: 6
 Porciones: 28
 TipoReceta: Postre

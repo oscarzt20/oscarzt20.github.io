@@ -1,8 +1,8 @@
 ---
 Title: Programación IX - Patrones de Diseño
-Fecha: 2025-08-08
+Date: 2025-08-08
 Hora: 02:06
-tags: ['enciclopedia', 'post']
+tags: ['enciclopedia', 'aprenderProgramacion']
 ---
 
 ---

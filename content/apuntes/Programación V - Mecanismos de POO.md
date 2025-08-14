@@ -1,8 +1,8 @@
 ---
 Title: Programación V - Mecanismos de POO
-Fecha: 2025-08-08
+Date: 2025-08-08
 Hora: 02:00
-tags: ['enciclopedia', 'post']
+tags: ['enciclopedia', 'aprenderProgramacion']
 ---
 
 ---

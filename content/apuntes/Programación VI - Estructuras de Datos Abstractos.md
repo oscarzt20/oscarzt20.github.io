@@ -1,8 +1,8 @@
 ---
 Title: Programación VI - Estructuras de Datos Abstractos
-Fecha: 2025-08-08
+Date: 2025-08-08
 Hora: 02:01
-tags: ['enciclopedia', 'post']
+tags: ['enciclopedia', 'aprenderProgramacion']
 ---
 
 ---

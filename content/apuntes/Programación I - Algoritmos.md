@@ -1,8 +1,8 @@
 ---
 Title: Programación I - Algoritmos
-Fecha: 2025-08-08
+Date: 2025-08-08
 Hora: 01:40
-tags: ['enciclopedia', 'post']
+tags: ['enciclopedia', 'aprenderProgramacion']
 ---
 
 ---

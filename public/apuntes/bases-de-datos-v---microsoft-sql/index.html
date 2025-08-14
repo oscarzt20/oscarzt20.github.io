@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en" dir="auto">
+<html lang="es" dir="auto">
 
 <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="noindex, nofollow">
 <title>Bases de Datos V - Microsoft SQL | oscarzt20</title>
-<meta name="keywords" content="enciclopedia, post">
+<meta name="keywords" content="enciclopedia">
 <meta name="description" content="
 I. Microsoft SQL
 El SQL (Lenguaje Estructurado de Consultas) es un lenguaje declarativo basado en el modelo relacional, es decir, se indican instrucciones y la acción que realizarán sobre una base de datos relacional.
@@ -45,7 +45,7 @@ Seleccionar todas las tablas al mismo tiempo y seleccionar add
 
 2.2 Backups
 En SQL, los respaldos son una parte esencial, ya que permiten recuperar los datos en caso de fallos o pérdidas.">
-<meta name="author" content="">
+<meta name="author" content="Oscar Juarez">
 <link rel="canonical" href="http://localhost:1313/apuntes/bases-de-datos-v---microsoft-sql/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.81c898f5a2238b061825acde445de1b10e9825286bc566504cbb22ca1b9d1f73.css" integrity="sha256-gciY9aIjiwYYJazeRF3hsQ6YJShrxWZQTLsiyhudH3M=" rel="preload stylesheet" as="style">
 <link rel="icon" href="http://localhost:1313/favicon.ico">
@@ -55,7 +55,7 @@ En SQL, los respaldos son una parte esencial, ya que permiten recuperar los dato
 <link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="http://localhost:1313/apuntes/bases-de-datos-v---microsoft-sql/">
+<link rel="alternate" hreflang="es" href="http://localhost:1313/apuntes/bases-de-datos-v---microsoft-sql/">
 <noscript>
     <style>
         #theme-toggle,
@@ -141,8 +141,8 @@ En SQL, los respaldos son una parte esencial, ya que permiten recuperar los dato
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/tags/" title="Temas">
-                    <span>Temas</span>
+                <a href="http://localhost:1313/tags/" title="Tags">
+                    <span>Tags</span>
                 </a>
             </li>
             <li>
@@ -157,17 +157,17 @@ En SQL, los respaldos son una parte esencial, ya que permiten recuperar los dato
 
 <article class="post-single">
   <header class="post-header">
-    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/apuntes/">Apuntes</a></div>
+    <div class="breadcrumbs"><a href="http://localhost:1313/">Inicio</a>&nbsp;»&nbsp;<a href="http://localhost:1313/apuntes/">Apuntes</a></div>
     <h1 class="post-title entry-hint-parent">
       Bases de Datos V - Microsoft SQL
     </h1>
-    <div class="post-meta">
+    <div class="post-meta"><span title='2025-08-08 00:00:00 +0000 UTC'>agosto 8, 2025</span>&nbsp;·&nbsp;Oscar Juarez
 
 </div>
   </header> <div class="toc">
     <details  open>
         <summary accesskey="c" title="(Alt + C)">
-            <span class="details">Table of Contents</span>
+            <span class="details">Tabla de Contenidos</span>
         </summary>
 
         <div class="inner"><ul>
@@ -281,7 +281,7 @@ EXEC sp_addrolemember &#39;db_datawriter&#39;, &#39;uEscritura&#39;;
 </code></pre><p>Para utilizar los usuarios en SQL Server Management Studio 20:</p>
 <ol>
 <li>Crear el usuario y ejecutar los comandos en la base de datos</li>
-<li>Click derecho nombre de MSI SQLEXPRESS en la barra de la izquierda, propiedades, seguridad y seleccionar SQL Server</li>
+<li>Click derecho nombre de SQLEXPRESS en la barra de la izquierda, propiedades, seguridad y seleccionar SQL Server</li>
 <li>En servicios de windows, buscar SQL Server (SQLEXPRESS) y reiniciar el servicio</li>
 <li>Cambiar la autenticación al abrir SQL poner SQL SERVER Auth</li>
 <li>Colocar login y password del usuario deseado</li>
@@ -315,7 +315,6 @@ EXEC sp_addrolemember &#39;db_datawriter&#39;, &#39;uEscritura&#39;;
   <footer class="post-footer">
     <ul class="post-tags">
       <li><a href="http://localhost:1313/tags/enciclopedia/">Enciclopedia</a></li>
-      <li><a href="http://localhost:1313/tags/post/">Post</a></li>
     </ul>
   </footer>
 </article>
@@ -396,12 +395,12 @@ EXEC sp_addrolemember &#39;db_datawriter&#39;, &#39;uEscritura&#39;;
 
         const copybutton = document.createElement('button');
         copybutton.classList.add('copy-code');
-        copybutton.innerHTML = 'copy';
+        copybutton.innerHTML = 'copiar';
 
         function copyingDone() {
-            copybutton.innerHTML = 'copied!';
+            copybutton.innerHTML = '¡copiado!';
             setTimeout(() => {
-                copybutton.innerHTML = 'copy';
+                copybutton.innerHTML = 'copiar';
             }, 2000);
         }
 

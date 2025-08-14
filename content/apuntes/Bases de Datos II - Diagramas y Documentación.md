@@ -1,8 +1,8 @@
 ---
 Title: Bases de Datos II - Diagramas y Documentación
-Fecha: 2025-08-08
+Date: 2025-08-08
 Hora: 02:11
-tags: ['enciclopedia', 'post']
+tags: ['enciclopedia', 'aprenderBD']
 ---
 
 ---
