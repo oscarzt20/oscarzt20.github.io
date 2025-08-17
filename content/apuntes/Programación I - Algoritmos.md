@@ -7,47 +7,58 @@ tags: ['enciclopedia', 'aprenderProgramacion']
 
 ---
 
-La programación es el proceso de escribir instrucciones para que una computadora realice tareas específicas. Antes de empezar a programar, es importante conocer los fundamentos necesarios para entender cómo funciona la programación.
+La programación es el proceso de escribir instrucciones para que una computadora realice tareas específicas. Es decir, cuando programamos le decimos a la computadora qué hacer y cómo hacerlo, paso a paso.
 
-Para programar, los desarrolladores crean algoritmos, que son secuencias ordenadas de pasos que resuelven un problema o llevan a cabo una tarea.
+Antes de escribir código, necesitamos entender la lógica detrás de los programas y para eso los desarrolladores crean algoritmos. Un algoritmo es una secuencia ordenada de pasos que resuelven un problema o llevan a cabo una tarea.
+
+En la vida diaria usamos algoritmos sin darnos cuenta, como el seguir una receta de cocina, consultar un mapa o entender las instrucciones de un juego. La diferencia es que en programación, esos pasos deben ser mucho más precisos y sin ambigüedades, porque la computadora solo entiende instrucciones claras y exactas.
 
 ## I. Características de los algoritmos
 
-- **Finito**: Un algoritmo debe terminar después de un número determinado de pasos. Se evitan los bucles sin fin.
-- **Preciso**: No debe haber interpretaciones subjetivas sobre lo que se debe hacer en cada instrucción.
-- **Con inicio y final/es**: Debe tener un inicio y puede contener más de un final.
-- **Eficaz en la solución del problema**: El algoritmo debe resolver el problema de manera correcta y óptima, evitando pasos innecesarios o ineficientes.
+Un buen algoritmo debe cumplir con ciertas propiedades:
+
+- **Finito**: Un algoritmo debe terminar después de un número determinado de pasos, para evitar los bucles sin fin.
+- **Preciso**: Cada instrucción debe estar claramente definida.
+- **Con inicio y final/es**: Debe tener un punto de inicio y puede contener más de un final posible.
+- **Eficaz en la solución del problema**: El algoritmo debe resolver el problema de manera correcta y eficiente, evitando pasos innecesarios.
 
 ### 1.1 Tipos de algoritmos
 
-- **Cualitativos**: Emplean palabras, ej. receta de cocina.
-- **Cuantitativos**: Utilizan cálculos numéricos, ej. resolver una ecuación de 2° grado.
+- **Cualitativos**: Emplean palabras. Ejemplo: Una receta de cocina.
+- **Cuantitativos**: Utilizan cálculos numéricos. Ejemplo: resolver una ecuación de 2° grado.
 
 ## II. Lenguajes algorítmicos
 
-Conjunto de símbolos y reglas que permiten explicar un proceso.
+Un lenguaje algorítmico es un conjunto de símbolos y reglas que permiten explicar un algoritmo. Se usan para planificar la lógica de un programa, facilitar su comprensión y ayudar a detectar errores.
 
 ### 2.1 Lenguajes algorítmicos gráficos
 
-- **Diagrama de flujo**: Es una representación gráfica de un algoritmo o proceso, utilizando distintos símbolos conectados por flechas que indican el flujo de ejecución. Se usa para facilitar la comprensión del programa y ayudar a detectar errores. Los símbolos usados son:
-	- **Círculo**: Indica el inicio y el fin del algoritmo.
-	- **Rectángulo**: Expresa una acción o proceso a realizar.
-	- **Rombo**: Representa una decisión (condición lógica).
-	- **Flechas**: Indican el flujo del proceso.
+**Diagrama de flujo**
 
-**Ejemplo de diagrama de flujo**:
+Es una representación gráfica de un algoritmo o proceso, utilizando distintos símbolos conectados por flechas que indican el flujo de ejecución.
 
-Algoritmo que determina si un número es par o impar.
+Los símbolos usados son:
+
+- **Círculo**: Indica el inicio y el fin del algoritmo.
+- **Rectángulo**: Expresa una acción o proceso a realizar.
+- **Rombo**: Representa una decisión (condición lógica).
+- **Flechas**: Indican el flujo del proceso.
+
+**Ejemplo**:
+
+Diagrama de flujo de un algoritmo que determina si un número es par o impar.
 
 ![Conceptos Generales de Programación_05-06-2025-1.png](/imagenes/Conceptos%20Generales%20de%20Programaci%C3%B3n_05-06-2025-1.png)
 
 ### 2.2 Lenguajes algorítmicos no gráficos
 
-- **Pseudocódigo**: Es una forma de representar algoritmos utilizando un lenguaje intermedio entre el lenguaje natural y un lenguaje de programación. Sirve para planificar la lógica de un programa y facilitar su comprensión antes de escribir código.
+**Pseudocódigo**
 
-**Ejemplo de pseudocódigo**:
+Consiste en escribir el algoritmo utilizando un lenguaje intermedio entre el lenguaje natural y un lenguaje de programación.
 
-Algoritmo para anotar un gol en un partido de fútbol.
+**Ejemplo**:
+
+Redacción de pseudocódigo para anotar un gol en un partido de fútbol.
 
 ```
 1. Inicio.
@@ -76,17 +87,42 @@ Algoritmo para anotar un gol en un partido de fútbol.
 
 ## III. Metodología general para solucionar algoritmos
 
-1. **Definición del problema**: Debe ser clara y precisa.
-2. **Análisis del problema**: Colocarse en el lugar del ordenador y buscar lo que se necesita para cumplir la tarea. Lleva:
-	- Datos de entrada.
-	- Información a producir (salida)
-	- Métodos y fórmulas para analizar datos.
-3. **Diseño del algoritmo**:
+Cuando enfrentamos un problema, podemos resolverlo siguiendo estos pasos:
+
+1. **Definir el problema**: Debe ser claro y preciso.
+2. **Analizar el problema**: Colocarse en el lugar del ordenador y buscar lo que se necesita para cumplir la tarea. Incluye:
+	- Datos que necesitamos (entrada).
+	- Información a producir (salida).
+	- Métodos y fórmulas para analizar y procesar los datos.
+3. **Diseñar el algoritmo**:
 	- Debe tener un punto particular de inicio.
 	- No debe ser ambiguo.
 	- Debe ir de lo general a lo particular.
 	- Debe ser finito en tamaño y tiempo de ejecución.
-	- Debe hacerse la prueba de escritorio (se toman datos límite de entrada y se sigue el algoritmo para validarlo).
+	- Debe hacerse la prueba de escritorio (simular el algoritmo con datos de ejemplo para comprobar que funciona).
+
+**Ejemplo**:
+
+Calcular el área de un triángulo.
+
+1. **Definición del problema**: Hallar el área del triángulo dados base y altura.
+2. **Análisis**:
+	- Entrada: base, altura.
+	- Proceso: área = (base × altura) ÷ 2.
+	- Salida: área del triángulo.
+3. **Diseño del algoritmo (utilizando pseudocódigo)**:
+	1. Inicio
+	2. Leer base y altura
+	3. Calcular area = (base * altura) / 2
+	4. Mostrar area
+	5. Fin
+
+---
+
+## Ejercicios
+
+1. Diseña un algoritmo que calcule el promedio de 3 calificaciones. Escríbelo usando pseudocódigo.
+2. Realiza un diagrama de flujo que represente el proceso de decidir si una persona puede votar (edad ≥ 18).
 
 ---
 
