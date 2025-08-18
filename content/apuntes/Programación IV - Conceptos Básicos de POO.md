@@ -7,6 +7,8 @@ tags: ['enciclopedia', 'aprenderProgramacion']
 
 ---
 
+
+
 ## I. Objetos
 
 Son elementos que componen un sistema. Este contiene datos y comportamientos.

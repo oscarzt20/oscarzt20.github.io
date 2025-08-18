@@ -7,8 +7,6 @@ tags: ['enciclopedia', 'aprenderProgramacion']
 
 ---
 
-## I. Patrones de diseño en POO
-
 Un patrón de diseño es una solución reutilizable, comprobada y estructurada a un problema común que aparece constantemente al diseñar sistemas orientados a objetos.
 
 Básicamente, son guías o plantillas que ayudan a resolver un problema específico de diseño.
@@ -21,7 +19,7 @@ Básicamente, son guías o plantillas que ayudan a resolver un problema específ
 - **Las consecuencias**: Analiza el impacto del patrón, tomando en cuenta el costo/beneficio, espacio/tiempo, lenguaje, impacto en flexibilidad, extensión y portabilidad.
 
 Los patrones de diseño se agrupan en tres categorías, según el tipo de problema que ayudan a resolver.
-### 1.1 Patrones de creación
+## I. Patrones de creación
 
 Se enfocan en cómo se crean los objetos. Permiten crear instancias de forma flexible.
 
@@ -30,7 +28,7 @@ Se enfocan en cómo se crean los objetos. Permiten crear instancias de forma fle
 - **Prototipo**: Clona objetos a partir de una instancia de prototipo existente.
 - **Singleton**: Asegura que solo exista una instancia de una clase y provee un punto de acceso global.
 
-### 1.2 Patrones de estructura
+## II. Patrones de estructura
 
 Ayudan a organizar las clases u objetos en estructuras más grandes sin perder flexibilidad. Mejoran la reutilización de componentes.
 
@@ -40,9 +38,30 @@ Ayudan a organizar las clases u objetos en estructuras más grandes sin perder f
 - **Fachada**: Proporciona una interfaz simplificada a un conjunto complejo de clases.
 - **Proxy**: Controla el acceso a un objeto, actuando como intermediario.
 
-### 1.3 Patrones de comportamiento
+## III. Patrones de comportamiento
 
 Ayudan a definir la comunicación entre objetos en el sistema y cómo es controlado el flujo.
+
+### Patrón Estrategia
+
+Este se forma con una familia de algoritmos que están encapsulados. El objetivo es hacer esos algoritmos intercambiables y usar el mejor para cada caso.
+
+**Características**:
+
+- El usuario selecciona que algoritmo usar.
+- Si tenemos un problema que provee una funcionalidad, pero existen varias formas de llevarla a cabo, se puede usar este patrón.
+- Puede hacerse vía herencia o con implementación de interfaz.
+
+**Diagrama de clases**:
+
+![Patrones Orientados a Objetos_18-08-2025.png](/imagenes/Patrones%20Orientados%20a%20Objetos_18-08-2025.png)
+
+**Ejemplos**:
+
+- Guardado de archivos en diferentes formatos.
+- Compresión con diferentes algoritmos.
+- Formas de representar información.
+
 
 - **Comando**: Encapsula una solicitud como un objeto, permitiendo parametrizar y deshacer operaciones.
 - **Interprete**: Define una gramática y un intérprete para entender y procesar expresiones.

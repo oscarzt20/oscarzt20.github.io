@@ -101,6 +101,8 @@ Cuando enfrentamos un problema, podemos resolverlo siguiendo estos pasos:
 	- Debe ser finito en tamaño y tiempo de ejecución.
 	- Debe hacerse la prueba de escritorio (simular el algoritmo con datos de ejemplo para comprobar que funciona).
 
+Es importante resaltar que pueden existir muchas soluciones para un mismo algoritmo.
+
 **Ejemplo**:
 
 Calcular el área de un triángulo.
