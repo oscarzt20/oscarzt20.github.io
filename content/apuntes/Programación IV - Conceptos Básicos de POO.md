@@ -7,9 +7,7 @@ tags: ['enciclopedia', 'aprenderProgramacion']
 
 ---
 
-## I. Conceptos básicos de POO
-
-### 1.1 Objetos
+## I. Objetos
 
 Son elementos que componen un sistema. Este contiene datos y comportamientos.
 
@@ -17,9 +15,9 @@ Son elementos que componen un sistema. Este contiene datos y comportamientos.
 
 En un automóvil las distintas partes que lo conforman son *objetos*, los cuales se pueden comunicar entre sí para funcionar.
 
-#### Características de los objetos
+### 1.1 Características de los objetos
 
-##### Atributos
+#### Atributos
 
 Los atributos representan las propiedades de un objeto y almacenan su información en un momento dado. Estos definen el *estado* del objeto y pueden cambiar durante la ejecución del programa.
 
@@ -40,7 +38,7 @@ class Persona
 }
 ```
 
-##### Métodos
+#### Métodos
 
 Representan lo que el objeto puede hacer.
 
@@ -98,11 +96,11 @@ class Program
 }
 ```
 
-#### Ciclo de vida de un objeto
+### 1.2  Ciclo de vida de un objeto
 
-##### Creación del objeto
+#### Creación del objeto
 
-###### Constructores
+##### Constructores
 
 Los constructores son métodos especiales que se ejecutan automáticamente cuando se crea una instancia de una clase (objeto). Su función principal es inicializar el objeto, asignando valores iniciales a sus atributos si es necesario.
 
@@ -138,7 +136,7 @@ class Persona
 }
 ```
 
-###### Instanciación
+##### Instanciación
 
 Un constructor es invocado cuando se utiliza el operador de instanciación `new`.
 
@@ -156,7 +154,7 @@ class Program
 }
 ```
 
-###### Operadores de instanciación
+##### Operadores de instanciación
 
 Los operadores de instanciación se usan para crear nuevos objetos en memoria. Su propósito es asignar espacio y ejecutar el constructor de una clase o estructura para inicializarla. Gracias a estos operadores, podemos trabajar con objetos de manera flexible y reutilizar código fácilmente.
 
@@ -194,18 +192,18 @@ Persona personaPorDefecto = default(Persona);  // null
 int numero = default(int);  // 0
 ```
 
-##### Uso del objeto
+#### Uso del objeto
 
-###### Acceso a atributos y métodos
+##### Acceso a atributos y métodos
 
 Una vez que un objeto ha sido creado (instanciado), podemos acceder a sus atributos y métodos para realizar operaciones y manipular sus datos.
 
 Se accede a los miembros de un objeto usando el operador punto (`.`).
 Por ejemplo, si `persona1` es un objeto, `persona1.Nombre` accede al atributo `Nombre` y `persona1.MostrarInfo()` llama al método.
 
-##### Alcance y duración del objeto
+#### Alcance y duración del objeto
 
-###### Variables de instancia y variables locales
+##### Variables de instancia y variables locales
 
 - **Variables de instancia**: Existen mientras el objeto esté en memoria y pertenecen a cada instancia.
 - **Variables locales**: Solo existen dentro del método donde se declaran y desaparecen al terminar la ejecución de ese método.
@@ -224,7 +222,7 @@ class Animal
 }
 ```
 
-##### Destrucción y gestión de memoria
+#### Destrucción y gestión de memoria
 
 En C#, la gestión de memoria es automática gracias al recolector de basura (GC), que elimina objetos cuando ya no se usan. No es necesario liberar memoria manualmente en la mayoría de los casos.
 
@@ -240,11 +238,11 @@ using (StreamReader lector = new StreamReader("archivo.txt"))
 } // Aquí se llama automáticamente a Dispose()
 ```
 
-###### Destructores
+##### Destructores
 
 Los destructores sirven para limpiar memoria, cerrar archivos, o finalizar cualquier cosa que lo requiera, y se invocan automáticamente cuando el objeto deja de existir. No todos los lenguajes lo implementan. Lleva el mismo nombre de la clase pero lleva `~` al inicio.
 
-### 1.2 Clases
+## II. Clases
 
 Una clase es el plano a partir del cual se determinan los atributos y métodos que contendrá un objeto. Esto permite reutilizar código para crear múltiples instancias del mismo objeto.
 
@@ -252,7 +250,7 @@ Una clase es el plano a partir del cual se determinan los atributos y métodos q
 
 Una empresa que tiene varios empleados. Cada empleado es un *objeto*, pero todos se crean a partir de una misma *clase* llamada `Empleado`.
 
-#### Elementos en una clase
+### 2.1 Elementos en una clase
 
 En una clase, el orden de los elementos presentes debe ser:
 
@@ -262,13 +260,13 @@ En una clase, el orden de los elementos presentes debe ser:
 4. **Funciones de interfaz (Getters y Setters)**
 5. **Demás métodos**
 
-#### Relaciones entre clases
+### 2.2 Relaciones entre clases
 
 En sistemas POO las clases no suelen trabajar de forma aislada, sino que estas se relacionan entre sí de diversas maneras para representar interacciones, dependencias y jerarquías. Estas relaciones ayudan a estructurar el código de forma más clara, reutilizable y mantenible.
 
 Se entiende que una clase puede ser "propietaria" de otra cuando es responsable de su creación, gestión y eliminación. Además, algunas relaciones se consideran más "fuertes", ya que implican una mayor relación, mientras que otras son más "débiles", porque solo llevan a cabo una interacción temporal.
 
-##### Dependencia - "usa"
+#### Dependencia - "usa"
 
 Una clase depende de otra cuando utiliza temporalmente sus datos o comportamiento para cumplir una operación. La clase dependiente no necesita almacenar una referencia al objeto, solo usarlo mientras dura el método.
 
@@ -294,7 +292,7 @@ class Impresora
 }
 ```
 
-##### Asociación - "conoce a" o "trabaja con"
+#### Asociación - "conoce a" o "trabaja con"
 
 Una clase puede estar relacionada a otra mediante la referencia de uno de sus atributos. Sin embargo, esto no implica que una controle a la otra. Esta relación puede ser unidireccional o bidireccional.
 
@@ -316,7 +314,7 @@ class Profesor
 }
 ```
 
-##### Agregación - "tiene un" (Existe por separado)
+#### Agregación - "tiene un" (Existe por separado)
 
 Una clase puede contener objetos de otra clase, pero esos objetos pueden vivir por sí mismos fuera del contenedor.
 
@@ -338,7 +336,7 @@ class Universidad
 }
 ```
 
-##### Composición - "tiene un" (No existe por separado)
+#### Composición - "tiene un" (No existe por separado)
 
 Una clase puede poseer objetos de otras clases, pero a diferencia de la agregación, estos no pueden existir independientemente, ya que si la clase contenedora desaparece, los objetos controlados también desaparecen.
 
@@ -366,7 +364,7 @@ class Casa
 }
 ```
 
-##### Herencia - "es un"
+#### Herencia - "es un"
 
 Las clases pueden tener una relación jerárquica, donde una clase hereda los atributos y comportamientos de otra (Clase base y clase hija) con el fin de crear una clase más especializada.
 
@@ -394,11 +392,11 @@ class Perro : Animal
 }
 ```
 
-#### Tipos de clases
+### 2.3 Tipos de clases
 
 Así como existen diferentes formas en las que se relacionan las clases, también existen distintos tipos de clases según su propósito, restricciones y forma de implementación. Estos tipos permiten organizar el código de forma más clara, flexible y segura.
 
-##### Clase concreta
+#### Clase concreta
 
 Es la clase tradicional que se puede instanciar directamente. Contiene la implementación completa de todos sus métodos y puede heredar o ser heredada.
 
@@ -420,7 +418,7 @@ class Persona
 }
 ```
 
-##### Clase abstracta
+#### Clase abstracta
 
 Una clase abstracta no puede ser instanciada directamente. Sirve como clase base para otras clases. Puede contener métodos abstractos (sin implementación) que deben ser definidos por las clases hijas, así como métodos normales.
 
@@ -447,7 +445,7 @@ class Perro : Animal
 }
 ```
 
-##### Clase estática
+#### Clase estática
 
 Una clase estática no puede ser instanciada ni heredada. Todos sus miembros también deben ser `static`. Es decir, no trabaja con datos de objetos, sino que ofrece funciones o utilidades que se pueden usar directamente desde la clase.
 
@@ -471,7 +469,7 @@ Calculadora calc = new Calculadora();
 int resultado = calc.Sumar(3, 4);
 ```
 
-##### Clase sellada
+#### Clase sellada
 
 Una clase sellada no puede ser heredada. Esto impide que otras clases modifiquen o extiendan su comportamiento. También puede mejorar el rendimiento del sistema en tiempo de ejecución.
 
@@ -496,7 +494,7 @@ sealed class Logger
 }
 ```
 
-##### Interfaz
+#### Interfaz
 
 Una interfaz garantiza que cualquier clase que la implemente tendrá cierto comportamiento, sin importar cómo lo haga, lo cual se define mediante un conjunto de métodos y propiedades sin implementación. Las clases que implementan la interfaz están obligadas a proporcionar su propia versión de esos miembros.
 
@@ -521,7 +519,7 @@ class Auto : IVehiculo
 }
 ```
 
-##### Clase parcial
+#### Clase parcial
 
 Una clase parcial se puede dividir en varios archivos del mismo proyecto. Todos los fragmentos se unen en tiempo de compilación como si fuera una sola clase.
 
@@ -549,7 +547,7 @@ public partial class Persona
 }
 ```
 
-##### Clase genérica
+#### Clase genérica
 
 Una clase **genérica** permite trabajar con distintos tipos de datos sin duplicar código. Se define con un parámetro de tipo `<T>`, el cual se especifica al momento de crear una instancia.
 
@@ -570,7 +568,7 @@ Caja caja1 = new Caja<int> { Contenido = 100 };
 Caja caja2 = new Caja<string> { Contenido = "Hola" };
 ```
 
-#### Cardinalidad
+### 2.4 Cardinalidad
 
 Expresa las relaciones entre clases, mediante el número de entidades a las que otra entidad puede estar relacionada. Cada caso se puede dar según los requerimientos del sistema.
 
@@ -578,7 +576,7 @@ Expresa las relaciones entre clases, mediante el número de entidades a las que 
 - **1 a muchos**: Una instancia de una clase se relaciona con **múltiples** instancias de otra clase, pero no al revés. **Ejemplo:** Un `Docente` puede impartir **muchos** `Cursos`, pero cada `Curso` es impartido por **solo un** `Docente`.
 - **Muchos a muchos**: Varias instancias de una clase se pueden relacionar con **varias** instancias de otra clase, y viceversa. **Ejemplo:** Un `Docente` puede impartir varios `Cursos`, y un mismo `Curso` puede ser impartido por varios `Docentes` (por ejemplo, en equipo).
 
-### 1.3 Tipos de datos no primitivos
+## III. Tipos de datos no primitivos
 
 Los tipos de datos no primitivos son estructuras más complejas que los datos simples y se crean a partir de estos. Algunos de los tipos más comunes son:
 

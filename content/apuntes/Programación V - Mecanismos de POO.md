@@ -445,7 +445,7 @@ Sus características principales son:
 
 **Ejemplo en C#**
 
-Vamos a sobrecargar el operador `+` para que pueda sumar dos objetos `Punto`, combinando sus coordenadas `x` e `y`. Sin esta sobrecarga, `PuntoA + PuntoB` daría error, pero al definir su comportamiento, podemos hacer que devuelva un nuevo punto con la suma de las coordenadas.
+Vamos a sobrecargar el operador \+ para que pueda sumar dos objetos `Punto`, combinando sus coordenadas `x` e `y`. Sin esta sobrecarga, `PuntoA + PuntoB` daría error, pero al definir su comportamiento, podemos hacer que devuelva un nuevo punto con la suma de las coordenadas.
 
 ```csharp
 class Punto
@@ -494,7 +494,7 @@ class Program
 
 ###### Sobrecarga de operadores aritméticos
 
-- **`+` (suma)** → Puede sumar dos objetos, como combinar coordenadas de dos puntos o concatenar información personalizada.
+- **\+ (suma)** → Puede sumar dos objetos, como combinar coordenadas de dos puntos o concatenar información personalizada.
   **Ejemplo**: `VectorA + VectorB` suma sus componentes y devuelve un nuevo vector.
 - **`-` (resta)** → Puede definir una diferencia entre objetos, como restar valores de dos cuentas bancarias.
   **Ejemplo**: `CuentaA - CuentaB` podría calcular la diferencia de saldo.
@@ -514,7 +514,7 @@ class Program
 
 ###### Sobrecarga de operadores de incremento/decremento
 
-- **`++` (incremento)** → Puede aumentar el valor de un objeto.
+- **\++ (incremento)** → Puede aumentar el valor de un objeto.
   **Ejemplo**: `Nivel++` podría aumentar el nivel de un personaje en un juego.
 - **`--` (decremento)** → Puede reducir el valor de un objeto.
   **Ejemplo**: `Cupo--` podría disminuir la cantidad de espacios disponibles en un evento.

@@ -163,7 +163,7 @@ Realizan operaciones aritméticas y definen el orden en el que se harán las ope
 
 - **Suma (+)**
 - **Resta (-)**
-- **Multiplicación ($*$)**
+- **Multiplicación (\*\)**
 - **División (/)**
 - **Módulo (%)**: Retorna el residuo de una división entre dos números.
 - **Incremento (++):** Aumenta en una unidad el valor de una variable.
@@ -209,11 +209,11 @@ Console.WriteLine(x == y); // False
 Permiten actualizar las variables. Mientras que los operadores aritméticos actúan sobre valores para producir un resultado, los de asignación modifican el valor de una variable. 
 
 - **Asignación (\=)**: Asigna o reemplaza un valor.
-- **Suma y asignación (`+=`)**: Suma un valor.
-- **Resta y asignación (`-=`)**: Resta un valor.
-- **Multiplicación y asignación (`*=`)**: Multiplica un valor.
-- **División y asignación (`/=`)**: Divide un valor.
-- **Módulo y asignación (`%=`)**: Calcula el residuo de la división.
+- **Suma y asignación (\+=)**: Suma un valor.
+- **Resta y asignación (\-=)**: Resta un valor.
+- **Multiplicación y asignación (\*=)**: Multiplica un valor.
+- **División y asignación (\/=)**: Divide un valor.
+- **Módulo y asignación (\%=)**: Calcula el residuo de la división.
 
 **Ejemplo en C#**:
 
@@ -229,13 +229,13 @@ z += 5; // z = z + 5 → 15
 
 Permiten combinar condiciones (expresiones que producen `true` o `false`) para tomar decisiones.
 
-- **AND (`&&`)**: Resulta verdadero si todas las expresiones conectadas son verdaderas, sino es falso.
-- **OR (`||`)**: Resulta verdadero si al menos una de las expresiones ligadas es verdadero, sino es falso.
+- **AND (\&&)**: Resulta verdadero si todas las expresiones conectadas son verdaderas, sino es falso.
+- **OR (\||)**: Resulta verdadero si al menos una de las expresiones ligadas es verdadero, sino es falso.
 - **NOT (!)**: Resulta verdadero si el valor es contrario a la expresión conectada.
 
 **Ejemplos en C#**:
 
-**AND (`&&`)**: Una persona está en rango adulto laboral si su edad está entre 18 **y** 65 años.
+**AND (\&&)**: Una persona está en rango adulto laboral si su edad está entre 18 *y* 65 años.
 
 ```csharp
 int edad = 30;
@@ -245,7 +245,7 @@ bool esAdultoLaboral = (edad >= 18) && (edad <= 65);
 Console.WriteLine(esAdultoLaboral); // True
 ```
 
-**OR (`||`)**: El envío gratis si la compra es mayor o igual a 200 **o**  si el cliente es Premium.
+**OR (\||)**: El envío gratis si la compra es mayor o igual a 200 *o* si el cliente es Premium.
 
 ```csharp
 double total = 180.0;
@@ -256,7 +256,7 @@ bool envioGratis = (total >= 200) || esPremium;
 Console.WriteLine(envioGratis); // True
 ```
 
-**NOT (!)**: Se bloquea el acceso si **no** tiene permiso.
+**NOT (!)**: Se bloquea el acceso si *no* tiene permiso.
 
 ```csharp
 bool tienePermiso = false;
@@ -283,9 +283,9 @@ Se utiliza para:
 
 Se recomienda usar los datos límite (los casos más pequeños, más grandes o extremos posibles) para validar de forma efectiva.
 
-**Ejemplo con OR (`||`)**:
+**Ejemplo con OR (\||)**:
 
-Determinar si un cliente recibe entrada gratis en Cinépolis. Para esto, debe tener `>=` 300 puntos o hay promoción especial.
+Determinar si un cliente recibe entrada gratis en Cinépolis. Para esto, debe tener \>= 300 puntos o hay promoción especial.
 
 **Código de C#**:
 
@@ -318,7 +318,7 @@ Para este ejemplo, estamos utilizando la estructura `if`, la cual permite tomar 
 
 **Ejemplo con AND &&**:
 
-Evaluar si una persona es acreedora a una tarjeta premium. Para ello, el ingreso debe ser `>=` 50,000 y el historial de pago debe ser puntual.
+Evaluar si una persona es acreedora a una tarjeta premium. Para ello, el ingreso debe ser \>= 50,000 y el historial de pago debe ser puntual.
 
 **Código de C#**:
 
@@ -545,7 +545,7 @@ tipo_de_dato NombreDeLaFuncion(parametros)
 
 - **tipo_de_dato**: Es el tipo de resultado que la función dará. (`int`, `string`, `bool`, `void` si no devuelve nada)
 - **NombreDeLaFuncion**: Es el **nombre de la función**, para poder usarla en el programa. Por ejemplo: `SumarNumeros`, `MostrarMensaje`.
-- **parametros**: Son los datos que la función necesita para trabajar. Pueden ser cero, uno o varios. Por ejemplo: (int a, int b) indica que la función necesita dos números enteros.
+- **parametros**: Son los datos que la función necesita para trabajar. Pueden ser cero, uno o varios. Por ejemplo: `(int a, int b)` indica que la función necesita dos números enteros.
 - **Instrucciones**: Son las acciones que realiza la función usando los parámetros.
 - **return valor**: Es lo que la función devuelve. Solo se usa si la función no es `void`.
 
@@ -562,7 +562,7 @@ static void Saludar()
 Saludar(); // Llamada a la función para "activarla"
 ```
 
-**Función con parámetros**: Se imprime un saludo personalizado usando el nombre que se le pasa.
+**Función con parámetros**: Se imprime un saludo personalizado usando el nombre que se le pase.
 
 ```csharp
 void SaludarA(string nombre)

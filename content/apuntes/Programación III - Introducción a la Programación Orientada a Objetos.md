@@ -7,33 +7,72 @@ tags: ['enciclopedia', 'aprenderProgramacion']
 
 ---
 
-## I. Introducción a la Programación Orientada a Objetos (POO)
+La programación orientada a objetos es una forma de organizar el código en "objetos", los cuales representan cosas del mundo real o conceptos abstractos. Cada uno tiene su propia información (*atributos*) y comportamientos (*métodos*), y permiten aplicar reglas, las cuales evitan que se pueda acceder a estos datos de manera no controlada.
 
-La programación orientada a objetos es un paradigma que organiza el código en objetos, cada uno con sus propios datos (*atributos*) y comportamientos (*métodos*), evitando que otros objetos tengan acceso a estos elementos de manera no controlada.
+Por ejemplo: Un objeto `Auto` puede tener atributos como `Color` y `Velocidad`, y métodos como `Arrancar()` o `Frenar()`.
 
-Los beneficios y objetivos de POO son:
+**Los beneficios y objetivos de POO son**:
 
-- **Natural**: Permite construir un sistema que modele elementos del mundo real.
+- **Natural**: Se parece a cómo pensamos en el mundo real.
 - **Confiable**: Un programa bien diseñado y codificado va a funcionar como es esperado sin importar el tamaño, y el testing se vuelve más sencillo.
 - **Reusable**: Una vez un problema es resuelto se puede volver a usar la solución.
-- **Fácil de mantener**: Se estima que del 60%-80% del trabajo en un programa es el mantenimiento, el 20% es el desarrollo. Un bug se puede resolver corrigiendo una sola parte.
-- **Extendible**: Un software creado en POO puede crecer y cambiar sin muchas dificultades.
-- **Oportuno**: Varias partes del programa se pueden desarrollar en paralelo. Es esencial realizar correctamente el análisis y diseño.
+- **Fácil de mantener**: Un bug se puede resolver corrigiendo una sola parte del código. Se estima que del 60%-80% del trabajo en un programa es el mantenimiento, el 20% es el desarrollo.
+- **Extensible**: Podemos añadir nuevas funciones sin muchas dificultades.
+- **Oportuno**: Varios programadores pueden trabajar en paralelo.
 
-### 1.1 Diferencias entre POO y la programación estructurada
+### I. Diferencias entre POO y la programación estructurada
 
-A diferencia de la programación estructurada, donde el código se escribe en *funciones* que resuelven un problema lógico y este se ejecuta en orden de arriba hacia abajo, la POO organiza el código en un sistema conectado basado en *objetos*, y el orden en que se escriben las partes de una clase no afecta su funcionamiento.
+A diferencia de la programación estructurada, donde el código se escribe en *funciones* que resuelven un problema lógico y este se ejecuta en orden de arriba hacia abajo, en POO el código se organiza en *clases* y *objetos*. No importa el orden en que se escriban, lo importante es cómo se relacionan.
 
-Algunos lenguajes como Python o JavaScript no usan archivos de clase como Java o C#, pero siguen permitiendo la programación orientada a objetos. En su lugar, organizan el código en módulos, lo que ayuda a manejar proyectos grandes de manera más ordenada.
+Algunos lenguajes como Python o JavaScript no usan archivos de clase de la misma manera que Java o C#, pero siguen permitiendo la programación orientada a objetos. En su lugar, organizan el código en módulos, lo que ayuda a manejar proyectos grandes de manera ordenada.
 
-### 1.2 Los 4 pilares de POO
+**Ejemplo en C#**:
 
-- **Encapsulación**: Es la combinación de atributos y métodos en una sola entidad (objeto), el cual solo debe permitir el acceso a sus datos y comportamiento a otros objetos con los que va a interactuar.
-- **Abstracción**: Permite mostrar solo los elementos esenciales de un objeto al usuario final, ocultando los detalles internos de su implementación.
+Vamos a mostrar un mensaje cuando un auto se enciende.
+
+**Programación estructurada**:
+
+```csharp
+void Encender()
+{
+    Console.WriteLine("El auto está encendido");
+}
+
+Encender();
+```
+
+- Aquí simplemente tenemos una función que imprime el mensaje. No existe un concepto de "auto", solo instrucciones.
+
+**Programación Orientada a Objetos**:
+
+```csharp
+class Auto
+{
+    public void Encender()
+    {
+        Console.WriteLine("El auto está encendido");
+    }
+}
+
+Auto miAuto = new Auto();
+miAuto.Encender();
+```
+
+- Aquí, agrupamos el comportamiento dentro de una clase que representa al objeto `Auto`.
+- Dentro de `Auto`, definimos un método `Encender()` que describe lo que puede hacer.
+- Finalmente, podemos generar copias de `Auto` en cualquier parte del programa y ejecutar su comportamiento, sin necesidad de volver a escribir el mismo código.
+
+Este ejemplo todavía no aprovecha todas las ventajas de la POO, pero nos sirve para ver la diferencia de enfoque.
+
+Desde aquí se recomienda usar proyectos de **Consola (.NET)** en Visual Studio, ya que generan automáticamente una clase inicial que facilita organizar y ejecutar los ejemplos de POO. Además, se utilizarán herramientas del Framework de (.NET).
+
+### II. Los principios de POO
+
+- **Encapsulación**: Consiste en agrupar los datos (atributos) y los comportamientos (métodos) dentro de un mismo objeto, el cual solo debe permitir el acceso a su información a otros objetos con los que va a interactuar.
+- **Abstracción**: Permite mostrar solo los detalles importantes de un objeto al usuario final, ocultando los internos.
 - **Herencia**: Permite que una clase aproveche los atributos y métodos de una ya existente sin tener que repetir el código, sino únicamente adicionando lo que le falte.
 - **Polimorfismo**: Es la capacidad que tiene un método para comportarse de distintas maneras según el objeto que lo esté usando.
-- **(+) Composición**: Aunque no es un principio oficial de POO la composición es un concepto importante que asimila que un objeto está formado por otros objetos, estableciendo una relación de dependencia entre ellos.
-
+- **(+) Composición**: Aunque no es un principio oficial de POO la composición es un concepto importante, que establece que un objeto puede estar formado por otros objetos, formando una relación de dependencia entre ellos.
 
 ---
 
