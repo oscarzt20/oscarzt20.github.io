@@ -188,7 +188,7 @@ Expresiones que comparan dos valores y devuelven un valor booleano `true` o `fal
 
 - **Menor que (<)**: Verifica si el valor `a` es menor que `b`.
 - **Mayor que (>)**: Comprueba si el valor `a` es mayor que `b`.
-- **Igual a ($==$)**: Determina si ambos valores son exactamente iguales, incluyendo si son del mismo tipo. *NO* confundir con $=$ que es el operador de asignación.
+- **Igual a (\==)**: Determina si ambos valores son exactamente iguales, incluyendo si son del mismo tipo. *NO* confundir con \= que es el operador de asignación.
 - **Diferente de (!=)**: Evalúa si dos valores son distintos.
 - **Menor o igual a (<=)**: Verifica si el valor `a` es menor o igual que `b`.
 - **Mayor o igual a (>=)**: Comprueba si el valor `a` es mayor o igual que `b`.
@@ -208,7 +208,7 @@ Console.WriteLine(x == y); // False
 
 Permiten actualizar las variables. Mientras que los operadores aritméticos actúan sobre valores para producir un resultado, los de asignación modifican el valor de una variable. 
 
-- **Asignación ($=$)**: Asigna o reemplaza un valor.
+- **Asignación (\=)**: Asigna o reemplaza un valor.
 - **Suma y asignación (`+=`)**: Suma un valor.
 - **Resta y asignación (`-=`)**: Resta un valor.
 - **Multiplicación y asignación (`*=`)**: Multiplica un valor.
