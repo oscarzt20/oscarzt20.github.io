@@ -449,7 +449,6 @@ for (int i = 0; i < carrito.Length; i++)
 {
     Console.WriteLine($"Producto {i + 1}: {carrito[i]}");
 }
-
 ```
 
 **FOR EACH**
@@ -469,7 +468,6 @@ foreach (string producto in productos)
 {
     Console.WriteLine($"Producto disponible: {producto}");
 }
-
 ```
 
 **WHILE**
@@ -545,7 +543,7 @@ tipo_de_dato NombreDeLaFuncion(parametros)
 
 - **tipo_de_dato**: Es el tipo de resultado que la función dará. (`int`, `string`, `bool`, `void` si no devuelve nada)
 - **NombreDeLaFuncion**: Es el **nombre de la función**, para poder usarla en el programa. Por ejemplo: `SumarNumeros`, `MostrarMensaje`.
-- **parametros**: Son los datos que la función necesita para trabajar. Pueden ser cero, uno o varios. Por ejemplo: `(int a, int b)` indica que la función necesita dos números enteros.
+- **parametros**: Son los datos que la función necesita para trabajar. Pueden ser cero, uno o varios. Por ejemplo: ``(int a, int b)`` indica que la función necesita dos números enteros.
 - **Instrucciones**: Son las acciones que realiza la función usando los parámetros.
 - **return valor**: Es lo que la función devuelve. Solo se usa si la función no es `void`.
 
@@ -616,9 +614,9 @@ Es recomendable revisar: [Programación - Guías Documentación y Buenas Prácti
 - [Programación I - Algoritmos](/apuntes/programación-i---algoritmos/)
 - [Programación II - Conceptos Básicos](/apuntes/programación-ii---conceptos-básicos/)
 - [Programación III - Introducción a la Programación Orientada a Objetos](/apuntes/programación-iii---introducción-a-la-programación-orientada-a-objetos/)
-- [Programación IV - Conceptos Básicos de POO](/apuntes/programación-iv---conceptos-básicos-de-poo/)
+- [Programación IV - Elementos de POO](/apuntes/programación-iv---elementos-de-poo/)
 - [Programación V - Mecanismos de POO](/apuntes/programación-v---mecanismos-de-poo/)
-- [Programación VI - Estructuras de Datos Abstractos](/apuntes/programación-vi---estructuras-de-datos-abstractos/)
+- [Programación VI - Estructuras de Datos y Algoritmos Avanzados](/apuntes/programación-vi---estructuras-de-datos-y-algoritmos-avanzados/)
 - [Programación VII - Manejo de Datos](/apuntes/programación-vii---manejo-de-datos/)
 - [Programación VIII - POO y la Programación Orientada a Eventos](/apuntes/programación-viii---poo-y-la-programación-orientada-a-eventos/)
 - [Programación IX - Patrones de Diseño](/apuntes/programación-ix---patrones-de-diseño/)
