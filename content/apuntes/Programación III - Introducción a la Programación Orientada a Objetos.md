@@ -64,7 +64,7 @@ miAuto.Encender();
 
 Este ejemplo todavía no aprovecha todas las ventajas de la POO, pero nos sirve para ver la diferencia de enfoque.
 
-Desde aquí se recomienda usar proyectos de **Consola (.NET)** en Visual Studio, ya que generan automáticamente una clase inicial que facilita organizar y ejecutar los ejemplos de POO. Además, se utilizarán herramientas del Framework de (.NET).
+Desde aquí se recomienda usar proyectos de **Aplicación de consola (.NET Framework)** en Visual Studio, ya que generan automáticamente una clase inicial que facilita organizar y ejecutar los ejemplos de POO. Además, se utilizarán herramientas del Framework de (.NET).
 
 ### II. Los principios de POO
 
