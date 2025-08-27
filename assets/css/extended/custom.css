@@ -41,22 +41,22 @@ body {
 
 /* Encabezados */
 h1 {
-  font-size: 2rem;     /* 36px */
+  font-size: 2rem;   /* 36px */
 }
 h2 {
-  font-size: 1.777rem; /* 32px */
+  font-size: 1.625rem; /* 29px */
 }
 h3 {
-  font-size: 1.555rem; /* 28px */
+  font-size: 1.375rem; /* 25px */
 }
-h4 {
-  font-size: 1.333rem; /* 24px */
+.post-content h4 {
+  font-size: 1.125rem; /* 20px */
 }
-h5 {
-  font-size: 1.222rem; /* 22px */
+.post-content h5 {
+  font-size: 1.125rem;  /* 20px */
 }
-h6 {
-  font-size: 1.111rem; /* 20px */
+.post-content h6 {
+  font-size: 1.125rem;  /* 20px */
 }
 
 /* Temas */
