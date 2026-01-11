@@ -41,22 +41,22 @@ body {
 
 /* Encabezados */
 .post-content h1 {
-  font-size: 2.5rem; /* 42px */
+  font-size: 2.5rem;
 }
 .post-content h2 {
-  font-size: 2.3rem; /* 36px */
+  font-size: 2.3rem;
 }
 .post-content h3 {
-  font-size: 1.86rem; /* 34px */
+  font-size: 1.86rem;
 }
 .post-content h4 {
-  font-size: 1.56rem; /* 28px */
+  font-size: 1.56rem;
 }
 .post-content h5 {
-  font-size: 1.33rem; /* 24px */
+  font-size: 1.33rem;
 }
 .post-content h6 {
-  font-size: 1.33rem; /* 24px */
+  font-size: 1.33rem;
 }
 
 /* Temas */
