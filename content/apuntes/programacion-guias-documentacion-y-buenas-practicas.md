@@ -24,14 +24,14 @@ Las convenciones ampliamente aceptadas en la industria para la nomenclatura en p
 | **Clases y Objetos**           | `PascalCase` con sustantivos para clases, `kebab-case` para archivos con sufijos descriptivos                         | ShoppingCart, user-profile.js, cart.service.js |
 | **Propiedades**                | Se toma el nombre del atributo y se pasa a `PascalCase`                                                               | public int Edad { get {  } set {  } }          |
 | **Assets (Recursos)**          | `kebab-case` o `snake_case`, agrupados en carpetas                                                                    | icon-home.svg, assets/images/, assets/fonts/   |
-| **Commits**                    | `&lt;tipo&gt;(área): descripción breve` Tipos: feat, fix, docs, test                                                        | feat(auth): add login feature                  |
+| **Commits**                    | `<tipo>(área): descripción breve` Tipos: feat, fix, docs, test                                                        | feat(auth): add login feature                  |
 | **Configuración del Proyecto** | `Ramas` y `versiones organizadas`                                                                                     | feature/login-page, v1.0.0                     |
 | **Bases de Datos y Eventos**   | Tablas/campos en `snake_case`y eventos en `verbo-nombre`                                                              | user_profiles, created_at, user-logged-in      |
 
-{{&lt; callout type="note" title="" &gt;}}
+{{< callout type="note" title="" >}}
 Siempre evitar utilizar las palabras reservadas de cada lenguaje.
 
-{{&lt; /callout &gt;}}
+{{< /callout >}}
 ## II. Documentación y buenas prácticas
 
 ### 2.1 Recomendaciones
@@ -101,9 +101,9 @@ Para el inicio de los **métodos**:
 /// Fecha: DD-MM-YY
 /// Versión: 1.0.0
 /// Modificación: DD-MM-YY
-/// &lt;param name=""&gt; &lt;/param&gt;
-/// &lt;param name=""&gt; &lt;/param&gt;
-/// &lt;returns&gt; &lt;/returns&gt;
+/// <param name=""> </param>
+/// <param name=""> </param>
+/// <returns> </returns>
 ```
 
 Para los **atributos**:

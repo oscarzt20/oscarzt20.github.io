@@ -171,7 +171,7 @@ CREATE TABLE Empleados
 	estado VARCHAR(100),
 	fecha_nacimiento DATE,
 	fecha_contratacion DATE,
-	CHECK(fecha_nacimiento &lt; fecha_contratacion)
+	CHECK(fecha_nacimiento < fecha_contratacion)
 );
 ```
 
@@ -185,7 +185,7 @@ CREATE TABLE Empleados
 	estado VARCHAR(100),
 	cargo VARCHAR(100),
 	salario DECIMAL(10, 2),
-	CHECK(cargo != 'Gerente' OR salario &gt; 5000)
+	CHECK(cargo != 'Gerente' OR salario > 5000)
 );
 ```
 

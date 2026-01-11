@@ -512,7 +512,7 @@ class Program
   **Ejemplo**: `PersonaA` \== `PersonaB` podría verificar si tienen el mismo nombre y edad.
 - **\!= (desigualdad)** → Verifica si dos objetos son distintos.
   **Ejemplo**: `AutoA` \!= `AutoB` podría comparar si tienen diferentes placas.
-- ** \&lt; y  \&gt; (menor o mayor que)** → Permiten comparar objetos según un criterio específico.
+- ** \< y  \> (menor o mayor que)** → Permiten comparar objetos según un criterio específico.
   **Ejemplo**: `EmpleadoA > EmpleadoB` podría significar que gana más salario.
 
 ###### Sobrecarga de operadores de incremento/decremento

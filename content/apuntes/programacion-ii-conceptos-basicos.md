@@ -189,12 +189,12 @@ Console.WriteLine(a % b); // 1 (residuo)
 
 Expresiones que comparan dos valores y devuelven un valor booleano `true` o `false`:
 
-- **Menor que (&lt;)**: Verifica si el valor `a` es menor que `b`.
-- **Mayor que (&gt;)**: Comprueba si el valor `a` es mayor que `b`.
+- **Menor que (<)**: Verifica si el valor `a` es menor que `b`.
+- **Mayor que (>)**: Comprueba si el valor `a` es mayor que `b`.
 - **Igual a (\==)**: Determina si ambos valores son exactamente iguales, incluyendo si son del mismo tipo. *NO* confundir con \= que es el operador de asignación.
 - **Diferente de (!=)**: Evalúa si dos valores son distintos.
-- **Menor o igual a (&lt;=)**: Verifica si el valor `a` es menor o igual que `b`.
-- **Mayor o igual a (&gt;=)**: Comprueba si el valor `a` es mayor o igual que `b`.
+- **Menor o igual a (<=)**: Verifica si el valor `a` es menor o igual que `b`.
+- **Mayor o igual a (>=)**: Comprueba si el valor `a` es mayor o igual que `b`.
 
 **Ejemplo en C#**:
 
@@ -203,7 +203,7 @@ Se declaran las variables `x` y `y`. Primero, se demuestra si `x` es menor que `
 ```csharp
 int x = 5, y = 8;
 
-Console.WriteLine(x &lt; y);  // True
+Console.WriteLine(x < y);  // True
 Console.WriteLine(x == y); // False
 ```
 
@@ -243,7 +243,7 @@ Permiten combinar condiciones (expresiones que producen `true` o `false`) para t
 ```csharp
 int edad = 30;
 
-bool esAdultoLaboral = (edad &gt;= 18) && (edad &lt;= 65);
+bool esAdultoLaboral = (edad >= 18) && (edad <= 65);
 
 Console.WriteLine(esAdultoLaboral); // True
 ```
@@ -254,7 +254,7 @@ Console.WriteLine(esAdultoLaboral); // True
 double total = 180.0;
 bool esPremium = true;
 
-bool envioGratis = (total &gt;= 200) || esPremium;
+bool envioGratis = (total >= 200) || esPremium;
 
 Console.WriteLine(envioGratis); // True
 ```
@@ -448,7 +448,7 @@ Un usuario tiene varios productos en su carrito y queremos mostrar la lista.
 ```csharp
 string[] carrito = { "Laptop", "Mouse", "Teclado" };
 
-for (int i = 0; i &lt; carrito.Length; i++)
+for (int i = 0; i < carrito.Length; i++)
 {
     Console.WriteLine($"Producto {i + 1}: {carrito[i]}");
 }
@@ -486,7 +486,7 @@ Un sistema de inventario descuenta unidades de un producto mientras haya stock d
 ```csharp
 int stock = 5;
 
-while (stock &gt; 0)
+while (stock > 0)
 {
     Console.WriteLine($"Producto vendido. Stock restante: {stock}");
     

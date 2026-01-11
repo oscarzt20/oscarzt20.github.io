@@ -109,14 +109,14 @@ BEGIN
 	SELECT @precio = precio
 	FROM Paletas;
 
-	IF @precio &lt; 50
+	IF @precio < 50
 		BEGIN
 			SET @totalDescuento = (@precio + 50);
 
 			UPDATE Paletas
 			SET precio = @totalDescuento;
 
-			PRINT 'Precios actualizados: ' + CAST(@precio AS VARCHAR(20)) + ' -&gt; ' + CAST(@totalDescuento AS VARCHAR(20)) ;
+			PRINT 'Precios actualizados: ' + CAST(@precio AS VARCHAR(20)) + ' -> ' + CAST(@totalDescuento AS VARCHAR(20)) ;
 		END
 	ELSE
 		BEGIN

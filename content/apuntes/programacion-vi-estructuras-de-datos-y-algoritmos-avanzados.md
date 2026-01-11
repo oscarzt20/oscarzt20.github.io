@@ -78,7 +78,7 @@ Se usa cuando necesitas insertar o eliminar elementos frecuentemente en cualquie
 Se crea una lista ligada de nombres. En este caso el recorrido se hace con un ciclo.
 
 ```csharp
-LinkedList&lt;string&gt; nombres = new LinkedList&lt;string&gt;();
+LinkedList<string> nombres = new LinkedList<string>();
 nombres.AddLast("Ana");
 nombres.AddFirst("Luis");
 
@@ -100,7 +100,7 @@ Se usa para manejar flujos reversibles, como en el caso de un historial de naveg
 Se agregan dos elementos a la pila por medio de `Push()`, mientras que `Pop()` elimina de la pila al último que entró y la guarda en la variable `actual`.
 
 ```csharp
-Stack&lt;string&gt; historial = new Stack&lt;string&gt;();
+Stack<string> historial = new Stack<string>();
 historial.Push("Página1");
 historial.Push("Página2");
 
@@ -119,7 +119,7 @@ Se usa cuando se necesitan procesar elementos en el orden en que llegaron, como 
 Se agregan dos tareas a la cola. Al hacer `Dequeue()`, se extrae la primera tarea ingresada ("Tarea1"), eliminándola de la cola, respetando el orden en el que llegaron.
 
 ```csharp
-Queue&lt;string&gt; tareas = new Queue&lt;string&gt;();
+Queue<string> tareas = new Queue<string>();
 tareas.Enqueue("Tarea1");
 tareas.Enqueue("Tarea2");
 
@@ -138,7 +138,7 @@ Se usa para buscar datos rápidamente mediante una clave única, como directorio
 Se crea un diccionario donde las claves son nombres y los valores son edades. Al pedir `edades["Ana"]`, se accede directamente al valor 30 sin necesidad de recorrer toda la colección.
 
 ```csharp
-Dictionary&lt;string, int&gt; edades = new Dictionary&lt;string, int&gt;();
+Dictionary<string, int> edades = new Dictionary<string, int>();
 edades["Juan"] = 25;
 edades["Ana"] = 30;
 
@@ -184,9 +184,9 @@ Se usa para representar mapas, relaciones entre entidades, etc.
 Se construye un grafo no dirigido: el nodo "A" está conectado a "B" y "C", y "B" también conecta con "A" y "D". Se usa un diccionario donde cada nodo tiene una lista de vecinos.
 
 ```csharp
-Dictionary&lt;string, List&lt;string&gt;> grafo = new Dictionary&lt;string, List&lt;string&gt;>();
-grafo["A"] = new List&lt;string&gt; { "B", "C" };
-grafo["B"] = new List&lt;string&gt; { "A", "D" };
+Dictionary<string, List<string>> grafo = new Dictionary<string, List<string>>();
+grafo["A"] = new List<string> { "B", "C" };
+grafo["B"] = new List<string> { "A", "D" };
 ```
 
 

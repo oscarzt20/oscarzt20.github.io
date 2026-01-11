@@ -21,10 +21,10 @@ Las bases de datos relacionales requieren de un conjunto de operaciones que perm
 
 ### 1.2 Operadores de condición
 
-- **&lt; (Menor que)**: Compara si un valor es menor que otro.
-- **&gt; (Mayor que)**: Compara si un valor es mayor que otro.
-- **&lt;= (Menor o igual a que)**: Compara si un valor es menor o igual a otro.
-- **&gt;= (Mayor o igual a que)**: Compara si un valor es mayor o igual a otro.
+- **< (Menor que)**: Compara si un valor es menor que otro.
+- **> (Mayor que)**: Compara si un valor es mayor que otro.
+- **<= (Menor o igual a que)**: Compara si un valor es menor o igual a otro.
+- **>= (Mayor o igual a que)**: Compara si un valor es mayor o igual a otro.
 - **= (Igual a)**: Verifica si dos valores son iguales.
 
 ### 1.3 Representación de una expresión

@@ -25,7 +25,7 @@ La serialización binaria convierte un objeto en una secuencia de bytes, que pue
 Solo puede ser interpretado por sistemas que conozcan su estructura interna, ya que no está en un formato legible.
 ### 1.3 Serialización con XML (Programación estructurada)
 
-La serialización XML convierte un objeto en texto legible, utilizando etiquetas `&lt;xml&gt;`. Es una forma estructurada y estandarizada, útil para la portabilidad con otros sistemas o lenguajes.
+La serialización XML convierte un objeto en texto legible, utilizando etiquetas `<xml>`. Es una forma estructurada y estandarizada, útil para la portabilidad con otros sistemas o lenguajes.
 
 La desventaja es que cualquiera puede abrir el archivo y modificarlo, por lo que tiene menor seguridad por default.
 

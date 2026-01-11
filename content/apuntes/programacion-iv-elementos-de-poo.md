@@ -260,12 +260,12 @@ int[] numeros = new int[5];
 Type tipoPersona = typeof(Persona);
 ```
 
-- **`Activator.CreateInstance&lt;T&gt;()`**: Crea dinámicamente una instancia de una clase sin usar `new`. Útil cuando el tipo se desconoce en tiempo de compilación.
+- **`Activator.CreateInstance<T>()`**: Crea dinámicamente una instancia de una clase sin usar `new`. Útil cuando el tipo se desconoce en tiempo de compilación.
   
   **Ejemplo en C#**
 
 ```csharp
-Persona juan = Activator.CreateInstance&lt;Persona&gt;();
+Persona juan = Activator.CreateInstance<Persona>();
 ```
 
 - **`default`**: Asigna el valor predeterminado a un tipo. Para tipos de referencia, devuelve `null`. Para tipos de valor, devuelve `0`, `false` o equivalente.
@@ -406,7 +406,7 @@ class Carrera
 
 class Universidad
 {
-    public List&lt;Carrera&gt; Carreras { get; set; } = new List&lt;Carrera&gt;();
+    public List<Carrera> Carreras { get; set; } = new List<Carrera>();
 }
 ```
 
@@ -432,7 +432,7 @@ class Habitacion
 
 class Casa
 {
-    private List&lt;Habitacion&gt; habitaciones = new List&lt;Habitacion&gt;();
+    private List<Habitacion> habitaciones = new List<Habitacion>();
 
     public Casa()
     {
@@ -676,23 +676,23 @@ p.Saludar(); // Muestra: Hola, soy Carlos
 
 ### 5.7 Clase genérica
 
-Una clase genérica permite trabajar con cualquier tipo de dato sin especificarlo inicialmente. Se define con un parámetro de tipo `&lt;T&gt;`, el cual se especifica al momento de crear una instancia.
+Una clase genérica permite trabajar con cualquier tipo de dato sin especificarlo inicialmente. Se define con un parámetro de tipo `<T>`, el cual se especifica al momento de crear una instancia.
 
 Se suele utilizar para colecciones, contenedores, utilidades y estructuras reutilizables.
 
 **Ejemplo en C#**:
 
-La clase `Caja&lt;T&gt;` es genérica porque puede guardar cualquier tipo de dato. En el primer caso es una caja de enteros, en el segundo una caja de texto.
+La clase `Caja<T>` es genérica porque puede guardar cualquier tipo de dato. En el primer caso es una caja de enteros, en el segundo una caja de texto.
 
 ```csharp
-class Caja&lt;T&gt;
+class Caja<T>
 {
     public T Contenido { get; set; }
 }
 
 // Uso
-Caja&lt;int&gt; cajaEntero = new Caja&lt;int&gt; { Contenido = 100 };
-Caja&lt;string&gt; cajaTexto = new Caja&lt;string&gt; { Contenido = "Hola" };
+Caja<int> cajaEntero = new Caja<int> { Contenido = 100 };
+Caja<string> cajaTexto = new Caja<string> { Contenido = "Hola" };
 
 Console.WriteLine(cajaEntero.Contenido); // Muestra: 100
 Console.WriteLine(cajaTexto.Contenido);  // Muestra: Hola
