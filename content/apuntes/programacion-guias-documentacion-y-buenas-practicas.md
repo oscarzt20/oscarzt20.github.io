@@ -28,7 +28,6 @@ Las convenciones ampliamente aceptadas en la industria para la nomenclatura en p
 | **Configuración del Proyecto** | `Ramas` y `versiones organizadas`                                                                                     | feature/login-page, v1.0.0                     |
 | **Bases de Datos y Eventos**   | Tablas/campos en `snake_case`y eventos en `verbo-nombre`                                                              | user_profiles, created_at, user-logged-in      |
 
-> [!NOTE]
 > Siempre evitar utilizar las palabras reservadas de cada lenguaje.
 
 ## II. Documentación y buenas prácticas
