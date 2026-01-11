@@ -51,7 +51,7 @@ Los símbolos usados son:
 
 Diagrama de flujo de un algoritmo que determina si un número es par o impar.
 
-!`Conceptos Generales de Programación_05-06-2025-1.png`
+![Conceptos Generales de Programación_05-06-2025-1.png](/imagenes/Conceptos%20Generales%20de%20Programaci%C3%B3n_05-06-2025-1.webp)
 
 ### 2.2 Lenguajes algorítmicos no gráficos
 

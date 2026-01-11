@@ -65,6 +65,6 @@ title: Pan de Muerto - Hojaldras Tradicionales
 
 ## Anexos
 
-!`Pan de Muerto - Hojaldras Tradicionales_26-07-2025.png`
+![Pan de Muerto - Hojaldras Tradicionales_26-07-2025.png](/imagenes/Pan%20de%20Muerto%20-%20Hojaldras%20Tradicionales_26-07-2025.webp)
 
 ---

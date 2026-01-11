@@ -362,7 +362,7 @@ Controla el flujo de ejecución del programa según si una o varias condiciones 
 
 Ejecuta un bloque de código si una condición es verdadera.
 
-!`Conceptos Generales de Programación_05-06-2025-3.png`
+![Conceptos Generales de Programación_05-06-2025-3.png](/imagenes/Conceptos%20Generales%20de%20Programaci%C3%B3n_05-06-2025-3.webp)
 
 **Ejemplo en C#**:
 
@@ -405,7 +405,7 @@ else
 
 Permite seleccionar uno de varios bloques de código para ejecutar, y tiene una opción de default. Es más limpio que usar muchos `else if`.
 
-!`Conceptos Generales de Programación_05-06-2025-2.png`
+![Conceptos Generales de Programación_05-06-2025-2.png](/imagenes/Conceptos%20Generales%20de%20Programaci%C3%B3n_05-06-2025-2.webp)
 
 **Ejemplo en C#**:
 
@@ -439,7 +439,7 @@ Sirven para repetir un bloque de instrucciones.
 
 Usado cuando sabemos de antemano cuántas veces queremos repetir un bloque de instrucciones.
 
-!`Conceptos Generales de Programación_05-06-2025-4.png`
+![Conceptos Generales de Programación_05-06-2025-4.png](/imagenes/Conceptos%20Generales%20de%20Programaci%C3%B3n_05-06-2025-4.webp)
 
 **Ejemplo en C#**:
 
@@ -458,7 +458,7 @@ for (int i = 0; i < carrito.Length; i++)
 
 Se utiliza para recorrer los elementos de una colección (como arreglos o listas) sin necesidad de usar un índice explícito.
 
-!`Conceptos Generales de Programación_05-06-2025-5.png`
+![Conceptos Generales de Programación_05-06-2025-5.png](/imagenes/Conceptos%20Generales%20de%20Programaci%C3%B3n_05-06-2025-5.webp)
 
 **Ejemplo en C#**:
 
@@ -477,7 +477,7 @@ foreach (string producto in productos)
 
 Repite un bloque de instrucciones mientras la condición sea verdadera.
 
-!`Conceptos Generales de Programación_05-06-2025-6.png`
+![Conceptos Generales de Programación_05-06-2025-6.png](/imagenes/Conceptos%20Generales%20de%20Programaci%C3%B3n_05-06-2025-6.webp)
 
 **Ejemplo en C#**:
 
@@ -499,7 +499,7 @@ while (stock > 0)
 
 Parecido al while pero este se cumple al menos una vez, aunque la condición sea falsa.
 
-!`Conceptos Generales de Programación_05-06-2025-7.png`
+![Conceptos Generales de Programación_05-06-2025-7.png](/imagenes/Conceptos%20Generales%20de%20Programaci%C3%B3n_05-06-2025-7.webp)
 
 **Ejemplo en C#**:
 

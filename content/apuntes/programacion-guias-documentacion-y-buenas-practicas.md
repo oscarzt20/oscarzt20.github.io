@@ -28,10 +28,9 @@ Las convenciones ampliamente aceptadas en la industria para la nomenclatura en p
 | **Configuración del Proyecto** | `Ramas` y `versiones organizadas`                                                                                     | feature/login-page, v1.0.0                     |
 | **Bases de Datos y Eventos**   | Tablas/campos en `snake_case`y eventos en `verbo-nombre`                                                              | user_profiles, created_at, user-logged-in      |
 
-{{< callout type="note" title="" >}}
-Siempre evitar utilizar las palabras reservadas de cada lenguaje.
+> [!NOTE]
+> Siempre evitar utilizar las palabras reservadas de cada lenguaje.
 
-{{< /callout >}}
 ## II. Documentación y buenas prácticas
 
 ### 2.1 Recomendaciones
@@ -118,7 +117,7 @@ En el caso de elementos que estén dentro de los métodos, solo se documenta lo 
 
 Se usa para modelar la estructura de clases en la programación orientada a objetos. Muestra las clases, sus atributos, métodos y relaciones (herencia, asociación, composición, etc.).
 
-!`Plataformas Abiertas 1_05-06-2025-7.png`
+![Plataformas Abiertas 1_05-06-2025-7.png](/imagenes/Plataformas%20Abiertas%201_05-06-2025-7.webp)
 
 Las relaciones entre clases se representan de diferente manera:
 
@@ -130,7 +129,7 @@ Las relaciones entre clases se representan de diferente manera:
 | **Composición** | "Tiene un" (no existe por separado) | Línea con rombo negro `----◆`             |
 | **Herencia**    | "Es un"                             | Línea con flecha triangular vacía `──▷`   |
 
-!`Programación Orientada a Objetos_21-07-2025.png`
+![Programación Orientada a Objetos_21-07-2025.png](/imagenes/Programaci%C3%B3n%20Orientada%20a%20Objetos_21-07-2025.webp)
 
 ## III. Excepciones y manejo de errores
 

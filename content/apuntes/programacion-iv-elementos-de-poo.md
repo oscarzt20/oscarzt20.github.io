@@ -361,7 +361,7 @@ class Impresora
 
 **Diagrama de clases**:
 
-!`Programación IV - Elementos de POO_23-08-2025.png`
+![Programación IV - Elementos de POO_23-08-2025.png](/imagenes/Programaci%C3%B3n%20IV%20-%20Elementos%20de%20POO_23-08-2025.webp)
 ### 4.2 Asociación - "conoce a" o "trabaja con"
 
 Una clase puede referenciar a otra clase que esté separada, sin embargo esto no implica que una sea parte de la otra, por lo que ambas pueden existir por separado.
@@ -386,7 +386,7 @@ class Profesor
 
 **Diagrama de clases**:
 
-!`Programación IV - Elementos de POO_23-08-2025-1.png`
+![Programación IV - Elementos de POO_23-08-2025-1.png](/imagenes/Programaci%C3%B3n%20IV%20-%20Elementos%20de%20POO_23-08-2025-1.webp)
 
 ### 4.3 Agregación - "tiene un" (Existe por separado)
 
@@ -412,7 +412,7 @@ class Universidad
 
 **Diagrama de clases**:
 
-!`Programación IV - Elementos de POO_23-08-2025-2.png`
+![Programación IV - Elementos de POO_23-08-2025-2.png](/imagenes/Programaci%C3%B3n%20IV%20-%20Elementos%20de%20POO_23-08-2025-2.webp)
 
 ### 4.4 Composición - "tiene un" (No existe por separado)
 
@@ -444,7 +444,7 @@ class Casa
 
 **Diagrama de clases**:
 
-!`Programación IV - Elementos de POO_23-08-2025-3.png`
+![Programación IV - Elementos de POO_23-08-2025-3.png](/imagenes/Programaci%C3%B3n%20IV%20-%20Elementos%20de%20POO_23-08-2025-3.webp)
 
 ### 4.5 Herencia - "es un"
 
@@ -476,7 +476,7 @@ class Perro : Animal
 
 **Diagrama de clases**:
 
-!`Programación IV - Elementos de POO_23-08-2025-4.png`
+![Programación IV - Elementos de POO_23-08-2025-4.png](/imagenes/Programaci%C3%B3n%20IV%20-%20Elementos%20de%20POO_23-08-2025-4.webp)
 
 ## V. Tipos de clases
 

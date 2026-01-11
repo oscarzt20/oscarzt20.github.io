@@ -57,7 +57,7 @@ Este se forma con una familia de algoritmos que están encapsulados. El objetivo
 
 **Diagrama de clases**:
 
-!`Patrones Orientados a Objetos_18-08-2025.png`
+![Patrones Orientados a Objetos_18-08-2025.png](/imagenes/Patrones%20Orientados%20a%20Objetos_18-08-2025.webp)
 
 **Ejemplos**:
 

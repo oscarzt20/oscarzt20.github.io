@@ -90,6 +90,6 @@ title: Pay de Calabaza
 
 ## Anexos
 
-!`Pay de Calabaza_02-06-2025-2.png`
+![Pay de Calabaza_02-06-2025-2.png](/imagenes/Pay%20de%20Calabaza_02-06-2025-2.webp)
 
 ---
