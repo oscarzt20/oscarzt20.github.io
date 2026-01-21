@@ -10,11 +10,9 @@ title: Programación 1 - Introducción y Algoritmos
 
 ---
 
-Para un ingeniero de software, la programación es una de las principales herramientas que tenemos a nuestra disposición para la resolución de problemas.
+Para un ingeniero de software, la programación es una de las principales herramientas que tenemos a nuestra disposición para la resolución de problemas. Al programar, le transmitimos nuestro razonamiento a la computadora, indicando qué acciones realizar y cómo ejecutarlas, paso a paso.
 
 Detrás de cualquier programa existe un razonamiento lógico, diseñado para solucionar una necesidad específica; el código es simplemente el medio para alcanzar esa solución.
-
-Al programar, le transmitimos nuestro razonamiento a la computadora, indicando qué acciones realizar y cómo ejecutarlas, paso a paso.
 
 ## I. ¿Qué es un algoritmo?
 
