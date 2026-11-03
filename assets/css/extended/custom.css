@@ -41,22 +41,22 @@ body {
 
 /* Encabezados */
 .post-content h1 {
-  font-size: 2.5rem;
+  font-size: 2.2rem;
 }
 .post-content h2 {
-  font-size: 2.3rem;
+  font-size: 1.75rem;
 }
 .post-content h3 {
-  font-size: 1.86rem;
+  font-size: 1.4rem;
 }
 .post-content h4 {
-  font-size: 1.56rem;
+  font-size: 1.2rem;
 }
 .post-content h5 {
-  font-size: 1.33rem;
+  font-size: 1.1rem;
 }
 .post-content h6 {
-  font-size: 1.33rem;
+  font-size: 1.05rem;
 }
 
 /* Temas */
@@ -90,4 +90,85 @@ body {
 
 .dark.list {
     background: var(--theme);
+}
+
+@media (min-width: 768px) {
+  .header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: var(--theme);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+  }
+}
+
+/* Estilos de Portafolio consistentes con el tema */
+.profile .buttons {
+  max-width: 580px;
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+  margin: 20px 0;
+}
+
+.portfolio-card {
+  background: var(--entry);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 18px;
+}
+
+.portfolio-card h3 {
+  margin-top: 0 !important;
+  margin-bottom: 8px !important;
+  font-size: 1.2rem !important;
+}
+
+.portfolio-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 12px 0;
+}
+
+.portfolio-badge {
+  display: inline-block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8rem;
+  padding: 3px 10px;
+  background: var(--code-bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--primary);
+}
+
+.portfolio-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+  margin: 20px 0;
+}
+
+.portfolio-gallery figure {
+  margin: 0;
+  background: var(--entry);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 10px;
+}
+
+.portfolio-gallery img {
+  margin: 0 auto 8px auto !important;
+  border-radius: 4px;
+}
+
+.portfolio-gallery figcaption {
+  font-size: 0.85rem;
+  color: var(--secondary);
+  text-align: center;
 }

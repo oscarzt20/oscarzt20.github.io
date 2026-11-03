@@ -1,6 +1,6 @@
 baseURL = 'https://oscarzt20.github.io/'
 languageCode = 'es-mx'
-title = 'oscarzt20'
+title = 'Oscar Juárez Ortiz | Portafolio'
 theme = 'PaperMod'
 defaultContentLanguage = "es"
 
@@ -8,24 +8,35 @@ defaultContentLanguage = "es"
   [caches.images]
     dir = ':cacheDir/images'
 
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
 [params]
   defaultTheme = "auto"
-  ShowReadingTime = false
+  ShowReadingTime = true
   ShowBreadCrumbs = true
   showtoc = true
-  tocopen = true
-  ShowPostNavLinks = false
+  tocopen = false
+  ShowPostNavLinks = true
   ShowCodeCopyButtons = true
   hideSummary = false
-  author = "Oscar Juarez"
-  mainSections = ["proyectos", "recursos", "apuntes", "pasatiempos", "recetas", "articulos"]
+  author = "Oscar Juárez Ortiz"
+  description = "Portafolio de Ingeniería de Software de Oscar Juárez Ortiz (UMAD) — Desarrollo Web & IA, Bases de Datos SQL, Redes Linux/VoIP, SAP S/4HANA Fiori y Videojuegos en Unity/C#."
+  mainSections = ["proyectos"]
+
+  [params.cover]
+    hidden = false
+    hiddenInList = false
+    hiddenInSingle = true
 
   [params.profileMode]
     enabled = true
-    title = "oscarzt20 | Blog & Notas"
-    subtitle = "Soy Oscar, desarrollador. En este blog comparto lo que hago, lo que aprendo y lo que me inspira. Siempre estoy abierto a colaborar."
+    title = "Oscar Juárez Ortiz"
+    subtitle = "Ingeniería de Software en Universidad Madero (UMAD) · Desarrollo Web & IA, Bases de Datos SQL, Redes Linux/VoIP, SAP S/4HANA Fiori y Videojuegos en Unity/C#. Enfocado en diseñar soluciones claras, eficientes y orientadas a la generación de valor."
     imageUrl = "perfil.jpg"
-    imageTitle = "Foto de perfil"
+    imageTitle = "Oscar Juárez Ortiz"
     imageWidth = 160
     imageHeight = 160
 
@@ -34,51 +45,56 @@ defaultContentLanguage = "es"
       url = "/proyectos/"
 
     [[params.profileMode.buttons]]
-      name = "Recursos"
-      url = "/recursos/"
+      name = "Sobre mí & CV"
+      url = "/sobre-mi/"
 
     [[params.profileMode.buttons]]
-      name = "Apuntes"
-      url = "/apuntes/"
+      name = "Certificaciones"
+      url = "/certificaciones/"
 
     [[params.profileMode.buttons]]
-      name = "Pasatiempos"
-      url = "/pasatiempos/"
-
-    [[params.profileMode.buttons]]
-      name = "Recetas"
-      url = "/recetas/"
-
-    [[params.profileMode.buttons]]
-      name = "Artículos"
-      url = "/articulos/"
+      name = "Descargar CV (PDF)"
+      url = "/cv/Oscar_Juarez_Ortiz_CV.pdf"
 
   [[params.socialIcons]]
     name = "github"
     url = "https://github.com/oscarzt20"
 
   [[params.socialIcons]]
-    name = "x"
-    url = "https://x.com/oscarzt20"
-
-  [[params.socialIcons]]
     name = "linkedin"
     url = "https://www.linkedin.com/in/oscarzt20/"
 
+  [[params.socialIcons]]
+    name = "email"
+    url = "mailto:oscar.juarezotz@gmail.com"
+
 [menu]
   [[menu.main]]
-    name = "Portafolio"
+    identifier = "proyectos"
+    name = "Proyectos"
     url = "/proyectos/"
     weight = 1
+
+  [[menu.main]]
+    identifier = "sobre-mi"
+    name = "Sobre mí"
+    url = "/sobre-mi/"
+    weight = 2
+
+  [[menu.main]]
+    identifier = "certificaciones"
+    name = "Certificaciones"
+    url = "/certificaciones/"
+    weight = 3
 
   [[menu.main]]
     identifier = "tags"
     name = "Tags"
     url = "/tags/"
-    weight = 2
+    weight = 4
 
   [[menu.main]]
     identifier = "archives"
     name = "Archivo"
     url = "/archives/"
-    weight = 3
+    weight = 5
