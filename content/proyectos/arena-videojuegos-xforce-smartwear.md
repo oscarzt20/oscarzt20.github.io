@@ -1,97 +1,101 @@
 ---
-title: "Arena de Videojuegos 'X-Force', Traje Háptico 'SmartWear V0.3' y Sistema de Estacionamiento QR"
-date: 2024-12-01
-weight: 4
+title: "X-Force Arena — Ingeniería y Ciclo de Vida de un Ecosistema Gamer"
+date: 2025-10-14
+weight: 2
 slug: "arena-videojuegos-xforce-smartwear"
-summary: "Proyecto integral del Ciclo de Vida de Software ( más de 220 páginas de ingeniería): Design Thinking para el traje inteligente SmartWear V0.3, Modelado de Negocios (120 reglas de negocio), Diseño de Sistemas UML/MVC y prototipos UI/UX para la arena X-Force y su sistema de estacionamiento QR."
+summary: "Proyecto integral del ciclo de vida del software para un complejo de entretenimiento inmersivo: desde la ideación de un traje háptico inteligente hasta el diseño del ERP operativo y su subsistema de estacionamiento automatizado con QR."
 tags:
-  - "Ingeniería de Software"
+  - "Ciclo de Vida del Software"
+  - "Ingeniería de Requerimientos"
   - "Diseño de Sistemas"
   - "UML"
-  - "Requerimientos"
   - "Design Thinking"
   - "UI/UX"
-  - "MySQL"
 categories:
   - "Ingeniería de Software y Diseño de Sistemas"
 cover:
   image: "/imagenes/proyectos/xforce-ui-home.png"
-  alt: "Interfaz principal de X-Force Live"
+  alt: "Ecosistema de software X-Force Arena"
   relative: false
 ---
 
-## Visión General del Proyecto
+## Visión Integral del Proyecto
 
-Este proyecto multidisciplinario abarca el **ciclo de vida completo de ingeniería de software** desarrollado a lo largo de tres asignaturas en la **Universidad Madero (UMAD)** (*Modelado de Negocios y Requerimientos*, *Proceso de Diseño de Sistemas* y *Sistemas de Información Gerencial*), para la empresa **Nexus Interactive** y su complejo de entretenimiento inmersivo **Arena de Videojuegos "X-Force"** (ubicado en WTC CDMX).
+**X-Force Arena** (desarrollado para la empresa ficticia *Nexus Interactive*) es un proyecto evolutivo que consolida las etapas fundamentales del **Ciclo de Vida del Desarrollo de Software (SDLC)**. En lugar de abordar ejercicios aislados, el proyecto modela el ecosistema tecnológico completo de una arena de videojuegos inmersiva a través de tres subsistemas interconectados:
 
-- **Autores**: Oscar Juárez Ortiz, José Brian Molina Nochebuena, Pedro Emiliano Romero Osorio.
-- **Asesora**: Mtra. Martha Patricia Hernández Zamora.
+1. **El Producto Inmersivo (*SmartWear V0.3*)**: El traje háptico inteligente que los visitantes rentan dentro de la arena para vivir partidas inmersivas y eventos de cosplay.
+2. **El Núcleo Operativo y Administrativo (*X-Force Live*)**: El sistema central que controla la venta de boletos, la renta y mantenimiento de los trajes *SmartWear*, los inventarios de souvenirs/alimentos, el personal y la facturación del recinto.
+3. **El Subsistema de Acceso y Movilidad (*Estacionamiento QR*)**: La plataforma de kioscos físicos y aplicación móvil integrada a las zonas de estacionamiento del complejo para agilizar el ingreso y cobro automatizado de los asistentes.
 
 ---
 
-## Fase 1: Design Thinking y Prototipo "SmartWear V0.3"
+## Etapa 1: Ideación y Design Thinking (*SmartWear V0.3*)
 
-Mediante investigación de usuarios (encuestas estadísticas y matriz *Point of View — POV* clasificando ideas conservadoras, innovadoras y extremas), se diseñó el traje inteligente **SmartWear V0.3** para cosplay y combate inmersivo en la arena:
+El ciclo inició con la definición del producto diferenciador de la arena mediante la metodología **Design Thinking**. A partir de encuestas a usuarios y el análisis de necesidades en una matriz *Point of View (POV)*, se diseñó el prototipo conceptual **SmartWear V0.3**:
 
-- **Paneles de Proyección Quantum Dot**: Proyección digital de alta fidelidad con *skins* generadas por IA, modo camuflaje/invisibilidad y respuesta háptica para simular texturas e impactos.
-- **Asistente Virtual IA y Conectividad**: Control por voz, traducción instantánea y sincronización grupal con otros trajes en eventos.
-- **Ergonomía y Sostenibilidad**: Recarga mediante luz solar, gorro integrado para simulación de casco/rostro y tela transpirable con autorregulación térmica.
+- **Inmersión Visual y Háptica**: Paneles de proyección *Quantum Dot* para renderizar *skins* dinámicas generadas por IA y sensores de retroalimentación táctil para simular impactos en partida.
+- **Ecosistema Conectado**: Asistente de voz integrado, sincronización grupal entre jugadores dentro de la arena, autorregulación térmica y recarga solar.
 
 <div class="portfolio-gallery">
   <figure>
-    <img src="/imagenes/proyectos/smartwear-v03.jpg" alt="Prototipo SmartWear V0.3">
-    <figcaption>Especificación conceptual y componentes tecnológicos del traje inteligente SmartWear V0.3.</figcaption>
+    <img src="/imagenes/proyectos/smartwear-v03.jpg" alt="Prototipo conceptual SmartWear V0.3">
+    <figcaption>Arquitectura conceptual del traje inteligente SmartWear V0.3.</figcaption>
   </figure>
   <figure>
-    <img src="/imagenes/proyectos/xforce-mapa-digital.jpg" alt="Mapa Digital de la Arena de Videojuegos X-Force">
-    <figcaption>Mapa arquitectónico digital de las 12 zonas operativas de la Arena de Videojuegos (Game Zone).</figcaption>
+    <img src="/imagenes/proyectos/xforce-mapa-digital.jpg" alt="Mapa arquitectónico de la Arena X-Force">
+    <figcaption>Distribución de las 12 zonas operativas de la arena: taquilla, renta/entrega de trajes SmartWear, áreas de juego y estacionamientos A y B.</figcaption>
   </figure>
 </div>
 
 ---
 
-## Fase 2: Modelado de Negocios y Diseño de Sistemas (201 Páginas)
+## Etapa 2: Modelado de Negocios y Diseño de Sistemas (*X-Force Live*)
 
-Se elaboró la especificación formal del sistema de información gerencial y operativo de la arena bajo estándares de **Gestión de Configuración de Software (SCM)** y modelado **UML en Rational Rose 7.0**:
+Con el modelo operativo del recinto definido, se realizó el levantamiento formal de requerimientos y la arquitectura del sistema central encargado de administrar todas las áreas del mapa de la arena:
 
-1. **Ingeniería de Requerimientos y Reglas de Negocio**:
-   - Levantamiento de **7 minutas formales** con *stakeholders* y definición de **120 Reglas de Negocio (`RN_01` a `RN_120`)**.
-   - Estudio de factibilidad técnica, económica, operativa y legal (presupuesto estimado de `$34,422.31 MXN` en 137 horas de *humanware*; arquitectura objetivo con **Yii Framework v1.1.1, PHP 5, MySQL 5.5 y WAMP Server**).
-2. **Modelado Funcional y Arquitectónico**:
-   - **8 Roles de Usuario** (*Administrador del parque, Cajero, Administrador del sistema, Gerente de ventas, Gerente de almacén, Gerente de compras, Empleado, Cliente*).
-   - **10 Casos de Uso del Sistema (`CU_01` a `CU_10`)**: Control de acceso y menús por rol, gestión ABC de empleados y clientes, catálogo e inventario de souvenirs/alimentos, venta de boletos (General `$180` / VIP `$500`), renta y restauración de trajes inteligentes (`$2,000`), arqueo/cierre de cajas, órdenes de compra a proveedores y facturación.
-   - **18 Reportes (`RE_01`–`RE_18`)** y **23 Formatos (`FO_01`–`FO_23`)** (Contratos, KARDEX, Tickets, Facturas, Cartas responsivas, Nómina y Estados de cuenta).
-   - **Diagramas UML**: Diagramas de Casos de Uso, Diagramas de Actividades con carriles (*swimlanes*) para flujos base y alternativos, Diagramas de Estados para **15 objetos de negocio (`OBJ_01`–`OBJ_15`)**, Diagramas de Navegación por rol y **Diagramas de Clases UML** con multiplicidades.
+- **Ingeniería de Requerimientos y Factibilidad**: Realización de **7 minutas con *stakeholders***, definición de **120 Reglas de Negocio (`RN_01` a `RN_120`)** y evaluación de factibilidad técnica, operativa, legal y financiera (estimando 137 horas de ingeniería sobre una arquitectura MVC con PHP y MySQL).
+- **Modelado Arquitectónico en UML**:
+  - Control de acceso para **8 roles operativos** (*Administrador del parque, Cajero, Administrador del sistema, Gerentes de ventas, almacén y compras, Empleado y Cliente*).
+  - Especificación de **10 Casos de Uso (`CU_01` a `CU_10`)** que integran la venta de accesos (General y VIP), el préstamo y restauración de los trajes *SmartWear V0.3*, el control de inventario, órdenes de compra, cierre de cajas y facturación.
+  - Modelado de **Diagramas de Actividades** (flujos base y alternativos), **Diagramas de Estados** para **15 objetos de negocio**, **Diagramas de Navegación** y **Diagramas de Clases UML**.
 
 <div class="portfolio-gallery">
   <figure>
-    <img src="/imagenes/proyectos/xforce-ui-home.png" alt="Pantalla de inicio de sesión X-Force Live">
-    <figcaption>Interfaz de autenticación del sistema web X-Force Live.</figcaption>
+    <img src="/imagenes/proyectos/xforce-ui-home.png" alt="Acceso al sistema X-Force Live">
+    <figcaption>Pantalla de autenticación del sistema central X-Force Live.</figcaption>
   </figure>
   <figure>
-    <img src="/imagenes/proyectos/xforce-ui-sistema.png" alt="Pantalla de gestión del sistema X-Force Live">
-    <figcaption>Diseño de pantallas operativas (Altas, Bajas, Cambios y Consultas) con validación de campos tipados.</figcaption>
+    <img src="/imagenes/proyectos/xforce-ui-sistema.png" alt="Especificación de interfaz de usuario con tipos de datos">
+    <figcaption>Diseño de interfaces operativas (Altas, Bajas, Cambios y Consultas) con validación estricta de tipos y longitudes de campo.</figcaption>
   </figure>
 </div>
 
 ---
 
-## Fase 3: Prototipo de Estacionamiento Automatizado y App Móvil QR
+## Etapa 3: Extensión de Autoservicio (*Kioscos y App de Estacionamiento QR*)
 
-Como extensión de *Sistemas de Información Gerencial*, se diseñó un ecosistema de **19 pantallas interactivas (`PA_16_01` a `PA_16_18`)** que conecta los kioscos físicos de entrada/salida del estacionamiento con una aplicación móvil de billetera digital:
+Para completar la experiencia del visitante desde su llegada a las zonas de **Estacionamiento A y B** del complejo, se diseñó un subsistema de **19 pantallas interactivas (`PA_16_01` a `PA_16_18`)** que elimina las filas de cobro manual:
 
-- **Kiosco de Entrada y Salida**: Emisión de boleto físico o código QR, validación de lectura e impresión y escaneo de salida.
-- **Cálculo Tarifario en SQL**: Integración de consultas en tiempo real (`SELECT id_ticket, TIMESTAMPDIFF(HOUR, horaE, NOW()) * 15 AS montoTotal FROM TicketEstacionamiento`) y pasarela de pago con tarjeta.
-- **App Móvil de Usuario**: Recarga de saldo (`$15` a `$100`), generación de QR dinámico de acceso/pago y consulta de historial de estancias (`Mis Accesos`).
+- **Kioscos de Entrada y Salida**: Emisión y validación de boletos con código QR, cálculo automático de tarifa por tiempo de estancia en base de datos (`TIMESTAMPDIFF`) y pasarela de pago con tarjeta.
+- **Billetera Móvil para Visitantes**: Aplicación móvil para escanear el código QR de acceso, recargar saldo digital y consultar el historial de visitas a la arena.
 
 <div class="portfolio-gallery">
   <figure>
-    <img src="/imagenes/proyectos/estacionamiento-kiosco-qr.png" alt="Kiosco de estacionamiento QR">
-    <figcaption>Pantalla de kiosco para emisión y escaneo de boleto QR (PA_16_01).</figcaption>
+    <img src="/imagenes/proyectos/estacionamiento-kiosco-qr.png" alt="Kiosco de acceso al estacionamiento de la arena">
+    <figcaption>Interfaz de kiosco en la entrada del estacionamiento de la arena (PA_16_01).</figcaption>
   </figure>
   <figure>
-    <img src="/imagenes/proyectos/estacionamiento-app-movil.png" alt="App móvil de estacionamiento">
-    <figcaption>Interfaz móvil para escaneo QR, recarga de saldo e historial de accesos (PA_16_09).</figcaption>
+    <img src="/imagenes/proyectos/estacionamiento-app-movil.png" alt="Aplicación móvil de estacionamiento y saldo QR">
+    <figcaption>Aplicación móvil del visitante con lector QR, gestión de saldo e historial de accesos (PA_16_09).</figcaption>
   </figure>
 </div>
 
+---
+
+## Documentación y Entregables de Ingeniería
+
+Uno de los pilares de este proyecto es su **rigor documental** (más de **230 páginas de especificación formal** elaboradas en equipo bajo la asesoría de la Mtra. Martha Patricia Hernández Zamora en la UMAD), demostrando dominio práctico de la ingeniería de software antes de escribir código:
+
+- **Plan de Gestión de Configuración de Software (SCM)**: Nomenclatura estandarizada de artefactos, control de cambios y versionado documental.
+- **Catálogo de Datos y Formatos**: Especificación de **18 Reportes Gerenciales (`RE_01`–`RE_18`)** y **23 Formatos Operativos (`FO_01`–`FO_23`)** (KARDEX, contratos, cartas responsivas de renta de trajes, tickets, facturas y nómina).
+- **Trazabilidad Completa**:Cada pantalla de usuario está vinculada directamente con su regla de negocio, su caso de uso, su tabla relacional y sus validaciones de entrada.

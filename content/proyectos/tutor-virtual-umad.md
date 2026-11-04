@@ -1,92 +1,86 @@
 ---
-title: "Plataforma Web de Tutor Virtual con IA Generativa (UMAD)"
+title: "Tutor Virtual UMAD — Asistente Académico con IA Generativa"
 date: 2026-05-15
 weight: 1
 slug: "tutor-virtual-umad"
-summary: "Aplicación web interactiva de tutoría académica impulsada por Google Gemini 2.5, Node.js/Express, SQLite y avatar 2D multimodal con síntesis de voz nativa (Web Speech API) para estudiantes de Ingeniería de Software."
+summary: "Plataforma web de tutoría inteligente que resuelve dudas académicas 24/7 mediante IA generativa contextualizada al plan de estudios, síntesis de voz y un avatar interactivo."
 tags:
-  - "Inteligencia Artificial"
   - "Node.js"
   - "JavaScript"
   - "SQLite"
+  - "Google Gemini API"
   - "Web Speech API"
-  - "Google Gemini"
   - "RAD / PSP / TSP"
 categories:
   - "Desarrollo Web e IA"
 cover:
   image: "/imagenes/proyectos/tutor-virtual-flujo.png"
-  alt: "Diagrama de flujo y arquitectura del Tutor Virtual UMAD"
+  alt: "Arquitectura de flujo del Tutor Virtual UMAD"
   relative: false
 ---
 
-## Resumen del Proyecto
+## El Reto
 
-Este proyecto de investigación aplicada consistió en el diseño, desarrollo y validación de una **plataforma web de tutoría virtual impulsada por Inteligencia Artificial Generativa**, creada para la **Universidad Madero Puebla (UMAD)** y orientada a fortalecer el proceso de enseñanza-aprendizaje de los estudiantes de **Ingeniería de Software**.
+Fuera del horario de clases, los estudiantes universitarios suelen recurrir a fuentes genéricas o respuestas de IA descontextualizadas que no coinciden con el enfoque pedagógico de sus asignaturas. A diferencia de los chatbots institucionales orientados únicamente a trámites administrativos, el objetivo de este proyecto fue construir un **Sistema de Tutoría Inteligente (STI)** alineado al plan de estudios de **Ingeniería de Software en la UMAD**, capaz de brindar acompañamiento académico confiable en cualquier momento.
 
-- **Equipo de Desarrollo**: Oscar Juárez Ortiz (*Frontend, UI/UX e integración de Web Speech API*), Emmanuel Baltazar López (*Backend, API Gemini y Arquitectura*), Pedro Emiliano Romero Osorio (*Base de Datos SQLite, Testing y Documentación*).
-- **Director de Tesis**: Mtro. Carlos Zapata Bretón.
-- **Metodología**: Desarrollo Rápido de Aplicaciones (**RAD**) complementado con métricas de **PSP (Personal Software Process)** y **TSP (Team Software Process)**.
-
----
-
-## Problemática y Objetivo
-
-Los estudiantes enfrentan dificultades frecuentes para acceder a fuentes confiables, contextualizadas y oportunas que refuercen los contenidos revisados en clase, derivando en rezago académico y reprobación en asignaturas clave. A diferencia de chatbots institucionales orientados a trámites administrativos, el **Tutor Virtual UMAD** fue diseñado específicamente como un **Sistema de Tutoría Inteligente (STI)** alineado al plan de estudios de Ingeniería de Software, ofreciendo asistencia pedagógica suplementaria 24/7 con interacción multimodal (texto, voz y avatar reactivo).
+- **Mi rol principal**: Diseño e implementación del Frontend responsivo (HTML5/CSS3/JS), experiencia de usuario (UI/UX) e integración multimodal de síntesis de voz y animación del avatar.
+- **Trabajo colaborativo**: Desarrollado en equipo junto con Emmanuel Baltazar López (*Backend y API*) y Pedro Emiliano Romero Osorio (*Base de Datos y Pruebas*), bajo la dirección del Mtro. Carlos Zapata Bretón.
 
 ---
 
-## Arquitectura del Sistema y Stack Tecnológico
+## Arquitectura de la Solución
 
-El sistema implementa una arquitectura **Cliente-Servidor basada en REST API** dividida en cuatro capas desacopladas:
+El sistema se diseñó bajo una arquitectura **Cliente-Servidor desacoplada vía REST API**, estructurada en cuatro capas con responsabilidades claramente definidas:
 
-1. **Capa de Presentación (Frontend Multimodal)**:
-   - Desarrollada con **HTML5**, **CSS3 responsivo (Mobile-First, Flexbox y Media Queries)** y **JavaScript Vanilla**, siguiendo principios de accesibilidad **WCAG (POUR)** y heurísticas de usabilidad de Nielsen.
-   - Integra un **Avatar 2D reactivo** sincronizado dinámicamente con los eventos asíncronos `onstart` y `onend` de la **Web Speech API (`SpeechSynthesis`)**, alternando sprites para simular el habla en tiempo real, acompañado de un interruptor de accesibilidad (*Toggle de Voz*) en todo momento.
-2. **Capa de Lógica de Negocio (Backend Node.js + Express)**:
-   - Expone los endpoints REST `/api/registro`, `/api/login`, `/api/preguntar` y `/api/historial`.
-   - Implementa **enrutamiento dinámico de personalidad (Prompt Engineering)**: recupera el perfil académico del estudiante desde la base de datos e inyecta un `System Prompt` especializado antes de consultar al modelo fundacional.
-   - Gestiona múltiples sesiones concurrentes mediante estructuras `Map` en memoria y protege la clave `GEMINI_API_KEY` exclusivamente en variables de entorno (`.env`) del servidor.
-3. **Capa de Servicios Cognitivos**:
-   - Integración con **Google Gemini 2.5 API**, con manejo explícito de excepciones, límites de cuota y *timeouts*.
-4. **Capa de Persistencia Relacional (SQLite)**:
-   - Base de datos incrustada (`umad_tutor.db`) con cumplimiento **ACID** y validación estricta por expresión regular (**Regex**) que restringe el registro exclusivamente a correos institucionales `@umad.edu.mx`.
+### 1. Interfaz Multimodal y Accesibilidad (Frontend)
+- Construida con **HTML5**, **CSS3 (*Mobile-First*)** y **JavaScript nativo**, aplicando los principios de accesibilidad **WCAG (POUR)** y las heurísticas de usabilidad de Nielsen.
+- Incorpora un **Avatar 2D reactivo** sincronizado en tiempo real con los eventos `onstart` y `onend` de la **Web Speech API (`SpeechSynthesis`)**, permitiendo que el estudiante reciba explicaciones tanto en texto como por voz, con un control de silenciamiento disponible en todo momento.
 
-### Modelo de Base de Datos Relacional
+### 2. Lógica de Negocio e Ingeniería de Prompts (Backend)
+- Servidor en **Node.js y Express** que gestiona los endpoints `/api/registro`, `/api/login`, `/api/preguntar` y `/api/historial`.
+- Implementa **enrutamiento dinámico de contexto**: antes de enviar una consulta al modelo de IA, el servidor recupera el perfil académico del alumno e inyecta un *System Prompt* especializado en Ingeniería de Software para asegurar respuestas pertinentes al temario universitario.
+- Protege las credenciales (`GEMINI_API_KEY`) en variables de entorno y administra sesiones concurrentes en memoria.
 
-| Tabla | Campos Principales | Restricciones y Propósito |
+### 3. Servicios Cognitivos y Persistencia Relacional
+- Conexión asíncrona con **Google Gemini 2.5 API** con control de *timeouts* y manejo de cuotas.
+- Base de datos relacional **SQLite (`umad_tutor.db`)** con cumplimiento **ACID**, restringiendo el acceso mediante expresiones regulares exclusivamente a correos institucionales (`@umad.edu.mx`).
+
+| Tabla Relacional | Atributos Clave | Propósito en el Sistema |
 | :--- | :--- | :--- |
-| `Usuarios` | `id`, `nombre`, `correo`, `password`, `carrera` | `PK AUTOINCREMENT`, `correo UNIQUE NOT NULL` (`@umad.edu.mx`), perfil para enrutamiento de prompts |
-| `Chats` | `id`, `correo_usuario`, `pregunta`, `respuesta`, `fecha` | `PK AUTOINCREMENT`, `FK Lógica` hacia `Usuarios(correo)`, `DEFAULT CURRENT_TIMESTAMP` para historial cronológico |
+| `Usuarios` | `id`, `nombre`, `correo`, `password`, `carrera` | Control de acceso institucional (`UNIQUE`) y perfil para contextualizar prompts. |
+| `Chats` | `id`, `correo_usuario`, `pregunta`, `respuesta`, `fecha` | Trazabilidad histórica de sesiones de estudio por alumno (`DEFAULT CURRENT_TIMESTAMP`). |
 
 ---
 
-## Diagramas de Ingeniería
+## Ingeniería de Software y Documentación
+
+El proyecto se ejecutó bajo la metodología de **Desarrollo Rápido de Aplicaciones (RAD)**, respaldada por una tesina técnica de 74 páginas que documenta todo el ciclo de ingeniería:
+
+- **Especificación de Requerimientos**: Definición y trazabilidad de **12 Requerimientos Funcionales (`RF-01` a `RF-12`)** y **5 Requerimientos No Funcionales (`RNF-01` a `RNF-05`)**.
+- **Modelado del Sistema**: Diagramas de navegación, diagramas de clases, diagramas de estados y flujo de orquestación del caso de uso principal.
+- **Gestión de Configuración y Calidad**: Control de versiones con **Semantic Versioning (SemVer)**, **Conventional Commits** y seguimiento cuantitativo de tiempos y defectos mediante **PSP (Personal Software Process)** y **TSP (Team Software Process)**.
 
 <div class="portfolio-gallery">
   <figure>
-    <img src="/imagenes/proyectos/tutor-virtual-flujo.png" alt="Diagrama de flujo del caso de uso principal">
-    <figcaption>Orquestación técnica del Caso de Uso Principal (Frontend → Backend Express → SQLite → Google Gemini API).</figcaption>
+    <img src="/imagenes/proyectos/tutor-virtual-flujo.png" alt="Flujo arquitectónico del caso de uso principal">
+    <figcaption>Orquestación entre la interfaz web, el servidor Express, SQLite y la API de Google Gemini.</figcaption>
   </figure>
   <figure>
-    <img src="/imagenes/proyectos/tutor-virtual-navegacion.png" alt="Diagrama de navegación del sistema">
-    <figcaption>Diagrama de navegación y flujo de pantallas del Tutor Virtual UMAD.</figcaption>
+    <img src="/imagenes/proyectos/tutor-virtual-navegacion.png" alt="Diagrama de navegación del Tutor Virtual">
+    <figcaption>Mapa de navegación y validación de acceso de la plataforma.</figcaption>
   </figure>
 </div>
 
 ---
 
-## Resultados y Métricas de Calidad
+## Resultados e Impacto
 
-Se implementaron el **100% de los 12 Requerimientos Funcionales (`RF-01` a `RF-12`)** y los **5 Requerimientos No Funcionales (`RNF-01` a `RNF-05`)**, gestionando el repositorio bajo **Semantic Versioning (SemVer)** y **Conventional Commits** (`feat:`, `fix:`, `refactor:`, `docs:`).
+- **Cumplimiento del 100%** de los requerimientos funcionales y no funcionales a lo largo de 5 fases iterativas, cerrando con **0 deuda técnica** tras detectar y corregir 31 bugs durante el desarrollo.
+- **95.5% de tasa de aprobación** en pruebas Alpha/Beta sobre 120 consultas reales del plan de estudios de Ingeniería de Software.
 
-| Módulo Evaluado | Latencia Promedio | Tasa de Éxito |
+| Componente Evaluado | Latencia Promedio | Tasa de Éxito |
 | :--- | :--- | :--- |
-| **Login / Autenticación (SQLite local)** | `120 ms` | `99.8%` |
-| **Consultas de Historial (SQLite local)** | `85 ms` | `99.9%` |
-| **API Google Gemini 2.5 (IA Generativa)** | `1,850 ms` | `97.5%` |
-| **Renderizado y Voz (Web Speech API)** | `45 ms` | `100%` |
-
-- **Calidad de Software**: 31 defectos detectados y resueltos a lo largo de las 5 fases del cronograma (0 deuda técnica acumulada al cierre).
-- **Validación con Usuarios**: **95.5% de tasa de aprobación** en pruebas Alpha/Beta sobre 120 consultas académicas realizadas en el perfil de Ingeniería de Software.
-
+| **Autenticación local (SQLite)** | `120 ms` | `99.8%` |
+| **Consulta de historial (SQLite)** | `85 ms` | `99.9%` |
+| **Inferencia en Google Gemini 2.5 API** | `1,850 ms` | `97.5%` |
+| **Síntesis de voz (Web Speech API)** | `45 ms` | `100%` |

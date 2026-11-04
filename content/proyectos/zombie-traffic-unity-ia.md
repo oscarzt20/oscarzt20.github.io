@@ -1,16 +1,16 @@
 ---
-title: "Zombie Traffic — IA con Máquinas de Estados Finitos y Parvadas en Unity 3D"
+title: "Zombie Traffic — Inteligencia Artificial y Comportamiento Colectivo en 3D"
 date: 2026-11-02
-weight: 2
+weight: 3
 slug: "zombie-traffic-unity-ia"
-summary: "Videojuego 3D de supervivencia urbana en Unity y C# con inteligencia artificial basada en Máquinas de Estados Finitos (MEF), algoritmo de parvada terrestre (Boids), evasión de obstáculos por raycasting y formación de escolta con potencial de Lennard-Jones."
+summary: "Videojuego 3D de supervivencia en Unity y C# donde las hordas enemigas y la manada de perros aliados toman decisiones autónomas mediante Máquinas de Estados Finitos, algoritmos de parvada y física de partículas."
 tags:
-  - "Unity 3D"
   - "C#"
+  - "Unity 3D"
   - "Inteligencia Artificial"
-  - "Videojuegos"
   - "Máquinas de Estados (FSM)"
   - "Algoritmo Boids"
+  - "Videojuegos"
 categories:
   - "Videojuegos y Simulación"
 cover:
@@ -19,69 +19,65 @@ cover:
   relative: false
 ---
 
-## Descripción del Proyecto
+## El Concepto
 
-**Zombie Traffic** es un videojuego 3D de supervivencia urbana desarrollado en **Unity** con **C#** para la asignatura *Videojuegos II* en la Universidad Madero (UMAD). A diferencia de los títulos de acción convencionales basados en armas de fuego, el jugador se encuentra desarmado y debe cruzar una ciudad infestada de hordas de zombies para llevar alimento a su mascota, explorando el entorno para **reclutar perros aliados** que lo escoltan en formación, intimidan a las hordas y ejecutan ataques coordinados.
+**Zombie Traffic** es un videojuego 3D de supervivencia urbana desarrollado individualmente en **Unity 6** y **C#**. En lugar de recurrir al combate tradicional con armas de fuego, el jugador está desarmado y debe cruzar una ciudad infestada de zombies para llevar alimento a su mascota. Su única defensa consiste en explorar las calles para **reclutar perros aliados**, quienes forman un perímetro de escolta dinámico, ahuyentan a las hordas cercanas y atacan de manera coordinada.
 
-- **Autor**: Oscar Juárez Ortiz
-- **Video demostrativo**: [Ver demostración en YouTube (`youtu.be/cZBsPuGksNY`)](https://youtu.be/cZBsPuGksNY)
+- **Video demostrativo**: [Ver funcionamiento en YouTube (`youtu.be/cZBsPuGksNY`)](https://youtu.be/cZBsPuGksNY)
 
 ![Escena de Zombie Traffic en Unity 3D](/imagenes/proyectos/zombie-traffic-gameplay.jpg)
 
 ---
 
-## Arquitectura de Inteligencia Artificial
+## Ingeniería de Inteligencia Artificial
 
-El núcleo técnico del proyecto reside en dos **Máquinas de Estados Finitos (MEF)** autónomas (`MEF_Zombie.cs` y `MEF_Perro.cs`) que interactúan en tiempo real sobre el plano urbano:
+El comportamiento emergente del juego se construyó desde cero en C# mediante dos **Máquinas de Estados Finitos (MEF)** independientes que interactúan en tiempo real con el entorno urbano:
 
-### 1. Máquina de Estados Finitos de Zombies (`MEF_Zombie.cs`)
+### 1. IA de las Hordas Enemigas (`MEF_Zombie.cs`)
+Cada zombie evalúa su entorno en cada fotograma y cambia su color para reflejar su estado activo:
 
-Cada agente zombie opera bajo 4 estados con retroalimentación visual cromática y transiciones automáticas:
-
-| Estado Actual | Color Visual | Comportamiento Técnico | Condición de Transición |
+| Estado | Indicador | Lógica de Movimiento | Condición de Transición |
 | :--- | :--- | :--- | :--- |
-| **E1: Parvada (`Flock`)** | Verde | Movimiento colectivo en suelo combinando fuerzas de **Cohesión** (`peso 40`, `rango 16m`), **Separación** (`peso 70`, `rango 3.5m`) y **Alineación** (`peso 50`, `rango 8m`), con aceleración `1.25x` para rezagados. | • Si `t > 12s` y `vecinos == 0` → **E2 Patrullar**<br>• Si `VeJugador()` → **E3 Perseguir**<br>• Si `hayPerros` → **E4 Huir** |
-| **E2: Patrullaje (`Patrullar`)** | Amarillo | Ejecuta secuencias deterministas de pasos (`struct SMovimiento`: ángulo de rotación, duración y velocidad). | • Si `t > 8s` y `vecinos >= 2` → **E1 Parvada**<br>• Si `VeJugador()` → **E3 Perseguir**<br>• Si `hayPerros` → **E4 Huir** |
-| **E3: Persecución (`Perseguir`)** | Rojo | Detección por distancia (`rangoVision = 25m`) y cono de visión (`FOV = 55°`); emite alerta en cadena a zombies vecinos dentro de `14m`. | • Si `distanciaJugador > 40m` → **E1 Parvada**<br>• Si `hayPerros` → **E4 Huir** |
-| **E4: Huida (`Huir`)** | Azul | Prioridad máxima de supervivencia. Calcula un **radio de miedo acumulativo** (`radioMiedo = 7m + 3m * perrosCercanos`). | • Si `!hayPerros` y `t > 1.5s` → **E1 Parvada** |
+| **Parvada (`Flock`)** | Verde | Desplazamiento grupal aplicando fuerzas de **Cohesión**, **Separación** y **Alineación**, con aceleración `1.25x` para individuos rezagados. | • Sin vecinos por `>12s` → **Patrullar**<br>• Detecta al jugador → **Perseguir**<br>• Detecta perros → **Huir** |
+| **Patrullaje (`Patrullar`)** | Amarillo | Recorrido autónomo mediante secuencias de vectores (`SMovimiento`: rotación, tiempo y velocidad). | • Encuentra `>=2` vecinos tras `8s` → **Parvada**<br>• Detecta al jugador → **Perseguir**<br>• Detecta perros → **Huir** |
+| **Persecución (`Perseguir`)** | Rojo | Detección por distancia (`25m`) y cono de visión (`55°`); emite una **alerta en cadena** a los zombies dentro de un radio de `14m`. | • Jugador se aleja `>40m` → **Parvada**<br>• Detecta perros → **Huir** |
+| **Huida (`Huir`)** | Azul | Estado de máxima prioridad. El radio de pánico escala dinámicamente según el tamaño de la jauría (`7m + 3m × perros`). | • Sin perros cercanos por `>1.5s` → **Parvada** |
 
-### 2. Máquina de Estados Finitos de Perros Aliados (`MEF_Perro.cs`)
+### 2. IA de la Jauría Aliada (`MEF_Perro.cs`)
+- **Reclutamiento y Escolta (`Esperar` → `Seguir`)**: Al detectar al jugador, cada perro se integra a la manada y calcula su posición de escolta empleando el **potencial de Lennard-Jones**, logrando una formación envolvente que evita colisiones entre aliados sin perder cohesión.
+- **Ataque Coordinado (`Atacar`)**: Cuando un zombie entra en rango de amenaza, la jauría abandona la formación de escolta y rodea al objetivo por los flancos hasta alejarlo a más de `22m`.
 
-- **E1: Espera (`Esperar`)**: Permanece en posición hasta detectar al jugador dentro del radio de reclutamiento (`VeJugador() == true`).
-- **E2: Escolta (`Seguir`)**: Se distribuye en ranuras alrededor del jugador empleando la **fórmula de potencial de Lennard-Jones** entre agentes caninos para mantener una distancia de escolta uniforme sin colapsar ni dispersarse.
-- **E3: Ataque Coordinado (`Atacar`)**: Al detectar un `zombieCercano != null`, la jauría toma posiciones frontales, laterales y de cerco hasta neutralizar o alejar la amenaza (`dist > 22m`).
-
-### 3. Navegación y Evasión de Obstáculos con Raycasting
-
-- Implementación de un sistema de rayos (`Physics.Raycast` / `SphereCast`) lanzados a la altura de las rodillas con cálculo de **tangentes laterales** respecto a la normal de impacto para rodear muros, autos y esquinas urbanas sin atascarse.
-- Sistema de detección y recuperación anti-atascos (`posRevision`, `tiempoEscape`) y reaparición automática ante caídas fuera del mapa (`VerificarCaida()`).
+### 3. Navegación Urbana y Evasión con Raycasting
+Para evitar el uso de mallas precalculadas estáticas, ambos tipos de agentes lanzan rayos (`Physics.Raycast` y `SphereCast`) y calculan **vectores tangentes** a la normal de impacto para rodear edificios, muros y vehículos de forma fluida, incorporando además detección automática de atascos.
 
 ---
 
-## Diagramas de Estados (MEF)
+## Documentación Técnica y Diagramas de Estados
+
+El proyecto cuenta con una memoria técnica de **73 páginas** que documenta la arquitectura de clases, los diagramas de transición de estados, las fórmulas matemáticas empleadas y el código fuente comentado bajo estándares de Ingeniería de Software en la UMAD.
 
 <div class="portfolio-gallery">
   <figure>
     <img src="/imagenes/proyectos/zombie-traffic-mef-1.png" alt="Diagrama de estados MEF Zombie">
-    <figcaption>Diagrama de transiciones de la Máquina de Estados Finitos para la horda de Zombies.</figcaption>
+    <figcaption>Máquina de Estados Finitos de la horda de zombies.</figcaption>
   </figure>
   <figure>
     <img src="/imagenes/proyectos/zombie-traffic-mef-2.png" alt="Diagrama de estados MEF Perro">
-    <figcaption>Diagrama de transiciones de la Máquina de Estados Finitos para la jauría de Perros Aliados.</figcaption>
+    <figcaption>Máquina de Estados Finitos de la jauría de perros aliados.</figcaption>
   </figure>
 </div>
 
 ---
 
-## Fragmento Destacado de Código (`MEF_Zombie.cs`)
+## Fragmento de Código (`MEF_Zombie.cs`)
 
 ```csharp
-/// Ejecuta el estado actual de la MEF y revisa las transiciones
+/// Evalúa el estado actual del agente y ejecuta las transiciones prioritarias
 void Update()
 {
     tiempoEnEstado += Time.deltaTime;
 
-    // Huir de los perros tiene prioridad sobre cualquier otro estado
+    // La supervivencia ante la jauría de perros tiene prioridad sobre cualquier estado
     Vector3 huidaPerros = CalcularHuidaPerros();
     bool hayPerros = huidaPerros.sqrMagnitude > 0;
 
@@ -114,4 +110,3 @@ void Update()
     }
 }
 ```
-

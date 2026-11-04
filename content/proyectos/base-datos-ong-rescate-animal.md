@@ -1,114 +1,79 @@
 ---
-title: "Sistema de Base de Datos para ONG de Rescate Animal y Veterinaria (SQL Server)"
+title: "Rescate Animal Puebla — Base de Datos Transaccional para ONG y Veterinaria"
 date: 2025-05-10
-weight: 5
+weight: 4
 slug: "base-datos-ong-rescate-animal"
-summary: "Diseño e implementación en Microsoft SQL Server (T-SQL) de una base de datos relacional de 21 tablas para gestionar rescates de fauna, clínica veterinaria, vacunaciones, adopciones, voluntariado, eventos y finanzas de una ONG."
+summary: "Diseño e implementación en SQL Server de una base de datos relacional de 21 tablas con automatización mediante triggers, procedimientos almacenados y vistas para gestionar rescates, hospital veterinario, adopciones y finanzas."
 tags:
   - "SQL Server"
   - "T-SQL"
   - "Bases de Datos"
   - "Stored Procedures"
   - "Triggers"
-  - "Modelado de Datos"
 categories:
   - "Bases de Datos"
 cover:
   image: "/imagenes/proyectos/bd-ong-modelo.png"
-  alt: "Modelo relacional de la base de datos de Rescate Animal y Veterinaria"
+  alt: "Modelo relacional de la base de datos RescateAnimalPuebla1"
   relative: false
 ---
 
-## Descripción del Proyecto
+## El Problema
 
-Proyecto desarrollado para la asignatura *Programación para Bases de Datos* en la **Universidad Madero (UMAD)**, cuyo objetivo fue diseñar, implementar y auditar una base de datos relacional completa en **Microsoft SQL Server (`RescateAnimalPuebla1`)** para administrar las operaciones clínicas, logísticas y financieras de una **ONG de rescate animal y hospital veterinario**.
+Las organizaciones de rescate animal y clínicas veterinarias suelen administrar sus operativos de rescate, expedientes médicos, inventario de medicamentos, voluntariado y donaciones en registros aislados. Esto provoca pérdida de trazabilidad sobre el estado clínico de cada ejemplar, desabasto de insumos médicos y falta de control presupuestal en campañas y eventos.
 
-- **Autores**: Oscar Juárez Ortiz, Emmanuel Baltazar López, Pedro Emiliano Romero Osorio.
-- **Asesora**: Ing. Verónica Moreno Jiménez.
+El objetivo de este proyecto fue construir el motor de base de datos relacional **`RescateAnimalPuebla1` en Microsoft SQL Server**, centralizando la operación clínica, logística y financiera con reglas de negocio automatizadas desde el propio servidor de datos.
+
+---
+
+## Arquitectura del Modelo Relacional (21 Tablas)
+
+El esquema se normalizó en **21 tablas relacionales** protegidas con restricciones de integridad referencial (`FOREIGN KEY`) y validaciones de dominio (`CHECK` para edades no negativas, teléfonos de 10 a 12 dígitos, códigos postales válidos, montos positivos y coherencia cronológica en fechas de tratamiento y turnos):
+
+| Dominio del Sistema | Tablas Relacionales |
+| :--- | :--- |
+| **Operativos de Rescate (4)** | `Especies`, `Razas`, `Rescates`, `Animales` |
+| **Hospital Veterinario (6)** | `Areas`, `Veterinarios`, `Consultas`, `Tratamientos`, `Vacunas`, `TratamientosVacunas` |
+| **Adopciones y Seguimiento (2)** | `Adoptantes`, `Adopciones` |
+| **Voluntariado y Acceso (3)** | `Turnos`, `Usuarios`, `Roles` |
+| **Finanzas, Eventos e Insumos (6)** | `Donantes`, `Donaciones`, `Eventos`, `Asistencias`, `Gastos`, `Suministros` |
 
 ![Modelo Relacional de la Base de Datos RescateAnimalPuebla1](/imagenes/proyectos/bd-ong-modelo.png)
 
 ---
 
-## Arquitectura del Esquema Relacional (21 Tablas)
+## Automatización y Lógica en T-SQL
 
-El modelo garantiza la integridad referencial y de dominio mediante llaves primarias autoincrementables (`IDENTITY(1,1)`), llaves foráneas (`FOREIGN KEY`) y restricciones de validación (`CHECK` en edades, rangos telefónicos de 10 a 12 dígitos, códigos postales positivos, montos financieros e intervalos de fechas y turnos):
+Para evitar que la integridad de los datos dependa exclusivamente de la capa de aplicación, se programaron objetos transaccionales y analíticos directamente en **T-SQL**:
 
-| Dominio Operativo | Tablas Implementadas (21 en Total) |
-| :--- | :--- |
-| **Rescate y Fauna (4)** | `Especies`, `Razas`, `Rescates`, `Animales` |
-| **Clínica Veterinaria (6)** | `Areas`, `Veterinarios`, `Consultas`, `Tratamientos`, `Vacunas`, `TratamientosVacunas` |
-| **Adopciones y Seguimiento (2)** | `Adoptantes`, `Adopciones` |
-| **Capital Humano y Seguridad (3)** | `Turnos`, `Usuarios` (Voluntarios), `Roles` |
-| **Finanzas, Eventos y Logística (6)** | `Donantes`, `Donaciones`, `Eventos`, `Asistencias`, `Gastos`, `Suministros` |
+### 1. Procedimientos Almacenados (`Stored Procedures`)
+- **`RegistrarRescateYActualizarAnimal`**: Registra en una sola transacción el operativo de rescate y el alta del animal utilizando `SCOPE_IDENTITY()`, asignándole automáticamente el estado `'En rehabilitación'`.
+- **`AsignarTratamientoTrasConsulta`**: Cierra automáticamente los tratamientos previos abiertos del paciente (`SET fechaFin = @fechaInicio`) antes de registrar la nueva prescripción médica.
+- **`ActualizarInventarioTrasAplicarVacuna`**: Verifica la existencia de dosis suficientes en `Suministros`, descuenta las unidades aplicadas y vincula el registro en `TratamientosVacunas`.
+- **`CompararEstadoSaludAnimal`**: Contrasta el diagnóstico inicial frente al estado actual del ejemplar para dictaminar su evolución clínica.
+- **`RegistrarAdopcion`**: Formaliza la entrega del ejemplar y actualiza su estatus en el catálogo general.
+- **`VerificarDesvioPresupuestal`**: Cruza el total de donaciones recaudadas frente a los gastos ejercidos durante el periodo de un evento y emite alertas en caso de déficit.
 
----
+### 2. Disparadores (`Triggers`) en Tiempo Real
+- **`tr_AjustarInventarioMedicamentos`**: Al insertar un nuevo tratamiento, analiza la lista de medicamentos prescritos y descuenta automáticamente las unidades correspondientes del inventario en `Suministros`.
+- **`tr_ActualizarEstadoAdopcion`**: Cambia de forma inmediata el estado del animal a `'Adoptado'` al registrarse un contrato en la tabla `Adopciones`.
+- **`tr_FechaAplicacionVacuna`**: Garantiza la trazabilidad asignando `GETDATE()` cuando se registra la aplicación de una vacuna sin fecha explícita.
 
-## Programación en T-SQL: Vistas, Procedimientos, Triggers y Seguridad
-
-### 1. Consultas Multitabla (`INNER JOIN` y Agregaciones)
-- Trazabilidad de animales rescatados por ubicación y tipo de siniestro (urbano, silvestre, incendio forestal, tráfico ilegal).
-- Historial clínico completo vinculando `Animales → Consultas → Veterinarios → Tratamientos → TratamientosVacunas → Vacunas`.
-- Análisis financiero de gastos operativos agrupados por categoría (`SUM(montoGasto)`).
-
-### 2. Vistas Analíticas (`CREATE VIEW`)
-- `Vista_Animales_Disponibles`: Catálogo con especie, raza, edad, estado de salud y descripción del animal.
-- `Vista_Historial_Clinico`: Expediente médico unificado por paciente, fecha de consulta, veterinario y diagnóstico.
-- `Vista_Adopciones_Confirmadas`: Cruce de animales adoptados con información del adoptante y especie.
-- `Vista_Animales_Vacunados`: Subconsultas correlacionadas para identificar animales con esquemas de vacunación múltiples (`COUNT(*) > 1`).
-- `Vista_Usuarios_Horas_Acumuladas1`: Totalización de horas de voluntariado (`SUM(horasT)`) agrupadas por voluntario y área operativa.
-- `Vista_Donaciones_Por_Donante`: Desglose de aportaciones individuales y monto acumulado histórico por donante.
-- `Vista_Eventos_Alta_Participacion`: Filtrado de campañas y eventos solidarios con aforo completo de asistentes.
-- `Vista_Seguimientos_Observaciones_Criticas`: Detección automatizada (`LIKE '%riesgo%'`, `'%inadecuado%'`, `'%ajuste%'`) de adopciones que requieren seguimiento prioritario.
-
-### 3. Procedimientos Almacenados (`CREATE PROCEDURE`)
-- `RegistrarRescateYActualizarAnimal`: Registra en una sola transacción el evento en `Rescates` y el expediente en `Animales` utilizando `SCOPE_IDENTITY()`, actualizando su estado a `'En rehabilitación'`.
-- `AsignarTratamientoTrasConsulta`: Cierra automáticamente los tratamientos activos previos del paciente (`SET fechaFin = @fechaInicio`) e inserta el nuevo tratamiento médico.
-- `CompararEstadoSaludAnimal`: Evalúa el diagnóstico clínico anterior frente al estado de salud actual del animal para dictaminar si presenta mejoría (`@mejora = 1`).
-- `RegistrarAdopcion`: Inserta el contrato en `Adopciones` y actualiza el estado del ejemplar en `Animales` a `'Adoptado'`.
-- `ActualizarInventarioTrasAplicarVacuna`: Verifica la disponibilidad en `Suministros`, descuenta las dosis requeridas (`TRY_CAST`) y asocia el registro en `TratamientosVacunas`.
-- `VerificarDesvioPresupuestal`: Compara las donaciones recaudadas frente a los gastos ejercidos durante el periodo de un evento y emite alertas de desviación presupuestal.
-
-### 4. Disparadores (`CREATE TRIGGER`) y Seguridad DCL
-- `tr_ActualizarEstadoAdopcion` (`AFTER INSERT ON Adopciones`): Actualiza automáticamente el `estadoSalud` del animal a `'Adoptado'`.
-- `tr_FechaAplicacionVacuna` (`AFTER INSERT ON Vacunas`): Asigna `GETDATE()` cuando se registra una vacuna sin fecha explícita.
-- `tr_AjustarInventarioMedicamentos` (`AFTER INSERT ON Tratamientos`): Cuenta los medicamentos prescritos en la cadena separada por comas y descuenta automáticamente el stock en `Suministros`.
-- **Seguridad Basada en Roles (DCL)**: Aprovisionamiento de logins y usuarios (`uLectura`, `uEscritura`) con permisos diferenciados (`GRANT SELECT`, `DENY INSERT, UPDATE, DELETE`) e integración en roles fijos (`db_datareader`, `db_datawriter`).
+### 3. Vistas Analíticas y Seguridad Basada en Roles (DCL)
+- **8 Vistas de Negocio (`CREATE VIEW`)**: Incluyen `Vista_Historial_Clinico`, `Vista_Animales_Disponibles`, `Vista_Donaciones_Por_Donante` y `Vista_Seguimientos_Observaciones_Criticas` (que detecta automáticamente casos post-adopción con palabras clave como `'riesgo'`, `'inadecuado'` o `'ajuste'`).
+- **Control de Permisos (DCL)**: Creación de perfiles diferenciados de lectura (`uLectura` en `db_datareader` con `DENY` explícito de modificación) y operación (`uEscritura` en `db_datawriter`).
 
 ---
 
-## Fragmento de Código T-SQL (`RescateAnimalPuebla1`)
+## Documentación y Pruebas
+
+El proyecto está respaldado por una **documentación técnica de 51 páginas** (desarrollada en la UMAD junto con Emmanuel Baltazar López y Pedro Emiliano Romero Osorio), que incluye el diagrama relacional, los scripts DDL/DML completos y la evidencia de ejecución y prueba de cada `INNER JOIN`, vista, procedimiento almacenado y *trigger*.
+
+---
+
+## Fragmento de Código T-SQL
 
 ```sql
-CREATE PROCEDURE RegistrarRescateYActualizarAnimal
-    @fechaR DATE,
-    @ubicacion VARCHAR(500),
-    @tipoR VARCHAR(50),
-    @nombreResponsable VARCHAR(50),
-    @nombreAnimal VARCHAR(100),
-    @edad INT,
-    @genero VARCHAR(100),
-    @estadoSalud VARCHAR(100),
-    @descripcionAnimales VARCHAR(150),
-    @id_especie INT
-AS
-BEGIN
-    DECLARE @id_rescate INT, @id_animal INT;
-
-    INSERT INTO Rescates (fechaR, ubicacion, tipoR, nombreResponsable)
-    VALUES (@fechaR, @ubicacion, @tipoR, @nombreResponsable);
-    SET @id_rescate = SCOPE_IDENTITY();
-
-    INSERT INTO Animales (nombreAnimal, edad, genero, estadoSalud, descripcionAnimales, id_especie, id_rescate)
-    VALUES (@nombreAnimal, @edad, @genero, @estadoSalud, @descripcionAnimales, @id_especie, @id_rescate);
-    SET @id_animal = SCOPE_IDENTITY();
-
-    UPDATE Animales
-    SET estadoSalud = 'En rehabilitación'
-    WHERE id_animal = @id_animal;
-END;
-GO
-
 CREATE TRIGGER tr_AjustarInventarioMedicamentos
 ON Tratamientos
 AFTER INSERT
@@ -121,6 +86,7 @@ BEGIN
 
     IF @medicamentos IS NOT NULL AND @medicamentos <> ''
     BEGIN
+        -- Calcula el número de medicamentos separados por coma y descuenta el stock
         SET @cantidadMedicamentos = LEN(@medicamentos) - LEN(REPLACE(@medicamentos, ',', '')) + 1;
 
         UPDATE Suministros
@@ -128,4 +94,16 @@ BEGIN
         WHERE id_tratamiento = @id_tratamiento;
     END;
 END;
+GO
+
+CREATE VIEW Vista_Seguimientos_Observaciones_Criticas AS
+SELECT
+    A.nombreAnimal,
+    AD.fechaAd,
+    AD.infoAdicional
+FROM Adopciones AD
+JOIN Animales A ON AD.id_animal = A.id_animal
+WHERE AD.infoAdicional LIKE '%ajuste%'
+   OR AD.infoAdicional LIKE '%inadecuado%'
+   OR AD.infoAdicional LIKE '%riesgo%';
 ```

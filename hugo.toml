@@ -1,6 +1,6 @@
 baseURL = 'https://oscarzt20.github.io/'
 languageCode = 'es-mx'
-title = 'Oscar Juárez Ortiz | Portafolio'
+title = 'Oscar Juárez Ortiz | Ingeniería de Software'
 theme = 'PaperMod'
 defaultContentLanguage = "es"
 
@@ -15,15 +15,14 @@ defaultContentLanguage = "es"
 
 [params]
   defaultTheme = "auto"
-  ShowReadingTime = true
+  ShowReadingTime = false
   ShowBreadCrumbs = true
   showtoc = true
   tocopen = false
   ShowPostNavLinks = true
   ShowCodeCopyButtons = true
   hideSummary = false
-  author = "Oscar Juárez Ortiz"
-  description = "Portafolio de Ingeniería de Software de Oscar Juárez Ortiz (UMAD) — Desarrollo Web & IA, Bases de Datos SQL, Redes Linux/VoIP, SAP S/4HANA Fiori y Videojuegos en Unity/C#."
+  description = "Estudiante de Ingeniería de Software con formación en el ciclo completo de desarrollo y en metodologías orientadas a la generación de valor y la creación de software de calidad."
   mainSections = ["proyectos"]
 
   [params.cover]
@@ -34,7 +33,7 @@ defaultContentLanguage = "es"
   [params.profileMode]
     enabled = true
     title = "Oscar Juárez Ortiz"
-    subtitle = "Ingeniería de Software en Universidad Madero (UMAD) · Desarrollo Web & IA, Bases de Datos SQL, Redes Linux/VoIP, SAP S/4HANA Fiori y Videojuegos en Unity/C#. Enfocado en diseñar soluciones claras, eficientes y orientadas a la generación de valor."
+    subtitle = "Estudiante de Ingeniería de Software con formación en el ciclo completo de desarrollo y en metodologías orientadas a la generación de valor y la creación de software de calidad. Aplico mi capacidad de análisis y organización para diseñar soluciones claras y eficientes."
     imageUrl = "perfil.jpg"
     imageTitle = "Oscar Juárez Ortiz"
     imageWidth = 160

@@ -1,62 +1,64 @@
 ---
-title: "Base de Datos para Gestión de Salud e Historia Clínica Electrónica (SaludOP)"
+title: "SaludOP — Arquitectura de Datos para Historia Clínica Electrónica"
 date: 2024-11-26
-weight: 6
+weight: 5
 slug: "base-datos-gestion-salud"
-summary: "Modelado Entidad-Relación, Diseño Relacional normalizado, Diccionario de Datos (48 páginas) e implementación en SQL Server de un sistema hospitalario de Historia Clínica Electrónica con 23 tablas."
+summary: "Modelado conceptual Entidad-Relación, diseño lógico normalizado, diccionario de datos e implementación en SQL Server de un sistema hospitalario de 23 tablas para expedientes clínicos electrónicos."
 tags:
   - "SQL Server"
-  - "Bases de Datos"
-  - "Modelado E-R"
+  - "Modelado de Datos"
   - "Diccionario de Datos"
-  - "Sector Salud"
+  - "Bases de Datos"
 categories:
   - "Bases de Datos"
 cover:
   image: "/imagenes/proyectos/bd-salud-relacional.png"
-  alt: "Diagrama Relacional del Sistema de Gestión de Salud SaludOP"
+  alt: "Diagrama Relacional del sistema clínico SaludOP"
   relative: false
 ---
 
-## Descripción del Proyecto
+## El Reto
 
-Este proyecto, desarrollado para la asignatura *Fundamentos de Bases de Datos* en la **Universidad Madero (UMAD)**, consiste en el análisis de requerimientos, modelado conceptual (**Entidad-Relación**), diseño lógico (**Modelo Relacional normalizado**), elaboración de **Diccionario de Datos** e implementación física en **Microsoft SQL Server (`SaludOP`)** para un sistema de **Gestión de Salud e Historia Clínica Electrónica (HCE)**.
-
-- **Autores**: Oscar Juárez Ortiz, Pedro Emiliano Romero Osorio.
-- **Asesora**: Ing. Verónica Moreno Jiménez.
+En clínicas y hospitales, la fragmentación de la información médica entre consultas, laboratorios y farmacia dificulta el seguimiento integral del paciente y compromete la precisión de los diagnósticos. El objetivo del proyecto **SaludOP** fue diseñar desde cero la arquitectura de base de datos para un sistema de **Historia Clínica Electrónica (HCE)** capaz de centralizar expedientes, agendas médicas, resultados de laboratorio, recetas e inventario farmacéutico bajo estándares de integridad y privacidad.
 
 ---
 
-## Requerimientos y Alcance del Sistema
+## Diseño Conceptual y Lógico (23 Tablas Normalizadas)
 
-El sistema fue diseñado para centralizar y estandarizar la operación médica y administrativa de hospitales y clínicas bajo criterios de integridad referencial y privacidad de datos clínicos (HIPAA / RGPD):
+El diseño de la base de datos siguió rigurosamente las etapas de ingeniería de datos para evitar redundancias y anomalías de actualización:
 
-- **Expediente Único de Pacientes**: Datos demográficos, seguro médico, contacto de emergencia, catálogo de alergias (`AlergiasPacientes`) y condiciones preexistentes (`PacientesCondicionesPre`: Diabetes, Hipertensión, EPOC, Lupus).
-- **Gestión de Cuerpo Médico e Instituciones**: Registro profesional (`noRegistroP`), horarios y días laborales (`Disponibilidades`), especialidades médicas (`MedicosEspecialidades`) y adscripción a instituciones de salud (`InstitucionesSalud`).
-- **Agenda, Bitácora Diaria y Consultas**: Programación de citas (`Agendaciones`, `Citas`), control de folios en `BitacoraDiaria` y emisión de informes de evolución clínica (`Informes`, `MedicosInformes`).
-- **Diagnósticos, Laboratorios, Tratamientos y Farmacia**: Vinculación de diagnósticos con pruebas de laboratorio (`Pruebas`, `DiagnosticosPruebas`, `Resultados`), prescripción de tratamientos (`Tratamientos`, `TratamientosDiagnosticos`), recetas electrónicas (`Recetas`, `Medicamentos`, `RecetasMedicamentos`) y control de stock en servicios de farmacia (`Servicios`, `Inventarios`).
-
----
-
-## Modelos de Ingeniería de Datos (23 Tablas)
+1. **Expediente Único del Paciente**: Identificación demográfica, seguro médico, contactos de emergencia y tablas asociativas para el control de **alergias** (`AlergiasPacientes`) y **condiciones preexistentes** (`PacientesCondicionesPre`).
+2. **Gestión del Cuerpo Médico e Instituciones**: Registro de cédulas profesionales, adscripción a unidades hospitalarias (`InstitucionesSalud`), control de especialidades (`MedicosEspecialidades`) y bloques de horario laboral (`Disponibilidades`).
+3. **Trazabilidad Clínica y Farmacéutica**: Vinculación completa desde la cita agendada (`Agendaciones`, `Citas`, `BitacoraDiaria`) hasta la emisión de diagnósticos (`Diagnosticos`), órdenes y resultados de laboratorio (`Pruebas`, `Resultados`), tratamientos (`Tratamientos`), prescripción de recetas (`Recetas`, `RecetasMedicamentos`) y existencias en farmacia (`Servicios`, `Inventarios`).
 
 <div class="portfolio-gallery">
   <figure>
     <img src="/imagenes/proyectos/bd-salud-er.png" alt="Diagrama Entidad-Relación SaludOP">
-    <figcaption>Diagrama Entidad-Relación (Modelo Conceptual) del sistema de Historia Clínica Electrónica.</figcaption>
+    <figcaption>Modelo Conceptual Entidad-Relación (E-R) con entidades, atributos y relaciones.</figcaption>
   </figure>
   <figure>
     <img src="/imagenes/proyectos/bd-salud-relacional.png" alt="Diagrama Relacional SaludOP">
-    <figcaption>Diagrama Relacional (Modelo Lógico) con las 23 tablas normalizadas y sus cardinalidades.</figcaption>
+    <figcaption>Modelo Lógico Relacional normalizado con las 23 tablas, llaves primarias (PK) y foráneas (FK).</figcaption>
   </figure>
 </div>
 
 ---
 
-## Estructura DDL en SQL Server (`SaludOP`)
+## Documentación Técnica y Diccionario de Datos
+
+El proyecto incluye una **especificación técnica de 48 páginas** (elaborada en la UMAD junto con Pedro Emiliano Romero Osorio), que documenta:
+
+- **Análisis de Requerimientos**: Reglas de negocio hospitalarias y lineamientos de seguridad y confidencialidad de datos clínicos.
+- **Diccionario de Datos Exhaustivo**: Definición formal de cada una de las 23 tablas, especificando nombre del atributo, tipo de dato en SQL Server, longitud, restricciones (`PRIMARY KEY`, `FOREIGN KEY`, `IDENTITY`) y descripción funcional de cada columna.
+- **Implementación DDL y DML**: Scripts de creación del esquema e inserción de catálogos y registros clínicos de prueba.
+
+---
+
+## Implementación DDL en SQL Server (`SaludOP`)
 
 ```sql
 CREATE DATABASE SaludOP;
+GO
 USE SaludOP;
 
 CREATE TABLE Pacientes (
@@ -94,4 +96,3 @@ CREATE TABLE Recetas (
     FOREIGN KEY (id_tratamiento) REFERENCES Tratamientos(id_tratamiento)
 );
 ```
-
